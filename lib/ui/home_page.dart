@@ -7,11 +7,13 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MyHomeApp(
+      showBack: false,
+      title: '首页',
       bodyWidget: new Container(
         child: new Center(
           child: FlatButton(
             onPressed: () {
-              Application.router.navigateTo(context, Routes.testPage);
+              Application.router.navigateTo(context, Routes.splash);
             },
             child: Text('测试跳转'),
           ),
