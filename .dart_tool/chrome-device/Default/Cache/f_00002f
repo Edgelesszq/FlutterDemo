@@ -1,29 +1,17 @@
-define(['dart_sdk', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/widgets/icon.dart', 'packages/flutter/src/material/icons.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/widgets/bottom_navigation_bar_item.dart', 'packages/flutter/src/material/colors.dart', 'packages/flutter_arg_demo/widget/myAppBar.dart'], (function load__packages__flutter_arg_demo__widget__myHomeApp_dart(dart_sdk, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__widgets__icon$46dart, packages__flutter__src__material__icons$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__widgets__bottom_navigation_bar_item$46dart, packages__flutter__src__material__colors$46dart, packages__flutter_arg_demo__widget__myAppBar$46dart) {
+define(['dart_sdk', 'packages/flutter/src/rendering/layer.dart', 'packages/flutter/src/painting/borders.dart'], (function load__packages__flutter__src__material__material_state_dart(dart_sdk, packages__flutter__src__rendering__layer$46dart, packages__flutter__src__painting__borders$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const _interceptors = dart_sdk._interceptors;
   const ui = dart_sdk.ui;
+  const collection = dart_sdk.collection;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const scaffold = packages__flutter__src__material__icon_button$46dart.src__material__scaffold;
-  const floating_action_button = packages__flutter__src__material__icon_button$46dart.src__material__floating_action_button;
-  const floating_action_button_location = packages__flutter__src__material__icon_button$46dart.src__material__floating_action_button_location;
-  const bottom_navigation_bar = packages__flutter__src__material__icon_button$46dart.src__material__bottom_navigation_bar;
-  const icon = packages__flutter__src__widgets__icon$46dart.src__widgets__icon;
-  const icons = packages__flutter__src__material__icons$46dart.src__material__icons;
-  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
-  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
-  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
-  const bottom_navigation_bar_item = packages__flutter__src__widgets__bottom_navigation_bar_item$46dart.src__widgets__bottom_navigation_bar_item;
-  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
-  const myAppBar = packages__flutter_arg_demo__widget__myAppBar$46dart.widget__myAppBar;
-  var myHomeApp = Object.create(dart.library);
+  const mouse_cursor = packages__flutter__src__rendering__layer$46dart.src__rendering__mouse_cursor;
+  const borders = packages__flutter__src__painting__borders$46dart.src__painting__borders;
+  var material_state = Object.create(dart.library);
   dart._checkModuleNullSafetyMode(false);
   var T = {
-    VoidToNull: () => (T.VoidToNull = dart.constFn(dart.fnType(core.Null, [])))(),
-    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
-    BottomNavigationBarItemL: () => (T.BottomNavigationBarItemL = dart.constFn(dart.legacy(bottom_navigation_bar_item.BottomNavigationBarItem)))(),
-    JSArrayOfBottomNavigationBarItemL: () => (T.JSArrayOfBottomNavigationBarItemL = dart.constFn(_interceptors.JSArray$(T.BottomNavigationBarItemL())))()
+    MaterialStateL: () => (T.MaterialStateL = dart.constFn(dart.legacy(material_state.MaterialState)))(),
+    LinkedHashSetOfMaterialState: () => (T.LinkedHashSetOfMaterialState = dart.constFn(collection.LinkedHashSet$(material_state.MaterialState)))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -38,417 +26,391 @@ define(['dart_sdk', 'packages/flutter/src/material/icon_button.dart', 'packages/
     _: () => (C, CT)
   });
   dart.defineLazy(CT, {
-    get C2() {
-      return C[2] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "icon",
-        [_Location_column]: 31,
-        [_Location_line]: 23,
-        [_Location_file]: null
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: material_state.MaterialState.prototype,
+        [_name$]: "MaterialState.hovered",
+        index: 0
       });
     },
     get C1() {
-      return C[1] = dart.constList([C[2] || CT.C2], T._LocationL());
+      return C[1] = dart.const({
+        __proto__: material_state.MaterialState.prototype,
+        [_name$]: "MaterialState.focused",
+        index: 1
+      });
     },
-    get C0() {
-      return C[0] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[1] || CT.C1,
-        [_Location_name]: null,
-        [_Location_column]: 20,
-        [_Location_line]: 23,
-        [_Location_file]: "file:///F:/flutterWork/FlutterDemo/lib/widget/myHomeApp.dart"
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: material_state.MaterialState.prototype,
+        [_name$]: "MaterialState.pressed",
+        index: 2
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: material_state.MaterialState.prototype,
+        [_name$]: "MaterialState.dragged",
+        index: 3
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: material_state.MaterialState.prototype,
+        [_name$]: "MaterialState.selected",
+        index: 4
       });
     },
     get C5() {
       return C[5] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "onPressed",
-        [_Location_column]: 9,
-        [_Location_line]: 22,
-        [_Location_file]: null
+        __proto__: material_state.MaterialState.prototype,
+        [_name$]: "MaterialState.disabled",
+        index: 5
       });
     },
     get C6() {
       return C[6] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 9,
-        [_Location_line]: 23,
-        [_Location_file]: null
+        __proto__: material_state.MaterialState.prototype,
+        [_name$]: "MaterialState.error",
+        index: 6
       });
     },
-    get C4() {
-      return C[4] = dart.constList([C[5] || CT.C5, C[6] || CT.C6], T._LocationL());
+    get C7() {
+      return C[7] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2, C[3] || CT.C3, C[4] || CT.C4, C[5] || CT.C5, C[6] || CT.C6], T.MaterialStateL());
     },
-    get C3() {
-      return C[3] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[4] || CT.C4,
-        [_Location_name]: null,
-        [_Location_column]: 33,
-        [_Location_line]: 21,
-        [_Location_file]: "file:///F:/flutterWork/FlutterDemo/lib/widget/myHomeApp.dart"
+    get C8() {
+      return C[8] = dart.constSet(T.MaterialStateL(), []);
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [SystemMouseCursor_kind]: "basic"
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [SystemMouseCursor_kind]: "click"
       });
     },
     get C9() {
       return C[9] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "icon",
-        [_Location_column]: 52,
-        [_Location_line]: 29,
-        [_Location_file]: null
+        __proto__: material_state._EnabledAndDisabledMouseCursor.prototype,
+        [_EnabledAndDisabledMouseCursor_name]: "clickable",
+        [_EnabledAndDisabledMouseCursor_disabledCursor]: C[10] || CT.C10,
+        [_EnabledAndDisabledMouseCursor_enabledCursor]: C[11] || CT.C11
       });
     },
-    get C8() {
-      return C[8] = dart.constList([C[9] || CT.C9], T._LocationL());
-    },
-    get C7() {
-      return C[7] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[8] || CT.C8,
-        [_Location_name]: null,
-        [_Location_column]: 41,
-        [_Location_line]: 29,
-        [_Location_file]: "file:///F:/flutterWork/FlutterDemo/lib/widget/myHomeApp.dart"
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [SystemMouseCursor_kind]: "text"
       });
     },
     get C12() {
       return C[12] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "data",
-        [_Location_column]: 71,
-        [_Location_line]: 29,
-        [_Location_file]: null
-      });
-    },
-    get C11() {
-      return C[11] = dart.constList([C[12] || CT.C12], T._LocationL());
-    },
-    get C10() {
-      return C[10] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[11] || CT.C11,
-        [_Location_name]: null,
-        [_Location_column]: 66,
-        [_Location_line]: 29,
-        [_Location_file]: "file:///F:/flutterWork/FlutterDemo/lib/widget/myHomeApp.dart"
-      });
-    },
-    get C15() {
-      return C[15] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "icon",
-        [_Location_column]: 32,
-        [_Location_line]: 31,
-        [_Location_file]: null
-      });
-    },
-    get C14() {
-      return C[14] = dart.constList([C[15] || CT.C15], T._LocationL());
-    },
-    get C13() {
-      return C[13] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[14] || CT.C14,
-        [_Location_name]: null,
-        [_Location_column]: 21,
-        [_Location_line]: 31,
-        [_Location_file]: "file:///F:/flutterWork/FlutterDemo/lib/widget/myHomeApp.dart"
-      });
-    },
-    get C18() {
-      return C[18] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "data",
-        [_Location_column]: 55,
-        [_Location_line]: 31,
-        [_Location_file]: null
-      });
-    },
-    get C17() {
-      return C[17] = dart.constList([C[18] || CT.C18], T._LocationL());
-    },
-    get C16() {
-      return C[16] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[17] || CT.C17,
-        [_Location_name]: null,
-        [_Location_column]: 50,
-        [_Location_line]: 31,
-        [_Location_file]: "file:///F:/flutterWork/FlutterDemo/lib/widget/myHomeApp.dart"
-      });
-    },
-    get C21() {
-      return C[21] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "icon",
-        [_Location_column]: 32,
-        [_Location_line]: 33,
-        [_Location_file]: null
-      });
-    },
-    get C20() {
-      return C[20] = dart.constList([C[21] || CT.C21], T._LocationL());
-    },
-    get C19() {
-      return C[19] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[20] || CT.C20,
-        [_Location_name]: null,
-        [_Location_column]: 21,
-        [_Location_line]: 33,
-        [_Location_file]: "file:///F:/flutterWork/FlutterDemo/lib/widget/myHomeApp.dart"
-      });
-    },
-    get C24() {
-      return C[24] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "data",
-        [_Location_column]: 53,
-        [_Location_line]: 33,
-        [_Location_file]: null
-      });
-    },
-    get C23() {
-      return C[23] = dart.constList([C[24] || CT.C24], T._LocationL());
-    },
-    get C22() {
-      return C[22] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[23] || CT.C23,
-        [_Location_name]: null,
-        [_Location_column]: 48,
-        [_Location_line]: 33,
-        [_Location_file]: "file:///F:/flutterWork/FlutterDemo/lib/widget/myHomeApp.dart"
-      });
-    },
-    get C27() {
-      return C[27] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "items",
-        [_Location_column]: 9,
-        [_Location_line]: 28,
-        [_Location_file]: null
-      });
-    },
-    get C28() {
-      return C[28] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "fixedColor",
-        [_Location_column]: 9,
-        [_Location_line]: 35,
-        [_Location_file]: null
-      });
-    },
-    get C26() {
-      return C[26] = dart.constList([C[27] || CT.C27, C[28] || CT.C28], T._LocationL());
-    },
-    get C25() {
-      return C[25] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[26] || CT.C26,
-        [_Location_name]: null,
-        [_Location_column]: 28,
-        [_Location_line]: 26,
-        [_Location_file]: "file:///F:/flutterWork/FlutterDemo/lib/widget/myHomeApp.dart"
-      });
-    },
-    get C31() {
-      return C[31] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "titleText",
-        [_Location_column]: 9,
-        [_Location_line]: 38,
-        [_Location_file]: null
-      });
-    },
-    get C32() {
-      return C[32] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "appBarBackColor",
-        [_Location_column]: 9,
-        [_Location_line]: 39,
-        [_Location_file]: null
-      });
-    },
-    get C33() {
-      return C[33] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "backShow",
-        [_Location_column]: 9,
-        [_Location_line]: 40,
-        [_Location_file]: null
-      });
-    },
-    get C30() {
-      return C[30] = dart.constList([C[31] || CT.C31, C[32] || CT.C32, C[33] || CT.C33], T._LocationL());
-    },
-    get C29() {
-      return C[29] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[30] || CT.C30,
-        [_Location_name]: null,
-        [_Location_column]: 15,
-        [_Location_line]: 37,
-        [_Location_file]: "file:///F:/flutterWork/FlutterDemo/lib/widget/myHomeApp.dart"
-      });
-    },
-    get C36() {
-      return C[36] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "floatingActionButton",
-        [_Location_column]: 7,
-        [_Location_line]: 21,
-        [_Location_file]: null
-      });
-    },
-    get C37() {
-      return C[37] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "floatingActionButtonLocation",
-        [_Location_column]: 7,
-        [_Location_line]: 25,
-        [_Location_file]: null
-      });
-    },
-    get C38() {
-      return C[38] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "bottomNavigationBar",
-        [_Location_column]: 7,
-        [_Location_line]: 26,
-        [_Location_file]: null
-      });
-    },
-    get C39() {
-      return C[39] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "appBar",
-        [_Location_column]: 7,
-        [_Location_line]: 37,
-        [_Location_file]: null
-      });
-    },
-    get C40() {
-      return C[40] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "body",
-        [_Location_column]: 7,
-        [_Location_line]: 42,
-        [_Location_file]: null
-      });
-    },
-    get C35() {
-      return C[35] = dart.constList([C[36] || CT.C36, C[37] || CT.C37, C[38] || CT.C38, C[39] || CT.C39, C[40] || CT.C40], T._LocationL());
-    },
-    get C34() {
-      return C[34] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[35] || CT.C35,
-        [_Location_name]: null,
-        [_Location_column]: 12,
-        [_Location_line]: 20,
-        [_Location_file]: "file:///F:/flutterWork/FlutterDemo/lib/widget/myHomeApp.dart"
+        __proto__: material_state._EnabledAndDisabledMouseCursor.prototype,
+        [_EnabledAndDisabledMouseCursor_name]: "textable",
+        [_EnabledAndDisabledMouseCursor_disabledCursor]: C[10] || CT.C10,
+        [_EnabledAndDisabledMouseCursor_enabledCursor]: C[13] || CT.C13
       });
     }
   }, false);
-  var C = Array(41).fill(void 0);
-  var I = ["package:flutter_arg_demo/widget/myHomeApp.dart"];
-  var bodyWidget$ = dart.privateName(myHomeApp, "MyHomeApp.bodyWidget");
-  var title$ = dart.privateName(myHomeApp, "MyHomeApp.title");
-  var actionColor$ = dart.privateName(myHomeApp, "MyHomeApp.actionColor");
-  var showBack$ = dart.privateName(myHomeApp, "MyHomeApp.showBack");
-  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
-  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
-  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
-  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
-  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
-  myHomeApp.MyHomeApp = class MyHomeApp extends framework.StatelessWidget {
-    get bodyWidget() {
-      return this[bodyWidget$];
-    }
-    set bodyWidget(value) {
-      super.bodyWidget = value;
-    }
-    get title() {
-      return this[title$];
-    }
-    set title(value) {
-      super.title = value;
-    }
-    get actionColor() {
-      return this[actionColor$];
-    }
-    set actionColor(value) {
-      super.actionColor = value;
-    }
-    get showBack() {
-      return this[showBack$];
-    }
-    set showBack(value) {
-      super.showBack = value;
-    }
-    build(context) {
-      return new scaffold.Scaffold.new({floatingActionButton: new floating_action_button.FloatingActionButton.new({onPressed: dart.fn(() => {
-          }, T.VoidToNull()), child: new icon.Icon.new(icons.Icons.add, {$creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), $creationLocationd_0dea112b090073317d4: C[3] || CT.C3}), floatingActionButtonLocation: floating_action_button_location.FloatingActionButtonLocation.centerDocked, bottomNavigationBar: new bottom_navigation_bar.BottomNavigationBar.new({items: T.JSArrayOfBottomNavigationBarItemL().of([new bottom_navigation_bar_item.BottomNavigationBarItem.new({icon: new icon.Icon.new(icons.Icons.home, {$creationLocationd_0dea112b090073317d4: C[7] || CT.C7}), title: new text.Text.new("Home", {$creationLocationd_0dea112b090073317d4: C[10] || CT.C10})}), new bottom_navigation_bar_item.BottomNavigationBarItem.new({icon: new icon.Icon.new(icons.Icons.business, {$creationLocationd_0dea112b090073317d4: C[13] || CT.C13}), title: new text.Text.new("Business", {$creationLocationd_0dea112b090073317d4: C[16] || CT.C16})}), new bottom_navigation_bar_item.BottomNavigationBarItem.new({icon: new icon.Icon.new(icons.Icons.school, {$creationLocationd_0dea112b090073317d4: C[19] || CT.C19}), title: new text.Text.new("School", {$creationLocationd_0dea112b090073317d4: C[22] || CT.C22})})]), fixedColor: colors.Colors.blue, $creationLocationd_0dea112b090073317d4: C[25] || CT.C25}), appBar: new myAppBar.MyAppBar.new({titleText: this.title == null ? "" : this.title, appBarBackColor: this.actionColor == null ? colors.Colors.black26 : this.actionColor, backShow: this.showBack == null ? true : this.showBack, $creationLocationd_0dea112b090073317d4: C[29] || CT.C29}), body: this.bodyWidget, $creationLocationd_0dea112b090073317d4: C[34] || CT.C34});
+  var C = Array(14).fill(void 0);
+  var I = [
+    "file:///D:/flutterSDK/flutter/packages/flutter/lib/src/material/material_state.dart",
+    "package:flutter/src/material/material_state.dart"
+  ];
+  var _name$ = dart.privateName(material_state, "_name");
+  material_state.MaterialState = class MaterialState extends core.Object {
+    toString() {
+      return this[_name$];
     }
   };
-  (myHomeApp.MyHomeApp.new = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let bodyWidget = opts && 'bodyWidget' in opts ? opts.bodyWidget : null;
-    let title = opts && 'title' in opts ? opts.title : null;
-    let actionColor = opts && 'actionColor' in opts ? opts.actionColor : null;
-    let showBack = opts && 'showBack' in opts ? opts.showBack : null;
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[bodyWidget$] = bodyWidget;
-    this[title$] = title;
-    this[actionColor$] = actionColor;
-    this[showBack$] = showBack;
-    myHomeApp.MyHomeApp.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+  (material_state.MaterialState.new = function(index, _name) {
+    if (index == null) dart.nullFailed(I[0], 34, 6, "index");
+    if (_name == null) dart.nullFailed(I[0], 34, 6, "_name");
+    this.index = index;
+    this[_name$] = _name;
     ;
-  }).prototype = myHomeApp.MyHomeApp.prototype;
-  dart.addTypeTests(myHomeApp.MyHomeApp);
-  dart.addTypeCaches(myHomeApp.MyHomeApp);
-  dart.setMethodSignature(myHomeApp.MyHomeApp, () => ({
-    __proto__: dart.getMethods(myHomeApp.MyHomeApp.__proto__),
-    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }).prototype = material_state.MaterialState.prototype;
+  dart.addTypeTests(material_state.MaterialState);
+  dart.addTypeCaches(material_state.MaterialState);
+  dart.setLibraryUri(material_state.MaterialState, I[1]);
+  dart.setFieldSignature(material_state.MaterialState, () => ({
+    __proto__: dart.getFields(material_state.MaterialState.__proto__),
+    index: dart.finalFieldType(core.int),
+    [_name$]: dart.finalFieldType(core.String)
   }));
-  dart.setLibraryUri(myHomeApp.MyHomeApp, I[0]);
-  dart.setFieldSignature(myHomeApp.MyHomeApp, () => ({
-    __proto__: dart.getFields(myHomeApp.MyHomeApp.__proto__),
-    bodyWidget: dart.finalFieldType(dart.legacy(framework.Widget)),
-    title: dart.finalFieldType(dart.legacy(core.String)),
-    actionColor: dart.finalFieldType(dart.legacy(ui.Color)),
-    showBack: dart.finalFieldType(dart.legacy(core.bool))
+  dart.defineExtensionMethods(material_state.MaterialState, ['toString']);
+  material_state.MaterialState.hovered = C[0] || CT.C0;
+  material_state.MaterialState.focused = C[1] || CT.C1;
+  material_state.MaterialState.pressed = C[2] || CT.C2;
+  material_state.MaterialState.dragged = C[3] || CT.C3;
+  material_state.MaterialState.selected = C[4] || CT.C4;
+  material_state.MaterialState.disabled = C[5] || CT.C5;
+  material_state.MaterialState.error = C[6] || CT.C6;
+  material_state.MaterialState.values = C[7] || CT.C7;
+  material_state.MaterialStateColor = class MaterialStateColor extends ui.Color {
+    static resolveWith(callback) {
+      if (callback == null) dart.nullFailed(I[0], 141, 73, "callback");
+      return new material_state._MaterialStateColor.new(callback);
+    }
+  };
+  (material_state.MaterialStateColor.new = function(defaultValue) {
+    if (defaultValue == null) dart.nullFailed(I[0], 131, 32, "defaultValue");
+    material_state.MaterialStateColor.__proto__.new.call(this, defaultValue);
+    ;
+  }).prototype = material_state.MaterialStateColor.prototype;
+  dart.addTypeTests(material_state.MaterialStateColor);
+  dart.addTypeCaches(material_state.MaterialStateColor);
+  material_state.MaterialStateColor[dart.implements] = () => [material_state.MaterialStateProperty$(ui.Color)];
+  dart.setLibraryUri(material_state.MaterialStateColor, I[1]);
+  var _resolve$ = dart.privateName(material_state, "_resolve");
+  material_state._MaterialStateColor = class _MaterialStateColor extends material_state.MaterialStateColor {
+    resolve(states) {
+      let t0;
+      if (states == null) dart.nullFailed(I[0], 165, 36, "states");
+      t0 = states;
+      return this[_resolve$](t0);
+    }
+  };
+  (material_state._MaterialStateColor.new = function(_resolve) {
+    if (_resolve == null) dart.nullFailed(I[0], 157, 28, "_resolve");
+    this[_resolve$] = _resolve;
+    material_state._MaterialStateColor.__proto__.new.call(this, _resolve(material_state._MaterialStateColor._defaultStates).value);
+    ;
+  }).prototype = material_state._MaterialStateColor.prototype;
+  dart.addTypeTests(material_state._MaterialStateColor);
+  dart.addTypeCaches(material_state._MaterialStateColor);
+  dart.setMethodSignature(material_state._MaterialStateColor, () => ({
+    __proto__: dart.getMethods(material_state._MaterialStateColor.__proto__),
+    resolve: dart.fnType(ui.Color, [core.Set$(material_state.MaterialState)])
   }));
-  dart.trackLibraries("packages/flutter_arg_demo/widget/myHomeApp.dart", {
-    "package:flutter_arg_demo/widget/myHomeApp.dart": myHomeApp
+  dart.setLibraryUri(material_state._MaterialStateColor, I[1]);
+  dart.setFieldSignature(material_state._MaterialStateColor, () => ({
+    __proto__: dart.getFields(material_state._MaterialStateColor.__proto__),
+    [_resolve$]: dart.finalFieldType(dart.fnType(ui.Color, [core.Set$(material_state.MaterialState)]))
+  }));
+  dart.defineLazy(material_state._MaterialStateColor, {
+    /*material_state._MaterialStateColor._defaultStates*/get _defaultStates() {
+      return C[8] || CT.C8;
+    }
+  }, false);
+  var _EnabledAndDisabledMouseCursor_name = dart.privateName(material_state, "_EnabledAndDisabledMouseCursor.name");
+  var SystemMouseCursor_kind = dart.privateName(mouse_cursor, "SystemMouseCursor.kind");
+  var _EnabledAndDisabledMouseCursor_disabledCursor = dart.privateName(material_state, "_EnabledAndDisabledMouseCursor.disabledCursor");
+  var _EnabledAndDisabledMouseCursor_enabledCursor = dart.privateName(material_state, "_EnabledAndDisabledMouseCursor.enabledCursor");
+  material_state.MaterialStateMouseCursor = class MaterialStateMouseCursor extends mouse_cursor.MouseCursor {
+    createSession(device) {
+      if (device == null) dart.nullFailed(I[0], 230, 40, "device");
+      return this.resolve(T.LinkedHashSetOfMaterialState().new()).createSession(device);
+    }
+  };
+  (material_state.MaterialStateMouseCursor.new = function() {
+    material_state.MaterialStateMouseCursor.__proto__.new.call(this);
+    ;
+  }).prototype = material_state.MaterialStateMouseCursor.prototype;
+  dart.addTypeTests(material_state.MaterialStateMouseCursor);
+  dart.addTypeCaches(material_state.MaterialStateMouseCursor);
+  material_state.MaterialStateMouseCursor[dart.implements] = () => [material_state.MaterialStateProperty$(mouse_cursor.MouseCursor)];
+  dart.setMethodSignature(material_state.MaterialStateMouseCursor, () => ({
+    __proto__: dart.getMethods(material_state.MaterialStateMouseCursor.__proto__),
+    createSession: dart.fnType(mouse_cursor.MouseCursorSession, [core.int])
+  }));
+  dart.setLibraryUri(material_state.MaterialStateMouseCursor, I[1]);
+  dart.defineLazy(material_state.MaterialStateMouseCursor, {
+    /*material_state.MaterialStateMouseCursor.clickable*/get clickable() {
+      return C[9] || CT.C9;
+    },
+    /*material_state.MaterialStateMouseCursor.textable*/get textable() {
+      return C[12] || CT.C12;
+    }
+  }, false);
+  const enabledCursor$ = _EnabledAndDisabledMouseCursor_enabledCursor;
+  const disabledCursor$ = _EnabledAndDisabledMouseCursor_disabledCursor;
+  const name$ = _EnabledAndDisabledMouseCursor_name;
+  material_state._EnabledAndDisabledMouseCursor = class _EnabledAndDisabledMouseCursor extends material_state.MaterialStateMouseCursor {
+    get enabledCursor() {
+      return this[enabledCursor$];
+    }
+    set enabledCursor(value) {
+      super.enabledCursor = value;
+    }
+    get disabledCursor() {
+      return this[disabledCursor$];
+    }
+    set disabledCursor(value) {
+      super.disabledCursor = value;
+    }
+    get name() {
+      return this[name$];
+    }
+    set name(value) {
+      super.name = value;
+    }
+    resolve(states) {
+      if (states == null) dart.nullFailed(I[0], 280, 42, "states");
+      if (dart.test(states.contains(material_state.MaterialState.disabled))) {
+        return this.disabledCursor;
+      }
+      return this.enabledCursor;
+    }
+    get debugDescription() {
+      return "MaterialStateMouseCursor(" + dart.str(this.name) + ")";
+    }
+  };
+  (material_state._EnabledAndDisabledMouseCursor.new = function(opts) {
+    let enabledCursor = opts && 'enabledCursor' in opts ? opts.enabledCursor : null;
+    if (enabledCursor == null) dart.nullFailed(I[0], 270, 19, "enabledCursor");
+    let disabledCursor = opts && 'disabledCursor' in opts ? opts.disabledCursor : null;
+    if (disabledCursor == null) dart.nullFailed(I[0], 271, 19, "disabledCursor");
+    let name = opts && 'name' in opts ? opts.name : null;
+    if (name == null) dart.nullFailed(I[0], 272, 19, "name");
+    this[enabledCursor$] = enabledCursor;
+    this[disabledCursor$] = disabledCursor;
+    this[name$] = name;
+    material_state._EnabledAndDisabledMouseCursor.__proto__.new.call(this);
+    ;
+  }).prototype = material_state._EnabledAndDisabledMouseCursor.prototype;
+  dart.addTypeTests(material_state._EnabledAndDisabledMouseCursor);
+  dart.addTypeCaches(material_state._EnabledAndDisabledMouseCursor);
+  dart.setMethodSignature(material_state._EnabledAndDisabledMouseCursor, () => ({
+    __proto__: dart.getMethods(material_state._EnabledAndDisabledMouseCursor.__proto__),
+    resolve: dart.fnType(mouse_cursor.MouseCursor, [core.Set$(material_state.MaterialState)])
+  }));
+  dart.setGetterSignature(material_state._EnabledAndDisabledMouseCursor, () => ({
+    __proto__: dart.getGetters(material_state._EnabledAndDisabledMouseCursor.__proto__),
+    debugDescription: core.String
+  }));
+  dart.setLibraryUri(material_state._EnabledAndDisabledMouseCursor, I[1]);
+  dart.setFieldSignature(material_state._EnabledAndDisabledMouseCursor, () => ({
+    __proto__: dart.getFields(material_state._EnabledAndDisabledMouseCursor.__proto__),
+    enabledCursor: dart.finalFieldType(mouse_cursor.MouseCursor),
+    disabledCursor: dart.finalFieldType(mouse_cursor.MouseCursor),
+    name: dart.finalFieldType(core.String)
+  }));
+  material_state.MaterialStateBorderSide = class MaterialStateBorderSide extends borders.BorderSide {};
+  (material_state.MaterialStateBorderSide.new = function() {
+    material_state.MaterialStateBorderSide.__proto__.new.call(this);
+    ;
+  }).prototype = material_state.MaterialStateBorderSide.prototype;
+  dart.addTypeTests(material_state.MaterialStateBorderSide);
+  dart.addTypeCaches(material_state.MaterialStateBorderSide);
+  material_state.MaterialStateBorderSide[dart.implements] = () => [material_state.MaterialStateProperty$(dart.nullable(borders.BorderSide))];
+  dart.setLibraryUri(material_state.MaterialStateBorderSide, I[1]);
+  material_state.MaterialStateOutlinedBorder = class MaterialStateOutlinedBorder extends borders.OutlinedBorder {};
+  (material_state.MaterialStateOutlinedBorder.new = function() {
+    material_state.MaterialStateOutlinedBorder.__proto__.new.call(this);
+    ;
+  }).prototype = material_state.MaterialStateOutlinedBorder.prototype;
+  dart.addTypeTests(material_state.MaterialStateOutlinedBorder);
+  dart.addTypeCaches(material_state.MaterialStateOutlinedBorder);
+  material_state.MaterialStateOutlinedBorder[dart.implements] = () => [material_state.MaterialStateProperty$(dart.nullable(borders.OutlinedBorder))];
+  dart.setLibraryUri(material_state.MaterialStateOutlinedBorder, I[1]);
+  const _is_MaterialStateProperty_default = Symbol('_is_MaterialStateProperty_default');
+  material_state.MaterialStateProperty$ = dart.generic(T => {
+    class MaterialStateProperty extends core.Object {
+      static resolveAs(T, value, states) {
+        if (states == null) dart.nullFailed(I[0], 481, 53, "states");
+        if (material_state.MaterialStateProperty$(T).is(value)) {
+          let property = value;
+          return property.resolve(states);
+        }
+        return value;
+      }
+      static resolveWith(T, callback) {
+        if (callback == null) dart.nullFailed(I[0], 491, 78, "callback");
+        return new (material_state._MaterialStatePropertyWith$(T)).new(callback);
+      }
+      static all(T, value) {
+        return new (material_state._MaterialStatePropertyAll$(T)).new(value);
+      }
+    }
+    (MaterialStateProperty.new = function() {
+      ;
+    }).prototype = MaterialStateProperty.prototype;
+    dart.addTypeTests(MaterialStateProperty);
+    MaterialStateProperty.prototype[_is_MaterialStateProperty_default] = true;
+    dart.addTypeCaches(MaterialStateProperty);
+    dart.setLibraryUri(MaterialStateProperty, I[1]);
+    return MaterialStateProperty;
+  });
+  material_state.MaterialStateProperty = material_state.MaterialStateProperty$();
+  dart.addTypeTests(material_state.MaterialStateProperty, _is_MaterialStateProperty_default);
+  const _is__MaterialStatePropertyWith_default = Symbol('_is__MaterialStatePropertyWith_default');
+  material_state._MaterialStatePropertyWith$ = dart.generic(T => {
+    class _MaterialStatePropertyWith extends core.Object {
+      resolve(states) {
+        let t0;
+        if (states == null) dart.nullFailed(I[0], 504, 32, "states");
+        t0 = states;
+        return this[_resolve$](t0);
+      }
+    }
+    (_MaterialStatePropertyWith.new = function(_resolve) {
+      if (_resolve == null) dart.nullFailed(I[0], 499, 35, "_resolve");
+      this[_resolve$] = _resolve;
+      ;
+    }).prototype = _MaterialStatePropertyWith.prototype;
+    dart.addTypeTests(_MaterialStatePropertyWith);
+    _MaterialStatePropertyWith.prototype[_is__MaterialStatePropertyWith_default] = true;
+    dart.addTypeCaches(_MaterialStatePropertyWith);
+    _MaterialStatePropertyWith[dart.implements] = () => [material_state.MaterialStateProperty$(T)];
+    dart.setMethodSignature(_MaterialStatePropertyWith, () => ({
+      __proto__: dart.getMethods(_MaterialStatePropertyWith.__proto__),
+      resolve: dart.fnType(T, [core.Set$(material_state.MaterialState)])
+    }));
+    dart.setLibraryUri(_MaterialStatePropertyWith, I[1]);
+    dart.setFieldSignature(_MaterialStatePropertyWith, () => ({
+      __proto__: dart.getFields(_MaterialStatePropertyWith.__proto__),
+      [_resolve$]: dart.finalFieldType(dart.fnType(T, [core.Set$(material_state.MaterialState)]))
+    }));
+    return _MaterialStatePropertyWith;
+  });
+  material_state._MaterialStatePropertyWith = material_state._MaterialStatePropertyWith$();
+  dart.addTypeTests(material_state._MaterialStatePropertyWith, _is__MaterialStatePropertyWith_default);
+  const _is__MaterialStatePropertyAll_default = Symbol('_is__MaterialStatePropertyAll_default');
+  material_state._MaterialStatePropertyAll$ = dart.generic(T => {
+    class _MaterialStatePropertyAll extends core.Object {
+      resolve(states) {
+        if (states == null) dart.nullFailed(I[0], 513, 32, "states");
+        return this.value;
+      }
+      toString() {
+        return "MaterialStateProperty.all(" + dart.str(this.value) + ")";
+      }
+    }
+    (_MaterialStatePropertyAll.new = function(value) {
+      this.value = value;
+      ;
+    }).prototype = _MaterialStatePropertyAll.prototype;
+    dart.addTypeTests(_MaterialStatePropertyAll);
+    _MaterialStatePropertyAll.prototype[_is__MaterialStatePropertyAll_default] = true;
+    dart.addTypeCaches(_MaterialStatePropertyAll);
+    _MaterialStatePropertyAll[dart.implements] = () => [material_state.MaterialStateProperty$(T)];
+    dart.setMethodSignature(_MaterialStatePropertyAll, () => ({
+      __proto__: dart.getMethods(_MaterialStatePropertyAll.__proto__),
+      resolve: dart.fnType(T, [core.Set$(material_state.MaterialState)])
+    }));
+    dart.setLibraryUri(_MaterialStatePropertyAll, I[1]);
+    dart.setFieldSignature(_MaterialStatePropertyAll, () => ({
+      __proto__: dart.getFields(_MaterialStatePropertyAll.__proto__),
+      value: dart.finalFieldType(T)
+    }));
+    dart.defineExtensionMethods(_MaterialStatePropertyAll, ['toString']);
+    return _MaterialStatePropertyAll;
+  });
+  material_state._MaterialStatePropertyAll = material_state._MaterialStatePropertyAll$();
+  dart.addTypeTests(material_state._MaterialStatePropertyAll, _is__MaterialStatePropertyAll_default);
+  dart.trackLibraries("packages/flutter/src/material/material_state.dart", {
+    "package:flutter/src/material/material_state.dart": material_state
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["myHomeApp.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAIe;;;;;;IACA;;;;;;IACD;;;;;;IACD;;;;;;UAWe;AACxB,YAAO,kDACqB,gEACb;qCACA,kBAAW,kKAEmC,gGACtC,0DAEa,0CAC9B,kEAA8B,kBAAW,mFAAc,kBAAK,sEAC5D,kEACU,kBAAW,yFAAkB,kBAAK,0EAC5C,kEACU,kBAAW,uFAAgB,kBAAK,sFAEzB,uFAEb,sCACK,AAAM,qBAAU,KAAK,6BACf,AAAY,2BAAiB,wBAAU,4BAC9C,AAAS,wBAAU,OAAO,gFAEhC;IAEV;;;QAjCM;QACC;QACA;QACA;QACA;;IAHA;IACA;IACA;IACA;AACF,uDAAW,GAAG;;EAAC","file":"../../../../packages/flutter_arg_demo/widget/myHomeApp.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["material_state.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IA8EA;;;QA7CK;;;;;EA6CL;;;;;;;;;;;;;;;;;;;;UA8DwE;AAAa,wDAAoB,QAAQ;IAAC;;;QAVnF;AAAgB,+DAAM,YAAY;;EAAC;;;;;;;YAkC/B;;;AAAW,WAAS,MAAM;YAAf,AAAQ;IAAQ;;;QARnC;;AAAY,gEAAM,AAAQ,AAAiB,QAAjB,CAAC;;EAAsB;;;;;;;;;;;;;MAK1C,iDAAc;;;;;;;;;;UAoET;AACnC,YAAO,AAA2B,cAAJ,sDAAkB,MAAM;IACxD;;;AANM;;EAA0B;;;;;;;;;;MAsBM,iDAAS;;;MAaT,gDAAQ;;;;;;;;IAc5B;;;;;;IACA;;;;;;IACL;;;;;;;UAG0B;AACrC,oBAAI,AAAO,MAAD,UAAwB;AAChC,cAAO;;AAET,YAAO;IACT;;AAG+B,YAAA,AAAiC,wCAAN,aAAI;IAAE;;;QAlBhD;;QACA;;QACA;;IAFA;IACA;IACA;AAHV;;EAIJ;;;;;;;;;;;;;;;;;;;;AAkEI;;EAAyB;;;;;;;AA4DzB;;EAA6B;;;;;;;;0BAkFX;YAA0B;AAChD,YAAU,4CAAN,KAAK;AACwB,yBAAW,KAAK;AAC/C,gBAAO,AAAS,SAAD,SAAS,MAAM;;AAEhC,cAAO,MAAK;MACd;;YAI2E;AAAa,uEAA8B,QAAQ;MAAC;oBAItF;AAAU,sEAA6B,KAAK;MAAC;;;;IACxF;;;;;;;;;;;;cAQ+B;;;AAAW,aAAS,MAAM;cAAf,AAAQ;MAAQ;;;UALxB;;;IAAS;;;;;;;;;;;;;;;;;;;;;;YAcZ;AAAW;MAAK;;AAGxB,cAAA,AAAmC,yCAAP,cAAK;MAAE;;;MARzB;;IAAM","file":"../../../../../../../packages/flutter/src/material/material_state.dart.lib.js"}');
   // Exports:
   return {
-    widget__myHomeApp: myHomeApp
+    src__material__material_state: material_state
   };
 }));
 
-//# sourceMappingURL=myHomeApp.dart.lib.js.map
+//# sourceMappingURL=material_state.dart.lib.js.map

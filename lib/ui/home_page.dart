@@ -8,6 +8,10 @@ class HomePage extends StatelessWidget {
       showAppBar: false,
       isShowBottomBar: true,
       showBack: false,
+      floatingButton: new FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.search),
+      ),
       title: '首页',
     );
   }

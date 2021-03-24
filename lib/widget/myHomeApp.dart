@@ -12,7 +12,7 @@ class MyHomeApp extends StatefulWidget {
   final bool isShowBottomBar;
   final int currentIndex;
   final bool showAppBar;
-
+  final Widget floatingButton;
   MyHomeApp({
     Key key,
     this.bodyWidget,
@@ -22,8 +22,8 @@ class MyHomeApp extends StatefulWidget {
     this.isShowBottomBar,
     this.currentIndex,
     this.showAppBar = true,
+    this.floatingButton,
   }) : super(key: key);
-
   @override
   _MyHomeAppState createState() => _MyHomeAppState();
 }
@@ -41,31 +41,34 @@ class _MyHomeAppState extends State<MyHomeApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: (widget.isShowBottomBar)
-          ? BottomNavigationBar(
-              currentIndex: this._currentIndex,
-              onTap: (index) {
-                _onItemTapped(index);
-              },
-              items: [
-                BottomNavigationBarItem(icon: Icon(Icons.home), label: "漫画"),
-                BottomNavigationBarItem(icon: Icon(Icons.book), label: "小说"),
-                BottomNavigationBarItem(
-                    icon: Icon(Icons.video_call), label: "视频")
-              ],
-              type: BottomNavigationBarType.fixed,
-            )
-          : null,
-      appBar: (widget.showAppBar)
-          ? MyAppBar(
-              titleText: (widget.title == null) ? "" : widget.title,
-              appBarBackColor: (widget.actionColor == null)
-                  ? Colors.black26
-                  : widget.actionColor,
-              backShow: (widget.showBack == null) ? true : widget.showBack,
-            )
-          : null,
-      body: (widget.isShowBottomBar) ? pages[_currentIndex] : widget.bodyWidget,
-    );
+        bottomNavigationBar: (widget.isShowBottomBar)
+            ? BottomNavigationBar(
+                currentIndex: this._currentIndex,
+                onTap: (index) {
+                  _onItemTapped(index);
+                },
+                items: [
+                  BottomNavigationBarItem(icon: Icon(Icons.home), label: "漫画"),
+                  BottomNavigationBarItem(icon: Icon(Icons.book), label: "小说"),
+                  BottomNavigationBarItem(
+                      icon: Icon(Icons.video_call), label: "视频")
+                ],
+                type: BottomNavigationBarType.fixed,
+              )
+            : null,
+        appBar: (widget.showAppBar)
+            ? MyAppBar(
+                titleText: (widget.title == null) ? "" : widget.title,
+                appBarBackColor: (widget.actionColor == null)
+                    ? Colors.black26
+                    : widget.actionColor,
+                backShow: (widget.showBack == null) ? true : widget.showBack,
+              )
+            : null,
+        floatingActionButton: widget.floatingButton,
+        body: SafeArea(
+            child: (widget.isShowBottomBar)
+                ? pages[_currentIndex]
+                : widget.bodyWidget));
   }
 }

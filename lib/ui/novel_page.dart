@@ -20,7 +20,7 @@ class _NovelPageState extends State<NovelPage> {
       builder: (context, model, child) {
         return MultiStateWidget(
           builder: (context) => Center(
-            child: Text(model.myData.msg),
+            child: buildContentView(model.myData),
           ),
           state: model.state,
         );
@@ -35,7 +35,9 @@ Widget buildContentView(NovelSearchBean novelSearchBean) {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          child: Text("NIUBI"),
+          child: Center(
+            child: Text("小说列表"),
+          ),
         ),
       ],
     ),
