@@ -28,6 +28,7 @@ class _FlashBodyPageState extends State<FlashBodyPage> {
     return Container(
       child: Image(
         image: AssetImage('images/icon_flash.jpg'),
+        fit: BoxFit.fill,
       ),
     );
   }
