@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_arg_demo/config/static_value.dart';
 import 'package:flutter_arg_demo/ui/comic_page.dart';
 import 'package:flutter_arg_demo/ui/novel_page.dart';
 import 'package:flutter_arg_demo/ui/video_page.dart';
@@ -10,7 +11,6 @@ class MyHomeApp extends StatefulWidget {
   final Color actionColor;
   final bool showBack;
   final bool isShowBottomBar;
-  final int currentIndex;
   final bool showAppBar;
   final Widget floatingButton;
   MyHomeApp({
@@ -20,22 +20,23 @@ class MyHomeApp extends StatefulWidget {
     this.actionColor,
     this.showBack,
     this.isShowBottomBar,
-    this.currentIndex,
     this.showAppBar = true,
     this.floatingButton,
   }) : super(key: key);
   @override
-  _MyHomeAppState createState() => _MyHomeAppState();
+  MyHomeAppState createState() => MyHomeAppState();
 }
 
-class _MyHomeAppState extends State<MyHomeApp> {
-  int _currentIndex = 0;
+class MyHomeAppState extends State<MyHomeApp> {
   final List<Widget> pages = <Widget>[ComicPage(), NovelPage(), VideoPage()];
-
   void _onItemTapped(int index) {
     setState(() {
-      _currentIndex = index;
+      StaticValue.currentPage = index;
     });
+  }
+
+  int getCurrentIndex() {
+    return StaticValue.currentPage;
   }
 
   @override
@@ -43,7 +44,7 @@ class _MyHomeAppState extends State<MyHomeApp> {
     return Scaffold(
         bottomNavigationBar: (widget.isShowBottomBar)
             ? BottomNavigationBar(
-                currentIndex: this._currentIndex,
+                currentIndex: StaticValue.currentPage,
                 onTap: (index) {
                   _onItemTapped(index);
                 },
@@ -68,7 +69,7 @@ class _MyHomeAppState extends State<MyHomeApp> {
         floatingActionButton: widget.floatingButton,
         body: SafeArea(
             child: (widget.isShowBottomBar)
-                ? pages[_currentIndex]
+                ? pages[StaticValue.currentPage]
                 : widget.bodyWidget));
   }
 }
