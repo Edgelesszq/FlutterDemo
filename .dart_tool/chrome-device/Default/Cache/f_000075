@@ -1,29 +1,23 @@
-define(['dart_sdk'], (function load__packages__typed_data__src__typed_buffer_dart(dart_sdk) {
+define(['dart_sdk', 'packages/nested/nested.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/collection/src/equality.dart', 'packages/flutter/src/foundation/debug.dart', 'packages/provider/src/provider.dart'], (function load__packages__provider__src__selector_dart(dart_sdk, packages__nested__nested$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__collection__src__equality$46dart, packages__flutter__src__foundation__debug$46dart, packages__provider__src__provider$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const typed_data = dart_sdk.typed_data;
-  const collection = dart_sdk.collection;
-  const _native_typed_data = dart_sdk._native_typed_data;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  var typed_buffer = Object.create(dart.library);
-  var $length = dartx.length;
-  var $_get = dartx._get;
-  var $_set = dartx._set;
-  var $isEmpty = dartx.isEmpty;
-  var $setRange = dartx.setRange;
-  var $elementSizeInBytes = dartx.elementSizeInBytes;
-  var $offsetInBytes = dartx.offsetInBytes;
-  var $buffer = dartx.buffer;
-  var $addAll = dartx.addAll;
-  var $insertAll = dartx.insertAll;
+  const nested = packages__nested__nested$46dart.nested;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const equality = packages__collection__src__equality$46dart.src__equality;
+  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
+  const provider = packages__provider__src__provider$46dart.src__provider;
+  var selector = Object.create(dart.library);
+  var consumer = Object.create(dart.library);
   dart._checkModuleNullSafetyMode(false);
-  var T = {
-    _: () => T
+  var T$ = {
+    DefaultEqualityOfNeverL: () => (T$.DefaultEqualityOfNeverL = dart.constFn(equality.DefaultEquality$(dart.legacy(dart.Never))))(),
+    WidgetN: () => (T$.WidgetN = dart.constFn(dart.nullable(framework.Widget)))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
-  }, T);
+  }, T$);
   var S = {
     _: () => S
   };
@@ -33,618 +27,600 @@ define(['dart_sdk'], (function load__packages__typed_data__src__typed_buffer_dar
   const CT = Object.create({
     _: () => (C, CT)
   });
-  var C = [];
+  dart.defineLazy(CT, {
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: T$.DefaultEqualityOfNeverL().prototype
+      });
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: equality.DeepCollectionEquality.prototype,
+        [DeepCollectionEquality__unordered]: false,
+        [DeepCollectionEquality__base]: C[1] || CT.C1
+      });
+    }
+  }, false);
+  var C = Array(2).fill(void 0);
   var I = [
-    "file:///D:/flutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/typed_data-1.3.0/lib/src/typed_buffer.dart",
-    "package:typed_data/src/typed_buffer.dart"
+    "file:///D:/flutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/provider-5.0.0/lib/src/selector.dart",
+    "package:provider/src/selector.dart",
+    "file:///D:/flutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/provider-5.0.0/lib/src/consumer.dart",
+    "package:provider/src/consumer.dart"
   ];
-  var _buffer = dart.privateName(typed_buffer, "_buffer");
-  var _length = dart.privateName(typed_buffer, "_length");
-  var _typedBuffer = dart.privateName(typed_buffer, "_typedBuffer");
-  var _defaultValue = dart.privateName(typed_buffer, "_defaultValue");
-  var _createBuffer = dart.privateName(typed_buffer, "_createBuffer");
-  var _createBiggerBuffer = dart.privateName(typed_buffer, "_createBiggerBuffer");
-  var _grow = dart.privateName(typed_buffer, "_grow");
-  var _add = dart.privateName(typed_buffer, "_add");
-  var _addAll = dart.privateName(typed_buffer, "_addAll");
-  var _insertKnownLength = dart.privateName(typed_buffer, "_insertKnownLength");
-  var _ensureCapacity = dart.privateName(typed_buffer, "_ensureCapacity");
-  var _setRange = dart.privateName(typed_buffer, "_setRange");
-  const _is_TypedDataBuffer_default = Symbol('_is_TypedDataBuffer_default');
-  typed_buffer.TypedDataBuffer$ = dart.generic(E => {
-    var IterableOfE = () => (IterableOfE = dart.constFn(core.Iterable$(E)))();
-    var TypedDataBufferOfE = () => (TypedDataBufferOfE = dart.constFn(typed_buffer.TypedDataBuffer$(E)))();
-    class TypedDataBuffer extends collection.ListBase$(E) {
-      get [_typedBuffer]() {
-        return typed_data.TypedData.as(this[_buffer]);
+  var builder$ = dart.privateName(selector, "Selector0.builder");
+  var selector$ = dart.privateName(selector, "Selector0.selector");
+  var _shouldRebuild = dart.privateName(selector, "_shouldRebuild");
+  const _is_Selector0_default = Symbol('_is_Selector0_default');
+  selector.Selector0$ = dart.generic(T => {
+    var _Selector0StateOfT = () => (_Selector0StateOfT = dart.constFn(selector._Selector0State$(T)))();
+    class Selector0 extends nested.SingleChildStatefulWidget {
+      get builder() {
+        return this[builder$];
       }
-      get length() {
-        return this[_length];
+      set builder(value) {
+        super.builder = value;
       }
-      _get(index) {
-        if (index == null) dart.nullFailed(I[0], 31, 21, "index");
-        if (dart.notNull(index) >= dart.notNull(this.length)) dart.throw(new core.IndexError.new(index, this));
-        return this[_buffer][$_get](index);
+      get selector() {
+        return this[selector$];
       }
-      _set(index, value$) {
-        let value = value$;
-        if (index == null) dart.nullFailed(I[0], 37, 25, "index");
-        E.as(value);
-        if (dart.notNull(index) >= dart.notNull(this.length)) dart.throw(new core.IndexError.new(index, this));
-        this[_buffer][$_set](index, value);
-        return value$;
+      set selector(value) {
+        super.selector = value;
       }
-      set length(newLength) {
-        if (newLength == null) dart.nullFailed(I[0], 43, 18, "newLength");
-        if (dart.notNull(newLength) < dart.notNull(this[_length])) {
-          let defaultValue = this[_defaultValue];
-          for (let i = newLength; dart.notNull(i) < dart.notNull(this[_length]); i = dart.notNull(i) + 1) {
-            this[_buffer][$_set](i, defaultValue);
-          }
-        } else if (dart.notNull(newLength) > dart.notNull(this[_buffer][$length])) {
-          let newBuffer = null;
-          if (dart.test(this[_buffer][$isEmpty])) {
-            newBuffer = this[_createBuffer](newLength);
-          } else {
-            newBuffer = this[_createBiggerBuffer](newLength);
-          }
-          newBuffer[$setRange](0, this[_length], this[_buffer]);
-          this[_buffer] = newBuffer;
-        }
-        this[_length] = newLength;
-      }
-      [_add](value) {
-        let t0;
-        if (this[_length] == this[_buffer][$length]) this[_grow](this[_length]);
-        this[_buffer][$_set]((t0 = this[_length], this[_length] = dart.notNull(t0) + 1, t0), value);
-      }
-      add(value) {
-        E.as(value);
-        this[_add](value);
-      }
-      addAll(values, start = 0, end = null) {
-        IterableOfE().as(values);
-        if (values == null) dart.nullFailed(I[0], 85, 27, "values");
-        if (start == null) dart.nullFailed(I[0], 85, 40, "start");
-        core.RangeError.checkNotNegative(start, "start");
-        if (end != null && dart.notNull(start) > dart.notNull(end)) {
-          dart.throw(new core.RangeError.range(end, start, null, "end"));
-        }
-        this[_addAll](values, start, end);
-      }
-      insertAll(index, values, start = 0, end = null) {
-        let t0;
-        if (index == null) dart.nullFailed(I[0], 104, 22, "index");
-        IterableOfE().as(values);
-        if (values == null) dart.nullFailed(I[0], 104, 41, "values");
-        if (start == null) dart.nullFailed(I[0], 104, 54, "start");
-        core.RangeError.checkValidIndex(index, this, "index", dart.notNull(this[_length]) + 1);
-        core.RangeError.checkNotNegative(start, "start");
-        if (end != null) {
-          if (dart.notNull(start) > dart.notNull(end)) {
-            dart.throw(new core.RangeError.range(end, start, null, "end"));
-          }
-          if (start == end) return;
-        }
-        if (index == this[_length]) {
-          this[_addAll](values, start, end);
-          return;
-        }
-        if (end == null && core.List.is(values)) {
-          end = values[$length];
-        }
-        if (end != null) {
-          this[_insertKnownLength](index, values, start, end);
-          return;
-        }
-        let writeIndex = this[_length];
-        let skipCount = start;
-        for (let value of values) {
-          if (dart.notNull(skipCount) > 0) {
-            skipCount = dart.notNull(skipCount) - 1;
-            continue;
-          }
-          if (writeIndex == this[_buffer][$length]) {
-            this[_grow](writeIndex);
-          }
-          this[_buffer][$_set]((t0 = writeIndex, writeIndex = dart.notNull(t0) + 1, t0), value);
-        }
-        if (dart.notNull(skipCount) > 0) {
-          dart.throw(new core.StateError.new("Too few elements"));
-        }
-        if (end != null && dart.notNull(writeIndex) < dart.notNull(end)) {
-          dart.throw(new core.RangeError.range(end, start, writeIndex, "end"));
-        }
-        typed_buffer.TypedDataBuffer._reverse(this[_buffer], index, this[_length]);
-        typed_buffer.TypedDataBuffer._reverse(this[_buffer], this[_length], writeIndex);
-        typed_buffer.TypedDataBuffer._reverse(this[_buffer], index, writeIndex);
-        this[_length] = writeIndex;
-        return;
-      }
-      static _reverse(buffer, start, end) {
-        if (buffer == null) dart.nullFailed(I[0], 162, 29, "buffer");
-        if (start == null) dart.nullFailed(I[0], 162, 41, "start");
-        if (end == null) dart.nullFailed(I[0], 162, 52, "end");
-        end = dart.notNull(end) - 1;
-        while (dart.notNull(start) < dart.notNull(end)) {
-          let first = buffer[$_get](start);
-          let last = buffer[$_get](end);
-          buffer[$_set](end, first);
-          buffer[$_set](start, last);
-          start = dart.notNull(start) + 1;
-          end = dart.notNull(end) - 1;
-        }
-      }
-      [_addAll](values, start = 0, end = null) {
-        if (values == null) dart.nullFailed(I[0], 179, 28, "values");
-        if (start == null) dart.nullFailed(I[0], 179, 41, "start");
-        if (core.List.is(values)) end == null ? end = values[$length] : null;
-        if (end != null) {
-          this[_insertKnownLength](this[_length], values, start, end);
-          return;
-        }
-        let i = 0;
-        for (let value of values) {
-          if (i >= dart.notNull(start)) this.add(value);
-          i = i + 1;
-        }
-        if (i < dart.notNull(start)) dart.throw(new core.StateError.new("Too few elements"));
-      }
-      [_insertKnownLength](index, values, start, end) {
-        if (index == null) dart.nullFailed(I[0], 200, 31, "index");
-        if (values == null) dart.nullFailed(I[0], 200, 50, "values");
-        if (start == null) dart.nullFailed(I[0], 200, 62, "start");
-        if (end == null) dart.nullFailed(I[0], 200, 73, "end");
-        if (core.List.is(values)) {
-          if (dart.notNull(start) > dart.notNull(values[$length]) || dart.notNull(end) > dart.notNull(values[$length])) {
-            dart.throw(new core.StateError.new("Too few elements"));
-          }
-        }
-        let valuesLength = dart.notNull(end) - dart.notNull(start);
-        let newLength = dart.notNull(this[_length]) + valuesLength;
-        this[_ensureCapacity](newLength);
-        this[_buffer][$setRange](dart.notNull(index) + valuesLength, dart.notNull(this[_length]) + valuesLength, this[_buffer], index);
-        this[_buffer][$setRange](index, dart.notNull(index) + valuesLength, values, start);
-        this[_length] = newLength;
-      }
-      insert(index, element) {
-        if (index == null) dart.nullFailed(I[0], 218, 19, "index");
-        E.as(element);
-        if (dart.notNull(index) < 0 || dart.notNull(index) > dart.notNull(this[_length])) {
-          dart.throw(new core.RangeError.range(index, 0, this[_length]));
-        }
-        if (dart.notNull(this[_length]) < dart.notNull(this[_buffer][$length])) {
-          this[_buffer][$setRange](dart.notNull(index) + 1, dart.notNull(this[_length]) + 1, this[_buffer], index);
-          this[_buffer][$_set](index, element);
-          this[_length] = dart.notNull(this[_length]) + 1;
-          return;
-        }
-        let newBuffer = this[_createBiggerBuffer](null);
-        newBuffer[$setRange](0, index, this[_buffer]);
-        newBuffer[$setRange](dart.notNull(index) + 1, dart.notNull(this[_length]) + 1, this[_buffer], index);
-        newBuffer[$_set](index, element);
-        this[_length] = dart.notNull(this[_length]) + 1;
-        this[_buffer] = newBuffer;
-      }
-      [_ensureCapacity](requiredCapacity) {
-        if (requiredCapacity == null) dart.nullFailed(I[0], 239, 28, "requiredCapacity");
-        if (dart.notNull(requiredCapacity) <= dart.notNull(this[_buffer][$length])) return;
-        let newBuffer = this[_createBiggerBuffer](requiredCapacity);
-        newBuffer[$setRange](0, this[_length], this[_buffer]);
-        this[_buffer] = newBuffer;
-      }
-      [_createBiggerBuffer](requiredCapacity) {
-        let newLength = dart.notNull(this[_buffer][$length]) * 2;
-        if (requiredCapacity != null && dart.notNull(newLength) < dart.notNull(requiredCapacity)) {
-          newLength = requiredCapacity;
-        } else if (dart.notNull(newLength) < 8) {
-          newLength = 8;
-        }
-        return this[_createBuffer](newLength);
-      }
-      [_grow](length) {
-        let t0;
-        if (length == null) dart.nullFailed(I[0], 265, 18, "length");
-        this[_buffer] = (t0 = this[_createBiggerBuffer](null), (() => {
-          t0[$setRange](0, length, this[_buffer]);
-          return t0;
-        })());
-      }
-      setRange(start, end, source, skipCount = 0) {
-        if (start == null) dart.nullFailed(I[0], 270, 21, "start");
-        if (end == null) dart.nullFailed(I[0], 270, 32, "end");
-        IterableOfE().as(source);
-        if (source == null) dart.nullFailed(I[0], 270, 49, "source");
-        if (skipCount == null) dart.nullFailed(I[0], 270, 62, "skipCount");
-        if (dart.notNull(end) > dart.notNull(this[_length])) dart.throw(new core.RangeError.range(end, 0, this[_length]));
-        this[_setRange](start, end, source, skipCount);
-      }
-      [_setRange](start, end, source, skipCount) {
-        if (start == null) dart.nullFailed(I[0], 276, 22, "start");
-        if (end == null) dart.nullFailed(I[0], 276, 33, "end");
-        if (source == null) dart.nullFailed(I[0], 276, 50, "source");
-        if (skipCount == null) dart.nullFailed(I[0], 276, 62, "skipCount");
-        if (TypedDataBufferOfE().is(source)) {
-          this[_buffer][$setRange](start, end, source[_buffer], skipCount);
-        } else {
-          this[_buffer][$setRange](start, end, source, skipCount);
-        }
-      }
-      get elementSizeInBytes() {
-        return this[_typedBuffer][$elementSizeInBytes];
-      }
-      get lengthInBytes() {
-        return dart.notNull(this[_length]) * dart.notNull(this[_typedBuffer][$elementSizeInBytes]);
-      }
-      get offsetInBytes() {
-        return this[_typedBuffer][$offsetInBytes];
-      }
-      get buffer() {
-        return this[_typedBuffer][$buffer];
+      createState() {
+        return new (_Selector0StateOfT()).new();
       }
     }
-    (TypedDataBuffer.new = function(buffer) {
-      if (buffer == null) dart.nullFailed(I[0], 23, 27, "buffer");
-      this[_buffer] = buffer;
-      this[_length] = buffer[$length];
+    (Selector0.new = function(opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      let builder = opts && 'builder' in opts ? opts.builder : null;
+      if (builder == null) dart.nullFailed(I[0], 37, 19, "builder");
+      let selector = opts && 'selector' in opts ? opts.selector : null;
+      if (selector == null) dart.nullFailed(I[0], 38, 19, "selector");
+      let shouldRebuild = opts && 'shouldRebuild' in opts ? opts.shouldRebuild : null;
+      let child = opts && 'child' in opts ? opts.child : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      this[builder$] = builder;
+      this[selector$] = selector;
+      this[_shouldRebuild] = shouldRebuild;
+      Selector0.__proto__.new.call(this, {key: key, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
       ;
-    }).prototype = TypedDataBuffer.prototype;
-    dart.addTypeTests(TypedDataBuffer);
-    TypedDataBuffer.prototype[_is_TypedDataBuffer_default] = true;
-    dart.addTypeCaches(TypedDataBuffer);
-    dart.setMethodSignature(TypedDataBuffer, () => ({
-      __proto__: dart.getMethods(TypedDataBuffer.__proto__),
-      _get: dart.fnType(E, [core.int]),
-      [$_get]: dart.fnType(E, [core.int]),
-      _set: dart.fnType(dart.void, [core.int, dart.nullable(core.Object)]),
-      [$_set]: dart.fnType(dart.void, [core.int, dart.nullable(core.Object)]),
-      [_add]: dart.fnType(dart.void, [E]),
-      addAll: dart.fnType(dart.void, [dart.nullable(core.Object)], [core.int, dart.nullable(core.int)]),
-      [$addAll]: dart.fnType(dart.void, [dart.nullable(core.Object)], [core.int, dart.nullable(core.int)]),
-      insertAll: dart.fnType(dart.void, [core.int, dart.nullable(core.Object)], [core.int, dart.nullable(core.int)]),
-      [$insertAll]: dart.fnType(dart.void, [core.int, dart.nullable(core.Object)], [core.int, dart.nullable(core.int)]),
-      [_addAll]: dart.fnType(dart.void, [core.Iterable$(E)], [core.int, dart.nullable(core.int)]),
-      [_insertKnownLength]: dart.fnType(dart.void, [core.int, core.Iterable$(E), core.int, core.int]),
-      [_ensureCapacity]: dart.fnType(dart.void, [core.int]),
-      [_createBiggerBuffer]: dart.fnType(core.List$(E), [dart.nullable(core.int)]),
-      [_grow]: dart.fnType(dart.void, [core.int]),
-      [_setRange]: dart.fnType(dart.void, [core.int, core.int, core.Iterable$(E), core.int])
+    }).prototype = Selector0.prototype;
+    dart.addTypeTests(Selector0);
+    Selector0.prototype[_is_Selector0_default] = true;
+    dart.addTypeCaches(Selector0);
+    dart.setMethodSignature(Selector0, () => ({
+      __proto__: dart.getMethods(Selector0.__proto__),
+      createState: dart.fnType(selector._Selector0State$(T), [])
     }));
-    dart.setGetterSignature(TypedDataBuffer, () => ({
-      __proto__: dart.getGetters(TypedDataBuffer.__proto__),
-      [_typedBuffer]: typed_data.TypedData,
-      length: core.int,
-      [$length]: core.int,
-      elementSizeInBytes: core.int,
-      lengthInBytes: core.int,
-      offsetInBytes: core.int,
-      buffer: typed_data.ByteBuffer
+    dart.setLibraryUri(Selector0, I[1]);
+    dart.setFieldSignature(Selector0, () => ({
+      __proto__: dart.getFields(Selector0.__proto__),
+      builder: dart.finalFieldType(dart.fnType(framework.Widget, [framework.BuildContext, T, dart.nullable(framework.Widget)])),
+      selector: dart.finalFieldType(dart.fnType(T, [framework.BuildContext])),
+      [_shouldRebuild]: dart.finalFieldType(dart.nullable(dart.fnType(core.bool, [T, T])))
     }));
-    dart.setSetterSignature(TypedDataBuffer, () => ({
-      __proto__: dart.getSetters(TypedDataBuffer.__proto__),
-      length: core.int,
-      [$length]: core.int
-    }));
-    dart.setLibraryUri(TypedDataBuffer, I[1]);
-    dart.setFieldSignature(TypedDataBuffer, () => ({
-      __proto__: dart.getFields(TypedDataBuffer.__proto__),
-      [_buffer]: dart.fieldType(core.List$(E)),
-      [_length]: dart.fieldType(core.int)
-    }));
-    dart.defineExtensionMethods(TypedDataBuffer, [
-      '_get',
-      '_set',
-      'add',
-      'addAll',
-      'insertAll',
-      'insert',
-      'setRange'
-    ]);
-    dart.defineExtensionAccessors(TypedDataBuffer, ['length']);
-    return TypedDataBuffer;
+    return Selector0;
   });
-  typed_buffer.TypedDataBuffer = typed_buffer.TypedDataBuffer$();
-  dart.defineLazy(typed_buffer.TypedDataBuffer, {
-    /*typed_buffer.TypedDataBuffer._initialLength*/get _initialLength() {
-      return 8;
+  selector.Selector0 = selector.Selector0$();
+  dart.addTypeTests(selector.Selector0, _is_Selector0_default);
+  var value$ = dart.privateName(selector, "_Selector0State.value");
+  var DeepCollectionEquality__unordered = dart.privateName(equality, "DeepCollectionEquality._unordered");
+  var DeepCollectionEquality__base = dart.privateName(equality, "DeepCollectionEquality._base");
+  const _is__Selector0State_default = Symbol('_is__Selector0State_default');
+  selector._Selector0State$ = dart.generic(T => {
+    var TN = () => (TN = dart.constFn(dart.nullable(T)))();
+    var TAndTTobool = () => (TAndTTobool = dart.constFn(dart.fnType(core.bool, [T, T])))();
+    var TAndTToNbool = () => (TAndTToNbool = dart.constFn(dart.nullable(TAndTTobool())))();
+    var BuildContextAndTAndWidgetNToWidget = () => (BuildContextAndTAndWidgetNToWidget = dart.constFn(dart.fnType(framework.Widget, [framework.BuildContext, T, T$.WidgetN()])))();
+    var DiagnosticsPropertyOfT = () => (DiagnosticsPropertyOfT = dart.constFn(diagnostics.DiagnosticsProperty$(T)))();
+    class _Selector0State extends nested.SingleChildState$(selector.Selector0$(T)) {
+      get value() {
+        return this[value$];
+      }
+      set value(value) {
+        this[value$] = TN().as(value);
+      }
+      buildWithChild(context, child) {
+        let t1, t0, t3, t2, t1$, t0$;
+        if (context == null) dart.nullFailed(I[0], 74, 38, "context");
+        let selected = (t0 = this.widget, t1 = context, t0.selector(t1));
+        let shouldInvalidateCache = !dart.equals(this.oldWidget, this.widget) || TAndTToNbool().as(this.widget[_shouldRebuild]) != null && dart.test(dart.nullCheck(TAndTToNbool().as(this.widget[_shouldRebuild]))(T.as(this.value), selected)) || TAndTToNbool().as(this.widget[_shouldRebuild]) == null && !dart.test((C[0] || CT.C0).equals(this.value, selected));
+        if (shouldInvalidateCache) {
+          this.value = selected;
+          this.oldWidget = this.widget;
+          this.cache = (t0$ = this.widget, t1$ = context, t2 = selected, t3 = child, BuildContextAndTAndWidgetNToWidget().as(t0$.builder)(t1$, t2, t3));
+        }
+        return dart.nullCheck(this.cache);
+      }
+      debugFillProperties(properties) {
+        if (properties == null) dart.nullFailed(I[0], 95, 56, "properties");
+        super.debugFillProperties(properties);
+        properties.add(new (DiagnosticsPropertyOfT()).new("value", this.value));
+      }
     }
-  }, false);
-  dart.addTypeTests(typed_buffer.TypedDataBuffer, _is_TypedDataBuffer_default);
-  typed_buffer._IntBuffer = class _IntBuffer extends typed_buffer.TypedDataBuffer$(core.int) {
-    get [_defaultValue]() {
-      return 0;
+    (_Selector0State.new = function() {
+      this[value$] = null;
+      this.cache = null;
+      this.oldWidget = null;
+      _Selector0State.__proto__.new.call(this);
+      ;
+    }).prototype = _Selector0State.prototype;
+    dart.addTypeTests(_Selector0State);
+    _Selector0State.prototype[_is__Selector0State_default] = true;
+    dart.addTypeCaches(_Selector0State);
+    dart.setMethodSignature(_Selector0State, () => ({
+      __proto__: dart.getMethods(_Selector0State.__proto__),
+      buildWithChild: dart.fnType(framework.Widget, [framework.BuildContext, dart.nullable(framework.Widget)])
+    }));
+    dart.setLibraryUri(_Selector0State, I[1]);
+    dart.setFieldSignature(_Selector0State, () => ({
+      __proto__: dart.getFields(_Selector0State.__proto__),
+      value: dart.fieldType(dart.nullable(T)),
+      cache: dart.fieldType(dart.nullable(framework.Widget)),
+      oldWidget: dart.fieldType(dart.nullable(framework.Widget))
+    }));
+    return _Selector0State;
+  });
+  selector._Selector0State = selector._Selector0State$();
+  dart.addTypeTests(selector._Selector0State, _is__Selector0State_default);
+  const _is_Selector_default = Symbol('_is_Selector_default');
+  selector.Selector$ = dart.generic((A, S) => {
+    var BuildContextToS = () => (BuildContextToS = dart.constFn(dart.fnType(S, [framework.BuildContext])))();
+    class Selector extends selector.Selector0$(S) {}
+    (Selector.new = function(opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      let builder = opts && 'builder' in opts ? opts.builder : null;
+      if (builder == null) dart.nullFailed(I[0], 143, 36, "builder");
+      let selector = opts && 'selector' in opts ? opts.selector : null;
+      if (selector == null) dart.nullFailed(I[0], 144, 42, "selector");
+      let shouldRebuild = opts && 'shouldRebuild' in opts ? opts.shouldRebuild : null;
+      let child = opts && 'child' in opts ? opts.child : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      Selector.__proto__.new.call(this, {key: key, shouldRebuild: shouldRebuild, builder: builder, selector: dart.fn(context => {
+          if (context == null) dart.nullFailed(I[0], 151, 22, "context");
+          return selector(context, provider.Provider.of(A, context));
+        }, BuildContextToS()), child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+      ;
+    }).prototype = Selector.prototype;
+    dart.addTypeTests(Selector);
+    Selector.prototype[_is_Selector_default] = true;
+    dart.addTypeCaches(Selector);
+    dart.setLibraryUri(Selector, I[1]);
+    return Selector;
+  });
+  selector.Selector = selector.Selector$();
+  dart.addTypeTests(selector.Selector, _is_Selector_default);
+  const _is_Selector2_default = Symbol('_is_Selector2_default');
+  selector.Selector2$ = dart.generic((A, B, S) => {
+    var BuildContextToS = () => (BuildContextToS = dart.constFn(dart.fnType(S, [framework.BuildContext])))();
+    class Selector2 extends selector.Selector0$(S) {}
+    (Selector2.new = function(opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      let builder = opts && 'builder' in opts ? opts.builder : null;
+      if (builder == null) dart.nullFailed(I[0], 161, 36, "builder");
+      let selector = opts && 'selector' in opts ? opts.selector : null;
+      if (selector == null) dart.nullFailed(I[0], 162, 45, "selector");
+      let shouldRebuild = opts && 'shouldRebuild' in opts ? opts.shouldRebuild : null;
+      let child = opts && 'child' in opts ? opts.child : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      Selector2.__proto__.new.call(this, {key: key, shouldRebuild: shouldRebuild, builder: builder, selector: dart.fn(context => {
+          if (context == null) dart.nullFailed(I[0], 169, 22, "context");
+          return selector(context, provider.Provider.of(A, context), provider.Provider.of(B, context));
+        }, BuildContextToS()), child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+      ;
+    }).prototype = Selector2.prototype;
+    dart.addTypeTests(Selector2);
+    Selector2.prototype[_is_Selector2_default] = true;
+    dart.addTypeCaches(Selector2);
+    dart.setLibraryUri(Selector2, I[1]);
+    return Selector2;
+  });
+  selector.Selector2 = selector.Selector2$();
+  dart.addTypeTests(selector.Selector2, _is_Selector2_default);
+  const _is_Selector3_default = Symbol('_is_Selector3_default');
+  selector.Selector3$ = dart.generic((A, B, C, S) => {
+    var BuildContextToS = () => (BuildContextToS = dart.constFn(dart.fnType(S, [framework.BuildContext])))();
+    class Selector3 extends selector.Selector0$(S) {}
+    (Selector3.new = function(opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      let builder = opts && 'builder' in opts ? opts.builder : null;
+      if (builder == null) dart.nullFailed(I[0], 183, 36, "builder");
+      let selector = opts && 'selector' in opts ? opts.selector : null;
+      if (selector == null) dart.nullFailed(I[0], 184, 48, "selector");
+      let shouldRebuild = opts && 'shouldRebuild' in opts ? opts.shouldRebuild : null;
+      let child = opts && 'child' in opts ? opts.child : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      Selector3.__proto__.new.call(this, {key: key, shouldRebuild: shouldRebuild, builder: builder, selector: dart.fn(context => {
+          if (context == null) dart.nullFailed(I[0], 191, 22, "context");
+          return selector(context, provider.Provider.of(A, context), provider.Provider.of(B, context), provider.Provider.of(C, context));
+        }, BuildContextToS()), child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+      ;
+    }).prototype = Selector3.prototype;
+    dart.addTypeTests(Selector3);
+    Selector3.prototype[_is_Selector3_default] = true;
+    dart.addTypeCaches(Selector3);
+    dart.setLibraryUri(Selector3, I[1]);
+    return Selector3;
+  });
+  selector.Selector3 = selector.Selector3$();
+  dart.addTypeTests(selector.Selector3, _is_Selector3_default);
+  const _is_Selector4_default = Symbol('_is_Selector4_default');
+  selector.Selector4$ = dart.generic((A, B, C, D, S) => {
+    var BuildContextToS = () => (BuildContextToS = dart.constFn(dart.fnType(S, [framework.BuildContext])))();
+    class Selector4 extends selector.Selector0$(S) {}
+    (Selector4.new = function(opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      let builder = opts && 'builder' in opts ? opts.builder : null;
+      if (builder == null) dart.nullFailed(I[0], 206, 36, "builder");
+      let selector = opts && 'selector' in opts ? opts.selector : null;
+      if (selector == null) dart.nullFailed(I[0], 207, 51, "selector");
+      let shouldRebuild = opts && 'shouldRebuild' in opts ? opts.shouldRebuild : null;
+      let child = opts && 'child' in opts ? opts.child : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      Selector4.__proto__.new.call(this, {key: key, shouldRebuild: shouldRebuild, builder: builder, selector: dart.fn(context => {
+          if (context == null) dart.nullFailed(I[0], 214, 22, "context");
+          return selector(context, provider.Provider.of(A, context), provider.Provider.of(B, context), provider.Provider.of(C, context), provider.Provider.of(D, context));
+        }, BuildContextToS()), child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+      ;
+    }).prototype = Selector4.prototype;
+    dart.addTypeTests(Selector4);
+    Selector4.prototype[_is_Selector4_default] = true;
+    dart.addTypeCaches(Selector4);
+    dart.setLibraryUri(Selector4, I[1]);
+    return Selector4;
+  });
+  selector.Selector4 = selector.Selector4$();
+  dart.addTypeTests(selector.Selector4, _is_Selector4_default);
+  const _is_Selector5_default = Symbol('_is_Selector5_default');
+  selector.Selector5$ = dart.generic((A, B, C, D, E, S) => {
+    var BuildContextToS = () => (BuildContextToS = dart.constFn(dart.fnType(S, [framework.BuildContext])))();
+    class Selector5 extends selector.Selector0$(S) {}
+    (Selector5.new = function(opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      let builder = opts && 'builder' in opts ? opts.builder : null;
+      if (builder == null) dart.nullFailed(I[0], 230, 36, "builder");
+      let selector = opts && 'selector' in opts ? opts.selector : null;
+      if (selector == null) dart.nullFailed(I[0], 231, 54, "selector");
+      let shouldRebuild = opts && 'shouldRebuild' in opts ? opts.shouldRebuild : null;
+      let child = opts && 'child' in opts ? opts.child : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      Selector5.__proto__.new.call(this, {key: key, shouldRebuild: shouldRebuild, builder: builder, selector: dart.fn(context => {
+          if (context == null) dart.nullFailed(I[0], 238, 22, "context");
+          return selector(context, provider.Provider.of(A, context), provider.Provider.of(B, context), provider.Provider.of(C, context), provider.Provider.of(D, context), provider.Provider.of(E, context));
+        }, BuildContextToS()), child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+      ;
+    }).prototype = Selector5.prototype;
+    dart.addTypeTests(Selector5);
+    Selector5.prototype[_is_Selector5_default] = true;
+    dart.addTypeCaches(Selector5);
+    dart.setLibraryUri(Selector5, I[1]);
+    return Selector5;
+  });
+  selector.Selector5 = selector.Selector5$();
+  dart.addTypeTests(selector.Selector5, _is_Selector5_default);
+  const _is_Selector6_default = Symbol('_is_Selector6_default');
+  selector.Selector6$ = dart.generic((A, B, C, D, E, F, S) => {
+    var BuildContextToS = () => (BuildContextToS = dart.constFn(dart.fnType(S, [framework.BuildContext])))();
+    class Selector6 extends selector.Selector0$(S) {}
+    (Selector6.new = function(opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      let builder = opts && 'builder' in opts ? opts.builder : null;
+      if (builder == null) dart.nullFailed(I[0], 255, 36, "builder");
+      let selector = opts && 'selector' in opts ? opts.selector : null;
+      if (selector == null) dart.nullFailed(I[0], 256, 57, "selector");
+      let shouldRebuild = opts && 'shouldRebuild' in opts ? opts.shouldRebuild : null;
+      let child = opts && 'child' in opts ? opts.child : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      Selector6.__proto__.new.call(this, {key: key, shouldRebuild: shouldRebuild, builder: builder, selector: dart.fn(context => {
+          if (context == null) dart.nullFailed(I[0], 263, 22, "context");
+          return selector(context, provider.Provider.of(A, context), provider.Provider.of(B, context), provider.Provider.of(C, context), provider.Provider.of(D, context), provider.Provider.of(E, context), provider.Provider.of(F, context));
+        }, BuildContextToS()), child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+      ;
+    }).prototype = Selector6.prototype;
+    dart.addTypeTests(Selector6);
+    Selector6.prototype[_is_Selector6_default] = true;
+    dart.addTypeCaches(Selector6);
+    dart.setLibraryUri(Selector6, I[1]);
+    return Selector6;
+  });
+  selector.Selector6 = selector.Selector6$();
+  dart.addTypeTests(selector.Selector6, _is_Selector6_default);
+  var builder$0 = dart.privateName(consumer, "Consumer.builder");
+  const _is_Consumer_default = Symbol('_is_Consumer_default');
+  consumer.Consumer$ = dart.generic(T => {
+    class Consumer extends nested.SingleChildStatelessWidget {
+      get builder() {
+        return this[builder$0];
+      }
+      set builder(value) {
+        super.builder = value;
+      }
+      buildWithChild(context, child) {
+        let t2, t1, t0;
+        if (context == null) dart.nullFailed(I[2], 179, 38, "context");
+        t0 = context;
+        t1 = provider.Provider.of(T, context);
+        t2 = child;
+        return this.builder(t0, t1, t2);
+      }
     }
-  };
-  (typed_buffer._IntBuffer.new = function(buffer) {
-    if (buffer == null) dart.nullFailed(I[0], 311, 24, "buffer");
-    typed_buffer._IntBuffer.__proto__.new.call(this, buffer);
-    ;
-  }).prototype = typed_buffer._IntBuffer.prototype;
-  dart.addTypeTests(typed_buffer._IntBuffer);
-  dart.addTypeCaches(typed_buffer._IntBuffer);
-  dart.setGetterSignature(typed_buffer._IntBuffer, () => ({
-    __proto__: dart.getGetters(typed_buffer._IntBuffer.__proto__),
-    [_defaultValue]: core.int
-  }));
-  dart.setLibraryUri(typed_buffer._IntBuffer, I[1]);
-  typed_buffer._FloatBuffer = class _FloatBuffer extends typed_buffer.TypedDataBuffer$(core.double) {
-    get [_defaultValue]() {
-      return 0.0;
+    (Consumer.new = function(opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      let builder = opts && 'builder' in opts ? opts.builder : null;
+      if (builder == null) dart.nullFailed(I[2], 163, 19, "builder");
+      let child = opts && 'child' in opts ? opts.child : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      this[builder$0] = builder;
+      Consumer.__proto__.new.call(this, {key: key, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+      ;
+    }).prototype = Consumer.prototype;
+    dart.addTypeTests(Consumer);
+    Consumer.prototype[_is_Consumer_default] = true;
+    dart.addTypeCaches(Consumer);
+    dart.setMethodSignature(Consumer, () => ({
+      __proto__: dart.getMethods(Consumer.__proto__),
+      buildWithChild: dart.fnType(framework.Widget, [framework.BuildContext, dart.nullable(framework.Widget)])
+    }));
+    dart.setLibraryUri(Consumer, I[3]);
+    dart.setFieldSignature(Consumer, () => ({
+      __proto__: dart.getFields(Consumer.__proto__),
+      builder: dart.finalFieldType(dart.fnType(framework.Widget, [framework.BuildContext, T, dart.nullable(framework.Widget)]))
+    }));
+    return Consumer;
+  });
+  consumer.Consumer = consumer.Consumer$();
+  dart.addTypeTests(consumer.Consumer, _is_Consumer_default);
+  var builder$1 = dart.privateName(consumer, "Consumer2.builder");
+  const _is_Consumer2_default = Symbol('_is_Consumer2_default');
+  consumer.Consumer2$ = dart.generic((A, B) => {
+    class Consumer2 extends nested.SingleChildStatelessWidget {
+      get builder() {
+        return this[builder$1];
+      }
+      set builder(value) {
+        super.builder = value;
+      }
+      buildWithChild(context, child) {
+        let t3, t2, t1, t0;
+        if (context == null) dart.nullFailed(I[2], 206, 38, "context");
+        t0 = context;
+        t1 = provider.Provider.of(A, context);
+        t2 = provider.Provider.of(B, context);
+        t3 = child;
+        return this.builder(t0, t1, t2, t3);
+      }
     }
-  };
-  (typed_buffer._FloatBuffer.new = function(buffer) {
-    if (buffer == null) dart.nullFailed(I[0], 318, 29, "buffer");
-    typed_buffer._FloatBuffer.__proto__.new.call(this, buffer);
-    ;
-  }).prototype = typed_buffer._FloatBuffer.prototype;
-  dart.addTypeTests(typed_buffer._FloatBuffer);
-  dart.addTypeCaches(typed_buffer._FloatBuffer);
-  dart.setGetterSignature(typed_buffer._FloatBuffer, () => ({
-    __proto__: dart.getGetters(typed_buffer._FloatBuffer.__proto__),
-    [_defaultValue]: core.double
-  }));
-  dart.setLibraryUri(typed_buffer._FloatBuffer, I[1]);
-  typed_buffer.Uint8Buffer = class Uint8Buffer extends typed_buffer._IntBuffer {
-    [_createBuffer](size) {
-      if (size == null) dart.nullFailed(I[0], 328, 31, "size");
-      return _native_typed_data.NativeUint8List.new(size);
+    (Consumer2.new = function(opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      let builder = opts && 'builder' in opts ? opts.builder : null;
+      if (builder == null) dart.nullFailed(I[2], 193, 19, "builder");
+      let child = opts && 'child' in opts ? opts.child : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      this[builder$1] = builder;
+      Consumer2.__proto__.new.call(this, {key: key, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+      ;
+    }).prototype = Consumer2.prototype;
+    dart.addTypeTests(Consumer2);
+    Consumer2.prototype[_is_Consumer2_default] = true;
+    dart.addTypeCaches(Consumer2);
+    dart.setMethodSignature(Consumer2, () => ({
+      __proto__: dart.getMethods(Consumer2.__proto__),
+      buildWithChild: dart.fnType(framework.Widget, [framework.BuildContext, dart.nullable(framework.Widget)])
+    }));
+    dart.setLibraryUri(Consumer2, I[3]);
+    dart.setFieldSignature(Consumer2, () => ({
+      __proto__: dart.getFields(Consumer2.__proto__),
+      builder: dart.finalFieldType(dart.fnType(framework.Widget, [framework.BuildContext, A, B, dart.nullable(framework.Widget)]))
+    }));
+    return Consumer2;
+  });
+  consumer.Consumer2 = consumer.Consumer2$();
+  dart.addTypeTests(consumer.Consumer2, _is_Consumer2_default);
+  var builder$2 = dart.privateName(consumer, "Consumer3.builder");
+  const _is_Consumer3_default = Symbol('_is_Consumer3_default');
+  consumer.Consumer3$ = dart.generic((A, B, C) => {
+    class Consumer3 extends nested.SingleChildStatelessWidget {
+      get builder() {
+        return this[builder$2];
+      }
+      set builder(value) {
+        super.builder = value;
+      }
+      buildWithChild(context, child) {
+        let t4, t3, t2, t1, t0;
+        if (context == null) dart.nullFailed(I[2], 235, 38, "context");
+        t0 = context;
+        t1 = provider.Provider.of(A, context);
+        t2 = provider.Provider.of(B, context);
+        t3 = provider.Provider.of(C, context);
+        t4 = child;
+        return this.builder(t0, t1, t2, t3, t4);
+      }
     }
-  };
-  (typed_buffer.Uint8Buffer.new = function(initialLength = 0) {
-    if (initialLength == null) dart.nullFailed(I[0], 325, 20, "initialLength");
-    typed_buffer.Uint8Buffer.__proto__.new.call(this, _native_typed_data.NativeUint8List.new(initialLength));
-    ;
-  }).prototype = typed_buffer.Uint8Buffer.prototype;
-  dart.addTypeTests(typed_buffer.Uint8Buffer);
-  dart.addTypeCaches(typed_buffer.Uint8Buffer);
-  dart.setMethodSignature(typed_buffer.Uint8Buffer, () => ({
-    __proto__: dart.getMethods(typed_buffer.Uint8Buffer.__proto__),
-    [_createBuffer]: dart.fnType(typed_data.Uint8List, [core.int])
-  }));
-  dart.setLibraryUri(typed_buffer.Uint8Buffer, I[1]);
-  typed_buffer.Int8Buffer = class Int8Buffer extends typed_buffer._IntBuffer {
-    [_createBuffer](size) {
-      if (size == null) dart.nullFailed(I[0], 335, 30, "size");
-      return _native_typed_data.NativeInt8List.new(size);
+    (Consumer3.new = function(opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      let builder = opts && 'builder' in opts ? opts.builder : null;
+      if (builder == null) dart.nullFailed(I[2], 221, 19, "builder");
+      let child = opts && 'child' in opts ? opts.child : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      this[builder$2] = builder;
+      Consumer3.__proto__.new.call(this, {key: key, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+      ;
+    }).prototype = Consumer3.prototype;
+    dart.addTypeTests(Consumer3);
+    Consumer3.prototype[_is_Consumer3_default] = true;
+    dart.addTypeCaches(Consumer3);
+    dart.setMethodSignature(Consumer3, () => ({
+      __proto__: dart.getMethods(Consumer3.__proto__),
+      buildWithChild: dart.fnType(framework.Widget, [framework.BuildContext, dart.nullable(framework.Widget)])
+    }));
+    dart.setLibraryUri(Consumer3, I[3]);
+    dart.setFieldSignature(Consumer3, () => ({
+      __proto__: dart.getFields(Consumer3.__proto__),
+      builder: dart.finalFieldType(dart.fnType(framework.Widget, [framework.BuildContext, A, B, C, dart.nullable(framework.Widget)]))
+    }));
+    return Consumer3;
+  });
+  consumer.Consumer3 = consumer.Consumer3$();
+  dart.addTypeTests(consumer.Consumer3, _is_Consumer3_default);
+  var builder$3 = dart.privateName(consumer, "Consumer4.builder");
+  const _is_Consumer4_default = Symbol('_is_Consumer4_default');
+  consumer.Consumer4$ = dart.generic((A, B, C, D) => {
+    class Consumer4 extends nested.SingleChildStatelessWidget {
+      get builder() {
+        return this[builder$3];
+      }
+      set builder(value) {
+        super.builder = value;
+      }
+      buildWithChild(context, child) {
+        let t5, t4, t3, t2, t1, t0;
+        if (context == null) dart.nullFailed(I[2], 266, 38, "context");
+        t0 = context;
+        t1 = provider.Provider.of(A, context);
+        t2 = provider.Provider.of(B, context);
+        t3 = provider.Provider.of(C, context);
+        t4 = provider.Provider.of(D, context);
+        t5 = child;
+        return this.builder(t0, t1, t2, t3, t4, t5);
+      }
     }
-  };
-  (typed_buffer.Int8Buffer.new = function(initialLength = 0) {
-    if (initialLength == null) dart.nullFailed(I[0], 332, 19, "initialLength");
-    typed_buffer.Int8Buffer.__proto__.new.call(this, _native_typed_data.NativeInt8List.new(initialLength));
-    ;
-  }).prototype = typed_buffer.Int8Buffer.prototype;
-  dart.addTypeTests(typed_buffer.Int8Buffer);
-  dart.addTypeCaches(typed_buffer.Int8Buffer);
-  dart.setMethodSignature(typed_buffer.Int8Buffer, () => ({
-    __proto__: dart.getMethods(typed_buffer.Int8Buffer.__proto__),
-    [_createBuffer]: dart.fnType(typed_data.Int8List, [core.int])
-  }));
-  dart.setLibraryUri(typed_buffer.Int8Buffer, I[1]);
-  typed_buffer.Uint8ClampedBuffer = class Uint8ClampedBuffer extends typed_buffer._IntBuffer {
-    [_createBuffer](size) {
-      if (size == null) dart.nullFailed(I[0], 343, 38, "size");
-      return _native_typed_data.NativeUint8ClampedList.new(size);
+    (Consumer4.new = function(opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      let builder = opts && 'builder' in opts ? opts.builder : null;
+      if (builder == null) dart.nullFailed(I[2], 251, 19, "builder");
+      let child = opts && 'child' in opts ? opts.child : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      this[builder$3] = builder;
+      Consumer4.__proto__.new.call(this, {key: key, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+      ;
+    }).prototype = Consumer4.prototype;
+    dart.addTypeTests(Consumer4);
+    Consumer4.prototype[_is_Consumer4_default] = true;
+    dart.addTypeCaches(Consumer4);
+    dart.setMethodSignature(Consumer4, () => ({
+      __proto__: dart.getMethods(Consumer4.__proto__),
+      buildWithChild: dart.fnType(framework.Widget, [framework.BuildContext, dart.nullable(framework.Widget)])
+    }));
+    dart.setLibraryUri(Consumer4, I[3]);
+    dart.setFieldSignature(Consumer4, () => ({
+      __proto__: dart.getFields(Consumer4.__proto__),
+      builder: dart.finalFieldType(dart.fnType(framework.Widget, [framework.BuildContext, A, B, C, D, dart.nullable(framework.Widget)]))
+    }));
+    return Consumer4;
+  });
+  consumer.Consumer4 = consumer.Consumer4$();
+  dart.addTypeTests(consumer.Consumer4, _is_Consumer4_default);
+  var builder$4 = dart.privateName(consumer, "Consumer5.builder");
+  const _is_Consumer5_default = Symbol('_is_Consumer5_default');
+  consumer.Consumer5$ = dart.generic((A, B, C, D, E) => {
+    class Consumer5 extends nested.SingleChildStatelessWidget {
+      get builder() {
+        return this[builder$4];
+      }
+      set builder(value) {
+        super.builder = value;
+      }
+      buildWithChild(context, child) {
+        let t6, t5, t4, t3, t2, t1, t0;
+        if (context == null) dart.nullFailed(I[2], 299, 38, "context");
+        t0 = context;
+        t1 = provider.Provider.of(A, context);
+        t2 = provider.Provider.of(B, context);
+        t3 = provider.Provider.of(C, context);
+        t4 = provider.Provider.of(D, context);
+        t5 = provider.Provider.of(E, context);
+        t6 = child;
+        return this.builder(t0, t1, t2, t3, t4, t5, t6);
+      }
     }
-  };
-  (typed_buffer.Uint8ClampedBuffer.new = function(initialLength = 0) {
-    if (initialLength == null) dart.nullFailed(I[0], 339, 27, "initialLength");
-    typed_buffer.Uint8ClampedBuffer.__proto__.new.call(this, _native_typed_data.NativeUint8ClampedList.new(initialLength));
-    ;
-  }).prototype = typed_buffer.Uint8ClampedBuffer.prototype;
-  dart.addTypeTests(typed_buffer.Uint8ClampedBuffer);
-  dart.addTypeCaches(typed_buffer.Uint8ClampedBuffer);
-  dart.setMethodSignature(typed_buffer.Uint8ClampedBuffer, () => ({
-    __proto__: dart.getMethods(typed_buffer.Uint8ClampedBuffer.__proto__),
-    [_createBuffer]: dart.fnType(typed_data.Uint8ClampedList, [core.int])
-  }));
-  dart.setLibraryUri(typed_buffer.Uint8ClampedBuffer, I[1]);
-  typed_buffer.Uint16Buffer = class Uint16Buffer extends typed_buffer._IntBuffer {
-    [_createBuffer](size) {
-      if (size == null) dart.nullFailed(I[0], 350, 32, "size");
-      return _native_typed_data.NativeUint16List.new(size);
+    (Consumer5.new = function(opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      let builder = opts && 'builder' in opts ? opts.builder : null;
+      if (builder == null) dart.nullFailed(I[2], 283, 19, "builder");
+      let child = opts && 'child' in opts ? opts.child : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      this[builder$4] = builder;
+      Consumer5.__proto__.new.call(this, {key: key, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+      ;
+    }).prototype = Consumer5.prototype;
+    dart.addTypeTests(Consumer5);
+    Consumer5.prototype[_is_Consumer5_default] = true;
+    dart.addTypeCaches(Consumer5);
+    dart.setMethodSignature(Consumer5, () => ({
+      __proto__: dart.getMethods(Consumer5.__proto__),
+      buildWithChild: dart.fnType(framework.Widget, [framework.BuildContext, dart.nullable(framework.Widget)])
+    }));
+    dart.setLibraryUri(Consumer5, I[3]);
+    dart.setFieldSignature(Consumer5, () => ({
+      __proto__: dart.getFields(Consumer5.__proto__),
+      builder: dart.finalFieldType(dart.fnType(framework.Widget, [framework.BuildContext, A, B, C, D, E, dart.nullable(framework.Widget)]))
+    }));
+    return Consumer5;
+  });
+  consumer.Consumer5 = consumer.Consumer5$();
+  dart.addTypeTests(consumer.Consumer5, _is_Consumer5_default);
+  var builder$5 = dart.privateName(consumer, "Consumer6.builder");
+  const _is_Consumer6_default = Symbol('_is_Consumer6_default');
+  consumer.Consumer6$ = dart.generic((A, B, C, D, E, F) => {
+    class Consumer6 extends nested.SingleChildStatelessWidget {
+      get builder() {
+        return this[builder$5];
+      }
+      set builder(value) {
+        super.builder = value;
+      }
+      buildWithChild(context, child) {
+        let t7, t6, t5, t4, t3, t2, t1, t0;
+        if (context == null) dart.nullFailed(I[2], 334, 38, "context");
+        t0 = context;
+        t1 = provider.Provider.of(A, context);
+        t2 = provider.Provider.of(B, context);
+        t3 = provider.Provider.of(C, context);
+        t4 = provider.Provider.of(D, context);
+        t5 = provider.Provider.of(E, context);
+        t6 = provider.Provider.of(F, context);
+        t7 = child;
+        return this.builder(t0, t1, t2, t3, t4, t5, t6, t7);
+      }
     }
-  };
-  (typed_buffer.Uint16Buffer.new = function(initialLength = 0) {
-    if (initialLength == null) dart.nullFailed(I[0], 347, 21, "initialLength");
-    typed_buffer.Uint16Buffer.__proto__.new.call(this, _native_typed_data.NativeUint16List.new(initialLength));
-    ;
-  }).prototype = typed_buffer.Uint16Buffer.prototype;
-  dart.addTypeTests(typed_buffer.Uint16Buffer);
-  dart.addTypeCaches(typed_buffer.Uint16Buffer);
-  dart.setMethodSignature(typed_buffer.Uint16Buffer, () => ({
-    __proto__: dart.getMethods(typed_buffer.Uint16Buffer.__proto__),
-    [_createBuffer]: dart.fnType(typed_data.Uint16List, [core.int])
-  }));
-  dart.setLibraryUri(typed_buffer.Uint16Buffer, I[1]);
-  typed_buffer.Int16Buffer = class Int16Buffer extends typed_buffer._IntBuffer {
-    [_createBuffer](size) {
-      if (size == null) dart.nullFailed(I[0], 357, 31, "size");
-      return _native_typed_data.NativeInt16List.new(size);
-    }
-  };
-  (typed_buffer.Int16Buffer.new = function(initialLength = 0) {
-    if (initialLength == null) dart.nullFailed(I[0], 354, 20, "initialLength");
-    typed_buffer.Int16Buffer.__proto__.new.call(this, _native_typed_data.NativeInt16List.new(initialLength));
-    ;
-  }).prototype = typed_buffer.Int16Buffer.prototype;
-  dart.addTypeTests(typed_buffer.Int16Buffer);
-  dart.addTypeCaches(typed_buffer.Int16Buffer);
-  dart.setMethodSignature(typed_buffer.Int16Buffer, () => ({
-    __proto__: dart.getMethods(typed_buffer.Int16Buffer.__proto__),
-    [_createBuffer]: dart.fnType(typed_data.Int16List, [core.int])
-  }));
-  dart.setLibraryUri(typed_buffer.Int16Buffer, I[1]);
-  typed_buffer.Uint32Buffer = class Uint32Buffer extends typed_buffer._IntBuffer {
-    [_createBuffer](size) {
-      if (size == null) dart.nullFailed(I[0], 364, 32, "size");
-      return _native_typed_data.NativeUint32List.new(size);
-    }
-  };
-  (typed_buffer.Uint32Buffer.new = function(initialLength = 0) {
-    if (initialLength == null) dart.nullFailed(I[0], 361, 21, "initialLength");
-    typed_buffer.Uint32Buffer.__proto__.new.call(this, _native_typed_data.NativeUint32List.new(initialLength));
-    ;
-  }).prototype = typed_buffer.Uint32Buffer.prototype;
-  dart.addTypeTests(typed_buffer.Uint32Buffer);
-  dart.addTypeCaches(typed_buffer.Uint32Buffer);
-  dart.setMethodSignature(typed_buffer.Uint32Buffer, () => ({
-    __proto__: dart.getMethods(typed_buffer.Uint32Buffer.__proto__),
-    [_createBuffer]: dart.fnType(typed_data.Uint32List, [core.int])
-  }));
-  dart.setLibraryUri(typed_buffer.Uint32Buffer, I[1]);
-  typed_buffer.Int32Buffer = class Int32Buffer extends typed_buffer._IntBuffer {
-    [_createBuffer](size) {
-      if (size == null) dart.nullFailed(I[0], 371, 31, "size");
-      return _native_typed_data.NativeInt32List.new(size);
-    }
-  };
-  (typed_buffer.Int32Buffer.new = function(initialLength = 0) {
-    if (initialLength == null) dart.nullFailed(I[0], 368, 20, "initialLength");
-    typed_buffer.Int32Buffer.__proto__.new.call(this, _native_typed_data.NativeInt32List.new(initialLength));
-    ;
-  }).prototype = typed_buffer.Int32Buffer.prototype;
-  dart.addTypeTests(typed_buffer.Int32Buffer);
-  dart.addTypeCaches(typed_buffer.Int32Buffer);
-  dart.setMethodSignature(typed_buffer.Int32Buffer, () => ({
-    __proto__: dart.getMethods(typed_buffer.Int32Buffer.__proto__),
-    [_createBuffer]: dart.fnType(typed_data.Int32List, [core.int])
-  }));
-  dart.setLibraryUri(typed_buffer.Int32Buffer, I[1]);
-  typed_buffer.Uint64Buffer = class Uint64Buffer extends typed_buffer._IntBuffer {
-    [_createBuffer](size) {
-      if (size == null) dart.nullFailed(I[0], 378, 32, "size");
-      return typed_data.Uint64List.new(size);
-    }
-  };
-  (typed_buffer.Uint64Buffer.new = function(initialLength = 0) {
-    if (initialLength == null) dart.nullFailed(I[0], 375, 21, "initialLength");
-    typed_buffer.Uint64Buffer.__proto__.new.call(this, typed_data.Uint64List.new(initialLength));
-    ;
-  }).prototype = typed_buffer.Uint64Buffer.prototype;
-  dart.addTypeTests(typed_buffer.Uint64Buffer);
-  dart.addTypeCaches(typed_buffer.Uint64Buffer);
-  dart.setMethodSignature(typed_buffer.Uint64Buffer, () => ({
-    __proto__: dart.getMethods(typed_buffer.Uint64Buffer.__proto__),
-    [_createBuffer]: dart.fnType(typed_data.Uint64List, [core.int])
-  }));
-  dart.setLibraryUri(typed_buffer.Uint64Buffer, I[1]);
-  typed_buffer.Int64Buffer = class Int64Buffer extends typed_buffer._IntBuffer {
-    [_createBuffer](size) {
-      if (size == null) dart.nullFailed(I[0], 385, 31, "size");
-      return typed_data.Int64List.new(size);
-    }
-  };
-  (typed_buffer.Int64Buffer.new = function(initialLength = 0) {
-    if (initialLength == null) dart.nullFailed(I[0], 382, 20, "initialLength");
-    typed_buffer.Int64Buffer.__proto__.new.call(this, typed_data.Int64List.new(initialLength));
-    ;
-  }).prototype = typed_buffer.Int64Buffer.prototype;
-  dart.addTypeTests(typed_buffer.Int64Buffer);
-  dart.addTypeCaches(typed_buffer.Int64Buffer);
-  dart.setMethodSignature(typed_buffer.Int64Buffer, () => ({
-    __proto__: dart.getMethods(typed_buffer.Int64Buffer.__proto__),
-    [_createBuffer]: dart.fnType(typed_data.Int64List, [core.int])
-  }));
-  dart.setLibraryUri(typed_buffer.Int64Buffer, I[1]);
-  typed_buffer.Float32Buffer = class Float32Buffer extends typed_buffer._FloatBuffer {
-    [_createBuffer](size) {
-      if (size == null) dart.nullFailed(I[0], 392, 33, "size");
-      return _native_typed_data.NativeFloat32List.new(size);
-    }
-  };
-  (typed_buffer.Float32Buffer.new = function(initialLength = 0) {
-    if (initialLength == null) dart.nullFailed(I[0], 389, 22, "initialLength");
-    typed_buffer.Float32Buffer.__proto__.new.call(this, _native_typed_data.NativeFloat32List.new(initialLength));
-    ;
-  }).prototype = typed_buffer.Float32Buffer.prototype;
-  dart.addTypeTests(typed_buffer.Float32Buffer);
-  dart.addTypeCaches(typed_buffer.Float32Buffer);
-  dart.setMethodSignature(typed_buffer.Float32Buffer, () => ({
-    __proto__: dart.getMethods(typed_buffer.Float32Buffer.__proto__),
-    [_createBuffer]: dart.fnType(typed_data.Float32List, [core.int])
-  }));
-  dart.setLibraryUri(typed_buffer.Float32Buffer, I[1]);
-  typed_buffer.Float64Buffer = class Float64Buffer extends typed_buffer._FloatBuffer {
-    [_createBuffer](size) {
-      if (size == null) dart.nullFailed(I[0], 399, 33, "size");
-      return _native_typed_data.NativeFloat64List.new(size);
-    }
-  };
-  (typed_buffer.Float64Buffer.new = function(initialLength = 0) {
-    if (initialLength == null) dart.nullFailed(I[0], 396, 22, "initialLength");
-    typed_buffer.Float64Buffer.__proto__.new.call(this, _native_typed_data.NativeFloat64List.new(initialLength));
-    ;
-  }).prototype = typed_buffer.Float64Buffer.prototype;
-  dart.addTypeTests(typed_buffer.Float64Buffer);
-  dart.addTypeCaches(typed_buffer.Float64Buffer);
-  dart.setMethodSignature(typed_buffer.Float64Buffer, () => ({
-    __proto__: dart.getMethods(typed_buffer.Float64Buffer.__proto__),
-    [_createBuffer]: dart.fnType(typed_data.Float64List, [core.int])
-  }));
-  dart.setLibraryUri(typed_buffer.Float64Buffer, I[1]);
-  typed_buffer.Int32x4Buffer = class Int32x4Buffer extends typed_buffer.TypedDataBuffer$(typed_data.Int32x4) {
-    get [_defaultValue]() {
-      return typed_buffer.Int32x4Buffer._zero;
-    }
-    [_createBuffer](size) {
-      if (size == null) dart.nullFailed(I[0], 411, 33, "size");
-      return new _native_typed_data.NativeInt32x4List.new(size);
-    }
-  };
-  (typed_buffer.Int32x4Buffer.new = function(initialLength = 0) {
-    if (initialLength == null) dart.nullFailed(I[0], 405, 22, "initialLength");
-    typed_buffer.Int32x4Buffer.__proto__.new.call(this, new _native_typed_data.NativeInt32x4List.new(initialLength));
-    ;
-  }).prototype = typed_buffer.Int32x4Buffer.prototype;
-  dart.addTypeTests(typed_buffer.Int32x4Buffer);
-  dart.addTypeCaches(typed_buffer.Int32x4Buffer);
-  dart.setMethodSignature(typed_buffer.Int32x4Buffer, () => ({
-    __proto__: dart.getMethods(typed_buffer.Int32x4Buffer.__proto__),
-    [_createBuffer]: dart.fnType(typed_data.Int32x4List, [core.int])
-  }));
-  dart.setGetterSignature(typed_buffer.Int32x4Buffer, () => ({
-    __proto__: dart.getGetters(typed_buffer.Int32x4Buffer.__proto__),
-    [_defaultValue]: typed_data.Int32x4
-  }));
-  dart.setLibraryUri(typed_buffer.Int32x4Buffer, I[1]);
-  dart.defineLazy(typed_buffer.Int32x4Buffer, {
-    /*typed_buffer.Int32x4Buffer._zero*/get _zero() {
-      return new _native_typed_data.NativeInt32x4.new(0, 0, 0, 0);
-    }
-  }, false);
-  typed_buffer.Float32x4Buffer = class Float32x4Buffer extends typed_buffer.TypedDataBuffer$(typed_data.Float32x4) {
-    get [_defaultValue]() {
-      return new _native_typed_data.NativeFloat32x4.zero();
-    }
-    [_createBuffer](size) {
-      if (size == null) dart.nullFailed(I[0], 422, 35, "size");
-      return new _native_typed_data.NativeFloat32x4List.new(size);
-    }
-  };
-  (typed_buffer.Float32x4Buffer.new = function(initialLength = 0) {
-    if (initialLength == null) dart.nullFailed(I[0], 415, 24, "initialLength");
-    typed_buffer.Float32x4Buffer.__proto__.new.call(this, new _native_typed_data.NativeFloat32x4List.new(initialLength));
-    ;
-  }).prototype = typed_buffer.Float32x4Buffer.prototype;
-  dart.addTypeTests(typed_buffer.Float32x4Buffer);
-  dart.addTypeCaches(typed_buffer.Float32x4Buffer);
-  dart.setMethodSignature(typed_buffer.Float32x4Buffer, () => ({
-    __proto__: dart.getMethods(typed_buffer.Float32x4Buffer.__proto__),
-    [_createBuffer]: dart.fnType(typed_data.Float32x4List, [core.int])
-  }));
-  dart.setGetterSignature(typed_buffer.Float32x4Buffer, () => ({
-    __proto__: dart.getGetters(typed_buffer.Float32x4Buffer.__proto__),
-    [_defaultValue]: typed_data.Float32x4
-  }));
-  dart.setLibraryUri(typed_buffer.Float32x4Buffer, I[1]);
-  dart.trackLibraries("packages/typed_data/src/typed_buffer.dart", {
-    "package:typed_data/src/typed_buffer.dart": typed_buffer
+    (Consumer6.new = function(opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      let builder = opts && 'builder' in opts ? opts.builder : null;
+      if (builder == null) dart.nullFailed(I[2], 317, 19, "builder");
+      let child = opts && 'child' in opts ? opts.child : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      this[builder$5] = builder;
+      Consumer6.__proto__.new.call(this, {key: key, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+      ;
+    }).prototype = Consumer6.prototype;
+    dart.addTypeTests(Consumer6);
+    Consumer6.prototype[_is_Consumer6_default] = true;
+    dart.addTypeCaches(Consumer6);
+    dart.setMethodSignature(Consumer6, () => ({
+      __proto__: dart.getMethods(Consumer6.__proto__),
+      buildWithChild: dart.fnType(framework.Widget, [framework.BuildContext, dart.nullable(framework.Widget)])
+    }));
+    dart.setLibraryUri(Consumer6, I[3]);
+    dart.setFieldSignature(Consumer6, () => ({
+      __proto__: dart.getFields(Consumer6.__proto__),
+      builder: dart.finalFieldType(dart.fnType(framework.Widget, [framework.BuildContext, A, B, C, D, E, F, dart.nullable(framework.Widget)]))
+    }));
+    return Consumer6;
+  });
+  consumer.Consumer6 = consumer.Consumer6$();
+  dart.addTypeTests(consumer.Consumer6, _is_Consumer6_default);
+  dart.trackLibraries("packages/provider/src/selector.dart", {
+    "package:provider/src/selector.dart": selector,
+    "package:provider/src/consumer.dart": consumer
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["typed_buffer.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/typed_data/src/typed_buffer.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["selector.dart","consumer.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/provider/src/selector.dart.lib.js"}');
   // Exports:
   return {
-    src__typed_buffer: typed_buffer
+    src__selector: selector,
+    src__consumer: consumer
   };
 }));
 
-//# sourceMappingURL=typed_buffer.dart.lib.js.map
+//# sourceMappingURL=selector.dart.lib.js.map

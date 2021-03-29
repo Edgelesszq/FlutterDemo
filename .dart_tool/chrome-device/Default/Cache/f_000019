@@ -1,42 +1,34 @@
-define(['dart_sdk', 'packages/fluro/src/tree.dart', 'packages/fluro/src/common.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/material/page.dart', 'packages/flutter/src/cupertino/route.dart', 'packages/flutter/src/animation/listener_helpers.dart'], (function load__packages__fluro__src__fluro_router_dart(dart_sdk, packages__fluro__src__tree$46dart, packages__fluro__src__common$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__material__page$46dart, packages__flutter__src__cupertino__route$46dart, packages__flutter__src__animation__listener_helpers$46dart) {
+define(['dart_sdk', 'packages/flutter/src/gestures/recognizer.dart', 'packages/flutter/src/gestures/velocity_tracker.dart', 'packages/flutter/src/gestures/events.dart', 'packages/flutter/src/gestures/arena.dart', 'packages/vector_math/vector_math_64.dart', 'packages/flutter/src/gestures/drag_details.dart', 'packages/flutter/src/foundation/debug.dart'], (function load__packages__flutter__src__gestures__monodrag_dart(dart_sdk, packages__flutter__src__gestures__recognizer$46dart, packages__flutter__src__gestures__velocity_tracker$46dart, packages__flutter__src__gestures__events$46dart, packages__flutter__src__gestures__arena$46dart, packages__vector_math__vector_math_64$46dart, packages__flutter__src__gestures__drag_details$46dart, packages__flutter__src__foundation__debug$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const async = dart_sdk.async;
   const _js_helper = dart_sdk._js_helper;
+  const collection = dart_sdk.collection;
+  const _internal = dart_sdk._internal;
   const ui = dart_sdk.ui;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const tree = packages__fluro__src__tree$46dart.src__tree;
-  const common = packages__fluro__src__common$46dart.src__common;
-  const navigator$ = packages__flutter__src__widgets__widget_span$46dart.src__widgets__navigator;
-  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
-  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
-  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
-  const pages = packages__flutter__src__widgets__widget_span$46dart.src__widgets__pages;
-  const transitions = packages__flutter__src__widgets__widget_span$46dart.src__widgets__transitions;
-  const page = packages__flutter__src__material__page$46dart.src__material__page;
-  const route$ = packages__flutter__src__cupertino__route$46dart.src__cupertino__route;
-  const animation = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animation;
-  const tween = packages__flutter__src__animation__listener_helpers$46dart.src__animation__tween;
-  var fluro_router = Object.create(dart.library);
-  var fluro = Object.create(dart.library);
+  const recognizer = packages__flutter__src__gestures__recognizer$46dart.src__gestures__recognizer;
+  const velocity_tracker = packages__flutter__src__gestures__velocity_tracker$46dart.src__gestures__velocity_tracker;
+  const events = packages__flutter__src__gestures__events$46dart.src__gestures__events;
+  const arena = packages__flutter__src__gestures__arena$46dart.src__gestures__arena;
+  const vector_math_64 = packages__vector_math__vector_math_64$46dart.vector_math_64;
+  const drag_details = packages__flutter__src__gestures__drag_details$46dart.src__gestures__drag_details;
+  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
+  var monodrag = Object.create(dart.library);
+  var $_set = dartx._set;
+  var $_get = dartx._get;
+  var $sign = dartx.sign;
+  var $clear = dartx.clear;
+  var $abs = dartx.abs;
   dart._checkModuleNullSafetyMode(false);
   var T = {
-    ObjectN: () => (T.ObjectN = dart.constFn(dart.nullable(core.Object)))(),
-    RouteTobool: () => (T.RouteTobool = dart.constFn(dart.fnType(core.bool, [navigator$.Route])))(),
-    MaterialPageRouteOfNull: () => (T.MaterialPageRouteOfNull = dart.constFn(page.MaterialPageRoute$(core.Null)))(),
-    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
-    BuildContextToWidget: () => (T.BuildContextToWidget = dart.constFn(dart.fnType(framework.Widget, [framework.BuildContext])))(),
-    RouteSettingsN: () => (T.RouteSettingsN = dart.constFn(dart.nullable(navigator$.RouteSettings)))(),
-    ListOfString: () => (T.ListOfString = dart.constFn(core.List$(core.String)))(),
-    MapOfString$ListOfString: () => (T.MapOfString$ListOfString = dart.constFn(core.Map$(core.String, T.ListOfString())))(),
-    RouteSettingsNAndMapOfString$ListOfStringToMaterialPageRouteOfNull: () => (T.RouteSettingsNAndMapOfString$ListOfStringToMaterialPageRouteOfNull = dart.constFn(dart.fnType(T.MaterialPageRouteOfNull(), [T.RouteSettingsN(), T.MapOfString$ListOfString()])))(),
-    IdentityMapOfString$ListOfString: () => (T.IdentityMapOfString$ListOfString = dart.constFn(_js_helper.IdentityMap$(core.String, T.ListOfString())))(),
-    AnimationOfdouble: () => (T.AnimationOfdouble = dart.constFn(animation.Animation$(core.double)))(),
-    BuildContextAndAnimationOfdoubleAndAnimationOfdoubleToWidget: () => (T.BuildContextAndAnimationOfdoubleAndAnimationOfdoubleToWidget = dart.constFn(dart.fnType(framework.Widget, [framework.BuildContext, T.AnimationOfdouble(), T.AnimationOfdouble()])))(),
-    BuildContextAndAnimationOfdoubleAndAnimationOfdouble__ToWidget: () => (T.BuildContextAndAnimationOfdoubleAndAnimationOfdouble__ToWidget = dart.constFn(dart.fnType(framework.Widget, [framework.BuildContext, T.AnimationOfdouble(), T.AnimationOfdouble(), framework.Widget])))(),
-    RouteSettingsNAndMapOfString$ListOfStringToPageRoute: () => (T.RouteSettingsNAndMapOfString$ListOfStringToPageRoute = dart.constFn(dart.fnType(pages.PageRoute, [T.RouteSettingsN(), T.MapOfString$ListOfString()])))(),
-    TweenOfOffset: () => (T.TweenOfOffset = dart.constFn(tween.Tween$(ui.Offset)))()
+    _DragStateL: () => (T._DragStateL = dart.constFn(dart.legacy(monodrag._DragState)))(),
+    PointerEventToVelocityTracker: () => (T.PointerEventToVelocityTracker = dart.constFn(dart.fnType(velocity_tracker.VelocityTracker, [events.PointerEvent])))(),
+    IdentityMapOfint$VelocityTracker: () => (T.IdentityMapOfint$VelocityTracker = dart.constFn(_js_helper.IdentityMap$(core.int, velocity_tracker.VelocityTracker)))(),
+    LinkedHashSetOfint: () => (T.LinkedHashSetOfint = dart.constFn(collection.LinkedHashSet$(core.int)))(),
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
+    VoidToString: () => (T.VoidToString = dart.constFn(dart.fnType(core.String, [])))(),
+    EnumPropertyOfDragStartBehavior: () => (T.EnumPropertyOfDragStartBehavior = dart.constFn(diagnostics.EnumProperty$(recognizer.DragStartBehavior)))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -53,425 +45,646 @@ define(['dart_sdk', 'packages/fluro/src/tree.dart', 'packages/fluro/src/common.d
   dart.defineLazy(CT, {
     get C0() {
       return C[0] = dart.const({
-        __proto__: core.Duration.prototype,
-        [Duration__duration]: 250000
+        __proto__: monodrag._DragState.prototype,
+        [_name$]: "_DragState.ready",
+        index: 0
       });
-    },
-    get C2() {
-      return C[2] = dart.constList([], T._LocationL());
     },
     get C1() {
       return C[1] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[2] || CT.C2,
-        [_Location_name]: null,
-        [_Location_column]: 26,
-        [_Location_line]: 118,
-        [_Location_file]: "file:///D:/flutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/fluro-2.0.3/lib/src/fluro_router.dart"
+        __proto__: monodrag._DragState.prototype,
+        [_name$]: "_DragState.possible",
+        index: 1
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: monodrag._DragState.prototype,
+        [_name$]: "_DragState.accepted",
+        index: 2
       });
     },
     get C3() {
-      return C[3] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[2] || CT.C2,
-        [_Location_name]: null,
-        [_Location_column]: 28,
-        [_Location_line]: 171,
-        [_Location_file]: "file:///D:/flutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/fluro-2.0.3/lib/src/fluro_router.dart"
-      });
+      return C[3] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2], T._DragStateL());
     },
     get C4() {
       return C[4] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[2] || CT.C2,
-        [_Location_name]: null,
-        [_Location_column]: 28,
-        [_Location_line]: 182,
-        [_Location_file]: "file:///D:/flutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/fluro-2.0.3/lib/src/fluro_router.dart"
+        __proto__: recognizer.DragStartBehavior.prototype,
+        [_name]: "DragStartBehavior.start",
+        index: 1
       });
     },
     get C5() {
-      return C[5] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[2] || CT.C2,
-        [_Location_name]: null,
-        [_Location_column]: 28,
-        [_Location_line]: 193,
-        [_Location_file]: "file:///D:/flutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/fluro-2.0.3/lib/src/fluro_router.dart"
-      });
+      return C[5] = dart.fn(monodrag.DragGestureRecognizer._defaultBuilder, T.PointerEventToVelocityTracker());
     },
     get C6() {
       return C[6] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[2] || CT.C2,
-        [_Location_name]: null,
-        [_Location_column]: 26,
-        [_Location_line]: 211,
-        [_Location_file]: "file:///D:/flutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/fluro-2.0.3/lib/src/fluro_router.dart"
-      });
-    },
-    get C9() {
-      return C[9] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "opacity",
-        [_Location_column]: 31,
-        [_Location_line]: 240,
-        [_Location_file]: null
-      });
-    },
-    get C10() {
-      return C[10] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 51,
-        [_Location_line]: 240,
-        [_Location_file]: null
-      });
-    },
-    get C8() {
-      return C[8] = dart.constList([C[9] || CT.C9, C[10] || CT.C10], T._LocationL());
-    },
-    get C7() {
-      return C[7] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[8] || CT.C8,
-        [_Location_name]: null,
-        [_Location_column]: 16,
-        [_Location_line]: 240,
-        [_Location_file]: "file:///D:/flutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/fluro-2.0.3/lib/src/fluro_router.dart"
-      });
-    },
-    get C11() {
-      return C[11] = dart.const({
-        __proto__: ui.Offset.prototype,
-        [OffsetBase__dy]: 0,
-        [OffsetBase__dx]: 0
-      });
-    },
-    get C12() {
-      return C[12] = dart.const({
-        __proto__: ui.Offset.prototype,
-        [OffsetBase__dy]: 0,
-        [OffsetBase__dx]: 1
-      });
-    },
-    get C13() {
-      return C[13] = dart.const({
-        __proto__: ui.Offset.prototype,
-        [OffsetBase__dy]: 1,
-        [OffsetBase__dx]: 0
-      });
-    },
-    get C14() {
-      return C[14] = dart.const({
-        __proto__: ui.Offset.prototype,
-        [OffsetBase__dy]: 0,
-        [OffsetBase__dx]: -1
-      });
-    },
-    get C17() {
-      return C[17] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "position",
-        [_Location_column]: 11,
-        [_Location_line]: 263,
-        [_Location_file]: null
-      });
-    },
-    get C18() {
-      return C[18] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 11,
-        [_Location_line]: 267,
-        [_Location_file]: null
-      });
-    },
-    get C16() {
-      return C[16] = dart.constList([C[17] || CT.C17, C[18] || CT.C18], T._LocationL());
-    },
-    get C15() {
-      return C[15] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[16] || CT.C16,
-        [_Location_name]: null,
-        [_Location_column]: 16,
-        [_Location_line]: 262,
-        [_Location_file]: "file:///D:/flutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/fluro-2.0.3/lib/src/fluro_router.dart"
+        __proto__: recognizer.DragStartBehavior.prototype,
+        [_name]: "DragStartBehavior.down",
+        index: 0
       });
     }
   }, false);
-  var C = Array(19).fill(void 0);
+  var C = Array(7).fill(void 0);
   var I = [
-    "file:///D:/flutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/fluro-2.0.3/lib/src/fluro_router.dart",
-    "package:fluro/src/fluro_router.dart"
+    "file:///D:/flutterSDK/flutter/packages/flutter/lib/src/gestures/monodrag.dart",
+    "package:flutter/src/gestures/monodrag.dart"
   ];
-  var notFoundHandler = dart.privateName(fluro_router, "FluroRouter.notFoundHandler");
-  var _routeTree = dart.privateName(fluro_router, "_routeTree");
-  var Duration__duration = dart.privateName(core, "Duration._duration");
-  var _notFoundRoute = dart.privateName(fluro_router, "_notFoundRoute");
-  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
-  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
-  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
-  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
-  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
-  var _standardTransitionsBuilder = dart.privateName(fluro_router, "_standardTransitionsBuilder");
-  var OffsetBase__dy = dart.privateName(ui, "OffsetBase._dy");
-  var OffsetBase__dx = dart.privateName(ui, "OffsetBase._dx");
-  fluro_router.FluroRouter = class FluroRouter extends core.Object {
-    get notFoundHandler() {
-      return this[notFoundHandler];
-    }
-    set notFoundHandler(value) {
-      this[notFoundHandler] = value;
-    }
-    define(routePath, opts) {
-      if (routePath == null) dart.nullFailed(I[0], 41, 22, "routePath");
-      let handler = opts && 'handler' in opts ? opts.handler : null;
-      let transitionType = opts && 'transitionType' in opts ? opts.transitionType : null;
-      let transitionDuration = opts && 'transitionDuration' in opts ? opts.transitionDuration : C[0] || CT.C0;
-      if (transitionDuration == null) dart.nullFailed(I[0], 44, 16, "transitionDuration");
-      let transitionBuilder = opts && 'transitionBuilder' in opts ? opts.transitionBuilder : null;
-      this[_routeTree].addRoute(new common.AppRoute.new(routePath, handler, {transitionType: transitionType, transitionDuration: transitionDuration, transitionBuilder: transitionBuilder}));
-    }
-    match(path) {
-      if (path == null) dart.nullFailed(I[0], 56, 31, "path");
-      return this[_routeTree].matchRoute(path);
-    }
-    pop(T, context, result = null) {
-      if (context == null) dart.nullFailed(I[0], 61, 28, "context");
-      return navigator$.Navigator.of(context).pop(T, result);
-    }
-    navigateTo(context, path, opts) {
-      if (context == null) dart.nullFailed(I[0], 65, 34, "context");
-      if (path == null) dart.nullFailed(I[0], 65, 50, "path");
-      let replace = opts && 'replace' in opts ? opts.replace : false;
-      if (replace == null) dart.nullFailed(I[0], 66, 13, "replace");
-      let clearStack = opts && 'clearStack' in opts ? opts.clearStack : false;
-      if (clearStack == null) dart.nullFailed(I[0], 67, 12, "clearStack");
-      let maintainState = opts && 'maintainState' in opts ? opts.maintainState : true;
-      if (maintainState == null) dart.nullFailed(I[0], 68, 12, "maintainState");
-      let rootNavigator = opts && 'rootNavigator' in opts ? opts.rootNavigator : false;
-      if (rootNavigator == null) dart.nullFailed(I[0], 69, 12, "rootNavigator");
-      let transition = opts && 'transition' in opts ? opts.transition : null;
-      let transitionDuration = opts && 'transitionDuration' in opts ? opts.transitionDuration : null;
-      let transitionBuilder = opts && 'transitionBuilder' in opts ? opts.transitionBuilder : null;
-      let routeSettings = opts && 'routeSettings' in opts ? opts.routeSettings : null;
-      let routeMatch = this.matchRoute(context, path, {transitionType: transition, transitionsBuilder: transitionBuilder, transitionDuration: transitionDuration, maintainState: maintainState, routeSettings: routeSettings});
-      let route = routeMatch.route;
-      let completer = async.Completer.new();
-      let future = completer.future;
-      if (routeMatch.matchType == common.RouteMatchType.nonVisual) {
-        completer.complete("Non visual route type.");
-      } else {
-        if (route == null && this.notFoundHandler != null) {
-          route = this[_notFoundRoute](context, path, {maintainState: maintainState});
-        }
-        if (route != null) {
-          let navigator = navigator$.Navigator.of(context, {rootNavigator: rootNavigator});
-          if (dart.test(clearStack)) {
-            future = navigator.pushAndRemoveUntil(T.ObjectN(), route, dart.fn(check => {
-              if (check == null) dart.nullFailed(I[0], 92, 57, "check");
-              return false;
-            }, T.RouteTobool()));
-          } else {
-            future = dart.test(replace) ? navigator.pushReplacement(T.ObjectN(), T.ObjectN(), route) : navigator.push(T.ObjectN(), route);
-          }
-          completer.complete();
-        } else {
-          let error = "No registered route was found to handle '" + dart.str(path) + "'.";
-          core.print(error);
-          completer.completeError(new common.RouteNotFoundException.new(error, path));
-        }
-      }
-      return future;
-    }
-    [_notFoundRoute](context, path, opts) {
-      if (context == null) dart.nullFailed(I[0], 109, 43, "context");
-      if (path == null) dart.nullFailed(I[0], 109, 59, "path");
-      let maintainState = opts && 'maintainState' in opts ? opts.maintainState : null;
-      let creator = dart.fn((routeSettings, parameters) => {
-        let t0;
-        if (parameters == null) dart.nullFailed(I[0], 112, 66, "parameters");
-        return new (T.MaterialPageRouteOfNull()).new({settings: routeSettings, maintainState: (t0 = maintainState, t0 == null ? true : t0), builder: dart.fn(context => {
-            let t3, t2, t1, t0, t0$;
-            if (context == null) dart.nullFailed(I[0], 116, 34, "context");
-            t0$ = (t0 = this.notFoundHandler, t0 == null ? null : (t1 = t0, t2 = context, t3 = parameters, t1.handlerFunc(t2, t3)));
-            return t0$ == null ? new basic.SizedBox.shrink({$creationLocationd_0dea112b090073317d4: C[1] || CT.C1}) : t0$;
-          }, T.BuildContextToWidget())});
-      }, T.RouteSettingsNAndMapOfString$ListOfStringToMaterialPageRouteOfNull());
-      return creator(new navigator$.RouteSettings.new({name: path}), new (T.IdentityMapOfString$ListOfString()).new());
-    }
-    matchRoute(buildContext, path, opts) {
-      let t0, t0$, t0$0, t0$1, t0$2, t0$3, t2, t1, t0$4;
-      let routeSettings = opts && 'routeSettings' in opts ? opts.routeSettings : null;
-      let transitionType = opts && 'transitionType' in opts ? opts.transitionType : null;
-      let transitionDuration = opts && 'transitionDuration' in opts ? opts.transitionDuration : null;
-      let transitionsBuilder = opts && 'transitionsBuilder' in opts ? opts.transitionsBuilder : null;
-      let maintainState = opts && 'maintainState' in opts ? opts.maintainState : true;
-      if (maintainState == null) dart.nullFailed(I[0], 130, 12, "maintainState");
-      let settingsToUse = (t0 = routeSettings, t0 == null ? new navigator$.RouteSettings.new({name: path}) : t0);
-      if (settingsToUse.name == null) {
-        settingsToUse = settingsToUse.copyWith({name: path});
-      }
-      let match = this[_routeTree].matchRoute(dart.nullCheck(path));
-      let route = (t0$ = match, t0$ == null ? null : t0$.route);
-      if (transitionDuration == null && (t0$0 = route, t0$0 == null ? null : t0$0.transitionDuration) != null) {
-        transitionDuration = (t0$1 = route, t0$1 == null ? null : t0$1.transitionDuration);
-      }
-      let handler = common.Handler.as(route != null ? route.handler : this.notFoundHandler);
-      let transition = transitionType;
-      if (transitionType == null) {
-        transition = route != null ? route.transitionType : common.TransitionType.native;
-      }
-      if (route == null && this.notFoundHandler == null) {
-        return new common.RouteMatch.new({matchType: common.RouteMatchType.noMatch, errorMessage: "No matching route was found"});
-      }
-      let parameters = (t0$3 = (t0$2 = match, t0$2 == null ? null : t0$2.parameters), t0$3 == null ? new (T.IdentityMapOfString$ListOfString()).new() : t0$3);
-      if (handler.type == common.HandlerType.function) {
-        t0$4 = handler;
-        t1 = buildContext;
-        t2 = parameters;
-        t0$4.handlerFunc(t1, t2);
-        return new common.RouteMatch.new({matchType: common.RouteMatchType.nonVisual});
-      }
-      let creator = dart.fn((routeSettings, parameters) => {
-        let t1, t0, t1$, t0$, t0$0, t1$0, t0$1, t0$2;
-        if (parameters == null) dart.nullFailed(I[0], 161, 66, "parameters");
-        let isNativeTransition = transition == common.TransitionType.native || transition == common.TransitionType.nativeModal;
-        if (isNativeTransition) {
-          return new page.MaterialPageRoute.new({settings: routeSettings, fullscreenDialog: transition == common.TransitionType.nativeModal, maintainState: maintainState, builder: dart.fn(context => {
-              let t2, t1, t0, t0$;
-              if (context == null) dart.nullFailed(I[0], 169, 36, "context");
-              t0$ = (t0 = handler, t1 = context, t2 = parameters, t0.handlerFunc(t1, t2));
-              return t0$ == null ? new basic.SizedBox.shrink({$creationLocationd_0dea112b090073317d4: C[3] || CT.C3}) : t0$;
-            }, T.BuildContextToWidget())});
-        } else if (transition == common.TransitionType.material || transition == common.TransitionType.materialFullScreenDialog) {
-          return new page.MaterialPageRoute.new({settings: routeSettings, fullscreenDialog: transition == common.TransitionType.materialFullScreenDialog, maintainState: maintainState, builder: dart.fn(context => {
-              let t2, t1, t0, t0$;
-              if (context == null) dart.nullFailed(I[0], 180, 36, "context");
-              t0$ = (t0 = handler, t1 = context, t2 = parameters, t0.handlerFunc(t1, t2));
-              return t0$ == null ? new basic.SizedBox.shrink({$creationLocationd_0dea112b090073317d4: C[4] || CT.C4}) : t0$;
-            }, T.BuildContextToWidget())});
-        } else if (transition == common.TransitionType.cupertino || transition == common.TransitionType.cupertinoFullScreenDialog) {
-          return new route$.CupertinoPageRoute.new({settings: routeSettings, fullscreenDialog: transition == common.TransitionType.cupertinoFullScreenDialog, maintainState: maintainState, builder: dart.fn(context => {
-              let t2, t1, t0, t0$;
-              if (context == null) dart.nullFailed(I[0], 191, 36, "context");
-              t0$ = (t0 = handler, t1 = context, t2 = parameters, t0.handlerFunc(t1, t2));
-              return t0$ == null ? new basic.SizedBox.shrink({$creationLocationd_0dea112b090073317d4: C[5] || CT.C5}) : t0$;
-            }, T.BuildContextToWidget())});
-        } else {
-          let routeTransitionsBuilder = null;
-          if (transition == common.TransitionType.custom) {
-            routeTransitionsBuilder = (t0 = transitionsBuilder, t0 == null ? (t1 = route, t1 == null ? null : t1.transitionBuilder) : t0);
-          } else {
-            routeTransitionsBuilder = this[_standardTransitionsBuilder](transition);
-          }
-          return new pages.PageRouteBuilder.new({settings: routeSettings, maintainState: maintainState, pageBuilder: dart.fn((context, animation, secondaryAnimation) => {
-              let t2, t1, t0, t0$;
-              if (context == null) dart.nullFailed(I[0], 208, 38, "context");
-              if (animation == null) dart.nullFailed(I[0], 208, 65, "animation");
-              if (secondaryAnimation == null) dart.nullFailed(I[0], 209, 33, "secondaryAnimation");
-              t0$ = (t0 = handler, t1 = context, t2 = parameters, t0.handlerFunc(t1, t2));
-              return t0$ == null ? new basic.SizedBox.shrink({$creationLocationd_0dea112b090073317d4: C[6] || CT.C6}) : t0$;
-            }, T.BuildContextAndAnimationOfdoubleAndAnimationOfdoubleToWidget()), transitionDuration: transition == common.TransitionType.none ? core.Duration.zero : (t0$0 = (t0$ = transitionDuration, t0$ == null ? (t1$ = route, t1$ == null ? null : t1$.transitionDuration) : t0$), t0$0 == null ? fluro_router.FluroRouter.defaultTransitionDuration : t0$0), reverseTransitionDuration: transition == common.TransitionType.none ? core.Duration.zero : (t0$2 = (t0$1 = transitionDuration, t0$1 == null ? (t1$0 = route, t1$0 == null ? null : t1$0.transitionDuration) : t0$1), t0$2 == null ? fluro_router.FluroRouter.defaultTransitionDuration : t0$2), transitionsBuilder: transition == common.TransitionType.none ? dart.fn((_, __, ___, child) => {
-              if (_ == null) dart.nullFailed(I[0], 224, 18, "_");
-              if (__ == null) dart.nullFailed(I[0], 224, 21, "__");
-              if (___ == null) dart.nullFailed(I[0], 224, 25, "___");
-              if (child == null) dart.nullFailed(I[0], 224, 30, "child");
-              return child;
-            }, T.BuildContextAndAnimationOfdoubleAndAnimationOfdouble__ToWidget()) : dart.nullCheck(routeTransitionsBuilder)});
-        }
-      }, T.RouteSettingsNAndMapOfString$ListOfStringToPageRoute());
-      return new common.RouteMatch.new({matchType: common.RouteMatchType.visual, route: creator(settingsToUse, parameters)});
-    }
-    [_standardTransitionsBuilder](transitionType) {
-      return dart.fn((context, animation, secondaryAnimation, child) => {
-        if (context == null) dart.nullFailed(I[0], 237, 26, "context");
-        if (animation == null) dart.nullFailed(I[0], 237, 53, "animation");
-        if (secondaryAnimation == null) dart.nullFailed(I[0], 238, 27, "secondaryAnimation");
-        if (child == null) dart.nullFailed(I[0], 238, 54, "child");
-        if (transitionType == common.TransitionType.fadeIn) {
-          return new transitions.FadeTransition.new({opacity: animation, child: child, $creationLocationd_0dea112b090073317d4: C[7] || CT.C7});
-        } else {
-          let topLeft = C[11] || CT.C11;
-          let topRight = C[12] || CT.C12;
-          let bottomLeft = C[13] || CT.C13;
-          let startOffset = bottomLeft;
-          let endOffset = topLeft;
-          if (transitionType == common.TransitionType.inFromLeft) {
-            startOffset = C[14] || CT.C14;
-            endOffset = topLeft;
-          } else if (transitionType == common.TransitionType.inFromRight) {
-            startOffset = topRight;
-            endOffset = topLeft;
-          } else if (transitionType == common.TransitionType.inFromBottom) {
-            startOffset = bottomLeft;
-            endOffset = topLeft;
-          } else if (transitionType == common.TransitionType.inFromTop) {
-            startOffset = new ui.Offset.new(0.0, -1.0);
-            endOffset = topLeft;
-          }
-          return new transitions.SlideTransition.new({position: new (T.TweenOfOffset()).new({begin: startOffset, end: endOffset}).animate(animation), child: child, $creationLocationd_0dea112b090073317d4: C[15] || CT.C15});
-        }
-      }, T.BuildContextAndAnimationOfdoubleAndAnimationOfdouble__ToWidget());
-    }
-    generator(routeSettings) {
-      if (routeSettings == null) dart.nullFailed(I[0], 276, 43, "routeSettings");
-      let match = this.matchRoute(null, routeSettings.name, {routeSettings: routeSettings});
-      return match.route;
-    }
-    printTree() {
-      this[_routeTree].printTree();
+  var _name$ = dart.privateName(monodrag, "_name");
+  monodrag._DragState = class _DragState extends core.Object {
+    toString() {
+      return this[_name$];
     }
   };
-  (fluro_router.FluroRouter.new = function() {
-    this[_routeTree] = new tree.RouteTree.new();
-    this[notFoundHandler] = null;
+  (monodrag._DragState.new = function(index, _name) {
+    if (index == null) dart.nullFailed(I[0], 15, 6, "index");
+    if (_name == null) dart.nullFailed(I[0], 15, 6, "_name");
+    this.index = index;
+    this[_name$] = _name;
     ;
-  }).prototype = fluro_router.FluroRouter.prototype;
-  dart.addTypeTests(fluro_router.FluroRouter);
-  dart.addTypeCaches(fluro_router.FluroRouter);
-  dart.setMethodSignature(fluro_router.FluroRouter, () => ({
-    __proto__: dart.getMethods(fluro_router.FluroRouter.__proto__),
-    define: dart.fnType(dart.void, [core.String], {transitionBuilder: dart.nullable(dart.fnType(framework.Widget, [framework.BuildContext, animation.Animation$(core.double), animation.Animation$(core.double), framework.Widget])), transitionDuration: core.Duration, transitionType: dart.nullable(common.TransitionType)}, {handler: dart.nullable(common.Handler)}),
-    match: dart.fnType(dart.nullable(tree.AppRouteMatch), [core.String]),
-    pop: dart.gFnType(T => [dart.void, [framework.BuildContext], [dart.nullable(T)]], T => [dart.nullable(core.Object)]),
-    navigateTo: dart.fnType(async.Future, [framework.BuildContext, core.String], {clearStack: core.bool, maintainState: core.bool, replace: core.bool, rootNavigator: core.bool, routeSettings: dart.nullable(navigator$.RouteSettings), transition: dart.nullable(common.TransitionType), transitionBuilder: dart.nullable(dart.fnType(framework.Widget, [framework.BuildContext, animation.Animation$(core.double), animation.Animation$(core.double), framework.Widget])), transitionDuration: dart.nullable(core.Duration)}, {}),
-    [_notFoundRoute]: dart.fnType(navigator$.Route$(core.Null), [framework.BuildContext, core.String], {maintainState: dart.nullable(core.bool)}, {}),
-    matchRoute: dart.fnType(common.RouteMatch, [dart.nullable(framework.BuildContext), dart.nullable(core.String)], {maintainState: core.bool, routeSettings: dart.nullable(navigator$.RouteSettings), transitionDuration: dart.nullable(core.Duration), transitionType: dart.nullable(common.TransitionType), transitionsBuilder: dart.nullable(dart.fnType(framework.Widget, [framework.BuildContext, animation.Animation$(core.double), animation.Animation$(core.double), framework.Widget]))}, {}),
-    [_standardTransitionsBuilder]: dart.fnType(dart.fnType(framework.Widget, [framework.BuildContext, animation.Animation$(core.double), animation.Animation$(core.double), framework.Widget]), [dart.nullable(common.TransitionType)]),
-    generator: dart.fnType(dart.nullable(navigator$.Route), [navigator$.RouteSettings]),
-    printTree: dart.fnType(dart.void, [])
+  }).prototype = monodrag._DragState.prototype;
+  dart.addTypeTests(monodrag._DragState);
+  dart.addTypeCaches(monodrag._DragState);
+  dart.setLibraryUri(monodrag._DragState, I[1]);
+  dart.setFieldSignature(monodrag._DragState, () => ({
+    __proto__: dart.getFields(monodrag._DragState.__proto__),
+    index: dart.finalFieldType(core.int),
+    [_name$]: dart.finalFieldType(core.String)
   }));
-  dart.setLibraryUri(fluro_router.FluroRouter, I[1]);
-  dart.setFieldSignature(fluro_router.FluroRouter, () => ({
-    __proto__: dart.getFields(fluro_router.FluroRouter.__proto__),
-    [_routeTree]: dart.finalFieldType(tree.RouteTree),
-    notFoundHandler: dart.fieldType(dart.nullable(common.Handler))
-  }));
-  dart.defineLazy(fluro_router.FluroRouter, {
-    /*fluro_router.FluroRouter.appRouter*/get appRouter() {
-      return new fluro_router.FluroRouter.new();
-    },
-    /*fluro_router.FluroRouter.defaultTransitionDuration*/get defaultTransitionDuration() {
-      return C[0] || CT.C0;
+  dart.defineExtensionMethods(monodrag._DragState, ['toString']);
+  monodrag._DragState.ready = C[0] || CT.C0;
+  monodrag._DragState.possible = C[1] || CT.C1;
+  monodrag._DragState.accepted = C[2] || CT.C2;
+  monodrag._DragState.values = C[3] || CT.C3;
+  var dragStartBehavior$ = dart.privateName(monodrag, "DragGestureRecognizer.dragStartBehavior");
+  var onDown = dart.privateName(monodrag, "DragGestureRecognizer.onDown");
+  var onStart = dart.privateName(monodrag, "DragGestureRecognizer.onStart");
+  var onUpdate = dart.privateName(monodrag, "DragGestureRecognizer.onUpdate");
+  var onEnd = dart.privateName(monodrag, "DragGestureRecognizer.onEnd");
+  var onCancel = dart.privateName(monodrag, "DragGestureRecognizer.onCancel");
+  var minFlingDistance = dart.privateName(monodrag, "DragGestureRecognizer.minFlingDistance");
+  var minFlingVelocity = dart.privateName(monodrag, "DragGestureRecognizer.minFlingVelocity");
+  var maxFlingVelocity = dart.privateName(monodrag, "DragGestureRecognizer.maxFlingVelocity");
+  var velocityTrackerBuilder$ = dart.privateName(monodrag, "DragGestureRecognizer.velocityTrackerBuilder");
+  var _name = dart.privateName(recognizer, "_name");
+  var _state = dart.privateName(monodrag, "_state");
+  var __DragGestureRecognizer__initialPosition = dart.privateName(monodrag, "_#DragGestureRecognizer#_initialPosition");
+  var __DragGestureRecognizer__initialPosition_isSet = dart.privateName(monodrag, "_#DragGestureRecognizer#_initialPosition#isSet");
+  var __DragGestureRecognizer__pendingDragOffset = dart.privateName(monodrag, "_#DragGestureRecognizer#_pendingDragOffset");
+  var __DragGestureRecognizer__pendingDragOffset_isSet = dart.privateName(monodrag, "_#DragGestureRecognizer#_pendingDragOffset#isSet");
+  var _lastPendingEventTimestamp = dart.privateName(monodrag, "_lastPendingEventTimestamp");
+  var _initialButtons = dart.privateName(monodrag, "_initialButtons");
+  var _lastTransform = dart.privateName(monodrag, "_lastTransform");
+  var __DragGestureRecognizer__globalDistanceMoved = dart.privateName(monodrag, "_#DragGestureRecognizer#_globalDistanceMoved");
+  var __DragGestureRecognizer__globalDistanceMoved_isSet = dart.privateName(monodrag, "_#DragGestureRecognizer#_globalDistanceMoved#isSet");
+  var _velocityTrackers = dart.privateName(monodrag, "_velocityTrackers");
+  var _acceptedActivePointers = dart.privateName(monodrag, "_acceptedActivePointers");
+  var _initialPosition = dart.privateName(monodrag, "_initialPosition");
+  var _pendingDragOffset = dart.privateName(monodrag, "_pendingDragOffset");
+  var _globalDistanceMoved = dart.privateName(monodrag, "_globalDistanceMoved");
+  var _checkDown = dart.privateName(monodrag, "_checkDown");
+  var _giveUpPointer = dart.privateName(monodrag, "_giveUpPointer");
+  var _getDeltaForDetails = dart.privateName(monodrag, "_getDeltaForDetails");
+  var _getPrimaryValueFromOffset = dart.privateName(monodrag, "_getPrimaryValueFromOffset");
+  var _checkUpdate = dart.privateName(monodrag, "_checkUpdate");
+  var _hasSufficientGlobalDistanceToAccept = dart.privateName(monodrag, "_hasSufficientGlobalDistanceToAccept");
+  var _checkStart = dart.privateName(monodrag, "_checkStart");
+  var _checkCancel = dart.privateName(monodrag, "_checkCancel");
+  var _checkEnd = dart.privateName(monodrag, "_checkEnd");
+  monodrag.DragGestureRecognizer = class DragGestureRecognizer extends recognizer.OneSequenceGestureRecognizer {
+    get dragStartBehavior() {
+      return this[dragStartBehavior$];
     }
-  }, false);
-  dart.trackLibraries("packages/fluro/src/fluro_router.dart", {
-    "package:fluro/src/fluro_router.dart": fluro_router,
-    "package:fluro/fluro.dart": fluro
+    set dragStartBehavior(value) {
+      this[dragStartBehavior$] = value;
+    }
+    get onDown() {
+      return this[onDown];
+    }
+    set onDown(value) {
+      this[onDown] = value;
+    }
+    get onStart() {
+      return this[onStart];
+    }
+    set onStart(value) {
+      this[onStart] = value;
+    }
+    get onUpdate() {
+      return this[onUpdate];
+    }
+    set onUpdate(value) {
+      this[onUpdate] = value;
+    }
+    get onEnd() {
+      return this[onEnd];
+    }
+    set onEnd(value) {
+      this[onEnd] = value;
+    }
+    get onCancel() {
+      return this[onCancel];
+    }
+    set onCancel(value) {
+      this[onCancel] = value;
+    }
+    get minFlingDistance() {
+      return this[minFlingDistance];
+    }
+    set minFlingDistance(value) {
+      this[minFlingDistance] = value;
+    }
+    get minFlingVelocity() {
+      return this[minFlingVelocity];
+    }
+    set minFlingVelocity(value) {
+      this[minFlingVelocity] = value;
+    }
+    get maxFlingVelocity() {
+      return this[maxFlingVelocity];
+    }
+    set maxFlingVelocity(value) {
+      this[maxFlingVelocity] = value;
+    }
+    get velocityTrackerBuilder() {
+      return this[velocityTrackerBuilder$];
+    }
+    set velocityTrackerBuilder(value) {
+      this[velocityTrackerBuilder$] = value;
+    }
+    static _defaultBuilder(event) {
+      if (event == null) dart.nullFailed(I[0], 75, 55, "event");
+      return new velocity_tracker.VelocityTracker.withKind(event.kind);
+    }
+    get [_initialPosition]() {
+      let t0;
+      return dart.test(this[__DragGestureRecognizer__initialPosition_isSet]) ? (t0 = this[__DragGestureRecognizer__initialPosition], t0) : dart.throw(new _internal.LateError.fieldNI("_initialPosition"));
+    }
+    set [_initialPosition](t0) {
+      if (t0 == null) dart.nullFailed(I[0], 204, 19, "null");
+      this[__DragGestureRecognizer__initialPosition_isSet] = true;
+      this[__DragGestureRecognizer__initialPosition] = t0;
+    }
+    get [_pendingDragOffset]() {
+      let t1;
+      return dart.test(this[__DragGestureRecognizer__pendingDragOffset_isSet]) ? (t1 = this[__DragGestureRecognizer__pendingDragOffset], t1) : dart.throw(new _internal.LateError.fieldNI("_pendingDragOffset"));
+    }
+    set [_pendingDragOffset](t1) {
+      if (t1 == null) dart.nullFailed(I[0], 205, 19, "null");
+      this[__DragGestureRecognizer__pendingDragOffset_isSet] = true;
+      this[__DragGestureRecognizer__pendingDragOffset] = t1;
+    }
+    get [_globalDistanceMoved]() {
+      let t2;
+      return dart.test(this[__DragGestureRecognizer__globalDistanceMoved_isSet]) ? (t2 = this[__DragGestureRecognizer__globalDistanceMoved], t2) : dart.throw(new _internal.LateError.fieldNI("_globalDistanceMoved"));
+    }
+    set [_globalDistanceMoved](t2) {
+      if (t2 == null) dart.nullFailed(I[0], 216, 15, "null");
+      this[__DragGestureRecognizer__globalDistanceMoved_isSet] = true;
+      this[__DragGestureRecognizer__globalDistanceMoved] = t2;
+    }
+    isPointerAllowed(event) {
+      if (event == null) dart.nullFailed(I[0], 232, 38, "event");
+      if (this[_initialButtons] == null) {
+        switch (event.buttons) {
+          case 1:
+          {
+            if (this.onDown == null && this.onStart == null && this.onUpdate == null && this.onEnd == null && this.onCancel == null) return false;
+            break;
+          }
+          default:
+          {
+            return false;
+          }
+        }
+      } else {
+        if (event.buttons != this[_initialButtons]) {
+          return false;
+        }
+      }
+      return super.isPointerAllowed(events.PointerDownEvent.as(event));
+    }
+    addAllowedPointer(event) {
+      let t3;
+      if (event == null) dart.nullFailed(I[0], 256, 39, "event");
+      this.startTrackingPointer(event.pointer, event.transform);
+      this[_velocityTrackers][$_set](event.pointer, (t3 = event, this.velocityTrackerBuilder(t3)));
+      if (this[_state] == monodrag._DragState.ready) {
+        this[_state] = monodrag._DragState.possible;
+        this[_initialPosition] = new recognizer.OffsetPair.new({global: event.position, local: event.localPosition});
+        this[_initialButtons] = event.buttons;
+        this[_pendingDragOffset] = recognizer.OffsetPair.zero;
+        this[_globalDistanceMoved] = 0.0;
+        this[_lastPendingEventTimestamp] = event.timeStamp;
+        this[_lastTransform] = event.transform;
+        this[_checkDown]();
+      } else if (this[_state] == monodrag._DragState.accepted) {
+        this.resolve(arena.GestureDisposition.accepted);
+      }
+    }
+    handleEvent(event) {
+      let t3;
+      if (event == null) dart.nullFailed(I[0], 274, 33, "event");
+      if (!(this[_state] != monodrag._DragState.ready)) dart.assertFailed(null, I[0], 275, 12, "_state != _DragState.ready");
+      if (!dart.test(event.synthesized) && (events.PointerDownEvent.is(event) || events.PointerMoveEvent.is(event))) {
+        let tracker = dart.nullCheck(this[_velocityTrackers][$_get](event.pointer));
+        if (!(tracker !== null)) dart.assertFailed(null, I[0], 279, 14, "tracker != null");
+        tracker.addPosition(event.timeStamp, event.localPosition);
+      }
+      if (events.PointerMoveEvent.is(event)) {
+        if (event.buttons != this[_initialButtons]) {
+          this[_giveUpPointer](event.pointer);
+          return;
+        }
+        if (this[_state] == monodrag._DragState.accepted) {
+          this[_checkUpdate]({sourceTimeStamp: event.timeStamp, delta: this[_getDeltaForDetails](event.localDelta), primaryDelta: this[_getPrimaryValueFromOffset](event.localDelta), globalPosition: event.position, localPosition: event.localPosition});
+        } else {
+          this[_pendingDragOffset] = this[_pendingDragOffset]['+'](new recognizer.OffsetPair.new({local: event.localDelta, global: event.delta}));
+          this[_lastPendingEventTimestamp] = event.timeStamp;
+          this[_lastTransform] = event.transform;
+          let movedLocally = this[_getDeltaForDetails](event.localDelta);
+          let localToGlobalTransform = event.transform == null ? null : vector_math_64.Matrix4.tryInvert(dart.nullCheck(event.transform));
+          this[_globalDistanceMoved] = dart.notNull(this[_globalDistanceMoved]) + dart.notNull(events.PointerEvent.transformDeltaViaPositions({transform: localToGlobalTransform, untransformedDelta: movedLocally, untransformedEndPosition: event.localPosition}).distance) * (t3 = this[_getPrimaryValueFromOffset](movedLocally), t3 == null ? 1.0 : t3)[$sign];
+          if (dart.test(this[_hasSufficientGlobalDistanceToAccept](event.kind))) this.resolve(arena.GestureDisposition.accepted);
+        }
+      }
+      if (events.PointerUpEvent.is(event) || events.PointerCancelEvent.is(event)) {
+        this[_giveUpPointer](event.pointer);
+      }
+    }
+    acceptGesture(pointer) {
+      if (pointer == null) dart.nullFailed(I[0], 319, 26, "pointer");
+      if (!!dart.test(this[_acceptedActivePointers].contains(pointer))) dart.assertFailed(null, I[0], 320, 12, "!_acceptedActivePointers.contains(pointer)");
+      this[_acceptedActivePointers].add(pointer);
+      if (this[_state] != monodrag._DragState.accepted) {
+        this[_state] = monodrag._DragState.accepted;
+        let delta = this[_pendingDragOffset];
+        let timestamp = dart.nullCheck(this[_lastPendingEventTimestamp]);
+        let transform = this[_lastTransform];
+        let localUpdateDelta = null;
+        switch (this.dragStartBehavior) {
+          case C[4] || CT.C4:
+          {
+            this[_initialPosition] = this[_initialPosition]['+'](delta);
+            localUpdateDelta = ui.Offset.zero;
+            break;
+          }
+          case C[6] || CT.C6:
+          {
+            localUpdateDelta = this[_getDeltaForDetails](delta.local);
+            break;
+          }
+          default:
+          {
+            dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
+          }
+        }
+        this[_pendingDragOffset] = recognizer.OffsetPair.zero;
+        this[_lastPendingEventTimestamp] = null;
+        this[_lastTransform] = null;
+        this[_checkStart](timestamp, pointer);
+        if (!dart.equals(localUpdateDelta, ui.Offset.zero) && this.onUpdate != null) {
+          let localToGlobal = transform != null ? vector_math_64.Matrix4.tryInvert(transform) : null;
+          let correctedLocalPosition = this[_initialPosition].local['+'](localUpdateDelta);
+          let globalUpdateDelta = events.PointerEvent.transformDeltaViaPositions({untransformedEndPosition: correctedLocalPosition, untransformedDelta: localUpdateDelta, transform: localToGlobal});
+          let updateDelta = new recognizer.OffsetPair.new({local: localUpdateDelta, global: globalUpdateDelta});
+          let correctedPosition = this[_initialPosition]['+'](updateDelta);
+          this[_checkUpdate]({sourceTimeStamp: timestamp, delta: localUpdateDelta, primaryDelta: this[_getPrimaryValueFromOffset](localUpdateDelta), globalPosition: correctedPosition.global, localPosition: correctedPosition.local});
+        }
+      }
+    }
+    rejectGesture(pointer) {
+      if (pointer == null) dart.nullFailed(I[0], 363, 26, "pointer");
+      this[_giveUpPointer](pointer);
+    }
+    didStopTrackingLastPointer(pointer) {
+      if (pointer == null) dart.nullFailed(I[0], 368, 39, "pointer");
+      if (!(this[_state] != monodrag._DragState.ready)) dart.assertFailed(null, I[0], 369, 12, "_state != _DragState.ready");
+      switch (this[_state]) {
+        case C[0] || CT.C0:
+        {
+          break;
+        }
+        case C[1] || CT.C1:
+        {
+          this.resolve(arena.GestureDisposition.rejected);
+          this[_checkCancel]();
+          break;
+        }
+        case C[2] || CT.C2:
+        {
+          this[_checkEnd](pointer);
+          break;
+        }
+        default:
+        {
+          dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
+        }
+      }
+      this[_velocityTrackers][$clear]();
+      this[_initialButtons] = null;
+      this[_state] = monodrag._DragState.ready;
+    }
+    [_giveUpPointer](pointer) {
+      if (pointer == null) dart.nullFailed(I[0], 388, 27, "pointer");
+      this.stopTrackingPointer(pointer);
+      if (!dart.test(this[_acceptedActivePointers].remove(pointer))) this.resolvePointer(pointer, arena.GestureDisposition.rejected);
+    }
+    [_checkDown]() {
+      if (!(this[_initialButtons] === 1)) dart.assertFailed(null, I[0], 397, 12, "_initialButtons == kPrimaryButton");
+      if (this.onDown != null) {
+        let details = new drag_details.DragDownDetails.new({globalPosition: this[_initialPosition].global, localPosition: this[_initialPosition].local});
+        this.invokeCallback(dart.void, "onDown", dart.fn(() => dart.nullCheck(this.onDown)(details), T.VoidTovoid()));
+      }
+    }
+    [_checkStart](timestamp, pointer) {
+      if (timestamp == null) dart.nullFailed(I[0], 407, 29, "timestamp");
+      if (pointer == null) dart.nullFailed(I[0], 407, 44, "pointer");
+      if (!(this[_initialButtons] === 1)) dart.assertFailed(null, I[0], 408, 12, "_initialButtons == kPrimaryButton");
+      if (this.onStart != null) {
+        let details = new drag_details.DragStartDetails.new({sourceTimeStamp: timestamp, globalPosition: this[_initialPosition].global, localPosition: this[_initialPosition].local, kind: this.getKindForPointer(pointer)});
+        this.invokeCallback(dart.void, "onStart", dart.fn(() => dart.nullCheck(this.onStart)(details), T.VoidTovoid()));
+      }
+    }
+    [_checkUpdate](opts) {
+      let sourceTimeStamp = opts && 'sourceTimeStamp' in opts ? opts.sourceTimeStamp : null;
+      let delta = opts && 'delta' in opts ? opts.delta : null;
+      if (delta == null) dart.nullFailed(I[0], 422, 21, "delta");
+      let primaryDelta = opts && 'primaryDelta' in opts ? opts.primaryDelta : null;
+      let globalPosition = opts && 'globalPosition' in opts ? opts.globalPosition : null;
+      if (globalPosition == null) dart.nullFailed(I[0], 424, 21, "globalPosition");
+      let localPosition = opts && 'localPosition' in opts ? opts.localPosition : null;
+      if (!(this[_initialButtons] === 1)) dart.assertFailed(null, I[0], 427, 12, "_initialButtons == kPrimaryButton");
+      if (this.onUpdate != null) {
+        let details = new drag_details.DragUpdateDetails.new({sourceTimeStamp: sourceTimeStamp, delta: delta, primaryDelta: primaryDelta, globalPosition: globalPosition, localPosition: localPosition});
+        this.invokeCallback(dart.void, "onUpdate", dart.fn(() => dart.nullCheck(this.onUpdate)(details), T.VoidTovoid()));
+      }
+    }
+    [_checkEnd](pointer) {
+      let t3, t3$;
+      if (pointer == null) dart.nullFailed(I[0], 440, 22, "pointer");
+      if (!(this[_initialButtons] === 1)) dart.assertFailed(null, I[0], 441, 12, "_initialButtons == kPrimaryButton");
+      if (this.onEnd == null) return;
+      let tracker = dart.nullCheck(this[_velocityTrackers][$_get](pointer));
+      if (!(tracker !== null)) dart.assertFailed(null, I[0], 446, 12, "tracker != null");
+      let details = null;
+      let debugReport = null;
+      let estimate = tracker.getVelocityEstimate();
+      if (estimate != null && dart.test(this.isFlingGesture(estimate, tracker.kind))) {
+        let velocity = new velocity_tracker.Velocity.new({pixelsPerSecond: estimate.pixelsPerSecond}).clampMagnitude((t3 = this.minFlingVelocity, t3 == null ? 50 : t3), (t3$ = this.maxFlingVelocity, t3$ == null ? 8000 : t3$));
+        details = new drag_details.DragEndDetails.new({velocity: velocity, primaryVelocity: this[_getPrimaryValueFromOffset](velocity.pixelsPerSecond)});
+        debugReport = dart.fn(() => dart.str(estimate) + "; fling at " + dart.str(velocity) + ".", T.VoidToString());
+      } else {
+        details = new drag_details.DragEndDetails.new({velocity: velocity_tracker.Velocity.zero, primaryVelocity: 0.0});
+        debugReport = dart.fn(() => {
+          if (estimate == null) return "Could not estimate velocity.";
+          return dart.str(estimate) + "; judged to not be a fling.";
+        }, T.VoidToString());
+      }
+      this.invokeCallback(dart.void, "onEnd", dart.fn(() => dart.nullCheck(this.onEnd)(details), T.VoidTovoid()), {debugReport: debugReport});
+    }
+    [_checkCancel]() {
+      if (!(this[_initialButtons] === 1)) dart.assertFailed(null, I[0], 477, 12, "_initialButtons == kPrimaryButton");
+      if (this.onCancel != null) this.invokeCallback(dart.void, "onCancel", dart.nullCheck(this.onCancel));
+    }
+    dispose() {
+      this[_velocityTrackers][$clear]();
+      super.dispose();
+    }
+    debugFillProperties(properties) {
+      if (properties == null) dart.nullFailed(I[0], 488, 56, "properties");
+      super.debugFillProperties(properties);
+      properties.add(new (T.EnumPropertyOfDragStartBehavior()).new("start behavior", this.dragStartBehavior));
+    }
+  };
+  (monodrag.DragGestureRecognizer.new = function(opts) {
+    let debugOwner = opts && 'debugOwner' in opts ? opts.debugOwner : null;
+    let kind = opts && 'kind' in opts ? opts.kind : null;
+    let dragStartBehavior = opts && 'dragStartBehavior' in opts ? opts.dragStartBehavior : C[4] || CT.C4;
+    if (dragStartBehavior == null) dart.nullFailed(I[0], 70, 10, "dragStartBehavior");
+    let velocityTrackerBuilder = opts && 'velocityTrackerBuilder' in opts ? opts.velocityTrackerBuilder : C[5] || CT.C5;
+    if (velocityTrackerBuilder == null) dart.nullFailed(I[0], 71, 10, "velocityTrackerBuilder");
+    this[onDown] = null;
+    this[onStart] = null;
+    this[onUpdate] = null;
+    this[onEnd] = null;
+    this[onCancel] = null;
+    this[minFlingDistance] = null;
+    this[minFlingVelocity] = null;
+    this[maxFlingVelocity] = null;
+    this[_state] = monodrag._DragState.ready;
+    this[__DragGestureRecognizer__initialPosition] = null;
+    this[__DragGestureRecognizer__initialPosition_isSet] = false;
+    this[__DragGestureRecognizer__pendingDragOffset] = null;
+    this[__DragGestureRecognizer__pendingDragOffset_isSet] = false;
+    this[_lastPendingEventTimestamp] = null;
+    this[_initialButtons] = null;
+    this[_lastTransform] = null;
+    this[__DragGestureRecognizer__globalDistanceMoved] = null;
+    this[__DragGestureRecognizer__globalDistanceMoved_isSet] = false;
+    this[_velocityTrackers] = new (T.IdentityMapOfint$VelocityTracker()).new();
+    this[_acceptedActivePointers] = T.LinkedHashSetOfint().new();
+    this[dragStartBehavior$] = dragStartBehavior;
+    this[velocityTrackerBuilder$] = velocityTrackerBuilder;
+    if (!(dragStartBehavior != null)) dart.assertFailed(null, I[0], 72, 15, "dragStartBehavior != null");
+    monodrag.DragGestureRecognizer.__proto__.new.call(this, {debugOwner: debugOwner, kind: kind});
+    ;
+  }).prototype = monodrag.DragGestureRecognizer.prototype;
+  dart.addTypeTests(monodrag.DragGestureRecognizer);
+  dart.addTypeCaches(monodrag.DragGestureRecognizer);
+  dart.setMethodSignature(monodrag.DragGestureRecognizer, () => ({
+    __proto__: dart.getMethods(monodrag.DragGestureRecognizer.__proto__),
+    isPointerAllowed: dart.fnType(core.bool, [events.PointerEvent]),
+    addAllowedPointer: dart.fnType(dart.void, [events.PointerEvent]),
+    handleEvent: dart.fnType(dart.void, [events.PointerEvent]),
+    didStopTrackingLastPointer: dart.fnType(dart.void, [core.int]),
+    [_giveUpPointer]: dart.fnType(dart.void, [core.int]),
+    [_checkDown]: dart.fnType(dart.void, []),
+    [_checkStart]: dart.fnType(dart.void, [core.Duration, core.int]),
+    [_checkUpdate]: dart.fnType(dart.void, [], {localPosition: dart.nullable(ui.Offset), primaryDelta: dart.nullable(core.double), sourceTimeStamp: dart.nullable(core.Duration)}, {delta: ui.Offset, globalPosition: ui.Offset}),
+    [_checkEnd]: dart.fnType(dart.void, [core.int]),
+    [_checkCancel]: dart.fnType(dart.void, [])
+  }));
+  dart.setGetterSignature(monodrag.DragGestureRecognizer, () => ({
+    __proto__: dart.getGetters(monodrag.DragGestureRecognizer.__proto__),
+    [_initialPosition]: recognizer.OffsetPair,
+    [_pendingDragOffset]: recognizer.OffsetPair,
+    [_globalDistanceMoved]: core.double
+  }));
+  dart.setSetterSignature(monodrag.DragGestureRecognizer, () => ({
+    __proto__: dart.getSetters(monodrag.DragGestureRecognizer.__proto__),
+    [_initialPosition]: recognizer.OffsetPair,
+    [_pendingDragOffset]: recognizer.OffsetPair,
+    [_globalDistanceMoved]: core.double
+  }));
+  dart.setLibraryUri(monodrag.DragGestureRecognizer, I[1]);
+  dart.setFieldSignature(monodrag.DragGestureRecognizer, () => ({
+    __proto__: dart.getFields(monodrag.DragGestureRecognizer.__proto__),
+    dragStartBehavior: dart.fieldType(recognizer.DragStartBehavior),
+    onDown: dart.fieldType(dart.nullable(dart.fnType(dart.void, [drag_details.DragDownDetails]))),
+    onStart: dart.fieldType(dart.nullable(dart.fnType(dart.void, [drag_details.DragStartDetails]))),
+    onUpdate: dart.fieldType(dart.nullable(dart.fnType(dart.void, [drag_details.DragUpdateDetails]))),
+    onEnd: dart.fieldType(dart.nullable(dart.fnType(dart.void, [drag_details.DragEndDetails]))),
+    onCancel: dart.fieldType(dart.nullable(dart.fnType(dart.void, []))),
+    minFlingDistance: dart.fieldType(dart.nullable(core.double)),
+    minFlingVelocity: dart.fieldType(dart.nullable(core.double)),
+    maxFlingVelocity: dart.fieldType(dart.nullable(core.double)),
+    velocityTrackerBuilder: dart.fieldType(dart.fnType(velocity_tracker.VelocityTracker, [events.PointerEvent])),
+    [_state]: dart.fieldType(monodrag._DragState),
+    [__DragGestureRecognizer__initialPosition]: dart.fieldType(dart.nullable(recognizer.OffsetPair)),
+    [__DragGestureRecognizer__initialPosition_isSet]: dart.fieldType(core.bool),
+    [__DragGestureRecognizer__pendingDragOffset]: dart.fieldType(dart.nullable(recognizer.OffsetPair)),
+    [__DragGestureRecognizer__pendingDragOffset_isSet]: dart.fieldType(core.bool),
+    [_lastPendingEventTimestamp]: dart.fieldType(dart.nullable(core.Duration)),
+    [_initialButtons]: dart.fieldType(dart.nullable(core.int)),
+    [_lastTransform]: dart.fieldType(dart.nullable(vector_math_64.Matrix4)),
+    [__DragGestureRecognizer__globalDistanceMoved]: dart.fieldType(dart.nullable(core.double)),
+    [__DragGestureRecognizer__globalDistanceMoved_isSet]: dart.fieldType(core.bool),
+    [_velocityTrackers]: dart.finalFieldType(core.Map$(core.int, velocity_tracker.VelocityTracker)),
+    [_acceptedActivePointers]: dart.finalFieldType(core.Set$(core.int))
+  }));
+  monodrag.VerticalDragGestureRecognizer = class VerticalDragGestureRecognizer extends monodrag.DragGestureRecognizer {
+    isFlingGesture(estimate, kind) {
+      let t3, t3$;
+      if (estimate == null) dart.nullFailed(I[0], 514, 40, "estimate");
+      if (kind == null) dart.nullFailed(I[0], 514, 68, "kind");
+      let minVelocity = (t3 = this.minFlingVelocity, t3 == null ? 50 : t3);
+      let minDistance = (t3$ = this.minFlingDistance, t3$ == null ? events.computeHitSlop(kind) : t3$);
+      return estimate.pixelsPerSecond.dy[$abs]() > dart.notNull(minVelocity) && estimate.offset.dy[$abs]() > dart.notNull(minDistance);
+    }
+    [_hasSufficientGlobalDistanceToAccept](pointerDeviceKind) {
+      if (pointerDeviceKind == null) dart.nullFailed(I[0], 521, 63, "pointerDeviceKind");
+      return this[_globalDistanceMoved][$abs]() > dart.notNull(events.computeHitSlop(pointerDeviceKind));
+    }
+    [_getDeltaForDetails](delta) {
+      if (delta == null) dart.nullFailed(I[0], 526, 37, "delta");
+      return new ui.Offset.new(0.0, delta.dy);
+    }
+    [_getPrimaryValueFromOffset](value) {
+      if (value == null) dart.nullFailed(I[0], 529, 44, "value");
+      return value.dy;
+    }
+    get debugDescription() {
+      return "vertical drag";
+    }
+  };
+  (monodrag.VerticalDragGestureRecognizer.new = function(opts) {
+    let debugOwner = opts && 'debugOwner' in opts ? opts.debugOwner : null;
+    let kind = opts && 'kind' in opts ? opts.kind : null;
+    monodrag.VerticalDragGestureRecognizer.__proto__.new.call(this, {debugOwner: debugOwner, kind: kind});
+    ;
+  }).prototype = monodrag.VerticalDragGestureRecognizer.prototype;
+  dart.addTypeTests(monodrag.VerticalDragGestureRecognizer);
+  dart.addTypeCaches(monodrag.VerticalDragGestureRecognizer);
+  dart.setMethodSignature(monodrag.VerticalDragGestureRecognizer, () => ({
+    __proto__: dart.getMethods(monodrag.VerticalDragGestureRecognizer.__proto__),
+    isFlingGesture: dart.fnType(core.bool, [velocity_tracker.VelocityEstimate, ui.PointerDeviceKind]),
+    [_hasSufficientGlobalDistanceToAccept]: dart.fnType(core.bool, [ui.PointerDeviceKind]),
+    [_getDeltaForDetails]: dart.fnType(ui.Offset, [ui.Offset]),
+    [_getPrimaryValueFromOffset]: dart.fnType(core.double, [ui.Offset])
+  }));
+  dart.setGetterSignature(monodrag.VerticalDragGestureRecognizer, () => ({
+    __proto__: dart.getGetters(monodrag.VerticalDragGestureRecognizer.__proto__),
+    debugDescription: core.String
+  }));
+  dart.setLibraryUri(monodrag.VerticalDragGestureRecognizer, I[1]);
+  monodrag.HorizontalDragGestureRecognizer = class HorizontalDragGestureRecognizer extends monodrag.DragGestureRecognizer {
+    isFlingGesture(estimate, kind) {
+      let t3, t3$;
+      if (estimate == null) dart.nullFailed(I[0], 555, 40, "estimate");
+      if (kind == null) dart.nullFailed(I[0], 555, 68, "kind");
+      let minVelocity = (t3 = this.minFlingVelocity, t3 == null ? 50 : t3);
+      let minDistance = (t3$ = this.minFlingDistance, t3$ == null ? events.computeHitSlop(kind) : t3$);
+      return estimate.pixelsPerSecond.dx[$abs]() > dart.notNull(minVelocity) && estimate.offset.dx[$abs]() > dart.notNull(minDistance);
+    }
+    [_hasSufficientGlobalDistanceToAccept](pointerDeviceKind) {
+      if (pointerDeviceKind == null) dart.nullFailed(I[0], 562, 63, "pointerDeviceKind");
+      return this[_globalDistanceMoved][$abs]() > dart.notNull(events.computeHitSlop(pointerDeviceKind));
+    }
+    [_getDeltaForDetails](delta) {
+      if (delta == null) dart.nullFailed(I[0], 567, 37, "delta");
+      return new ui.Offset.new(delta.dx, 0.0);
+    }
+    [_getPrimaryValueFromOffset](value) {
+      if (value == null) dart.nullFailed(I[0], 570, 44, "value");
+      return value.dx;
+    }
+    get debugDescription() {
+      return "horizontal drag";
+    }
+  };
+  (monodrag.HorizontalDragGestureRecognizer.new = function(opts) {
+    let debugOwner = opts && 'debugOwner' in opts ? opts.debugOwner : null;
+    let kind = opts && 'kind' in opts ? opts.kind : null;
+    monodrag.HorizontalDragGestureRecognizer.__proto__.new.call(this, {debugOwner: debugOwner, kind: kind});
+    ;
+  }).prototype = monodrag.HorizontalDragGestureRecognizer.prototype;
+  dart.addTypeTests(monodrag.HorizontalDragGestureRecognizer);
+  dart.addTypeCaches(monodrag.HorizontalDragGestureRecognizer);
+  dart.setMethodSignature(monodrag.HorizontalDragGestureRecognizer, () => ({
+    __proto__: dart.getMethods(monodrag.HorizontalDragGestureRecognizer.__proto__),
+    isFlingGesture: dart.fnType(core.bool, [velocity_tracker.VelocityEstimate, ui.PointerDeviceKind]),
+    [_hasSufficientGlobalDistanceToAccept]: dart.fnType(core.bool, [ui.PointerDeviceKind]),
+    [_getDeltaForDetails]: dart.fnType(ui.Offset, [ui.Offset]),
+    [_getPrimaryValueFromOffset]: dart.fnType(core.double, [ui.Offset])
+  }));
+  dart.setGetterSignature(monodrag.HorizontalDragGestureRecognizer, () => ({
+    __proto__: dart.getGetters(monodrag.HorizontalDragGestureRecognizer.__proto__),
+    debugDescription: core.String
+  }));
+  dart.setLibraryUri(monodrag.HorizontalDragGestureRecognizer, I[1]);
+  monodrag.PanGestureRecognizer = class PanGestureRecognizer extends monodrag.DragGestureRecognizer {
+    isFlingGesture(estimate, kind) {
+      let t3, t3$;
+      if (estimate == null) dart.nullFailed(I[0], 590, 40, "estimate");
+      if (kind == null) dart.nullFailed(I[0], 590, 68, "kind");
+      let minVelocity = (t3 = this.minFlingVelocity, t3 == null ? 50 : t3);
+      let minDistance = (t3$ = this.minFlingDistance, t3$ == null ? events.computeHitSlop(kind) : t3$);
+      return dart.notNull(estimate.pixelsPerSecond.distanceSquared) > dart.notNull(minVelocity) * dart.notNull(minVelocity) && dart.notNull(estimate.offset.distanceSquared) > dart.notNull(minDistance) * dart.notNull(minDistance);
+    }
+    [_hasSufficientGlobalDistanceToAccept](pointerDeviceKind) {
+      if (pointerDeviceKind == null) dart.nullFailed(I[0], 598, 63, "pointerDeviceKind");
+      return this[_globalDistanceMoved][$abs]() > dart.notNull(events.computePanSlop(pointerDeviceKind));
+    }
+    [_getDeltaForDetails](delta) {
+      if (delta == null) dart.nullFailed(I[0], 603, 37, "delta");
+      return delta;
+    }
+    [_getPrimaryValueFromOffset](value) {
+      if (value == null) dart.nullFailed(I[0], 606, 45, "value");
+      return null;
+    }
+    get debugDescription() {
+      return "pan";
+    }
+  };
+  (monodrag.PanGestureRecognizer.new = function(opts) {
+    let debugOwner = opts && 'debugOwner' in opts ? opts.debugOwner : null;
+    monodrag.PanGestureRecognizer.__proto__.new.call(this, {debugOwner: debugOwner});
+    ;
+  }).prototype = monodrag.PanGestureRecognizer.prototype;
+  dart.addTypeTests(monodrag.PanGestureRecognizer);
+  dart.addTypeCaches(monodrag.PanGestureRecognizer);
+  dart.setMethodSignature(monodrag.PanGestureRecognizer, () => ({
+    __proto__: dart.getMethods(monodrag.PanGestureRecognizer.__proto__),
+    isFlingGesture: dart.fnType(core.bool, [velocity_tracker.VelocityEstimate, ui.PointerDeviceKind]),
+    [_hasSufficientGlobalDistanceToAccept]: dart.fnType(core.bool, [ui.PointerDeviceKind]),
+    [_getDeltaForDetails]: dart.fnType(ui.Offset, [ui.Offset]),
+    [_getPrimaryValueFromOffset]: dart.fnType(dart.nullable(core.double), [ui.Offset])
+  }));
+  dart.setGetterSignature(monodrag.PanGestureRecognizer, () => ({
+    __proto__: dart.getGetters(monodrag.PanGestureRecognizer.__proto__),
+    debugDescription: core.String
+  }));
+  dart.setLibraryUri(monodrag.PanGestureRecognizer, I[1]);
+  dart.trackLibraries("packages/flutter/src/gestures/monodrag.dart", {
+    "package:flutter/src/gestures/monodrag.dart": monodrag
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["fluro_router.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/fluro/src/fluro_router.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["monodrag.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/gestures/monodrag.dart.lib.js"}');
   // Exports:
   return {
-    src__fluro_router: fluro_router,
-    fluro: fluro
+    src__gestures__monodrag: monodrag
   };
 }));
 
-//# sourceMappingURL=fluro_router.dart.lib.js.map
+//# sourceMappingURL=monodrag.dart.lib.js.map

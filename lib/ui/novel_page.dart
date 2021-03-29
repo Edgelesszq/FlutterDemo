@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_arg_demo/common/Application.dart';
+import 'package:flutter_arg_demo/config/intent_key_value.dart';
 import 'package:flutter_arg_demo/model/novel_search.dart';
-import 'package:flutter_arg_demo/viewmodel/myModel.dart';
+import 'package:flutter_arg_demo/routers/routes.dart';
+import 'package:flutter_arg_demo/viewmodel/novel_model.dart';
 import 'package:flutter_arg_demo/widget/multi_state_widget.dart';
 import 'package:flutter_arg_demo/widget/providerWidget.dart';
 
@@ -10,14 +13,14 @@ class NovelPage extends StatefulWidget {
 }
 
 class NovelPageState extends State<NovelPage> {
-  static MyModel model = new MyModel();
+  static MyModel model;
 
   @override
   Widget build(BuildContext context) {
     return ProviderWidget<MyModel>(
-      model: model,
+      model: model = new MyModel(),
       onReady: (model) {
-        model.load("凡人修仙传");
+        model.load("");
       },
       builder: (context, model, child) {
         return MultiStateWidget(
@@ -55,7 +58,14 @@ class NovelItemView extends StatelessWidget {
         ElData elData = dataList[index];
         return GestureDetector(
           onTap: () {
-            print(dataList[index].cover);
+            Application.router.navigateTo(
+              context,
+              Routes.novel_list,
+              routeSettings: RouteSettings(
+                arguments: IntentKeyAndValue(
+                    title: elData.title, url: elData.cartoonId),
+              ),
+            );
           },
           child: ChildItem(elData: elData),
         );

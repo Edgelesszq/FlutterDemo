@@ -19,15 +19,15 @@ define("main_module.bootstrap", ["web_entrypoint.dart", "dart_sdk"], function(ap
          main();
       });
     }
-    window.$dartAppId = "WKb+sBXpLu63avTLkBLFsw==";
+    window.$dartAppId = "8T65VXzz/PBO1aV6nrQN2Q==";
 window.$dartReloadConfiguration = "ReloadConfiguration.none";
 window.$dartModuleStrategy = "require-js";
 window.$loadModuleConfig = require;
 window.$dwdsVersion = "7.1.1";
-window.$dwdsDevHandlerPath = "http://localhost:61921/$dwdsSseHandler";
+window.$dwdsDevHandlerPath = "http://localhost:61950/$dwdsSseHandler";
 window.$dartEntrypointPath = "main_module.bootstrap.js";
 window.$requireLoader.forceLoadModule("dwds/src/injected/client");
-window.$dartExtensionUri = "http://127.0.0.1:61923/$debug";
+window.$dartExtensionUri = "http://127.0.0.1:61952/$debug";
 
   } else {
     if(window.$dartMainExecuted){
@@ -443,14 +443,7 @@ let modulePaths = {
  "packages/flutter/src/material/animated_icons.dart": "packages/flutter/src/material/animated_icons.dart.lib",
  "packages/flutter/src/material/about.dart": "packages/flutter/src/material/about.dart.lib",
  "packages/fluro/src/extensions.dart": "packages/fluro/src/extensions.dart.lib",
- "packages/flutter_arg_demo/routers/routes.dart": "packages/flutter_arg_demo/routers/routes.dart.lib",
- "packages/flutter_arg_demo/routers/route_handler.dart": "packages/flutter_arg_demo/routers/route_handler.dart.lib",
- "packages/flutter_arg_demo/ui/home_page.dart": "packages/flutter_arg_demo/ui/home_page.dart.lib",
- "packages/flutter_arg_demo/widget/myHomeApp.dart": "packages/flutter_arg_demo/widget/myHomeApp.dart.lib",
- "packages/flutter_arg_demo/widget/myAppBar.dart": "packages/flutter_arg_demo/widget/myAppBar.dart.lib",
- "packages/flutter_arg_demo/config/AppConfig.dart": "packages/flutter_arg_demo/config/AppConfig.dart.lib",
- "packages/flutter_arg_demo/ui/video_page.dart": "packages/flutter_arg_demo/ui/video_page.dart.lib",
- "packages/flutter_arg_demo/ui/novel_page.dart": "packages/flutter_arg_demo/ui/novel_page.dart.lib",
+ "packages/flutter_arg_demo/ui/novel_list_page.dart": "packages/flutter_arg_demo/ui/novel_list_page.dart.lib",
  "packages/flutter_arg_demo/widget/providerWidget.dart": "packages/flutter_arg_demo/widget/providerWidget.dart.lib",
  "packages/provider/provider.dart": "packages/provider/provider.dart.lib",
  "packages/provider/src/value_listenable_provider.dart": "packages/provider/src/value_listenable_provider.dart.lib",
@@ -461,10 +454,13 @@ let modulePaths = {
  "packages/provider/src/proxy_provider.dart": "packages/provider/src/proxy_provider.dart.lib",
  "packages/provider/src/listenable_provider.dart": "packages/provider/src/listenable_provider.dart.lib",
  "packages/provider/src/async_provider.dart": "packages/provider/src/async_provider.dart.lib",
+ "packages/flutter_arg_demo/widget/myAppBar.dart": "packages/flutter_arg_demo/widget/myAppBar.dart.lib",
+ "packages/flutter_arg_demo/config/AppConfig.dart": "packages/flutter_arg_demo/config/AppConfig.dart.lib",
+ "packages/flutter_arg_demo/ui/video_page.dart": "packages/flutter_arg_demo/ui/video_page.dart.lib",
  "packages/flutter_arg_demo/widget/multi_state_widget.dart": "packages/flutter_arg_demo/widget/multi_state_widget.dart.lib",
  "packages/flutter_arg_demo/util/textUtils.dart": "packages/flutter_arg_demo/util/textUtils.dart.lib",
  "packages/flutter_arg_demo/common/base_state.dart": "packages/flutter_arg_demo/common/base_state.dart.lib",
- "packages/flutter_arg_demo/viewmodel/myModel.dart": "packages/flutter_arg_demo/viewmodel/myModel.dart.lib",
+ "packages/flutter_arg_demo/viewmodel/novel_model.dart": "packages/flutter_arg_demo/viewmodel/novel_model.dart.lib",
  "packages/flutter_arg_demo/model/novel_search.dart": "packages/flutter_arg_demo/model/novel_search.dart.lib",
  "packages/flutter_arg_demo/http/http_util.dart": "packages/flutter_arg_demo/http/http_util.dart.lib",
  "packages/flutter_arg_demo/http/api.dart": "packages/flutter_arg_demo/http/api.dart.lib",
@@ -525,7 +521,7 @@ let modulePaths = {
  "packages/dio_log/theme/style.dart": "packages/dio_log/theme/style.dart.lib",
  "packages/flutter_arg_demo/common/BaseViewModel.dart": "packages/flutter_arg_demo/common/BaseViewModel.dart.lib",
  "packages/flutter_arg_demo/ui/comic_page.dart": "packages/flutter_arg_demo/ui/comic_page.dart.lib",
- "packages/flutter_arg_demo/ui/flash_page.dart": "packages/flutter_arg_demo/ui/flash_page.dart.lib"
+ "packages/flutter_arg_demo/config/static_value.dart": "packages/flutter_arg_demo/config/static_value.dart.lib"
 };
 let moduleNames = {
  "web_entrypoint.dart.lib": "web_entrypoint.dart",
@@ -891,14 +887,7 @@ let moduleNames = {
  "packages/flutter/src/material/animated_icons.dart.lib": "packages/flutter/src/material/animated_icons.dart",
  "packages/flutter/src/material/about.dart.lib": "packages/flutter/src/material/about.dart",
  "packages/fluro/src/extensions.dart.lib": "packages/fluro/src/extensions.dart",
- "packages/flutter_arg_demo/routers/routes.dart.lib": "packages/flutter_arg_demo/routers/routes.dart",
- "packages/flutter_arg_demo/routers/route_handler.dart.lib": "packages/flutter_arg_demo/routers/route_handler.dart",
- "packages/flutter_arg_demo/ui/home_page.dart.lib": "packages/flutter_arg_demo/ui/home_page.dart",
- "packages/flutter_arg_demo/widget/myHomeApp.dart.lib": "packages/flutter_arg_demo/widget/myHomeApp.dart",
- "packages/flutter_arg_demo/widget/myAppBar.dart.lib": "packages/flutter_arg_demo/widget/myAppBar.dart",
- "packages/flutter_arg_demo/config/AppConfig.dart.lib": "packages/flutter_arg_demo/config/AppConfig.dart",
- "packages/flutter_arg_demo/ui/video_page.dart.lib": "packages/flutter_arg_demo/ui/video_page.dart",
- "packages/flutter_arg_demo/ui/novel_page.dart.lib": "packages/flutter_arg_demo/ui/novel_page.dart",
+ "packages/flutter_arg_demo/ui/novel_list_page.dart.lib": "packages/flutter_arg_demo/ui/novel_list_page.dart",
  "packages/flutter_arg_demo/widget/providerWidget.dart.lib": "packages/flutter_arg_demo/widget/providerWidget.dart",
  "packages/provider/provider.dart.lib": "packages/provider/provider.dart",
  "packages/provider/src/value_listenable_provider.dart.lib": "packages/provider/src/value_listenable_provider.dart",
@@ -909,10 +898,13 @@ let moduleNames = {
  "packages/provider/src/proxy_provider.dart.lib": "packages/provider/src/proxy_provider.dart",
  "packages/provider/src/listenable_provider.dart.lib": "packages/provider/src/listenable_provider.dart",
  "packages/provider/src/async_provider.dart.lib": "packages/provider/src/async_provider.dart",
+ "packages/flutter_arg_demo/widget/myAppBar.dart.lib": "packages/flutter_arg_demo/widget/myAppBar.dart",
+ "packages/flutter_arg_demo/config/AppConfig.dart.lib": "packages/flutter_arg_demo/config/AppConfig.dart",
+ "packages/flutter_arg_demo/ui/video_page.dart.lib": "packages/flutter_arg_demo/ui/video_page.dart",
  "packages/flutter_arg_demo/widget/multi_state_widget.dart.lib": "packages/flutter_arg_demo/widget/multi_state_widget.dart",
  "packages/flutter_arg_demo/util/textUtils.dart.lib": "packages/flutter_arg_demo/util/textUtils.dart",
  "packages/flutter_arg_demo/common/base_state.dart.lib": "packages/flutter_arg_demo/common/base_state.dart",
- "packages/flutter_arg_demo/viewmodel/myModel.dart.lib": "packages/flutter_arg_demo/viewmodel/myModel.dart",
+ "packages/flutter_arg_demo/viewmodel/novel_model.dart.lib": "packages/flutter_arg_demo/viewmodel/novel_model.dart",
  "packages/flutter_arg_demo/model/novel_search.dart.lib": "packages/flutter_arg_demo/model/novel_search.dart",
  "packages/flutter_arg_demo/http/http_util.dart.lib": "packages/flutter_arg_demo/http/http_util.dart",
  "packages/flutter_arg_demo/http/api.dart.lib": "packages/flutter_arg_demo/http/api.dart",
@@ -973,7 +965,7 @@ let moduleNames = {
  "packages/dio_log/theme/style.dart.lib": "packages/dio_log/theme/style.dart",
  "packages/flutter_arg_demo/common/BaseViewModel.dart.lib": "packages/flutter_arg_demo/common/BaseViewModel.dart",
  "packages/flutter_arg_demo/ui/comic_page.dart.lib": "packages/flutter_arg_demo/ui/comic_page.dart",
- "packages/flutter_arg_demo/ui/flash_page.dart.lib": "packages/flutter_arg_demo/ui/flash_page.dart"
+ "packages/flutter_arg_demo/config/static_value.dart.lib": "packages/flutter_arg_demo/config/static_value.dart"
 };
 if(!window.$requireLoader) {
    window.$requireLoader = {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_arg_demo/common/Application.dart';
+import 'package:flutter_arg_demo/routers/routes.dart';
 
 class FlashPage extends StatelessWidget {
   @override
@@ -19,7 +20,7 @@ class _FlashBodyPageState extends State<FlashBodyPage> {
     // TODO: implement initState
     super.initState();
     Future.delayed(Duration(seconds: 2), () {
-      Application.router.navigateTo(context, '/home');
+      Application.router.navigateTo(context, Routes.home);
     });
   }
 
