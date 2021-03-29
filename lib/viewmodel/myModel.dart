@@ -8,10 +8,10 @@ import 'package:flutter_arg_demo/model/novel_search.dart';
 class MyModel extends BaseViewModel {
   NovelSearchBean myData;
 
-  load() {
+  load(String content) {
     state = BaseState.LOADING;
     notifyListeners();
-    Http().get(Api.GET_NOVEL, {}, success: (json) {
+    Http().get2(Api.GET_NOVEL, content, 1, success: (json) {
       compute(decode, json).then((value) {
         if (value == null) {
           state = BaseState.EMPTY;

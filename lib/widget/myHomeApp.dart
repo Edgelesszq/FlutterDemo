@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_arg_demo/config/static_value.dart';
 import 'package:flutter_arg_demo/ui/comic_page.dart';
@@ -13,6 +14,7 @@ class MyHomeApp extends StatefulWidget {
   final bool isShowBottomBar;
   final bool showAppBar;
   final Widget floatingButton;
+
   MyHomeApp({
     Key key,
     this.bodyWidget,
@@ -23,12 +25,14 @@ class MyHomeApp extends StatefulWidget {
     this.showAppBar = true,
     this.floatingButton,
   }) : super(key: key);
+
   @override
   MyHomeAppState createState() => MyHomeAppState();
 }
 
 class MyHomeAppState extends State<MyHomeApp> {
   final List<Widget> pages = <Widget>[ComicPage(), NovelPage(), VideoPage()];
+
   void _onItemTapped(int index) {
     setState(() {
       StaticValue.currentPage = index;
@@ -69,7 +73,14 @@ class MyHomeAppState extends State<MyHomeApp> {
         floatingActionButton: widget.floatingButton,
         body: SafeArea(
             child: (widget.isShowBottomBar)
-                ? pages[StaticValue.currentPage]
-                : widget.bodyWidget));
+                ? Padding(
+                    padding: EdgeInsets.only(
+                        left: 15.0, right: 15.0, top: 15.0, bottom: 15.0),
+                    child: pages[StaticValue.currentPage],
+                  )
+                : Padding(
+                    padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                    child: widget.bodyWidget,
+            )));
   }
 }

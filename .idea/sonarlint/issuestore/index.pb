@@ -51,3 +51,5 @@ J
 lib/viewmodel/myModel.dart,4\c\4c80423e14ca62847ee6dd0fd59a867f39efbd5a
 F
 lib/ui/novel_page.dart,1\d\1d7c39cb8c7c7c361c911b146ea4d5cd81338cfe
+L
+lib/config/static_value.dart,e\8\e88276b35a594ab1ec1b63a0fd9552dac54c2802

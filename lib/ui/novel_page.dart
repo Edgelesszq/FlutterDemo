@@ -6,20 +6,22 @@ import 'package:flutter_arg_demo/widget/providerWidget.dart';
 
 class NovelPage extends StatefulWidget {
   @override
-  _NovelPageState createState() => _NovelPageState();
+  NovelPageState createState() => NovelPageState();
 }
 
-class _NovelPageState extends State<NovelPage> {
+class NovelPageState extends State<NovelPage> {
+  static MyModel model = new MyModel();
+
   @override
   Widget build(BuildContext context) {
     return ProviderWidget<MyModel>(
-      model: MyModel(),
+      model: model,
       onReady: (model) {
-        model.load();
+        model.load("凡人修仙传");
       },
       builder: (context, model, child) {
         return MultiStateWidget(
-          builder: (context) => Center(
+          builder: (context) => Container(
             child: buildContentView(model.myData),
           ),
           state: model.state,
@@ -30,16 +32,109 @@ class _NovelPageState extends State<NovelPage> {
 }
 
 Widget buildContentView(NovelSearchBean novelSearchBean) {
+  List<ElData> dataList = novelSearchBean.data.data;
   return Container(
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          child: Center(
-            child: Text("小说列表"),
+    child: NovelItemView(dataList: dataList),
+  );
+}
+
+class NovelItemView extends StatelessWidget {
+  const NovelItemView({
+    Key key,
+    @required this.dataList,
+  }) : super(key: key);
+
+  final List<ElData> dataList;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: dataList.length,
+      shrinkWrap: true,
+      itemBuilder: (BuildContext context, int index) {
+        ElData elData = dataList[index];
+        return GestureDetector(
+          onTap: () {
+            print(dataList[index].cover);
+          },
+          child: ChildItem(elData: elData),
+        );
+      },
+      scrollDirection: Axis.vertical,
+    );
+  }
+}
+
+class ChildItem extends StatelessWidget {
+  const ChildItem({
+    Key key,
+    @required this.elData,
+  }) : super(key: key);
+
+  final ElData elData;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 10),
+      child: ChildItemDecorateBox(elData: elData),
+    );
+  }
+}
+
+class ChildItemDecorateBox extends StatelessWidget {
+  const ChildItemDecorateBox({
+    Key key,
+    @required this.elData,
+  }) : super(key: key);
+
+  final ElData elData;
+
+  @override
+  Widget build(BuildContext context) {
+    return DecoratedBox(
+      decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(5.0),
+          boxShadow: [
+            //阴影
+            BoxShadow(
+                color: Colors.black54,
+                offset: Offset(2.0, 2.0),
+                blurRadius: 4.0)
+          ]),
+      child: Container(
+        height: 150.0,
+        child: Padding(
+          padding: EdgeInsets.all(10.0),
+          child: Row(
+            children: [
+              Image.network(
+                elData.cover,
+                width: 100.0,
+                height: 120.0,
+              ),
+              Expanded(
+                  child: Column(
+                children: [
+                  Text(elData.title,
+                      style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold)),
+                  Text(elData.author),
+                  Text(
+                    elData.descs,
+                    maxLines: 4,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  Text(elData.updateTime),
+                ],
+              ))
+            ],
           ),
         ),
-      ],
-    ),
-  );
+      ),
+    );
+  }
 }

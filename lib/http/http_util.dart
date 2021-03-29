@@ -22,9 +22,9 @@ class Http {
 
   Dio createDio() {
     var dio = Dio(BaseOptions(
-      connectTimeout: 30000,
-      receiveTimeout: 30000,
-      sendTimeout: 30000,
+      connectTimeout: 10000,
+      receiveTimeout: 3000,
+      sendTimeout: 3000,
       baseUrl: Api.BASE_URL,
       responseType: ResponseType.json,
     ));
@@ -35,6 +35,28 @@ class Http {
   Future<void> get(String uri, Map<String, dynamic> params,
       {Success success, Fail fail, After after}) {
     _dio.get(uri, queryParameters: params).then((response) {
+      print('凑得' '$response.statusCode');
+      if (response.statusCode == 200) {
+        if (success != null) {
+          success(response.data);
+        }
+      } else {
+        if (fail != null) {
+          fail(response.statusMessage, response.statusCode);
+        }
+      }
+      if (after != null) {
+        after();
+      }
+    });
+    return Future.value();
+  }
+
+  Future<void> get2(String uri, String content, int page,
+      {Success success, Fail fail, After after}) {
+    print(uri + '$content' '/' '$page' '/' '10');
+    _dio.get((uri + '$content' '/' '$page' '/' '10'), queryParameters: {}).then(
+        (response) {
       if (response.statusCode == 200) {
         if (success != null) {
           success(response.data);

@@ -40,11 +40,11 @@ class NovelSearchBean {
 
 class Data {
   int _size;
-  List<Data> _data;
+  List<ElData> _data;
   int _count;
   int _from;
 
-  Data({int size, List<Data> data, int count, int from}) {
+  Data({int size, List<ElData> data, int count, int from}) {
     this._size = size;
     this._data = data;
     this._count = count;
@@ -55,9 +55,9 @@ class Data {
 
   set size(int size) => _size = size;
 
-  List<Data> get data => _data;
+  List<ElData> get data => _data;
 
-  set data(List<Data> data) => _data = data;
+  set data(List<ElData> data) => _data = data;
 
   int get count => _count;
 
@@ -70,9 +70,9 @@ class Data {
   Data.fromJson(Map<String, dynamic> json) {
     _size = json['size'];
     if (json['data'] != null) {
-      _data = new List<Data>();
+      _data = new List<ElData>();
       json['data'].forEach((v) {
-        _data.add(new Data.fromJson(v));
+        _data.add(new ElData.fromJson(v));
       });
     }
     _count = json['count'];

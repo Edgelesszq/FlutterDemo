@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_arg_demo/config/static_value.dart';
+import 'package:flutter_arg_demo/ui/novel_page.dart';
 import 'package:flutter_arg_demo/widget/myHomeApp.dart';
 
 class HomePage extends StatelessWidget {
@@ -16,9 +18,8 @@ class HomePage extends StatelessWidget {
 }
 
 class MyFloatingButton extends StatelessWidget {
-  const MyFloatingButton({
-    Key key,
-  }) : super(key: key);
+  TextEditingController inputContent = TextEditingController();
+
   String _getTitleString() {
     if (StaticValue.currentPage == 0) {
       return '搜索漫画';
@@ -41,14 +42,21 @@ class MyFloatingButton extends StatelessWidget {
               title: new Text(_getTitleString()),
               content: new SingleChildScrollView(
                 child: new ListBody(
-                  children: <Widget>[new TextField()],
+                  children: <Widget>[
+                    new TextField(
+                      controller: inputContent,
+                      textInputAction: TextInputAction.search,
+                      maxLines: 1,
+                    )
+                  ],
                 ),
               ),
               actions: <Widget>[
                 new FlatButton(
                   child: new Text('搜索'),
                   onPressed: () {
-                    Navigator.of(context).pop();
+                    NovelPageState.model.load(inputContent.text);
+                    Navigator.pop(context);
                   },
                 ),
               ],
