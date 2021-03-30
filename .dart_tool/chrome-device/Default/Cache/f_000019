@@ -1,34 +1,20 @@
-define(['dart_sdk', 'packages/flutter/src/gestures/recognizer.dart', 'packages/flutter/src/gestures/velocity_tracker.dart', 'packages/flutter/src/gestures/events.dart', 'packages/flutter/src/gestures/arena.dart', 'packages/vector_math/vector_math_64.dart', 'packages/flutter/src/gestures/drag_details.dart', 'packages/flutter/src/foundation/debug.dart'], (function load__packages__flutter__src__gestures__monodrag_dart(dart_sdk, packages__flutter__src__gestures__recognizer$46dart, packages__flutter__src__gestures__velocity_tracker$46dart, packages__flutter__src__gestures__events$46dart, packages__flutter__src__gestures__arena$46dart, packages__vector_math__vector_math_64$46dart, packages__flutter__src__gestures__drag_details$46dart, packages__flutter__src__foundation__debug$46dart) {
+define(['dart_sdk', 'packages/flutter/src/foundation/object.dart'], (function load__packages__flutter__src__painting__alignment_dart(dart_sdk, packages__flutter__src__foundation__object$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const _js_helper = dart_sdk._js_helper;
-  const collection = dart_sdk.collection;
-  const _internal = dart_sdk._internal;
   const ui = dart_sdk.ui;
+  const _internal = dart_sdk._internal;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const recognizer = packages__flutter__src__gestures__recognizer$46dart.src__gestures__recognizer;
-  const velocity_tracker = packages__flutter__src__gestures__velocity_tracker$46dart.src__gestures__velocity_tracker;
-  const events = packages__flutter__src__gestures__events$46dart.src__gestures__events;
-  const arena = packages__flutter__src__gestures__arena$46dart.src__gestures__arena;
-  const vector_math_64 = packages__vector_math__vector_math_64$46dart.vector_math_64;
-  const drag_details = packages__flutter__src__gestures__drag_details$46dart.src__gestures__drag_details;
-  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
-  var monodrag = Object.create(dart.library);
-  var $_set = dartx._set;
-  var $_get = dartx._get;
-  var $sign = dartx.sign;
-  var $clear = dartx.clear;
-  var $abs = dartx.abs;
+  const object = packages__flutter__src__foundation__object$46dart.src__foundation__object;
+  var alignment = Object.create(dart.library);
+  var $truncate = dartx.truncate;
+  var $toDouble = dartx.toDouble;
+  var $modulo = dartx['%'];
+  var $toStringAsFixed = dartx.toStringAsFixed;
+  var $runtimeType = dartx.runtimeType;
   dart._checkModuleNullSafetyMode(false);
   var T = {
-    _DragStateL: () => (T._DragStateL = dart.constFn(dart.legacy(monodrag._DragState)))(),
-    PointerEventToVelocityTracker: () => (T.PointerEventToVelocityTracker = dart.constFn(dart.fnType(velocity_tracker.VelocityTracker, [events.PointerEvent])))(),
-    IdentityMapOfint$VelocityTracker: () => (T.IdentityMapOfint$VelocityTracker = dart.constFn(_js_helper.IdentityMap$(core.int, velocity_tracker.VelocityTracker)))(),
-    LinkedHashSetOfint: () => (T.LinkedHashSetOfint = dart.constFn(collection.LinkedHashSet$(core.int)))(),
-    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
-    VoidToString: () => (T.VoidToString = dart.constFn(dart.fnType(core.String, [])))(),
-    EnumPropertyOfDragStartBehavior: () => (T.EnumPropertyOfDragStartBehavior = dart.constFn(diagnostics.EnumProperty$(recognizer.DragStartBehavior)))()
+    _: () => T
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -45,646 +31,689 @@ define(['dart_sdk', 'packages/flutter/src/gestures/recognizer.dart', 'packages/f
   dart.defineLazy(CT, {
     get C0() {
       return C[0] = dart.const({
-        __proto__: monodrag._DragState.prototype,
-        [_name$]: "_DragState.ready",
-        index: 0
+        __proto__: alignment.Alignment.prototype,
+        [y$]: -1,
+        [x$]: -1
       });
     },
     get C1() {
       return C[1] = dart.const({
-        __proto__: monodrag._DragState.prototype,
-        [_name$]: "_DragState.possible",
-        index: 1
+        __proto__: alignment.Alignment.prototype,
+        [y$]: -1,
+        [x$]: 0
       });
     },
     get C2() {
       return C[2] = dart.const({
-        __proto__: monodrag._DragState.prototype,
-        [_name$]: "_DragState.accepted",
-        index: 2
+        __proto__: alignment.Alignment.prototype,
+        [y$]: -1,
+        [x$]: 1
       });
     },
     get C3() {
-      return C[3] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2], T._DragStateL());
+      return C[3] = dart.const({
+        __proto__: alignment.Alignment.prototype,
+        [y$]: 0,
+        [x$]: -1
+      });
     },
     get C4() {
       return C[4] = dart.const({
-        __proto__: recognizer.DragStartBehavior.prototype,
-        [_name]: "DragStartBehavior.start",
-        index: 1
+        __proto__: alignment.Alignment.prototype,
+        [y$]: 0,
+        [x$]: 0
       });
     },
     get C5() {
-      return C[5] = dart.fn(monodrag.DragGestureRecognizer._defaultBuilder, T.PointerEventToVelocityTracker());
+      return C[5] = dart.const({
+        __proto__: alignment.Alignment.prototype,
+        [y$]: 0,
+        [x$]: 1
+      });
     },
     get C6() {
       return C[6] = dart.const({
-        __proto__: recognizer.DragStartBehavior.prototype,
-        [_name]: "DragStartBehavior.down",
+        __proto__: alignment.Alignment.prototype,
+        [y$]: 1,
+        [x$]: -1
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: alignment.Alignment.prototype,
+        [y$]: 1,
+        [x$]: 0
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: alignment.Alignment.prototype,
+        [y$]: 1,
+        [x$]: 1
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: ui.TextDirection.prototype,
+        [_name]: "TextDirection.rtl",
         index: 0
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: ui.TextDirection.prototype,
+        [_name]: "TextDirection.ltr",
+        index: 1
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: alignment.AlignmentDirectional.prototype,
+        [y$0]: -1,
+        [start$]: -1
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: alignment.AlignmentDirectional.prototype,
+        [y$0]: -1,
+        [start$]: 0
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: alignment.AlignmentDirectional.prototype,
+        [y$0]: -1,
+        [start$]: 1
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: alignment.AlignmentDirectional.prototype,
+        [y$0]: 0,
+        [start$]: -1
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: alignment.AlignmentDirectional.prototype,
+        [y$0]: 0,
+        [start$]: 0
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: alignment.AlignmentDirectional.prototype,
+        [y$0]: 0,
+        [start$]: 1
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: alignment.AlignmentDirectional.prototype,
+        [y$0]: 1,
+        [start$]: -1
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: alignment.AlignmentDirectional.prototype,
+        [y$0]: 1,
+        [start$]: 0
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: alignment.AlignmentDirectional.prototype,
+        [y$0]: 1,
+        [start$]: 1
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: alignment.TextAlignVertical.prototype,
+        [y$1]: -1
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: alignment.TextAlignVertical.prototype,
+        [y$1]: 0
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: alignment.TextAlignVertical.prototype,
+        [y$1]: 1
       });
     }
   }, false);
-  var C = Array(7).fill(void 0);
+  var C = Array(23).fill(void 0);
   var I = [
-    "file:///D:/flutterSDK/flutter/packages/flutter/lib/src/gestures/monodrag.dart",
-    "package:flutter/src/gestures/monodrag.dart"
+    "file:///E:/flutterSDK/flutter/packages/flutter/lib/src/painting/alignment.dart",
+    "package:flutter/src/painting/alignment.dart"
   ];
-  var _name$ = dart.privateName(monodrag, "_name");
-  monodrag._DragState = class _DragState extends core.Object {
+  var _x = dart.privateName(alignment, "_x");
+  var _start = dart.privateName(alignment, "_start");
+  var _y = dart.privateName(alignment, "_y");
+  alignment.AlignmentGeometry = class AlignmentGeometry extends core.Object {
+    add(other) {
+      if (other == null) dart.nullFailed(I[0], 43, 43, "other");
+      return new alignment._MixedAlignment.new(dart.notNull(this[_x]) + dart.notNull(other[_x]), dart.notNull(this[_start]) + dart.notNull(other[_start]), dart.notNull(this[_y]) + dart.notNull(other[_y]));
+    }
+    static lerp(a, b, t) {
+      if (t == null) dart.nullFailed(I[0], 90, 85, "t");
+      if (!(t != null)) dart.assertFailed(null, I[0], 91, 12, "t != null");
+      if (a == null && b == null) return null;
+      if (a == null) return dart.nullCheck(b)['*'](t);
+      if (b == null) return a['*'](1.0 - dart.notNull(t));
+      if (alignment.Alignment.is(a) && alignment.Alignment.is(b)) return alignment.Alignment.lerp(a, b, t);
+      if (alignment.AlignmentDirectional.is(a) && alignment.AlignmentDirectional.is(b)) return alignment.AlignmentDirectional.lerp(a, b, t);
+      return new alignment._MixedAlignment.new(dart.nullCheck(ui.lerpDouble(a[_x], b[_x], t)), dart.nullCheck(ui.lerpDouble(a[_start], b[_start], t)), dart.nullCheck(ui.lerpDouble(a[_y], b[_y], t)));
+    }
     toString() {
-      return this[_name$];
+      if (this[_start] === 0.0) return alignment.Alignment._stringify(this[_x], this[_y]);
+      if (this[_x] === 0.0) return alignment.AlignmentDirectional._stringify(this[_start], this[_y]);
+      return dart.notNull(alignment.Alignment._stringify(this[_x], this[_y])) + " + " + dart.notNull(alignment.AlignmentDirectional._stringify(this[_start], 0.0));
+    }
+    _equals(other) {
+      if (other == null) return false;
+      return alignment.AlignmentGeometry.is(other) && other[_x] == this[_x] && other[_start] == this[_start] && other[_y] == this[_y];
+    }
+    get hashCode() {
+      return ui.hashValues(this[_x], this[_start], this[_y]);
     }
   };
-  (monodrag._DragState.new = function(index, _name) {
-    if (index == null) dart.nullFailed(I[0], 15, 6, "index");
-    if (_name == null) dart.nullFailed(I[0], 15, 6, "_name");
-    this.index = index;
-    this[_name$] = _name;
+  (alignment.AlignmentGeometry.new = function() {
     ;
-  }).prototype = monodrag._DragState.prototype;
-  dart.addTypeTests(monodrag._DragState);
-  dart.addTypeCaches(monodrag._DragState);
-  dart.setLibraryUri(monodrag._DragState, I[1]);
-  dart.setFieldSignature(monodrag._DragState, () => ({
-    __proto__: dart.getFields(monodrag._DragState.__proto__),
-    index: dart.finalFieldType(core.int),
-    [_name$]: dart.finalFieldType(core.String)
+  }).prototype = alignment.AlignmentGeometry.prototype;
+  dart.addTypeTests(alignment.AlignmentGeometry);
+  dart.addTypeCaches(alignment.AlignmentGeometry);
+  dart.setMethodSignature(alignment.AlignmentGeometry, () => ({
+    __proto__: dart.getMethods(alignment.AlignmentGeometry.__proto__),
+    add: dart.fnType(alignment.AlignmentGeometry, [alignment.AlignmentGeometry])
   }));
-  dart.defineExtensionMethods(monodrag._DragState, ['toString']);
-  monodrag._DragState.ready = C[0] || CT.C0;
-  monodrag._DragState.possible = C[1] || CT.C1;
-  monodrag._DragState.accepted = C[2] || CT.C2;
-  monodrag._DragState.values = C[3] || CT.C3;
-  var dragStartBehavior$ = dart.privateName(monodrag, "DragGestureRecognizer.dragStartBehavior");
-  var onDown = dart.privateName(monodrag, "DragGestureRecognizer.onDown");
-  var onStart = dart.privateName(monodrag, "DragGestureRecognizer.onStart");
-  var onUpdate = dart.privateName(monodrag, "DragGestureRecognizer.onUpdate");
-  var onEnd = dart.privateName(monodrag, "DragGestureRecognizer.onEnd");
-  var onCancel = dart.privateName(monodrag, "DragGestureRecognizer.onCancel");
-  var minFlingDistance = dart.privateName(monodrag, "DragGestureRecognizer.minFlingDistance");
-  var minFlingVelocity = dart.privateName(monodrag, "DragGestureRecognizer.minFlingVelocity");
-  var maxFlingVelocity = dart.privateName(monodrag, "DragGestureRecognizer.maxFlingVelocity");
-  var velocityTrackerBuilder$ = dart.privateName(monodrag, "DragGestureRecognizer.velocityTrackerBuilder");
-  var _name = dart.privateName(recognizer, "_name");
-  var _state = dart.privateName(monodrag, "_state");
-  var __DragGestureRecognizer__initialPosition = dart.privateName(monodrag, "_#DragGestureRecognizer#_initialPosition");
-  var __DragGestureRecognizer__initialPosition_isSet = dart.privateName(monodrag, "_#DragGestureRecognizer#_initialPosition#isSet");
-  var __DragGestureRecognizer__pendingDragOffset = dart.privateName(monodrag, "_#DragGestureRecognizer#_pendingDragOffset");
-  var __DragGestureRecognizer__pendingDragOffset_isSet = dart.privateName(monodrag, "_#DragGestureRecognizer#_pendingDragOffset#isSet");
-  var _lastPendingEventTimestamp = dart.privateName(monodrag, "_lastPendingEventTimestamp");
-  var _initialButtons = dart.privateName(monodrag, "_initialButtons");
-  var _lastTransform = dart.privateName(monodrag, "_lastTransform");
-  var __DragGestureRecognizer__globalDistanceMoved = dart.privateName(monodrag, "_#DragGestureRecognizer#_globalDistanceMoved");
-  var __DragGestureRecognizer__globalDistanceMoved_isSet = dart.privateName(monodrag, "_#DragGestureRecognizer#_globalDistanceMoved#isSet");
-  var _velocityTrackers = dart.privateName(monodrag, "_velocityTrackers");
-  var _acceptedActivePointers = dart.privateName(monodrag, "_acceptedActivePointers");
-  var _initialPosition = dart.privateName(monodrag, "_initialPosition");
-  var _pendingDragOffset = dart.privateName(monodrag, "_pendingDragOffset");
-  var _globalDistanceMoved = dart.privateName(monodrag, "_globalDistanceMoved");
-  var _checkDown = dart.privateName(monodrag, "_checkDown");
-  var _giveUpPointer = dart.privateName(monodrag, "_giveUpPointer");
-  var _getDeltaForDetails = dart.privateName(monodrag, "_getDeltaForDetails");
-  var _getPrimaryValueFromOffset = dart.privateName(monodrag, "_getPrimaryValueFromOffset");
-  var _checkUpdate = dart.privateName(monodrag, "_checkUpdate");
-  var _hasSufficientGlobalDistanceToAccept = dart.privateName(monodrag, "_hasSufficientGlobalDistanceToAccept");
-  var _checkStart = dart.privateName(monodrag, "_checkStart");
-  var _checkCancel = dart.privateName(monodrag, "_checkCancel");
-  var _checkEnd = dart.privateName(monodrag, "_checkEnd");
-  monodrag.DragGestureRecognizer = class DragGestureRecognizer extends recognizer.OneSequenceGestureRecognizer {
-    get dragStartBehavior() {
-      return this[dragStartBehavior$];
+  dart.setLibraryUri(alignment.AlignmentGeometry, I[1]);
+  dart.defineExtensionMethods(alignment.AlignmentGeometry, ['toString', '_equals']);
+  dart.defineExtensionAccessors(alignment.AlignmentGeometry, ['hashCode']);
+  var x$ = dart.privateName(alignment, "Alignment.x");
+  var y$ = dart.privateName(alignment, "Alignment.y");
+  alignment.Alignment = class Alignment extends alignment.AlignmentGeometry {
+    get x() {
+      return this[x$];
     }
-    set dragStartBehavior(value) {
-      this[dragStartBehavior$] = value;
+    set x(value) {
+      super.x = value;
     }
-    get onDown() {
-      return this[onDown];
+    get y() {
+      return this[y$];
     }
-    set onDown(value) {
-      this[onDown] = value;
+    set y(value) {
+      super.y = value;
     }
-    get onStart() {
-      return this[onStart];
+    get [_x]() {
+      return this.x;
     }
-    set onStart(value) {
-      this[onStart] = value;
+    get [_start]() {
+      return 0.0;
     }
-    get onUpdate() {
-      return this[onUpdate];
+    get [_y]() {
+      return this.y;
     }
-    set onUpdate(value) {
-      this[onUpdate] = value;
+    add(other) {
+      if (other == null) dart.nullFailed(I[0], 243, 43, "other");
+      if (alignment.Alignment.is(other)) return this['+'](other);
+      return super.add(other);
     }
-    get onEnd() {
-      return this[onEnd];
+    ['-'](other) {
+      if (other == null) dart.nullFailed(I[0], 250, 34, "other");
+      return new alignment.Alignment.new(dart.notNull(this.x) - dart.notNull(other.x), dart.notNull(this.y) - dart.notNull(other.y));
     }
-    set onEnd(value) {
-      this[onEnd] = value;
+    ['+'](other) {
+      if (other == null) dart.nullFailed(I[0], 255, 34, "other");
+      return new alignment.Alignment.new(dart.notNull(this.x) + dart.notNull(other.x), dart.notNull(this.y) + dart.notNull(other.y));
     }
-    get onCancel() {
-      return this[onCancel];
+    _negate() {
+      return new alignment.Alignment.new(-dart.notNull(this.x), -dart.notNull(this.y));
     }
-    set onCancel(value) {
-      this[onCancel] = value;
+    ['*'](other) {
+      if (other == null) dart.nullFailed(I[0], 267, 31, "other");
+      return new alignment.Alignment.new(dart.notNull(this.x) * dart.notNull(other), dart.notNull(this.y) * dart.notNull(other));
     }
-    get minFlingDistance() {
-      return this[minFlingDistance];
+    ['/'](other) {
+      if (other == null) dart.nullFailed(I[0], 273, 31, "other");
+      return new alignment.Alignment.new(dart.notNull(this.x) / dart.notNull(other), dart.notNull(this.y) / dart.notNull(other));
     }
-    set minFlingDistance(value) {
-      this[minFlingDistance] = value;
+    ['~/'](other) {
+      if (other == null) dart.nullFailed(I[0], 279, 32, "other");
+      return new alignment.Alignment.new((dart.notNull(this.x) / dart.notNull(other))[$truncate]()[$toDouble](), (dart.notNull(this.y) / dart.notNull(other))[$truncate]()[$toDouble]());
     }
-    get minFlingVelocity() {
-      return this[minFlingVelocity];
+    ['%'](other) {
+      if (other == null) dart.nullFailed(I[0], 285, 31, "other");
+      return new alignment.Alignment.new(this.x[$modulo](other), this.y[$modulo](other));
     }
-    set minFlingVelocity(value) {
-      this[minFlingVelocity] = value;
+    alongOffset(other) {
+      if (other == null) dart.nullFailed(I[0], 290, 29, "other");
+      let centerX = dart.notNull(other.dx) / 2.0;
+      let centerY = dart.notNull(other.dy) / 2.0;
+      return new ui.Offset.new(centerX + dart.notNull(this.x) * centerX, centerY + dart.notNull(this.y) * centerY);
     }
-    get maxFlingVelocity() {
-      return this[maxFlingVelocity];
+    alongSize(other) {
+      if (other == null) dart.nullFailed(I[0], 297, 25, "other");
+      let centerX = dart.notNull(other.width) / 2.0;
+      let centerY = dart.notNull(other.height) / 2.0;
+      return new ui.Offset.new(centerX + dart.notNull(this.x) * centerX, centerY + dart.notNull(this.y) * centerY);
     }
-    set maxFlingVelocity(value) {
-      this[maxFlingVelocity] = value;
+    withinRect(rect) {
+      if (rect == null) dart.nullFailed(I[0], 304, 26, "rect");
+      let halfWidth = dart.notNull(rect.width) / 2.0;
+      let halfHeight = dart.notNull(rect.height) / 2.0;
+      return new ui.Offset.new(dart.notNull(rect.left) + halfWidth + dart.notNull(this.x) * halfWidth, dart.notNull(rect.top) + halfHeight + dart.notNull(this.y) * halfHeight);
     }
-    get velocityTrackerBuilder() {
-      return this[velocityTrackerBuilder$];
+    inscribe(size, rect) {
+      if (size == null) dart.nullFailed(I[0], 319, 22, "size");
+      if (rect == null) dart.nullFailed(I[0], 319, 33, "rect");
+      let halfWidthDelta = (dart.notNull(rect.width) - dart.notNull(size.width)) / 2.0;
+      let halfHeightDelta = (dart.notNull(rect.height) - dart.notNull(size.height)) / 2.0;
+      return new ui.Rect.fromLTWH(dart.notNull(rect.left) + halfWidthDelta + dart.notNull(this.x) * halfWidthDelta, dart.notNull(rect.top) + halfHeightDelta + dart.notNull(this.y) * halfHeightDelta, size.width, size.height);
     }
-    set velocityTrackerBuilder(value) {
-      this[velocityTrackerBuilder$] = value;
+    static lerp(a, b, t) {
+      if (t == null) dart.nullFailed(I[0], 335, 61, "t");
+      if (!(t != null)) dart.assertFailed(null, I[0], 336, 12, "t != null");
+      if (a == null && b == null) return null;
+      if (a == null) return new alignment.Alignment.new(dart.nullCheck(ui.lerpDouble(0.0, dart.nullCheck(b).x, t)), dart.nullCheck(ui.lerpDouble(0.0, b.y, t)));
+      if (b == null) return new alignment.Alignment.new(dart.nullCheck(ui.lerpDouble(a.x, 0.0, t)), dart.nullCheck(ui.lerpDouble(a.y, 0.0, t)));
+      return new alignment.Alignment.new(dart.nullCheck(ui.lerpDouble(a.x, b.x, t)), dart.nullCheck(ui.lerpDouble(a.y, b.y, t)));
     }
-    static _defaultBuilder(event) {
-      if (event == null) dart.nullFailed(I[0], 75, 55, "event");
-      return new velocity_tracker.VelocityTracker.withKind(event.kind);
+    resolve(direction) {
+      return this;
     }
-    get [_initialPosition]() {
-      let t0;
-      return dart.test(this[__DragGestureRecognizer__initialPosition_isSet]) ? (t0 = this[__DragGestureRecognizer__initialPosition], t0) : dart.throw(new _internal.LateError.fieldNI("_initialPosition"));
+    static _stringify(x, y) {
+      if (x == null) dart.nullFailed(I[0], 349, 35, "x");
+      if (y == null) dart.nullFailed(I[0], 349, 45, "y");
+      if (x === -1.0 && y === -1.0) return "Alignment.topLeft";
+      if (x === 0.0 && y === -1.0) return "Alignment.topCenter";
+      if (x === 1.0 && y === -1.0) return "Alignment.topRight";
+      if (x === -1.0 && y === 0.0) return "Alignment.centerLeft";
+      if (x === 0.0 && y === 0.0) return "Alignment.center";
+      if (x === 1.0 && y === 0.0) return "Alignment.centerRight";
+      if (x === -1.0 && y === 1.0) return "Alignment.bottomLeft";
+      if (x === 0.0 && y === 1.0) return "Alignment.bottomCenter";
+      if (x === 1.0 && y === 1.0) return "Alignment.bottomRight";
+      return "Alignment(" + x[$toStringAsFixed](1) + ", " + y[$toStringAsFixed](1) + ")";
     }
-    set [_initialPosition](t0) {
-      if (t0 == null) dart.nullFailed(I[0], 204, 19, "null");
-      this[__DragGestureRecognizer__initialPosition_isSet] = true;
-      this[__DragGestureRecognizer__initialPosition] = t0;
+    toString() {
+      return alignment.Alignment._stringify(this.x, this.y);
     }
-    get [_pendingDragOffset]() {
-      let t1;
-      return dart.test(this[__DragGestureRecognizer__pendingDragOffset_isSet]) ? (t1 = this[__DragGestureRecognizer__pendingDragOffset], t1) : dart.throw(new _internal.LateError.fieldNI("_pendingDragOffset"));
+  };
+  (alignment.Alignment.new = function(x, y) {
+    if (x == null) dart.nullFailed(I[0], 185, 24, "x");
+    if (y == null) dart.nullFailed(I[0], 185, 32, "y");
+    this[x$] = x;
+    this[y$] = y;
+    if (!(x != null)) dart.assertFailed(null, I[0], 186, 14, "x != null");
+    if (!(y != null)) dart.assertFailed(null, I[0], 187, 14, "y != null");
+    alignment.Alignment.__proto__.new.call(this);
+    ;
+  }).prototype = alignment.Alignment.prototype;
+  dart.addTypeTests(alignment.Alignment);
+  dart.addTypeCaches(alignment.Alignment);
+  dart.setMethodSignature(alignment.Alignment, () => ({
+    __proto__: dart.getMethods(alignment.Alignment.__proto__),
+    '-': dart.fnType(alignment.Alignment, [alignment.Alignment]),
+    '+': dart.fnType(alignment.Alignment, [alignment.Alignment]),
+    _negate: dart.fnType(alignment.Alignment, []),
+    '*': dart.fnType(alignment.Alignment, [core.double]),
+    '/': dart.fnType(alignment.Alignment, [core.double]),
+    '~/': dart.fnType(alignment.Alignment, [core.double]),
+    '%': dart.fnType(alignment.Alignment, [core.double]),
+    alongOffset: dart.fnType(ui.Offset, [ui.Offset]),
+    alongSize: dart.fnType(ui.Offset, [ui.Size]),
+    withinRect: dart.fnType(ui.Offset, [ui.Rect]),
+    inscribe: dart.fnType(ui.Rect, [ui.Size, ui.Rect]),
+    resolve: dart.fnType(alignment.Alignment, [dart.nullable(ui.TextDirection)])
+  }));
+  dart.setGetterSignature(alignment.Alignment, () => ({
+    __proto__: dart.getGetters(alignment.Alignment.__proto__),
+    [_x]: core.double,
+    [_start]: core.double,
+    [_y]: core.double
+  }));
+  dart.setLibraryUri(alignment.Alignment, I[1]);
+  dart.setFieldSignature(alignment.Alignment, () => ({
+    __proto__: dart.getFields(alignment.Alignment.__proto__),
+    x: dart.finalFieldType(core.double),
+    y: dart.finalFieldType(core.double)
+  }));
+  dart.defineExtensionMethods(alignment.Alignment, ['toString']);
+  dart.defineLazy(alignment.Alignment, {
+    /*alignment.Alignment.topLeft*/get topLeft() {
+      return C[0] || CT.C0;
+    },
+    /*alignment.Alignment.topCenter*/get topCenter() {
+      return C[1] || CT.C1;
+    },
+    /*alignment.Alignment.topRight*/get topRight() {
+      return C[2] || CT.C2;
+    },
+    /*alignment.Alignment.centerLeft*/get centerLeft() {
+      return C[3] || CT.C3;
+    },
+    /*alignment.Alignment.center*/get center() {
+      return C[4] || CT.C4;
+    },
+    /*alignment.Alignment.centerRight*/get centerRight() {
+      return C[5] || CT.C5;
+    },
+    /*alignment.Alignment.bottomLeft*/get bottomLeft() {
+      return C[6] || CT.C6;
+    },
+    /*alignment.Alignment.bottomCenter*/get bottomCenter() {
+      return C[7] || CT.C7;
+    },
+    /*alignment.Alignment.bottomRight*/get bottomRight() {
+      return C[8] || CT.C8;
     }
-    set [_pendingDragOffset](t1) {
-      if (t1 == null) dart.nullFailed(I[0], 205, 19, "null");
-      this[__DragGestureRecognizer__pendingDragOffset_isSet] = true;
-      this[__DragGestureRecognizer__pendingDragOffset] = t1;
+  }, false);
+  var start$ = dart.privateName(alignment, "AlignmentDirectional.start");
+  var y$0 = dart.privateName(alignment, "AlignmentDirectional.y");
+  var _name = dart.privateName(ui, "_name");
+  alignment.AlignmentDirectional = class AlignmentDirectional extends alignment.AlignmentGeometry {
+    get start() {
+      return this[start$];
     }
-    get [_globalDistanceMoved]() {
-      let t2;
-      return dart.test(this[__DragGestureRecognizer__globalDistanceMoved_isSet]) ? (t2 = this[__DragGestureRecognizer__globalDistanceMoved], t2) : dart.throw(new _internal.LateError.fieldNI("_globalDistanceMoved"));
+    set start(value) {
+      super.start = value;
     }
-    set [_globalDistanceMoved](t2) {
-      if (t2 == null) dart.nullFailed(I[0], 216, 15, "null");
-      this[__DragGestureRecognizer__globalDistanceMoved_isSet] = true;
-      this[__DragGestureRecognizer__globalDistanceMoved] = t2;
+    get y() {
+      return this[y$0];
     }
-    isPointerAllowed(event) {
-      if (event == null) dart.nullFailed(I[0], 232, 38, "event");
-      if (this[_initialButtons] == null) {
-        switch (event.buttons) {
-          case 1:
-          {
-            if (this.onDown == null && this.onStart == null && this.onUpdate == null && this.onEnd == null && this.onCancel == null) return false;
-            break;
-          }
-          default:
-          {
-            return false;
-          }
-        }
-      } else {
-        if (event.buttons != this[_initialButtons]) {
-          return false;
-        }
-      }
-      return super.isPointerAllowed(events.PointerDownEvent.as(event));
+    set y(value) {
+      super.y = value;
     }
-    addAllowedPointer(event) {
-      let t3;
-      if (event == null) dart.nullFailed(I[0], 256, 39, "event");
-      this.startTrackingPointer(event.pointer, event.transform);
-      this[_velocityTrackers][$_set](event.pointer, (t3 = event, this.velocityTrackerBuilder(t3)));
-      if (this[_state] == monodrag._DragState.ready) {
-        this[_state] = monodrag._DragState.possible;
-        this[_initialPosition] = new recognizer.OffsetPair.new({global: event.position, local: event.localPosition});
-        this[_initialButtons] = event.buttons;
-        this[_pendingDragOffset] = recognizer.OffsetPair.zero;
-        this[_globalDistanceMoved] = 0.0;
-        this[_lastPendingEventTimestamp] = event.timeStamp;
-        this[_lastTransform] = event.transform;
-        this[_checkDown]();
-      } else if (this[_state] == monodrag._DragState.accepted) {
-        this.resolve(arena.GestureDisposition.accepted);
-      }
+    get [_x]() {
+      return 0.0;
     }
-    handleEvent(event) {
-      let t3;
-      if (event == null) dart.nullFailed(I[0], 274, 33, "event");
-      if (!(this[_state] != monodrag._DragState.ready)) dart.assertFailed(null, I[0], 275, 12, "_state != _DragState.ready");
-      if (!dart.test(event.synthesized) && (events.PointerDownEvent.is(event) || events.PointerMoveEvent.is(event))) {
-        let tracker = dart.nullCheck(this[_velocityTrackers][$_get](event.pointer));
-        if (!(tracker !== null)) dart.assertFailed(null, I[0], 279, 14, "tracker != null");
-        tracker.addPosition(event.timeStamp, event.localPosition);
-      }
-      if (events.PointerMoveEvent.is(event)) {
-        if (event.buttons != this[_initialButtons]) {
-          this[_giveUpPointer](event.pointer);
-          return;
-        }
-        if (this[_state] == monodrag._DragState.accepted) {
-          this[_checkUpdate]({sourceTimeStamp: event.timeStamp, delta: this[_getDeltaForDetails](event.localDelta), primaryDelta: this[_getPrimaryValueFromOffset](event.localDelta), globalPosition: event.position, localPosition: event.localPosition});
-        } else {
-          this[_pendingDragOffset] = this[_pendingDragOffset]['+'](new recognizer.OffsetPair.new({local: event.localDelta, global: event.delta}));
-          this[_lastPendingEventTimestamp] = event.timeStamp;
-          this[_lastTransform] = event.transform;
-          let movedLocally = this[_getDeltaForDetails](event.localDelta);
-          let localToGlobalTransform = event.transform == null ? null : vector_math_64.Matrix4.tryInvert(dart.nullCheck(event.transform));
-          this[_globalDistanceMoved] = dart.notNull(this[_globalDistanceMoved]) + dart.notNull(events.PointerEvent.transformDeltaViaPositions({transform: localToGlobalTransform, untransformedDelta: movedLocally, untransformedEndPosition: event.localPosition}).distance) * (t3 = this[_getPrimaryValueFromOffset](movedLocally), t3 == null ? 1.0 : t3)[$sign];
-          if (dart.test(this[_hasSufficientGlobalDistanceToAccept](event.kind))) this.resolve(arena.GestureDisposition.accepted);
-        }
-      }
-      if (events.PointerUpEvent.is(event) || events.PointerCancelEvent.is(event)) {
-        this[_giveUpPointer](event.pointer);
-      }
+    get [_start]() {
+      return this.start;
     }
-    acceptGesture(pointer) {
-      if (pointer == null) dart.nullFailed(I[0], 319, 26, "pointer");
-      if (!!dart.test(this[_acceptedActivePointers].contains(pointer))) dart.assertFailed(null, I[0], 320, 12, "!_acceptedActivePointers.contains(pointer)");
-      this[_acceptedActivePointers].add(pointer);
-      if (this[_state] != monodrag._DragState.accepted) {
-        this[_state] = monodrag._DragState.accepted;
-        let delta = this[_pendingDragOffset];
-        let timestamp = dart.nullCheck(this[_lastPendingEventTimestamp]);
-        let transform = this[_lastTransform];
-        let localUpdateDelta = null;
-        switch (this.dragStartBehavior) {
-          case C[4] || CT.C4:
-          {
-            this[_initialPosition] = this[_initialPosition]['+'](delta);
-            localUpdateDelta = ui.Offset.zero;
-            break;
-          }
-          case C[6] || CT.C6:
-          {
-            localUpdateDelta = this[_getDeltaForDetails](delta.local);
-            break;
-          }
-          default:
-          {
-            dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
-          }
-        }
-        this[_pendingDragOffset] = recognizer.OffsetPair.zero;
-        this[_lastPendingEventTimestamp] = null;
-        this[_lastTransform] = null;
-        this[_checkStart](timestamp, pointer);
-        if (!dart.equals(localUpdateDelta, ui.Offset.zero) && this.onUpdate != null) {
-          let localToGlobal = transform != null ? vector_math_64.Matrix4.tryInvert(transform) : null;
-          let correctedLocalPosition = this[_initialPosition].local['+'](localUpdateDelta);
-          let globalUpdateDelta = events.PointerEvent.transformDeltaViaPositions({untransformedEndPosition: correctedLocalPosition, untransformedDelta: localUpdateDelta, transform: localToGlobal});
-          let updateDelta = new recognizer.OffsetPair.new({local: localUpdateDelta, global: globalUpdateDelta});
-          let correctedPosition = this[_initialPosition]['+'](updateDelta);
-          this[_checkUpdate]({sourceTimeStamp: timestamp, delta: localUpdateDelta, primaryDelta: this[_getPrimaryValueFromOffset](localUpdateDelta), globalPosition: correctedPosition.global, localPosition: correctedPosition.local});
-        }
-      }
+    get [_y]() {
+      return this.y;
     }
-    rejectGesture(pointer) {
-      if (pointer == null) dart.nullFailed(I[0], 363, 26, "pointer");
-      this[_giveUpPointer](pointer);
+    add(other) {
+      if (other == null) dart.nullFailed(I[0], 465, 43, "other");
+      if (alignment.AlignmentDirectional.is(other)) return this['+'](other);
+      return super.add(other);
     }
-    didStopTrackingLastPointer(pointer) {
-      if (pointer == null) dart.nullFailed(I[0], 368, 39, "pointer");
-      if (!(this[_state] != monodrag._DragState.ready)) dart.assertFailed(null, I[0], 369, 12, "_state != _DragState.ready");
-      switch (this[_state]) {
-        case C[0] || CT.C0:
+    ['-'](other) {
+      if (other == null) dart.nullFailed(I[0], 472, 56, "other");
+      return new alignment.AlignmentDirectional.new(dart.notNull(this.start) - dart.notNull(other.start), dart.notNull(this.y) - dart.notNull(other.y));
+    }
+    ['+'](other) {
+      if (other == null) dart.nullFailed(I[0], 477, 56, "other");
+      return new alignment.AlignmentDirectional.new(dart.notNull(this.start) + dart.notNull(other.start), dart.notNull(this.y) + dart.notNull(other.y));
+    }
+    _negate() {
+      return new alignment.AlignmentDirectional.new(-dart.notNull(this.start), -dart.notNull(this.y));
+    }
+    ['*'](other) {
+      if (other == null) dart.nullFailed(I[0], 489, 42, "other");
+      return new alignment.AlignmentDirectional.new(dart.notNull(this.start) * dart.notNull(other), dart.notNull(this.y) * dart.notNull(other));
+    }
+    ['/'](other) {
+      if (other == null) dart.nullFailed(I[0], 495, 42, "other");
+      return new alignment.AlignmentDirectional.new(dart.notNull(this.start) / dart.notNull(other), dart.notNull(this.y) / dart.notNull(other));
+    }
+    ['~/'](other) {
+      if (other == null) dart.nullFailed(I[0], 501, 43, "other");
+      return new alignment.AlignmentDirectional.new((dart.notNull(this.start) / dart.notNull(other))[$truncate]()[$toDouble](), (dart.notNull(this.y) / dart.notNull(other))[$truncate]()[$toDouble]());
+    }
+    ['%'](other) {
+      if (other == null) dart.nullFailed(I[0], 507, 42, "other");
+      return new alignment.AlignmentDirectional.new(this.start[$modulo](other), this.y[$modulo](other));
+    }
+    static lerp(a, b, t) {
+      if (t == null) dart.nullFailed(I[0], 516, 94, "t");
+      if (!(t != null)) dart.assertFailed(null, I[0], 517, 12, "t != null");
+      if (a == null && b == null) return null;
+      if (a == null) return new alignment.AlignmentDirectional.new(dart.nullCheck(ui.lerpDouble(0.0, dart.nullCheck(b).start, t)), dart.nullCheck(ui.lerpDouble(0.0, b.y, t)));
+      if (b == null) return new alignment.AlignmentDirectional.new(dart.nullCheck(ui.lerpDouble(a.start, 0.0, t)), dart.nullCheck(ui.lerpDouble(a.y, 0.0, t)));
+      return new alignment.AlignmentDirectional.new(dart.nullCheck(ui.lerpDouble(a.start, b.start, t)), dart.nullCheck(ui.lerpDouble(a.y, b.y, t)));
+    }
+    resolve(direction) {
+      if (!(direction != null)) dart.assertFailed("Cannot resolve " + dart.str(this[$runtimeType]) + " without a TextDirection.", I[0], 529, 12, "direction != null");
+      switch (dart.nullCheck(direction)) {
+        case C[9] || CT.C9:
         {
-          break;
+          return new alignment.Alignment.new(-dart.notNull(this.start), this.y);
         }
-        case C[1] || CT.C1:
+        case C[10] || CT.C10:
         {
-          this.resolve(arena.GestureDisposition.rejected);
-          this[_checkCancel]();
-          break;
-        }
-        case C[2] || CT.C2:
-        {
-          this[_checkEnd](pointer);
-          break;
+          return new alignment.Alignment.new(this.start, this.y);
         }
         default:
         {
           dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
         }
       }
-      this[_velocityTrackers][$clear]();
-      this[_initialButtons] = null;
-      this[_state] = monodrag._DragState.ready;
     }
-    [_giveUpPointer](pointer) {
-      if (pointer == null) dart.nullFailed(I[0], 388, 27, "pointer");
-      this.stopTrackingPointer(pointer);
-      if (!dart.test(this[_acceptedActivePointers].remove(pointer))) this.resolvePointer(pointer, arena.GestureDisposition.rejected);
+    static _stringify(start, y) {
+      if (start == null) dart.nullFailed(I[0], 538, 35, "start");
+      if (y == null) dart.nullFailed(I[0], 538, 49, "y");
+      if (start === -1.0 && y === -1.0) return "AlignmentDirectional.topStart";
+      if (start === 0.0 && y === -1.0) return "AlignmentDirectional.topCenter";
+      if (start === 1.0 && y === -1.0) return "AlignmentDirectional.topEnd";
+      if (start === -1.0 && y === 0.0) return "AlignmentDirectional.centerStart";
+      if (start === 0.0 && y === 0.0) return "AlignmentDirectional.center";
+      if (start === 1.0 && y === 0.0) return "AlignmentDirectional.centerEnd";
+      if (start === -1.0 && y === 1.0) return "AlignmentDirectional.bottomStart";
+      if (start === 0.0 && y === 1.0) return "AlignmentDirectional.bottomCenter";
+      if (start === 1.0 && y === 1.0) return "AlignmentDirectional.bottomEnd";
+      return "AlignmentDirectional(" + start[$toStringAsFixed](1) + ", " + y[$toStringAsFixed](1) + ")";
     }
-    [_checkDown]() {
-      if (!(this[_initialButtons] === 1)) dart.assertFailed(null, I[0], 397, 12, "_initialButtons == kPrimaryButton");
-      if (this.onDown != null) {
-        let details = new drag_details.DragDownDetails.new({globalPosition: this[_initialPosition].global, localPosition: this[_initialPosition].local});
-        this.invokeCallback(dart.void, "onDown", dart.fn(() => dart.nullCheck(this.onDown)(details), T.VoidTovoid()));
-      }
-    }
-    [_checkStart](timestamp, pointer) {
-      if (timestamp == null) dart.nullFailed(I[0], 407, 29, "timestamp");
-      if (pointer == null) dart.nullFailed(I[0], 407, 44, "pointer");
-      if (!(this[_initialButtons] === 1)) dart.assertFailed(null, I[0], 408, 12, "_initialButtons == kPrimaryButton");
-      if (this.onStart != null) {
-        let details = new drag_details.DragStartDetails.new({sourceTimeStamp: timestamp, globalPosition: this[_initialPosition].global, localPosition: this[_initialPosition].local, kind: this.getKindForPointer(pointer)});
-        this.invokeCallback(dart.void, "onStart", dart.fn(() => dart.nullCheck(this.onStart)(details), T.VoidTovoid()));
-      }
-    }
-    [_checkUpdate](opts) {
-      let sourceTimeStamp = opts && 'sourceTimeStamp' in opts ? opts.sourceTimeStamp : null;
-      let delta = opts && 'delta' in opts ? opts.delta : null;
-      if (delta == null) dart.nullFailed(I[0], 422, 21, "delta");
-      let primaryDelta = opts && 'primaryDelta' in opts ? opts.primaryDelta : null;
-      let globalPosition = opts && 'globalPosition' in opts ? opts.globalPosition : null;
-      if (globalPosition == null) dart.nullFailed(I[0], 424, 21, "globalPosition");
-      let localPosition = opts && 'localPosition' in opts ? opts.localPosition : null;
-      if (!(this[_initialButtons] === 1)) dart.assertFailed(null, I[0], 427, 12, "_initialButtons == kPrimaryButton");
-      if (this.onUpdate != null) {
-        let details = new drag_details.DragUpdateDetails.new({sourceTimeStamp: sourceTimeStamp, delta: delta, primaryDelta: primaryDelta, globalPosition: globalPosition, localPosition: localPosition});
-        this.invokeCallback(dart.void, "onUpdate", dart.fn(() => dart.nullCheck(this.onUpdate)(details), T.VoidTovoid()));
-      }
-    }
-    [_checkEnd](pointer) {
-      let t3, t3$;
-      if (pointer == null) dart.nullFailed(I[0], 440, 22, "pointer");
-      if (!(this[_initialButtons] === 1)) dart.assertFailed(null, I[0], 441, 12, "_initialButtons == kPrimaryButton");
-      if (this.onEnd == null) return;
-      let tracker = dart.nullCheck(this[_velocityTrackers][$_get](pointer));
-      if (!(tracker !== null)) dart.assertFailed(null, I[0], 446, 12, "tracker != null");
-      let details = null;
-      let debugReport = null;
-      let estimate = tracker.getVelocityEstimate();
-      if (estimate != null && dart.test(this.isFlingGesture(estimate, tracker.kind))) {
-        let velocity = new velocity_tracker.Velocity.new({pixelsPerSecond: estimate.pixelsPerSecond}).clampMagnitude((t3 = this.minFlingVelocity, t3 == null ? 50 : t3), (t3$ = this.maxFlingVelocity, t3$ == null ? 8000 : t3$));
-        details = new drag_details.DragEndDetails.new({velocity: velocity, primaryVelocity: this[_getPrimaryValueFromOffset](velocity.pixelsPerSecond)});
-        debugReport = dart.fn(() => dart.str(estimate) + "; fling at " + dart.str(velocity) + ".", T.VoidToString());
-      } else {
-        details = new drag_details.DragEndDetails.new({velocity: velocity_tracker.Velocity.zero, primaryVelocity: 0.0});
-        debugReport = dart.fn(() => {
-          if (estimate == null) return "Could not estimate velocity.";
-          return dart.str(estimate) + "; judged to not be a fling.";
-        }, T.VoidToString());
-      }
-      this.invokeCallback(dart.void, "onEnd", dart.fn(() => dart.nullCheck(this.onEnd)(details), T.VoidTovoid()), {debugReport: debugReport});
-    }
-    [_checkCancel]() {
-      if (!(this[_initialButtons] === 1)) dart.assertFailed(null, I[0], 477, 12, "_initialButtons == kPrimaryButton");
-      if (this.onCancel != null) this.invokeCallback(dart.void, "onCancel", dart.nullCheck(this.onCancel));
-    }
-    dispose() {
-      this[_velocityTrackers][$clear]();
-      super.dispose();
-    }
-    debugFillProperties(properties) {
-      if (properties == null) dart.nullFailed(I[0], 488, 56, "properties");
-      super.debugFillProperties(properties);
-      properties.add(new (T.EnumPropertyOfDragStartBehavior()).new("start behavior", this.dragStartBehavior));
+    toString() {
+      return alignment.AlignmentDirectional._stringify(this.start, this.y);
     }
   };
-  (monodrag.DragGestureRecognizer.new = function(opts) {
-    let debugOwner = opts && 'debugOwner' in opts ? opts.debugOwner : null;
-    let kind = opts && 'kind' in opts ? opts.kind : null;
-    let dragStartBehavior = opts && 'dragStartBehavior' in opts ? opts.dragStartBehavior : C[4] || CT.C4;
-    if (dragStartBehavior == null) dart.nullFailed(I[0], 70, 10, "dragStartBehavior");
-    let velocityTrackerBuilder = opts && 'velocityTrackerBuilder' in opts ? opts.velocityTrackerBuilder : C[5] || CT.C5;
-    if (velocityTrackerBuilder == null) dart.nullFailed(I[0], 71, 10, "velocityTrackerBuilder");
-    this[onDown] = null;
-    this[onStart] = null;
-    this[onUpdate] = null;
-    this[onEnd] = null;
-    this[onCancel] = null;
-    this[minFlingDistance] = null;
-    this[minFlingVelocity] = null;
-    this[maxFlingVelocity] = null;
-    this[_state] = monodrag._DragState.ready;
-    this[__DragGestureRecognizer__initialPosition] = null;
-    this[__DragGestureRecognizer__initialPosition_isSet] = false;
-    this[__DragGestureRecognizer__pendingDragOffset] = null;
-    this[__DragGestureRecognizer__pendingDragOffset_isSet] = false;
-    this[_lastPendingEventTimestamp] = null;
-    this[_initialButtons] = null;
-    this[_lastTransform] = null;
-    this[__DragGestureRecognizer__globalDistanceMoved] = null;
-    this[__DragGestureRecognizer__globalDistanceMoved_isSet] = false;
-    this[_velocityTrackers] = new (T.IdentityMapOfint$VelocityTracker()).new();
-    this[_acceptedActivePointers] = T.LinkedHashSetOfint().new();
-    this[dragStartBehavior$] = dragStartBehavior;
-    this[velocityTrackerBuilder$] = velocityTrackerBuilder;
-    if (!(dragStartBehavior != null)) dart.assertFailed(null, I[0], 72, 15, "dragStartBehavior != null");
-    monodrag.DragGestureRecognizer.__proto__.new.call(this, {debugOwner: debugOwner, kind: kind});
+  (alignment.AlignmentDirectional.new = function(start, y) {
+    if (start == null) dart.nullFailed(I[0], 391, 35, "start");
+    if (y == null) dart.nullFailed(I[0], 391, 47, "y");
+    this[start$] = start;
+    this[y$0] = y;
+    if (!(start != null)) dart.assertFailed(null, I[0], 392, 14, "start != null");
+    if (!(y != null)) dart.assertFailed(null, I[0], 393, 14, "y != null");
+    alignment.AlignmentDirectional.__proto__.new.call(this);
     ;
-  }).prototype = monodrag.DragGestureRecognizer.prototype;
-  dart.addTypeTests(monodrag.DragGestureRecognizer);
-  dart.addTypeCaches(monodrag.DragGestureRecognizer);
-  dart.setMethodSignature(monodrag.DragGestureRecognizer, () => ({
-    __proto__: dart.getMethods(monodrag.DragGestureRecognizer.__proto__),
-    isPointerAllowed: dart.fnType(core.bool, [events.PointerEvent]),
-    addAllowedPointer: dart.fnType(dart.void, [events.PointerEvent]),
-    handleEvent: dart.fnType(dart.void, [events.PointerEvent]),
-    didStopTrackingLastPointer: dart.fnType(dart.void, [core.int]),
-    [_giveUpPointer]: dart.fnType(dart.void, [core.int]),
-    [_checkDown]: dart.fnType(dart.void, []),
-    [_checkStart]: dart.fnType(dart.void, [core.Duration, core.int]),
-    [_checkUpdate]: dart.fnType(dart.void, [], {localPosition: dart.nullable(ui.Offset), primaryDelta: dart.nullable(core.double), sourceTimeStamp: dart.nullable(core.Duration)}, {delta: ui.Offset, globalPosition: ui.Offset}),
-    [_checkEnd]: dart.fnType(dart.void, [core.int]),
-    [_checkCancel]: dart.fnType(dart.void, [])
+  }).prototype = alignment.AlignmentDirectional.prototype;
+  dart.addTypeTests(alignment.AlignmentDirectional);
+  dart.addTypeCaches(alignment.AlignmentDirectional);
+  dart.setMethodSignature(alignment.AlignmentDirectional, () => ({
+    __proto__: dart.getMethods(alignment.AlignmentDirectional.__proto__),
+    '-': dart.fnType(alignment.AlignmentDirectional, [alignment.AlignmentDirectional]),
+    '+': dart.fnType(alignment.AlignmentDirectional, [alignment.AlignmentDirectional]),
+    _negate: dart.fnType(alignment.AlignmentDirectional, []),
+    '*': dart.fnType(alignment.AlignmentDirectional, [core.double]),
+    '/': dart.fnType(alignment.AlignmentDirectional, [core.double]),
+    '~/': dart.fnType(alignment.AlignmentDirectional, [core.double]),
+    '%': dart.fnType(alignment.AlignmentDirectional, [core.double]),
+    resolve: dart.fnType(alignment.Alignment, [dart.nullable(ui.TextDirection)])
   }));
-  dart.setGetterSignature(monodrag.DragGestureRecognizer, () => ({
-    __proto__: dart.getGetters(monodrag.DragGestureRecognizer.__proto__),
-    [_initialPosition]: recognizer.OffsetPair,
-    [_pendingDragOffset]: recognizer.OffsetPair,
-    [_globalDistanceMoved]: core.double
+  dart.setGetterSignature(alignment.AlignmentDirectional, () => ({
+    __proto__: dart.getGetters(alignment.AlignmentDirectional.__proto__),
+    [_x]: core.double,
+    [_start]: core.double,
+    [_y]: core.double
   }));
-  dart.setSetterSignature(monodrag.DragGestureRecognizer, () => ({
-    __proto__: dart.getSetters(monodrag.DragGestureRecognizer.__proto__),
-    [_initialPosition]: recognizer.OffsetPair,
-    [_pendingDragOffset]: recognizer.OffsetPair,
-    [_globalDistanceMoved]: core.double
+  dart.setLibraryUri(alignment.AlignmentDirectional, I[1]);
+  dart.setFieldSignature(alignment.AlignmentDirectional, () => ({
+    __proto__: dart.getFields(alignment.AlignmentDirectional.__proto__),
+    start: dart.finalFieldType(core.double),
+    y: dart.finalFieldType(core.double)
   }));
-  dart.setLibraryUri(monodrag.DragGestureRecognizer, I[1]);
-  dart.setFieldSignature(monodrag.DragGestureRecognizer, () => ({
-    __proto__: dart.getFields(monodrag.DragGestureRecognizer.__proto__),
-    dragStartBehavior: dart.fieldType(recognizer.DragStartBehavior),
-    onDown: dart.fieldType(dart.nullable(dart.fnType(dart.void, [drag_details.DragDownDetails]))),
-    onStart: dart.fieldType(dart.nullable(dart.fnType(dart.void, [drag_details.DragStartDetails]))),
-    onUpdate: dart.fieldType(dart.nullable(dart.fnType(dart.void, [drag_details.DragUpdateDetails]))),
-    onEnd: dart.fieldType(dart.nullable(dart.fnType(dart.void, [drag_details.DragEndDetails]))),
-    onCancel: dart.fieldType(dart.nullable(dart.fnType(dart.void, []))),
-    minFlingDistance: dart.fieldType(dart.nullable(core.double)),
-    minFlingVelocity: dart.fieldType(dart.nullable(core.double)),
-    maxFlingVelocity: dart.fieldType(dart.nullable(core.double)),
-    velocityTrackerBuilder: dart.fieldType(dart.fnType(velocity_tracker.VelocityTracker, [events.PointerEvent])),
-    [_state]: dart.fieldType(monodrag._DragState),
-    [__DragGestureRecognizer__initialPosition]: dart.fieldType(dart.nullable(recognizer.OffsetPair)),
-    [__DragGestureRecognizer__initialPosition_isSet]: dart.fieldType(core.bool),
-    [__DragGestureRecognizer__pendingDragOffset]: dart.fieldType(dart.nullable(recognizer.OffsetPair)),
-    [__DragGestureRecognizer__pendingDragOffset_isSet]: dart.fieldType(core.bool),
-    [_lastPendingEventTimestamp]: dart.fieldType(dart.nullable(core.Duration)),
-    [_initialButtons]: dart.fieldType(dart.nullable(core.int)),
-    [_lastTransform]: dart.fieldType(dart.nullable(vector_math_64.Matrix4)),
-    [__DragGestureRecognizer__globalDistanceMoved]: dart.fieldType(dart.nullable(core.double)),
-    [__DragGestureRecognizer__globalDistanceMoved_isSet]: dart.fieldType(core.bool),
-    [_velocityTrackers]: dart.finalFieldType(core.Map$(core.int, velocity_tracker.VelocityTracker)),
-    [_acceptedActivePointers]: dart.finalFieldType(core.Set$(core.int))
-  }));
-  monodrag.VerticalDragGestureRecognizer = class VerticalDragGestureRecognizer extends monodrag.DragGestureRecognizer {
-    isFlingGesture(estimate, kind) {
-      let t3, t3$;
-      if (estimate == null) dart.nullFailed(I[0], 514, 40, "estimate");
-      if (kind == null) dart.nullFailed(I[0], 514, 68, "kind");
-      let minVelocity = (t3 = this.minFlingVelocity, t3 == null ? 50 : t3);
-      let minDistance = (t3$ = this.minFlingDistance, t3$ == null ? events.computeHitSlop(kind) : t3$);
-      return estimate.pixelsPerSecond.dy[$abs]() > dart.notNull(minVelocity) && estimate.offset.dy[$abs]() > dart.notNull(minDistance);
+  dart.defineExtensionMethods(alignment.AlignmentDirectional, ['toString']);
+  dart.defineLazy(alignment.AlignmentDirectional, {
+    /*alignment.AlignmentDirectional.topStart*/get topStart() {
+      return C[11] || CT.C11;
+    },
+    /*alignment.AlignmentDirectional.topCenter*/get topCenter() {
+      return C[12] || CT.C12;
+    },
+    /*alignment.AlignmentDirectional.topEnd*/get topEnd() {
+      return C[13] || CT.C13;
+    },
+    /*alignment.AlignmentDirectional.centerStart*/get centerStart() {
+      return C[14] || CT.C14;
+    },
+    /*alignment.AlignmentDirectional.center*/get center() {
+      return C[15] || CT.C15;
+    },
+    /*alignment.AlignmentDirectional.centerEnd*/get centerEnd() {
+      return C[16] || CT.C16;
+    },
+    /*alignment.AlignmentDirectional.bottomStart*/get bottomStart() {
+      return C[17] || CT.C17;
+    },
+    /*alignment.AlignmentDirectional.bottomCenter*/get bottomCenter() {
+      return C[18] || CT.C18;
+    },
+    /*alignment.AlignmentDirectional.bottomEnd*/get bottomEnd() {
+      return C[19] || CT.C19;
     }
-    [_hasSufficientGlobalDistanceToAccept](pointerDeviceKind) {
-      if (pointerDeviceKind == null) dart.nullFailed(I[0], 521, 63, "pointerDeviceKind");
-      return this[_globalDistanceMoved][$abs]() > dart.notNull(events.computeHitSlop(pointerDeviceKind));
+  }, false);
+  var _x$ = dart.privateName(alignment, "_MixedAlignment._x");
+  var _start$ = dart.privateName(alignment, "_MixedAlignment._start");
+  var _y$ = dart.privateName(alignment, "_MixedAlignment._y");
+  alignment._MixedAlignment = class _MixedAlignment extends alignment.AlignmentGeometry {
+    get [_x]() {
+      return this[_x$];
     }
-    [_getDeltaForDetails](delta) {
-      if (delta == null) dart.nullFailed(I[0], 526, 37, "delta");
-      return new ui.Offset.new(0.0, delta.dy);
+    set [_x](value) {
+      super[_x] = value;
     }
-    [_getPrimaryValueFromOffset](value) {
-      if (value == null) dart.nullFailed(I[0], 529, 44, "value");
-      return value.dy;
+    get [_start]() {
+      return this[_start$];
     }
-    get debugDescription() {
-      return "vertical drag";
+    set [_start](value) {
+      super[_start] = value;
+    }
+    get [_y]() {
+      return this[_y$];
+    }
+    set [_y](value) {
+      super[_y] = value;
+    }
+    _negate() {
+      return new alignment._MixedAlignment.new(-dart.notNull(this[_x]), -dart.notNull(this[_start]), -dart.notNull(this[_y]));
+    }
+    ['*'](other) {
+      if (other == null) dart.nullFailed(I[0], 587, 37, "other");
+      return new alignment._MixedAlignment.new(dart.notNull(this[_x]) * dart.notNull(other), dart.notNull(this[_start]) * dart.notNull(other), dart.notNull(this[_y]) * dart.notNull(other));
+    }
+    ['/'](other) {
+      if (other == null) dart.nullFailed(I[0], 596, 37, "other");
+      return new alignment._MixedAlignment.new(dart.notNull(this[_x]) / dart.notNull(other), dart.notNull(this[_start]) / dart.notNull(other), dart.notNull(this[_y]) / dart.notNull(other));
+    }
+    ['~/'](other) {
+      if (other == null) dart.nullFailed(I[0], 605, 38, "other");
+      return new alignment._MixedAlignment.new((dart.notNull(this[_x]) / dart.notNull(other))[$truncate]()[$toDouble](), (dart.notNull(this[_start]) / dart.notNull(other))[$truncate]()[$toDouble](), (dart.notNull(this[_y]) / dart.notNull(other))[$truncate]()[$toDouble]());
+    }
+    ['%'](other) {
+      if (other == null) dart.nullFailed(I[0], 614, 37, "other");
+      return new alignment._MixedAlignment.new(this[_x][$modulo](other), this[_start][$modulo](other), this[_y][$modulo](other));
+    }
+    resolve(direction) {
+      if (!(direction != null)) dart.assertFailed("Cannot resolve " + dart.str(this[$runtimeType]) + " without a TextDirection.", I[0], 624, 12, "direction != null");
+      switch (dart.nullCheck(direction)) {
+        case C[9] || CT.C9:
+        {
+          return new alignment.Alignment.new(dart.notNull(this[_x]) - dart.notNull(this[_start]), this[_y]);
+        }
+        case C[10] || CT.C10:
+        {
+          return new alignment.Alignment.new(dart.notNull(this[_x]) + dart.notNull(this[_start]), this[_y]);
+        }
+        default:
+        {
+          dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
+        }
+      }
     }
   };
-  (monodrag.VerticalDragGestureRecognizer.new = function(opts) {
-    let debugOwner = opts && 'debugOwner' in opts ? opts.debugOwner : null;
-    let kind = opts && 'kind' in opts ? opts.kind : null;
-    monodrag.VerticalDragGestureRecognizer.__proto__.new.call(this, {debugOwner: debugOwner, kind: kind});
+  (alignment._MixedAlignment.new = function(_x, _start, _y) {
+    if (_x == null) dart.nullFailed(I[0], 566, 30, "_x");
+    if (_start == null) dart.nullFailed(I[0], 566, 39, "_start");
+    if (_y == null) dart.nullFailed(I[0], 566, 52, "_y");
+    this[_x$] = _x;
+    this[_start$] = _start;
+    this[_y$] = _y;
+    alignment._MixedAlignment.__proto__.new.call(this);
     ;
-  }).prototype = monodrag.VerticalDragGestureRecognizer.prototype;
-  dart.addTypeTests(monodrag.VerticalDragGestureRecognizer);
-  dart.addTypeCaches(monodrag.VerticalDragGestureRecognizer);
-  dart.setMethodSignature(monodrag.VerticalDragGestureRecognizer, () => ({
-    __proto__: dart.getMethods(monodrag.VerticalDragGestureRecognizer.__proto__),
-    isFlingGesture: dart.fnType(core.bool, [velocity_tracker.VelocityEstimate, ui.PointerDeviceKind]),
-    [_hasSufficientGlobalDistanceToAccept]: dart.fnType(core.bool, [ui.PointerDeviceKind]),
-    [_getDeltaForDetails]: dart.fnType(ui.Offset, [ui.Offset]),
-    [_getPrimaryValueFromOffset]: dart.fnType(core.double, [ui.Offset])
+  }).prototype = alignment._MixedAlignment.prototype;
+  dart.addTypeTests(alignment._MixedAlignment);
+  dart.addTypeCaches(alignment._MixedAlignment);
+  dart.setMethodSignature(alignment._MixedAlignment, () => ({
+    __proto__: dart.getMethods(alignment._MixedAlignment.__proto__),
+    _negate: dart.fnType(alignment._MixedAlignment, []),
+    '*': dart.fnType(alignment._MixedAlignment, [core.double]),
+    '/': dart.fnType(alignment._MixedAlignment, [core.double]),
+    '~/': dart.fnType(alignment._MixedAlignment, [core.double]),
+    '%': dart.fnType(alignment._MixedAlignment, [core.double]),
+    resolve: dart.fnType(alignment.Alignment, [dart.nullable(ui.TextDirection)])
   }));
-  dart.setGetterSignature(monodrag.VerticalDragGestureRecognizer, () => ({
-    __proto__: dart.getGetters(monodrag.VerticalDragGestureRecognizer.__proto__),
-    debugDescription: core.String
+  dart.setLibraryUri(alignment._MixedAlignment, I[1]);
+  dart.setFieldSignature(alignment._MixedAlignment, () => ({
+    __proto__: dart.getFields(alignment._MixedAlignment.__proto__),
+    [_x]: dart.finalFieldType(core.double),
+    [_start]: dart.finalFieldType(core.double),
+    [_y]: dart.finalFieldType(core.double)
   }));
-  dart.setLibraryUri(monodrag.VerticalDragGestureRecognizer, I[1]);
-  monodrag.HorizontalDragGestureRecognizer = class HorizontalDragGestureRecognizer extends monodrag.DragGestureRecognizer {
-    isFlingGesture(estimate, kind) {
-      let t3, t3$;
-      if (estimate == null) dart.nullFailed(I[0], 555, 40, "estimate");
-      if (kind == null) dart.nullFailed(I[0], 555, 68, "kind");
-      let minVelocity = (t3 = this.minFlingVelocity, t3 == null ? 50 : t3);
-      let minDistance = (t3$ = this.minFlingDistance, t3$ == null ? events.computeHitSlop(kind) : t3$);
-      return estimate.pixelsPerSecond.dx[$abs]() > dart.notNull(minVelocity) && estimate.offset.dx[$abs]() > dart.notNull(minDistance);
+  var y$1 = dart.privateName(alignment, "TextAlignVertical.y");
+  alignment.TextAlignVertical = class TextAlignVertical extends core.Object {
+    get y() {
+      return this[y$1];
     }
-    [_hasSufficientGlobalDistanceToAccept](pointerDeviceKind) {
-      if (pointerDeviceKind == null) dart.nullFailed(I[0], 562, 63, "pointerDeviceKind");
-      return this[_globalDistanceMoved][$abs]() > dart.notNull(events.computeHitSlop(pointerDeviceKind));
+    set y(value) {
+      super.y = value;
     }
-    [_getDeltaForDetails](delta) {
-      if (delta == null) dart.nullFailed(I[0], 567, 37, "delta");
-      return new ui.Offset.new(delta.dx, 0.0);
-    }
-    [_getPrimaryValueFromOffset](value) {
-      if (value == null) dart.nullFailed(I[0], 570, 44, "value");
-      return value.dx;
-    }
-    get debugDescription() {
-      return "horizontal drag";
+    toString() {
+      return dart.str(object.objectRuntimeType(this, "TextAlignVertical")) + "(y: " + dart.str(this.y) + ")";
     }
   };
-  (monodrag.HorizontalDragGestureRecognizer.new = function(opts) {
-    let debugOwner = opts && 'debugOwner' in opts ? opts.debugOwner : null;
-    let kind = opts && 'kind' in opts ? opts.kind : null;
-    monodrag.HorizontalDragGestureRecognizer.__proto__.new.call(this, {debugOwner: debugOwner, kind: kind});
+  (alignment.TextAlignVertical.new = function(opts) {
+    let y = opts && 'y' in opts ? opts.y : null;
+    if (y == null) dart.nullFailed(I[0], 652, 19, "y");
+    this[y$1] = y;
+    if (!(y != null)) dart.assertFailed(null, I[0], 653, 15, "y != null");
+    if (!(dart.notNull(y) >= -1.0 && dart.notNull(y) <= 1.0)) dart.assertFailed(null, I[0], 654, 15, "y >= -1.0 && y <= 1.0");
     ;
-  }).prototype = monodrag.HorizontalDragGestureRecognizer.prototype;
-  dart.addTypeTests(monodrag.HorizontalDragGestureRecognizer);
-  dart.addTypeCaches(monodrag.HorizontalDragGestureRecognizer);
-  dart.setMethodSignature(monodrag.HorizontalDragGestureRecognizer, () => ({
-    __proto__: dart.getMethods(monodrag.HorizontalDragGestureRecognizer.__proto__),
-    isFlingGesture: dart.fnType(core.bool, [velocity_tracker.VelocityEstimate, ui.PointerDeviceKind]),
-    [_hasSufficientGlobalDistanceToAccept]: dart.fnType(core.bool, [ui.PointerDeviceKind]),
-    [_getDeltaForDetails]: dart.fnType(ui.Offset, [ui.Offset]),
-    [_getPrimaryValueFromOffset]: dart.fnType(core.double, [ui.Offset])
+  }).prototype = alignment.TextAlignVertical.prototype;
+  dart.addTypeTests(alignment.TextAlignVertical);
+  dart.addTypeCaches(alignment.TextAlignVertical);
+  dart.setLibraryUri(alignment.TextAlignVertical, I[1]);
+  dart.setFieldSignature(alignment.TextAlignVertical, () => ({
+    __proto__: dart.getFields(alignment.TextAlignVertical.__proto__),
+    y: dart.finalFieldType(core.double)
   }));
-  dart.setGetterSignature(monodrag.HorizontalDragGestureRecognizer, () => ({
-    __proto__: dart.getGetters(monodrag.HorizontalDragGestureRecognizer.__proto__),
-    debugDescription: core.String
-  }));
-  dart.setLibraryUri(monodrag.HorizontalDragGestureRecognizer, I[1]);
-  monodrag.PanGestureRecognizer = class PanGestureRecognizer extends monodrag.DragGestureRecognizer {
-    isFlingGesture(estimate, kind) {
-      let t3, t3$;
-      if (estimate == null) dart.nullFailed(I[0], 590, 40, "estimate");
-      if (kind == null) dart.nullFailed(I[0], 590, 68, "kind");
-      let minVelocity = (t3 = this.minFlingVelocity, t3 == null ? 50 : t3);
-      let minDistance = (t3$ = this.minFlingDistance, t3$ == null ? events.computeHitSlop(kind) : t3$);
-      return dart.notNull(estimate.pixelsPerSecond.distanceSquared) > dart.notNull(minVelocity) * dart.notNull(minVelocity) && dart.notNull(estimate.offset.distanceSquared) > dart.notNull(minDistance) * dart.notNull(minDistance);
+  dart.defineExtensionMethods(alignment.TextAlignVertical, ['toString']);
+  dart.defineLazy(alignment.TextAlignVertical, {
+    /*alignment.TextAlignVertical.top*/get top() {
+      return C[20] || CT.C20;
+    },
+    /*alignment.TextAlignVertical.center*/get center() {
+      return C[21] || CT.C21;
+    },
+    /*alignment.TextAlignVertical.bottom*/get bottom() {
+      return C[22] || CT.C22;
     }
-    [_hasSufficientGlobalDistanceToAccept](pointerDeviceKind) {
-      if (pointerDeviceKind == null) dart.nullFailed(I[0], 598, 63, "pointerDeviceKind");
-      return this[_globalDistanceMoved][$abs]() > dart.notNull(events.computePanSlop(pointerDeviceKind));
-    }
-    [_getDeltaForDetails](delta) {
-      if (delta == null) dart.nullFailed(I[0], 603, 37, "delta");
-      return delta;
-    }
-    [_getPrimaryValueFromOffset](value) {
-      if (value == null) dart.nullFailed(I[0], 606, 45, "value");
-      return null;
-    }
-    get debugDescription() {
-      return "pan";
-    }
-  };
-  (monodrag.PanGestureRecognizer.new = function(opts) {
-    let debugOwner = opts && 'debugOwner' in opts ? opts.debugOwner : null;
-    monodrag.PanGestureRecognizer.__proto__.new.call(this, {debugOwner: debugOwner});
-    ;
-  }).prototype = monodrag.PanGestureRecognizer.prototype;
-  dart.addTypeTests(monodrag.PanGestureRecognizer);
-  dart.addTypeCaches(monodrag.PanGestureRecognizer);
-  dart.setMethodSignature(monodrag.PanGestureRecognizer, () => ({
-    __proto__: dart.getMethods(monodrag.PanGestureRecognizer.__proto__),
-    isFlingGesture: dart.fnType(core.bool, [velocity_tracker.VelocityEstimate, ui.PointerDeviceKind]),
-    [_hasSufficientGlobalDistanceToAccept]: dart.fnType(core.bool, [ui.PointerDeviceKind]),
-    [_getDeltaForDetails]: dart.fnType(ui.Offset, [ui.Offset]),
-    [_getPrimaryValueFromOffset]: dart.fnType(dart.nullable(core.double), [ui.Offset])
-  }));
-  dart.setGetterSignature(monodrag.PanGestureRecognizer, () => ({
-    __proto__: dart.getGetters(monodrag.PanGestureRecognizer.__proto__),
-    debugDescription: core.String
-  }));
-  dart.setLibraryUri(monodrag.PanGestureRecognizer, I[1]);
-  dart.trackLibraries("packages/flutter/src/gestures/monodrag.dart", {
-    "package:flutter/src/gestures/monodrag.dart": monodrag
+  }, false);
+  dart.trackLibraries("packages/flutter/src/painting/alignment.dart", {
+    "package:flutter/src/painting/alignment.dart": alignment
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["monodrag.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/gestures/monodrag.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["alignment.dart"],"names":[],"mappings":"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","file":"../../../../../../../../F:/packages/flutter/src/painting/alignment.dart.lib.js"}');
   // Exports:
   return {
-    src__gestures__monodrag: monodrag
+    src__painting__alignment: alignment
   };
 }));
 
-//# sourceMappingURL=monodrag.dart.lib.js.map
+//# sourceMappingURL=alignment.dart.lib.js.map

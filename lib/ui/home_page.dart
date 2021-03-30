@@ -55,7 +55,8 @@ class MyFloatingButton extends StatelessWidget {
                 new FlatButton(
                   child: new Text('搜索'),
                   onPressed: () {
-                    NovelPageState.model.load(inputContent.text);
+                    NovelPageState.model.content = inputContent.text;
+                    NovelPageState.model.load(false, false);
                     Navigator.pop(context);
                   },
                 ),
