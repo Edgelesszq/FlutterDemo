@@ -3,10 +3,10 @@ import 'package:flutter_arg_demo/common/BaseViewModel.dart';
 import 'package:flutter_arg_demo/common/base_state.dart';
 import 'package:flutter_arg_demo/http/api.dart';
 import 'package:flutter_arg_demo/http/http_util.dart';
-import 'package:flutter_arg_demo/model/novel_search.dart';
+import 'package:flutter_arg_demo/model/novel_search_model.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-class MyModel extends BaseViewModel {
+class NovelModel extends BaseViewModel {
   List<ElData> elDataList = [];
   RefreshController refreshController =
       RefreshController(initialRefresh: false);

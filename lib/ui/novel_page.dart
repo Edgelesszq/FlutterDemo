@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_arg_demo/common/Application.dart';
 import 'package:flutter_arg_demo/config/intent_key_value.dart';
-import 'package:flutter_arg_demo/model/novel_search.dart';
+import 'package:flutter_arg_demo/model/novel_search_model.dart';
 import 'package:flutter_arg_demo/routers/routes.dart';
 import 'package:flutter_arg_demo/viewmodel/novel_model.dart';
 import 'package:flutter_arg_demo/widget/multi_state_widget.dart';
@@ -15,12 +15,12 @@ class NovelPage extends StatefulWidget {
 }
 
 class NovelPageState extends State<NovelPage> {
-  static MyModel model;
+  static NovelModel model;
 
   @override
   Widget build(BuildContext context) {
-    return ProviderWidget<MyModel>(
-      model: model = new MyModel(),
+    return ProviderWidget<NovelModel>(
+      model: model = new NovelModel(),
       onReady: (model) {
         model.load(false, false);
       },
@@ -83,7 +83,7 @@ Widget buildContentView(List<ElData> mlist) {
                   Routes.novel_list,
                   routeSettings: RouteSettings(
                     arguments: IntentKeyAndValue(
-                        title: elData.title, url: elData.cartoonId),
+                        title: elData.title, functionId: elData.fictionId),
                   ),
                 );
               },
@@ -129,8 +129,8 @@ class ChildItemDecorateBox extends StatelessWidget {
           boxShadow: [
             //阴影
             BoxShadow(
-                color: Colors.black54,
-                offset: Offset(2.0, 2.0),
+                color: Colors.black38,
+                offset: Offset(1.0, 1.0),
                 blurRadius: 4.0)
           ]),
       child: Container(
@@ -158,9 +158,9 @@ class ChildItemDecorateBox extends StatelessWidget {
                     maxLines: 4,
                     overflow: TextOverflow.ellipsis,
                   ),
-                  Text(elData.updateTime),
+                  Text(elData.updateTime.toString()),
                 ],
-              ))
+                  ))
             ],
           ),
         ),
