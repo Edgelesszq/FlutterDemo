@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_arg_demo/config/static_value.dart';
+import 'package:flutter_arg_demo/ui/comic_page.dart';
 import 'package:flutter_arg_demo/ui/novel_page.dart';
 import 'package:flutter_arg_demo/widget/myHomeApp.dart';
 
@@ -55,8 +56,15 @@ class MyFloatingButton extends StatelessWidget {
                 new FlatButton(
                   child: new Text('搜索'),
                   onPressed: () {
-                    NovelPageState.model.load(inputContent.text);
-                    Navigator.pop(context);
+                    if (StaticValue.currentPage == 0) {
+                      ComicPageState.model.content = inputContent.text;
+                      ComicPageState.model.load(false, false);
+                      Navigator.pop(context);
+                    } else if (StaticValue.currentPage == 1) {
+                      NovelPageState.model.content = inputContent.text;
+                      NovelPageState.model.load(false, false);
+                      Navigator.pop(context);
+                    }
                   },
                 ),
               ],

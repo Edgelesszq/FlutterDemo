@@ -78,6 +78,10 @@ provider
 2.12
 file:///D:/flutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/provider-5.0.0/
 file:///D:/flutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/provider-5.0.0/lib/
+pull_to_refresh
+2.10
+file:///D:/flutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/pull_to_refresh-1.6.4/
+file:///D:/flutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/pull_to_refresh-1.6.4/lib/
 source_span
 2.12
 file:///D:/flutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/source_span-1.8.0/

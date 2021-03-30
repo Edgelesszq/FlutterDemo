@@ -23,8 +23,8 @@ class Http {
   Dio createDio() {
     var dio = Dio(BaseOptions(
       connectTimeout: 10000,
-      receiveTimeout: 3000,
-      sendTimeout: 3000,
+      receiveTimeout: 10000,
+      sendTimeout: 10000,
       baseUrl: Api.BASE_URL,
       responseType: ResponseType.json,
     ));

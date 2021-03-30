@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 define(['dart_sdk', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/foundation/debug.dart'], (function load__packages__flutter__src__widgets__safe_area_dart(dart_sdk, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__foundation__debug$46dart) {
   'use strict';
   const core = dart_sdk.core;
@@ -15,6 +16,32 @@ define(['dart_sdk', 'packages/flutter/src/painting/edge_insets.dart', 'packages/
   dart._checkModuleNullSafetyMode(false);
   var T = {
     _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))()
+=======
+define(['dart_sdk'], (function load__packages__flutter_arg_demo__model__novel_search_dart(dart_sdk) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _js_helper = dart_sdk._js_helper;
+  const _interceptors = dart_sdk._interceptors;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  var novel_search = Object.create(dart.library);
+  var $_get = dartx._get;
+  var $_set = dartx._set;
+  var $add = dartx.add;
+  var $map = dartx.map;
+  var $toList = dartx.toList;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
+    intL: () => (T.intL = dart.constFn(dart.legacy(core.int)))(),
+    MapOfStringL$dynamic: () => (T.MapOfStringL$dynamic = dart.constFn(core.Map$(T.StringL(), dart.dynamic)))(),
+    MapLOfStringL$dynamic: () => (T.MapLOfStringL$dynamic = dart.constFn(dart.legacy(T.MapOfStringL$dynamic())))(),
+    LinkedMapOfStringL$dynamic: () => (T.LinkedMapOfStringL$dynamic = dart.constFn(_js_helper.LinkedMap$(T.StringL(), dart.dynamic)))(),
+    ElDataL: () => (T.ElDataL = dart.constFn(dart.legacy(novel_search.ElData)))(),
+    JSArrayOfElDataL: () => (T.JSArrayOfElDataL = dart.constFn(_interceptors.JSArray$(T.ElDataL())))(),
+    dynamicToNull: () => (T.dynamicToNull = dart.constFn(dart.fnType(core.Null, [dart.dynamic])))(),
+    ElDataLToMapLOfStringL$dynamic: () => (T.ElDataLToMapLOfStringL$dynamic = dart.constFn(dart.fnType(T.MapLOfStringL$dynamic(), [T.ElDataL()])))()
+>>>>>>> 9fed4871f8cb2e24becf4331c7fe9d1d7a564371
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -28,6 +55,7 @@ define(['dart_sdk', 'packages/flutter/src/painting/edge_insets.dart', 'packages/
   const CT = Object.create({
     _: () => (C, CT)
   });
+<<<<<<< HEAD
   dart.defineLazy(CT, {
     get C0() {
       return C[0] = dart.const({
@@ -493,3 +521,376 @@ define(['dart_sdk', 'packages/flutter/src/painting/edge_insets.dart', 'packages/
 }));
 
 //# sourceMappingURL=safe_area.dart.lib.js.map
+=======
+  var C = [];
+  var I = ["package:flutter_arg_demo/model/novel_search.dart"];
+  var _msg = dart.privateName(novel_search, "_msg");
+  var _code = dart.privateName(novel_search, "_code");
+  var _data = dart.privateName(novel_search, "_data");
+  novel_search.NovelSearchBean = class NovelSearchBean extends core.Object {
+    get msg() {
+      return this[_msg];
+    }
+    set msg(msg) {
+      return this[_msg] = msg;
+    }
+    get code() {
+      return this[_code];
+    }
+    set code(code) {
+      return this[_code] = code;
+    }
+    get data() {
+      return this[_data];
+    }
+    set data(data) {
+      return this[_data] = data;
+    }
+    toJson() {
+      let data = new (T.LinkedMapOfStringL$dynamic()).new();
+      data[$_set]("msg", this[_msg]);
+      data[$_set]("code", this[_code]);
+      if (this[_data] != null) {
+        data[$_set]("data", this[_data].toJson());
+      }
+      return data;
+    }
+  };
+  (novel_search.NovelSearchBean.new = function(opts) {
+    let msg = opts && 'msg' in opts ? opts.msg : null;
+    let code = opts && 'code' in opts ? opts.code : null;
+    let data = opts && 'data' in opts ? opts.data : null;
+    this[_msg] = null;
+    this[_code] = null;
+    this[_data] = null;
+    this[_msg] = msg;
+    this[_code] = code;
+    this[_data] = data;
+  }).prototype = novel_search.NovelSearchBean.prototype;
+  (novel_search.NovelSearchBean.fromJson = function(json) {
+    this[_msg] = null;
+    this[_code] = null;
+    this[_data] = null;
+    this[_msg] = T.StringL().as(json[$_get]("msg"));
+    this[_code] = T.intL().as(json[$_get]("code"));
+    this[_data] = json[$_get]("data") != null ? new novel_search.Data.fromJson(T.MapLOfStringL$dynamic().as(json[$_get]("data"))) : null;
+  }).prototype = novel_search.NovelSearchBean.prototype;
+  dart.addTypeTests(novel_search.NovelSearchBean);
+  dart.addTypeCaches(novel_search.NovelSearchBean);
+  dart.setMethodSignature(novel_search.NovelSearchBean, () => ({
+    __proto__: dart.getMethods(novel_search.NovelSearchBean.__proto__),
+    toJson: dart.fnType(dart.legacy(core.Map$(dart.legacy(core.String), dart.dynamic)), [])
+  }));
+  dart.setGetterSignature(novel_search.NovelSearchBean, () => ({
+    __proto__: dart.getGetters(novel_search.NovelSearchBean.__proto__),
+    msg: dart.legacy(core.String),
+    code: dart.legacy(core.int),
+    data: dart.legacy(novel_search.Data)
+  }));
+  dart.setSetterSignature(novel_search.NovelSearchBean, () => ({
+    __proto__: dart.getSetters(novel_search.NovelSearchBean.__proto__),
+    msg: dart.legacy(core.String),
+    code: dart.legacy(core.int),
+    data: dart.legacy(novel_search.Data)
+  }));
+  dart.setLibraryUri(novel_search.NovelSearchBean, I[0]);
+  dart.setFieldSignature(novel_search.NovelSearchBean, () => ({
+    __proto__: dart.getFields(novel_search.NovelSearchBean.__proto__),
+    [_msg]: dart.fieldType(dart.legacy(core.String)),
+    [_code]: dart.fieldType(dart.legacy(core.int)),
+    [_data]: dart.fieldType(dart.legacy(novel_search.Data))
+  }));
+  var _size = dart.privateName(novel_search, "_size");
+  var _count = dart.privateName(novel_search, "_count");
+  var _from = dart.privateName(novel_search, "_from");
+  novel_search.Data = class Data extends core.Object {
+    get size() {
+      return this[_size];
+    }
+    set size(size) {
+      return this[_size] = size;
+    }
+    get data() {
+      return this[_data];
+    }
+    set data(data) {
+      return this[_data] = data;
+    }
+    get count() {
+      return this[_count];
+    }
+    set count(count) {
+      return this[_count] = count;
+    }
+    get from() {
+      return this[_from];
+    }
+    set from(from) {
+      return this[_from] = from;
+    }
+    toJson() {
+      let data = new (T.LinkedMapOfStringL$dynamic()).new();
+      data[$_set]("size", this[_size]);
+      if (this[_data] != null) {
+        data[$_set]("data", this[_data][$map](T.MapLOfStringL$dynamic(), dart.fn(v => v.toJson(), T.ElDataLToMapLOfStringL$dynamic()))[$toList]());
+      }
+      data[$_set]("count", this[_count]);
+      data[$_set]("from", this[_from]);
+      return data;
+    }
+  };
+  (novel_search.Data.new = function(opts) {
+    let size = opts && 'size' in opts ? opts.size : null;
+    let data = opts && 'data' in opts ? opts.data : null;
+    let count = opts && 'count' in opts ? opts.count : null;
+    let from = opts && 'from' in opts ? opts.from : null;
+    this[_size] = null;
+    this[_data] = null;
+    this[_count] = null;
+    this[_from] = null;
+    this[_size] = size;
+    this[_data] = data;
+    this[_count] = count;
+    this[_from] = from;
+  }).prototype = novel_search.Data.prototype;
+  (novel_search.Data.fromJson = function(json) {
+    this[_size] = null;
+    this[_data] = null;
+    this[_count] = null;
+    this[_from] = null;
+    this[_size] = T.intL().as(json[$_get]("size"));
+    if (json[$_get]("data") != null) {
+      this[_data] = T.JSArrayOfElDataL().of([]);
+      dart.dsend(json[$_get]("data"), 'forEach', [dart.fn(v => {
+          this[_data][$add](new novel_search.ElData.fromJson(T.MapLOfStringL$dynamic().as(v)));
+        }, T.dynamicToNull())]);
+    }
+    this[_count] = T.intL().as(json[$_get]("count"));
+    this[_from] = T.intL().as(json[$_get]("from"));
+  }).prototype = novel_search.Data.prototype;
+  dart.addTypeTests(novel_search.Data);
+  dart.addTypeCaches(novel_search.Data);
+  dart.setMethodSignature(novel_search.Data, () => ({
+    __proto__: dart.getMethods(novel_search.Data.__proto__),
+    toJson: dart.fnType(dart.legacy(core.Map$(dart.legacy(core.String), dart.dynamic)), [])
+  }));
+  dart.setGetterSignature(novel_search.Data, () => ({
+    __proto__: dart.getGetters(novel_search.Data.__proto__),
+    size: dart.legacy(core.int),
+    data: dart.legacy(core.List$(dart.legacy(novel_search.ElData))),
+    count: dart.legacy(core.int),
+    from: dart.legacy(core.int)
+  }));
+  dart.setSetterSignature(novel_search.Data, () => ({
+    __proto__: dart.getSetters(novel_search.Data.__proto__),
+    size: dart.legacy(core.int),
+    data: dart.legacy(core.List$(dart.legacy(novel_search.ElData))),
+    count: dart.legacy(core.int),
+    from: dart.legacy(core.int)
+  }));
+  dart.setLibraryUri(novel_search.Data, I[0]);
+  dart.setFieldSignature(novel_search.Data, () => ({
+    __proto__: dart.getFields(novel_search.Data.__proto__),
+    [_size]: dart.fieldType(dart.legacy(core.int)),
+    [_data]: dart.fieldType(dart.legacy(core.List$(dart.legacy(novel_search.ElData)))),
+    [_count]: dart.fieldType(dart.legacy(core.int)),
+    [_from]: dart.fieldType(dart.legacy(core.int))
+  }));
+  var _id = dart.privateName(novel_search, "_id");
+  var _title = dart.privateName(novel_search, "_title");
+  var _descs = dart.privateName(novel_search, "_descs");
+  var _cover = dart.privateName(novel_search, "_cover");
+  var _author = dart.privateName(novel_search, "_author");
+  var _cartoonType = dart.privateName(novel_search, "_cartoonType");
+  var _cartoonId = dart.privateName(novel_search, "_cartoonId");
+  var _updateTime = dart.privateName(novel_search, "_updateTime");
+  var _creationTime = dart.privateName(novel_search, "_creationTime");
+  var _cartoonVariableId = dart.privateName(novel_search, "_cartoonVariableId");
+  novel_search.ElData = class ElData extends core.Object {
+    get id() {
+      return this[_id];
+    }
+    set id(id) {
+      return this[_id] = id;
+    }
+    get title() {
+      return this[_title];
+    }
+    set title(title) {
+      return this[_title] = title;
+    }
+    get descs() {
+      return this[_descs];
+    }
+    set descs(descs) {
+      return this[_descs] = descs;
+    }
+    get cover() {
+      return this[_cover];
+    }
+    set cover(cover) {
+      return this[_cover] = cover;
+    }
+    get author() {
+      return this[_author];
+    }
+    set author(author) {
+      return this[_author] = author;
+    }
+    get cartoonType() {
+      return this[_cartoonType];
+    }
+    set cartoonType(cartoonType) {
+      return this[_cartoonType] = cartoonType;
+    }
+    get cartoonId() {
+      return this[_cartoonId];
+    }
+    set cartoonId(cartoonId) {
+      return this[_cartoonId] = cartoonId;
+    }
+    get updateTime() {
+      return this[_updateTime];
+    }
+    set updateTime(updateTime) {
+      return this[_updateTime] = updateTime;
+    }
+    get creationTime() {
+      return this[_creationTime];
+    }
+    set creationTime(creationTime) {
+      return this[_creationTime] = creationTime;
+    }
+    get cartoonVariableId() {
+      return this[_cartoonVariableId];
+    }
+    set cartoonVariableId(cartoonVariableId) {
+      return this[_cartoonVariableId] = cartoonVariableId;
+    }
+    toJson() {
+      let data = new (T.LinkedMapOfStringL$dynamic()).new();
+      data[$_set]("id", this[_id]);
+      data[$_set]("title", this[_title]);
+      data[$_set]("descs", this[_descs]);
+      data[$_set]("cover", this[_cover]);
+      data[$_set]("author", this[_author]);
+      data[$_set]("cartoonType", this[_cartoonType]);
+      data[$_set]("cartoonId", this[_cartoonId]);
+      data[$_set]("updateTime", this[_updateTime]);
+      data[$_set]("creationTime", this[_creationTime]);
+      data[$_set]("cartoonVariableId", this[_cartoonVariableId]);
+      return data;
+    }
+  };
+  (novel_search.ElData.new = function(opts) {
+    let id = opts && 'id' in opts ? opts.id : null;
+    let title = opts && 'title' in opts ? opts.title : null;
+    let descs = opts && 'descs' in opts ? opts.descs : null;
+    let cover = opts && 'cover' in opts ? opts.cover : null;
+    let author = opts && 'author' in opts ? opts.author : null;
+    let cartoonType = opts && 'cartoonType' in opts ? opts.cartoonType : null;
+    let cartoonId = opts && 'cartoonId' in opts ? opts.cartoonId : null;
+    let updateTime = opts && 'updateTime' in opts ? opts.updateTime : null;
+    let creationTime = opts && 'creationTime' in opts ? opts.creationTime : null;
+    let cartoonVariableId = opts && 'cartoonVariableId' in opts ? opts.cartoonVariableId : null;
+    this[_id] = null;
+    this[_title] = null;
+    this[_descs] = null;
+    this[_cover] = null;
+    this[_author] = null;
+    this[_cartoonType] = null;
+    this[_cartoonId] = null;
+    this[_updateTime] = null;
+    this[_creationTime] = null;
+    this[_cartoonVariableId] = null;
+    this[_id] = id;
+    this[_title] = title;
+    this[_descs] = descs;
+    this[_cover] = cover;
+    this[_author] = author;
+    this[_cartoonType] = cartoonType;
+    this[_cartoonId] = cartoonId;
+    this[_updateTime] = updateTime;
+    this[_creationTime] = creationTime;
+    this[_cartoonVariableId] = cartoonVariableId;
+  }).prototype = novel_search.ElData.prototype;
+  (novel_search.ElData.fromJson = function(json) {
+    this[_id] = null;
+    this[_title] = null;
+    this[_descs] = null;
+    this[_cover] = null;
+    this[_author] = null;
+    this[_cartoonType] = null;
+    this[_cartoonId] = null;
+    this[_updateTime] = null;
+    this[_creationTime] = null;
+    this[_cartoonVariableId] = null;
+    this[_id] = T.intL().as(json[$_get]("id"));
+    this[_title] = T.StringL().as(json[$_get]("title"));
+    this[_descs] = T.StringL().as(json[$_get]("descs"));
+    this[_cover] = T.StringL().as(json[$_get]("cover"));
+    this[_author] = T.StringL().as(json[$_get]("author"));
+    this[_cartoonType] = T.StringL().as(json[$_get]("cartoonType"));
+    this[_cartoonId] = T.StringL().as(json[$_get]("cartoonId"));
+    this[_updateTime] = T.StringL().as(json[$_get]("updateTime"));
+    this[_creationTime] = T.StringL().as(json[$_get]("creationTime"));
+    this[_cartoonVariableId] = T.intL().as(json[$_get]("cartoonVariableId"));
+  }).prototype = novel_search.ElData.prototype;
+  dart.addTypeTests(novel_search.ElData);
+  dart.addTypeCaches(novel_search.ElData);
+  dart.setMethodSignature(novel_search.ElData, () => ({
+    __proto__: dart.getMethods(novel_search.ElData.__proto__),
+    toJson: dart.fnType(dart.legacy(core.Map$(dart.legacy(core.String), dart.dynamic)), [])
+  }));
+  dart.setGetterSignature(novel_search.ElData, () => ({
+    __proto__: dart.getGetters(novel_search.ElData.__proto__),
+    id: dart.legacy(core.int),
+    title: dart.legacy(core.String),
+    descs: dart.legacy(core.String),
+    cover: dart.legacy(core.String),
+    author: dart.legacy(core.String),
+    cartoonType: dart.legacy(core.String),
+    cartoonId: dart.legacy(core.String),
+    updateTime: dart.legacy(core.String),
+    creationTime: dart.legacy(core.String),
+    cartoonVariableId: dart.legacy(core.int)
+  }));
+  dart.setSetterSignature(novel_search.ElData, () => ({
+    __proto__: dart.getSetters(novel_search.ElData.__proto__),
+    id: dart.legacy(core.int),
+    title: dart.legacy(core.String),
+    descs: dart.legacy(core.String),
+    cover: dart.legacy(core.String),
+    author: dart.legacy(core.String),
+    cartoonType: dart.legacy(core.String),
+    cartoonId: dart.legacy(core.String),
+    updateTime: dart.legacy(core.String),
+    creationTime: dart.legacy(core.String),
+    cartoonVariableId: dart.legacy(core.int)
+  }));
+  dart.setLibraryUri(novel_search.ElData, I[0]);
+  dart.setFieldSignature(novel_search.ElData, () => ({
+    __proto__: dart.getFields(novel_search.ElData.__proto__),
+    [_id]: dart.fieldType(dart.legacy(core.int)),
+    [_title]: dart.fieldType(dart.legacy(core.String)),
+    [_descs]: dart.fieldType(dart.legacy(core.String)),
+    [_cover]: dart.fieldType(dart.legacy(core.String)),
+    [_author]: dart.fieldType(dart.legacy(core.String)),
+    [_cartoonType]: dart.fieldType(dart.legacy(core.String)),
+    [_cartoonId]: dart.fieldType(dart.legacy(core.String)),
+    [_updateTime]: dart.fieldType(dart.legacy(core.String)),
+    [_creationTime]: dart.fieldType(dart.legacy(core.String)),
+    [_cartoonVariableId]: dart.fieldType(dart.legacy(core.int))
+  }));
+  dart.trackLibraries("packages/flutter_arg_demo/model/novel_search.dart", {
+    "package:flutter_arg_demo/model/novel_search.dart": novel_search
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["novel_search.dart"],"names":[],"mappings":"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","file":"../../../../packages/flutter_arg_demo/model/novel_search.dart.lib.js"}');
+  // Exports:
+  return {
+    model__novel_search: novel_search
+  };
+}));
+
+//# sourceMappingURL=novel_search.dart.lib.js.map
+>>>>>>> 9fed4871f8cb2e24becf4331c7fe9d1d7a564371

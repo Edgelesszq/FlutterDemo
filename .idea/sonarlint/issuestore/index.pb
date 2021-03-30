@@ -53,3 +53,5 @@ F
 lib/ui/novel_page.dart,1\d\1d7c39cb8c7c7c361c911b146ea4d5cd81338cfe
 L
 lib/config/static_value.dart,e\8\e88276b35a594ab1ec1b63a0fd9552dac54c2802
+K
+lib/common/Application.dart,c\e\cea5b32d933ada7fe63a01c2dc496771a8ed0230

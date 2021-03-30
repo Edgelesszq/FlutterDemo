@@ -1,11 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_arg_demo/common/Application.dart';
 import 'package:flutter_arg_demo/config/intent_key_value.dart';
-import 'package:flutter_arg_demo/model/novel_search.dart';
+import 'package:flutter_arg_demo/model/novel_search_model.dart';
 import 'package:flutter_arg_demo/routers/routes.dart';
 import 'package:flutter_arg_demo/viewmodel/novel_model.dart';
 import 'package:flutter_arg_demo/widget/multi_state_widget.dart';
 import 'package:flutter_arg_demo/widget/providerWidget.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class NovelPage extends StatefulWidget {
   @override
@@ -13,19 +15,19 @@ class NovelPage extends StatefulWidget {
 }
 
 class NovelPageState extends State<NovelPage> {
-  static MyModel model;
+  static NovelModel model;
 
   @override
   Widget build(BuildContext context) {
-    return ProviderWidget<MyModel>(
-      model: model = new MyModel(),
+    return ProviderWidget<NovelModel>(
+      model: model = new NovelModel(),
       onReady: (model) {
-        model.load("");
+        model.load(false, false);
       },
       builder: (context, model, child) {
         return MultiStateWidget(
           builder: (context) => Container(
-            child: buildContentView(model.myData),
+            child: buildContentView(model.elDataList),
           ),
           state: model.state,
         );
@@ -34,45 +36,63 @@ class NovelPageState extends State<NovelPage> {
   }
 }
 
-Widget buildContentView(NovelSearchBean novelSearchBean) {
-  List<ElData> dataList = novelSearchBean.data.data;
+Widget buildContentView(List<ElData> mlist) {
+  void _refresh() {
+    NovelPageState.model.load(true, false);
+  }
+
+  void _loadMore() {
+    NovelPageState.model.load(false, true);
+  }
+
   return Container(
-    child: NovelItemView(dataList: dataList),
-  );
-}
-
-class NovelItemView extends StatelessWidget {
-  const NovelItemView({
-    Key key,
-    @required this.dataList,
-  }) : super(key: key);
-
-  final List<ElData> dataList;
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: dataList.length,
-      shrinkWrap: true,
-      itemBuilder: (BuildContext context, int index) {
-        ElData elData = dataList[index];
-        return GestureDetector(
-          onTap: () {
-            Application.router.navigateTo(
-              context,
-              Routes.novel_list,
-              routeSettings: RouteSettings(
-                arguments: IntentKeyAndValue(
-                    title: elData.title, url: elData.cartoonId),
-              ),
+    child: SmartRefresher(
+        enablePullDown: true,
+        enablePullUp: true,
+        header: WaterDropHeader(),
+        footer: CustomFooter(builder: (context, mode) {
+          Widget body;
+          if (mode == LoadStatus.idle) {
+            body = Text("上拉加载");
+          } else if (mode == LoadStatus.loading) {
+            body = CupertinoActivityIndicator();
+          } else if (mode == LoadStatus.failed) {
+            body = Text("加载失败！点击重试！");
+          } else if (mode == LoadStatus.canLoading) {
+            body = Text("松手,加载更多!");
+          } else {
+            body = Text("没有更多数据了!");
+          }
+          return Container(
+            height: 55.0,
+            child: Center(child: body),
+          );
+        }),
+        onRefresh: _refresh,
+        onLoading: _loadMore,
+        controller: NovelPageState.model.refreshController,
+        child: ListView.builder(
+          itemCount: mlist.length,
+          shrinkWrap: true,
+          itemBuilder: (BuildContext context, int index) {
+            ElData elData = mlist[index];
+            return GestureDetector(
+              onTap: () {
+                Application.router.navigateTo(
+                  context,
+                  Routes.novel_list,
+                  routeSettings: RouteSettings(
+                    arguments: IntentKeyAndValue(
+                        title: elData.title, functionId: elData.fictionId),
+                  ),
+                );
+              },
+              child: ChildItem(elData: elData),
             );
           },
-          child: ChildItem(elData: elData),
-        );
-      },
-      scrollDirection: Axis.vertical,
-    );
-  }
+          scrollDirection: Axis.vertical,
+        )),
+  );
 }
 
 class ChildItem extends StatelessWidget {
@@ -109,8 +129,8 @@ class ChildItemDecorateBox extends StatelessWidget {
           boxShadow: [
             //阴影
             BoxShadow(
-                color: Colors.black54,
-                offset: Offset(2.0, 2.0),
+                color: Colors.black38,
+                offset: Offset(1.0, 1.0),
                 blurRadius: 4.0)
           ]),
       child: Container(
@@ -138,9 +158,9 @@ class ChildItemDecorateBox extends StatelessWidget {
                     maxLines: 4,
                     overflow: TextOverflow.ellipsis,
                   ),
-                  Text(elData.updateTime),
+                  Text(elData.updateTime.toString()),
                 ],
-              ))
+                  ))
             ],
           ),
         ),

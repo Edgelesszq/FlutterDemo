@@ -128,6 +128,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "pull_to_refresh",
+      "rootUri": "file:///D:/flutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/pull_to_refresh-1.6.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///D:/flutterSDK/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -188,7 +194,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-03-30T13:39:11.557568Z",
+  "generated": "2021-03-30T13:45:58.346689Z",
   "generator": "pub",
   "generatorVersion": "2.12.1"
 }

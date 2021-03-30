@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 define(['dart_sdk', 'packages/flutter/src/foundation/object.dart', 'packages/flutter/src/foundation/collections.dart', 'packages/flutter/src/foundation/debug.dart'], (function load__packages__flutter__src__painting__colors_dart(dart_sdk, packages__flutter__src__foundation__object$46dart, packages__flutter__src__foundation__collections$46dart, packages__flutter__src__foundation__debug$46dart) {
   'use strict';
   const core = dart_sdk.core;
@@ -19,6 +20,23 @@ define(['dart_sdk', 'packages/flutter/src/foundation/object.dart', 'packages/flu
   var $_set = dartx._set;
   var $isNaN = dartx.isNaN;
   var $round = dartx.round;
+=======
+define(['dart_sdk', 'packages/flutter_arg_demo/common/base_state.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/flutter/src/material/colors.dart', 'packages/flutter_arg_demo/util/textUtils.dart'], (function load__packages__flutter_arg_demo__widget__multi_state_widget_dart(dart_sdk, packages__flutter_arg_demo__common__base_state$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__painting__strut_style$46dart, packages__flutter__src__material__colors$46dart, packages__flutter_arg_demo__util__textUtils$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const base_state = packages__flutter_arg_demo__common__base_state$46dart.common__base_state;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const textUtils = packages__flutter_arg_demo__util__textUtils$46dart.util__textUtils;
+  var multi_state_widget = Object.create(dart.library);
+>>>>>>> 9fed4871f8cb2e24becf4331c7fe9d1d7a564371
   dart._checkModuleNullSafetyMode(false);
   var T = {
     IdentityMapOfString$Object: () => (T.IdentityMapOfString$Object = dart.constFn(_js_helper.IdentityMap$(core.String, core.Object)))(),
@@ -38,6 +56,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/object.dart', 'packages/flu
     _: () => (C, CT)
   });
   dart.defineLazy(CT, {
+<<<<<<< HEAD
     get C0() {
       return C[0] = dart.const({
         __proto__: diagnostics._NoDefaultValue.prototype
@@ -489,3 +508,503 @@ define(['dart_sdk', 'packages/flutter/src/foundation/object.dart', 'packages/flu
 }));
 
 //# sourceMappingURL=colors.dart.lib.js.map
+=======
+    get C1() {
+      return C[1] = dart.constList([], T._LocationL());
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 29,
+        [_Location_file]: "file:///F:/flutterWork/FlutterDemo/lib/widget/multi_state_widget.dart"
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 33,
+        [_Location_file]: "file:///F:/flutterWork/FlutterDemo/lib/widget/multi_state_widget.dart"
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 37,
+        [_Location_file]: "file:///F:/flutterWork/FlutterDemo/lib/widget/multi_state_widget.dart"
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 9,
+        [_Location_line]: 50,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 9,
+        [_Location_line]: 51,
+        [_Location_file]: null
+      });
+    },
+    get C5() {
+      return C[5] = dart.constList([C[6] || CT.C6, C[7] || CT.C7], T._LocationL());
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[5] || CT.C5,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 49,
+        [_Location_file]: "file:///F:/flutterWork/FlutterDemo/lib/widget/multi_state_widget.dart"
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 11,
+        [_Location_line]: 71,
+        [_Location_file]: null
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 11,
+        [_Location_line]: 72,
+        [_Location_file]: null
+      });
+    },
+    get C9() {
+      return C[9] = dart.constList([C[10] || CT.C10, C[11] || CT.C11], T._LocationL());
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[9] || CT.C9,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 70,
+        [_Location_file]: "file:///F:/flutterWork/FlutterDemo/lib/widget/multi_state_widget.dart"
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 70,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C[13] = dart.constList([C[14] || CT.C14], T._LocationL());
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[13] || CT.C13,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 69,
+        [_Location_file]: "file:///F:/flutterWork/FlutterDemo/lib/widget/multi_state_widget.dart"
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 69,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C[16] = dart.constList([C[17] || CT.C17], T._LocationL());
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[16] || CT.C16,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 68,
+        [_Location_file]: "file:///F:/flutterWork/FlutterDemo/lib/widget/multi_state_widget.dart"
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 21,
+        [_Location_line]: 89,
+        [_Location_file]: null
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 11,
+        [_Location_line]: 90,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.constList([C[20] || CT.C20, C[21] || CT.C21], T._LocationL());
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[19] || CT.C19,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 88,
+        [_Location_file]: "file:///F:/flutterWork/FlutterDemo/lib/widget/multi_state_widget.dart"
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 88,
+        [_Location_file]: null
+      });
+    },
+    get C23() {
+      return C[23] = dart.constList([C[24] || CT.C24], T._LocationL());
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[23] || CT.C23,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 87,
+        [_Location_file]: "file:///F:/flutterWork/FlutterDemo/lib/widget/multi_state_widget.dart"
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 87,
+        [_Location_file]: null
+      });
+    },
+    get C26() {
+      return C[26] = dart.constList([C[27] || CT.C27], T._LocationL());
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[26] || CT.C26,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 86,
+        [_Location_file]: "file:///F:/flutterWork/FlutterDemo/lib/widget/multi_state_widget.dart"
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 11,
+        [_Location_line]: 103,
+        [_Location_file]: null
+      });
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 11,
+        [_Location_line]: 104,
+        [_Location_file]: null
+      });
+    },
+    get C29() {
+      return C[29] = dart.constList([C[30] || CT.C30, C[31] || CT.C31], T._LocationL());
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[29] || CT.C29,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 102,
+        [_Location_file]: "file:///F:/flutterWork/FlutterDemo/lib/widget/multi_state_widget.dart"
+      });
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 102,
+        [_Location_file]: null
+      });
+    },
+    get C33() {
+      return C[33] = dart.constList([C[34] || CT.C34], T._LocationL());
+    },
+    get C32() {
+      return C[32] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[33] || CT.C33,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 101,
+        [_Location_file]: "file:///F:/flutterWork/FlutterDemo/lib/widget/multi_state_widget.dart"
+      });
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 101,
+        [_Location_file]: null
+      });
+    },
+    get C36() {
+      return C[36] = dart.constList([C[37] || CT.C37], T._LocationL());
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[36] || CT.C36,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 100,
+        [_Location_file]: "file:///F:/flutterWork/FlutterDemo/lib/widget/multi_state_widget.dart"
+      });
+    }
+  }, false);
+  var C = Array(38).fill(void 0);
+  var I = ["package:flutter_arg_demo/widget/multi_state_widget.dart"];
+  var loadingWidget$ = dart.privateName(multi_state_widget, "MultiStateWidget.loadingWidget");
+  var emptyWidget$ = dart.privateName(multi_state_widget, "MultiStateWidget.emptyWidget");
+  var failWidget$ = dart.privateName(multi_state_widget, "MultiStateWidget.failWidget");
+  var builder$ = dart.privateName(multi_state_widget, "MultiStateWidget.builder");
+  var state$ = dart.privateName(multi_state_widget, "MultiStateWidget.state");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  multi_state_widget.MultiStateWidget = class MultiStateWidget extends framework.StatefulWidget {
+    get loadingWidget() {
+      return this[loadingWidget$];
+    }
+    set loadingWidget(value) {
+      this[loadingWidget$] = value;
+    }
+    get emptyWidget() {
+      return this[emptyWidget$];
+    }
+    set emptyWidget(value) {
+      this[emptyWidget$] = value;
+    }
+    get failWidget() {
+      return this[failWidget$];
+    }
+    set failWidget(value) {
+      this[failWidget$] = value;
+    }
+    get builder() {
+      return this[builder$];
+    }
+    set builder(value) {
+      this[builder$] = value;
+    }
+    get state() {
+      return this[state$];
+    }
+    set state(value) {
+      this[state$] = value;
+    }
+    createState() {
+      return new multi_state_widget._MultiStateWidgetState.new();
+    }
+  };
+  (multi_state_widget.MultiStateWidget.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let builder = opts && 'builder' in opts ? opts.builder : null;
+    let state = opts && 'state' in opts ? opts.state : null;
+    let emptyWidget = opts && 'emptyWidget' in opts ? opts.emptyWidget : null;
+    let failWidget = opts && 'failWidget' in opts ? opts.failWidget : null;
+    let loadingWidget = opts && 'loadingWidget' in opts ? opts.loadingWidget : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[builder$] = null;
+    this[state$] = state;
+    this[emptyWidget$] = emptyWidget;
+    this[failWidget$] = failWidget;
+    this[loadingWidget$] = loadingWidget;
+    multi_state_widget.MultiStateWidget.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    if (this.state == base_state.BaseState.CONTENT) {
+      if (builder != null) {
+        this.builder = builder;
+      }
+    }
+    if (this.emptyWidget == null) {
+      this.emptyWidget = new multi_state_widget.EmptyStateWidget.new({$creationLocationd_0dea112b090073317d4: C[0] || CT.C0});
+    }
+    if (this.failWidget == null) {
+      this.failWidget = new multi_state_widget.ErrorStateWidget.new({$creationLocationd_0dea112b090073317d4: C[2] || CT.C2});
+    }
+    if (this.loadingWidget == null) {
+      this.loadingWidget = new multi_state_widget.LoadingStateWidget.new({$creationLocationd_0dea112b090073317d4: C[3] || CT.C3});
+    }
+  }).prototype = multi_state_widget.MultiStateWidget.prototype;
+  dart.addTypeTests(multi_state_widget.MultiStateWidget);
+  dart.addTypeCaches(multi_state_widget.MultiStateWidget);
+  dart.setMethodSignature(multi_state_widget.MultiStateWidget, () => ({
+    __proto__: dart.getMethods(multi_state_widget.MultiStateWidget.__proto__),
+    createState: dart.fnType(dart.legacy(multi_state_widget._MultiStateWidgetState), [])
+  }));
+  dart.setLibraryUri(multi_state_widget.MultiStateWidget, I[0]);
+  dart.setFieldSignature(multi_state_widget.MultiStateWidget, () => ({
+    __proto__: dart.getFields(multi_state_widget.MultiStateWidget.__proto__),
+    loadingWidget: dart.fieldType(dart.legacy(framework.Widget)),
+    emptyWidget: dart.fieldType(dart.legacy(framework.Widget)),
+    failWidget: dart.fieldType(dart.legacy(framework.Widget)),
+    builder: dart.fieldType(dart.legacy(dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)]))),
+    state: dart.fieldType(dart.legacy(base_state.BaseState))
+  }));
+  multi_state_widget._MultiStateWidgetState = class _MultiStateWidgetState extends framework.State$(dart.legacy(multi_state_widget.MultiStateWidget)) {
+    build(context) {
+      let t1, t0;
+      if (this.widget.state == null) return new container.Container.new({width: 0.0, height: 0.0, $creationLocationd_0dea112b090073317d4: C[4] || CT.C4});
+      if (this.widget.state == base_state.BaseState.CONTENT) {
+        t0 = this.widget;
+        t1 = context;
+        return t0.builder(t1);
+      } else if (this.widget.state == base_state.BaseState.EMPTY) {
+        return this.widget.emptyWidget;
+      } else if (this.widget.state == base_state.BaseState.FAIL) {
+        return this.widget.failWidget;
+      } else {
+        return this.widget.loadingWidget;
+      }
+    }
+  };
+  (multi_state_widget._MultiStateWidgetState.new = function() {
+    multi_state_widget._MultiStateWidgetState.__proto__.new.call(this);
+    ;
+  }).prototype = multi_state_widget._MultiStateWidgetState.prototype;
+  dart.addTypeTests(multi_state_widget._MultiStateWidgetState);
+  dart.addTypeCaches(multi_state_widget._MultiStateWidgetState);
+  dart.setMethodSignature(multi_state_widget._MultiStateWidgetState, () => ({
+    __proto__: dart.getMethods(multi_state_widget._MultiStateWidgetState.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(multi_state_widget._MultiStateWidgetState, I[0]);
+  multi_state_widget.EmptyStateWidget = class EmptyStateWidget extends framework.StatelessWidget {
+    build(context) {
+      return new basic.Center.new({child: new container.Container.new({child: new text.Text.new("暂无数据", {style: new text_style.TextStyle.new({color: colors.Colors.grey, fontSize: 14.0}), $creationLocationd_0dea112b090073317d4: C[8] || CT.C8}), $creationLocationd_0dea112b090073317d4: C[12] || CT.C12}), $creationLocationd_0dea112b090073317d4: C[15] || CT.C15});
+    }
+  };
+  (multi_state_widget.EmptyStateWidget.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    multi_state_widget.EmptyStateWidget.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = multi_state_widget.EmptyStateWidget.prototype;
+  dart.addTypeTests(multi_state_widget.EmptyStateWidget);
+  dart.addTypeCaches(multi_state_widget.EmptyStateWidget);
+  dart.setMethodSignature(multi_state_widget.EmptyStateWidget, () => ({
+    __proto__: dart.getMethods(multi_state_widget.EmptyStateWidget.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(multi_state_widget.EmptyStateWidget, I[0]);
+  var reason$ = dart.privateName(multi_state_widget, "ErrorStateWidget.reason");
+  multi_state_widget.ErrorStateWidget = class ErrorStateWidget extends framework.StatelessWidget {
+    get reason() {
+      return this[reason$];
+    }
+    set reason(value) {
+      this[reason$] = value;
+    }
+    build(context) {
+      return new basic.Center.new({child: new container.Container.new({child: new text.Text.new(textUtils.TextUtils.getNonStr(this.reason, {ifNonReplace: "请求失败"}), {style: new text_style.TextStyle.new({color: colors.Colors.grey, fontSize: 14.0}), $creationLocationd_0dea112b090073317d4: C[18] || CT.C18}), $creationLocationd_0dea112b090073317d4: C[22] || CT.C22}), $creationLocationd_0dea112b090073317d4: C[25] || CT.C25});
+    }
+  };
+  (multi_state_widget.ErrorStateWidget.new = function(opts) {
+    let reason = opts && 'reason' in opts ? opts.reason : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[reason$] = reason;
+    multi_state_widget.ErrorStateWidget.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = multi_state_widget.ErrorStateWidget.prototype;
+  dart.addTypeTests(multi_state_widget.ErrorStateWidget);
+  dart.addTypeCaches(multi_state_widget.ErrorStateWidget);
+  dart.setMethodSignature(multi_state_widget.ErrorStateWidget, () => ({
+    __proto__: dart.getMethods(multi_state_widget.ErrorStateWidget.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(multi_state_widget.ErrorStateWidget, I[0]);
+  dart.setFieldSignature(multi_state_widget.ErrorStateWidget, () => ({
+    __proto__: dart.getFields(multi_state_widget.ErrorStateWidget.__proto__),
+    reason: dart.fieldType(dart.legacy(core.String))
+  }));
+  multi_state_widget.LoadingStateWidget = class LoadingStateWidget extends framework.StatelessWidget {
+    build(context) {
+      return new basic.Center.new({child: new container.Container.new({child: new text.Text.new("加载中...", {style: new text_style.TextStyle.new({color: colors.Colors.grey, fontSize: 14.0}), $creationLocationd_0dea112b090073317d4: C[28] || CT.C28}), $creationLocationd_0dea112b090073317d4: C[32] || CT.C32}), $creationLocationd_0dea112b090073317d4: C[35] || CT.C35});
+    }
+  };
+  (multi_state_widget.LoadingStateWidget.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    multi_state_widget.LoadingStateWidget.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = multi_state_widget.LoadingStateWidget.prototype;
+  dart.addTypeTests(multi_state_widget.LoadingStateWidget);
+  dart.addTypeCaches(multi_state_widget.LoadingStateWidget);
+  dart.setMethodSignature(multi_state_widget.LoadingStateWidget, () => ({
+    __proto__: dart.getMethods(multi_state_widget.LoadingStateWidget.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(multi_state_widget.LoadingStateWidget, I[0]);
+  dart.trackLibraries("packages/flutter_arg_demo/widget/multi_state_widget.dart", {
+    "package:flutter_arg_demo/widget/multi_state_widget.dart": multi_state_widget
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["multi_state_widget.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAQS;;;;;;IACA;;;;;;IACA;;;;;;IACC;;;;;;IACE;;;;;;;AA6B8B;IAAwB;;;QA1BvD;QACG;QACH;QACA;QACA;QACA;;IATD;IAMC;IACA;IACA;IACA;AACH,uEAAW,GAAG;AAClB,QAAI,AAAM,cAAa;AACrB,UAAI,AAAQ,OAAD;AACa,QAAjB,eAAU,OAAO;;;AAG1B,QAAI,AAAY;AACkB,MAAhC,mBAAc;;AAGhB,QAAI,AAAW;AACkB,MAA/B,kBAAa;;AAGf,QAAI,AAAc;AACoB,MAApC,qBAAgB;;EAEpB;;;;;;;;;;;;;;;;;UAQ0B;;AACxB,UAAI,AAAO,AAAM,2BACf,MAAO,qCACE,aACC;AAEZ,UAAI,AAAO,AAAM,qBAAa;AAC5B,aAAO;aAAe,OAAO;cAAR;YAChB,KAAI,AAAO,AAAM,qBAAa;AACnC,cAAO,AAAO;YACT,KAAI,AAAO,AAAM,qBAAa;AACnC,cAAO,AAAO;;AAEd,cAAO,AAAO;;IAElB;;;;;EACF;;;;;;;;;UAI4B;AACxB,YAAO,8BACE,oCACE,kBACL,gBACO,qCAAwB,8BAAgB;IAIvD;;;;;;EACF;;;;;;;;;;IAGS;;;;;;UAKmB;AACxB,YAAO,8BACE,oCACE,kBACK,8BAAU,4BAAsB,kBACnC,qCAAwB,8BAAgB;IAIvD;;;QAZuB;;;AAAvB;;EAA+B;;;;;;;;;;;;;UAiBL;AACxB,YAAO,8BACE,oCACE,kBACL,kBACO,qCAAwB,8BAAgB;IAIvD;;;;;;EACF","file":"../../../../packages/flutter_arg_demo/widget/multi_state_widget.dart.lib.js"}');
+  // Exports:
+  return {
+    widget__multi_state_widget: multi_state_widget
+  };
+}));
+
+//# sourceMappingURL=multi_state_widget.dart.lib.js.map
+>>>>>>> 9fed4871f8cb2e24becf4331c7fe9d1d7a564371
