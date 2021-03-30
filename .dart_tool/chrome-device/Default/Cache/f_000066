@@ -1,29 +1,37 @@
-define(['dart_sdk', 'packages/flutter/src/painting/alignment.dart', 'packages/flutter/src/painting/decoration_image.dart', 'packages/flutter/src/rendering/layer.dart', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/painting/colors.dart', 'packages/flutter/src/painting/box_fit.dart'], (function load__packages__flutter__src__rendering__image_dart(dart_sdk, packages__flutter__src__painting__alignment$46dart, packages__flutter__src__painting__decoration_image$46dart, packages__flutter__src__rendering__layer$46dart, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__painting__colors$46dart, packages__flutter__src__painting__box_fit$46dart) {
+define(['dart_sdk', 'packages/flutter/src/gestures/debug.dart', 'packages/flutter/src/foundation/print.dart'], (function load__packages__flutter__src__gestures__arena_dart(dart_sdk, packages__flutter__src__gestures__debug$46dart, packages__flutter__src__foundation__print$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const ui = dart_sdk.ui;
-  const _engine = dart_sdk._engine;
+  const _interceptors = dart_sdk._interceptors;
+  const _js_helper = dart_sdk._js_helper;
+  const async = dart_sdk.async;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const alignment = packages__flutter__src__painting__alignment$46dart.src__painting__alignment;
-  const decoration_image = packages__flutter__src__painting__decoration_image$46dart.src__painting__decoration_image;
-  const box = packages__flutter__src__rendering__layer$46dart.src__rendering__box;
-  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
-  const colors = packages__flutter__src__painting__colors$46dart.src__painting__colors;
-  const box_fit = packages__flutter__src__painting__box_fit$46dart.src__painting__box_fit;
-  var image$ = Object.create(dart.library);
-  var $toDouble = dartx.toDouble;
+  const debug = packages__flutter__src__gestures__debug$46dart.src__gestures__debug;
+  const print = packages__flutter__src__foundation__print$46dart.src__foundation__print;
+  var arena = Object.create(dart.library);
+  var $add = dartx.add;
+  var $isEmpty = dartx.isEmpty;
+  var $map = dartx.map;
+  var $join = dartx.join;
+  var $putIfAbsent = dartx.putIfAbsent;
+  var $_get = dartx._get;
+  var $remove = dartx.remove;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $first = dartx.first;
+  var $length = dartx.length;
+  var $contains = dartx.contains;
+  var $containsKey = dartx.containsKey;
+  var $toString = dartx.toString;
+  var $padRight = dartx.padRight;
   dart._checkModuleNullSafetyMode(false);
   var T = {
-    DiagnosticsPropertyOfImage: () => (T.DiagnosticsPropertyOfImage = dart.constFn(diagnostics.DiagnosticsProperty$(ui.Image)))(),
-    EnumPropertyOfBlendMode: () => (T.EnumPropertyOfBlendMode = dart.constFn(diagnostics.EnumProperty$(ui.BlendMode)))(),
-    EnumPropertyOfBoxFit: () => (T.EnumPropertyOfBoxFit = dart.constFn(diagnostics.EnumProperty$(box_fit.BoxFit)))(),
-    DiagnosticsPropertyOfAlignmentGeometry: () => (T.DiagnosticsPropertyOfAlignmentGeometry = dart.constFn(diagnostics.DiagnosticsProperty$(alignment.AlignmentGeometry)))(),
-    EnumPropertyOfImageRepeat: () => (T.EnumPropertyOfImageRepeat = dart.constFn(diagnostics.EnumProperty$(decoration_image.ImageRepeat)))(),
-    DiagnosticsPropertyOfRect: () => (T.DiagnosticsPropertyOfRect = dart.constFn(diagnostics.DiagnosticsProperty$(ui.Rect)))(),
-    EnumPropertyOfTextDirection: () => (T.EnumPropertyOfTextDirection = dart.constFn(diagnostics.EnumProperty$(ui.TextDirection)))(),
-    DiagnosticsPropertyOfbool: () => (T.DiagnosticsPropertyOfbool = dart.constFn(diagnostics.DiagnosticsProperty$(core.bool)))(),
-    EnumPropertyOfFilterQuality: () => (T.EnumPropertyOfFilterQuality = dart.constFn(diagnostics.EnumProperty$(ui.FilterQuality)))()
+    GestureDispositionL: () => (T.GestureDispositionL = dart.constFn(dart.legacy(arena.GestureDisposition)))(),
+    JSArrayOfGestureArenaMember: () => (T.JSArrayOfGestureArenaMember = dart.constFn(_interceptors.JSArray$(arena.GestureArenaMember)))(),
+    GestureArenaMemberToString: () => (T.GestureArenaMemberToString = dart.constFn(dart.fnType(core.String, [arena.GestureArenaMember])))(),
+    IdentityMapOfint$_GestureArena: () => (T.IdentityMapOfint$_GestureArena = dart.constFn(_js_helper.IdentityMap$(core.int, arena._GestureArena)))(),
+    VoidTo_GestureArena: () => (T.VoidTo_GestureArena = dart.constFn(dart.fnType(arena._GestureArena, [])))(),
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
+    VoidTobool: () => (T.VoidTobool = dart.constFn(dart.fnType(core.bool, [])))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -40,424 +48,308 @@ define(['dart_sdk', 'packages/flutter/src/painting/alignment.dart', 'packages/fl
   dart.defineLazy(CT, {
     get C0() {
       return C[0] = dart.const({
-        __proto__: alignment.Alignment.prototype,
-        [Alignment_y]: 0,
-        [Alignment_x]: 0
+        __proto__: arena.GestureDisposition.prototype,
+        [_name$]: "GestureDisposition.accepted",
+        index: 0
       });
     },
     get C1() {
       return C[1] = dart.const({
-        __proto__: decoration_image.ImageRepeat.prototype,
-        [_name]: "ImageRepeat.noRepeat",
-        index: 3
+        __proto__: arena.GestureDisposition.prototype,
+        [_name$]: "GestureDisposition.rejected",
+        index: 1
       });
     },
     get C2() {
-      return C[2] = dart.const({
-        __proto__: ui.FilterQuality.prototype,
-        [_name$]: "FilterQuality.low",
-        index: 1
-      });
+      return C[2] = dart.constList([C[0] || CT.C0, C[1] || CT.C1], T.GestureDispositionL());
     }
   }, false);
   var C = Array(3).fill(void 0);
   var I = [
-    "file:///D:/flutterSDK/flutter/packages/flutter/lib/src/rendering/image.dart",
-    "package:flutter/src/rendering/image.dart"
+    "file:///D:/flutterSDK/flutter/packages/flutter/lib/src/gestures/arena.dart",
+    "package:flutter/src/gestures/arena.dart"
   ];
-  var debugImageLabel$ = dart.privateName(image$, "RenderImage.debugImageLabel");
-  var Alignment_y = dart.privateName(alignment, "Alignment.y");
-  var Alignment_x = dart.privateName(alignment, "Alignment.x");
-  var _name = dart.privateName(decoration_image, "_name");
-  var _name$ = dart.privateName(ui, "_name");
-  var _resolvedAlignment = dart.privateName(image$, "_resolvedAlignment");
-  var _flipHorizontally = dart.privateName(image$, "_flipHorizontally");
-  var _colorFilter = dart.privateName(image$, "_colorFilter");
-  var _image = dart.privateName(image$, "_image");
-  var _width = dart.privateName(image$, "_width");
-  var _height = dart.privateName(image$, "_height");
-  var _scale = dart.privateName(image$, "_scale");
-  var _color = dart.privateName(image$, "_color");
-  var _colorBlendMode = dart.privateName(image$, "_colorBlendMode");
-  var _fit = dart.privateName(image$, "_fit");
-  var _alignment = dart.privateName(image$, "_alignment");
-  var _repeat = dart.privateName(image$, "_repeat");
-  var _centerSlice = dart.privateName(image$, "_centerSlice");
-  var _matchTextDirection = dart.privateName(image$, "_matchTextDirection");
-  var _invertColors = dart.privateName(image$, "_invertColors");
-  var _textDirection = dart.privateName(image$, "_textDirection");
-  var _isAntiAlias = dart.privateName(image$, "_isAntiAlias");
-  var _filterQuality = dart.privateName(image$, "_filterQuality");
-  var _updateColorFilter = dart.privateName(image$, "_updateColorFilter");
-  var _resolve = dart.privateName(image$, "_resolve");
-  var _markNeedResolution = dart.privateName(image$, "_markNeedResolution");
-  var _sizeForConstraints = dart.privateName(image$, "_sizeForConstraints");
-  image$.RenderImage = class RenderImage extends box.RenderBox {
-    get debugImageLabel() {
-      return this[debugImageLabel$];
-    }
-    set debugImageLabel(value) {
-      this[debugImageLabel$] = value;
-    }
-    [_resolve]() {
-      if (this[_resolvedAlignment] != null) return;
-      this[_resolvedAlignment] = this.alignment.resolve(this.textDirection);
-      this[_flipHorizontally] = dart.test(this.matchTextDirection) && this.textDirection == ui.TextDirection.rtl;
-    }
-    [_markNeedResolution]() {
-      this[_resolvedAlignment] = null;
-      this[_flipHorizontally] = null;
-      this.markNeedsPaint();
-    }
-    get image() {
-      return this[_image];
-    }
-    set image(value) {
-      let t0;
-      if (dart.equals(value, this[_image])) {
-        return;
-      }
-      if (value != null && this[_image] != null && dart.test(value.isCloneOf(dart.nullCheck(this[_image])))) {
-        value.dispose();
-        return;
-      }
-      t0 = this[_image];
-      t0 == null ? null : t0.dispose();
-      this[_image] = value;
-      this.markNeedsPaint();
-      if (this[_width] == null || this[_height] == null) this.markNeedsLayout();
-    }
-    get width() {
-      return this[_width];
-    }
-    set width(value) {
-      if (value == this[_width]) return;
-      this[_width] = value;
-      this.markNeedsLayout();
-    }
-    get height() {
-      return this[_height];
-    }
-    set height(value) {
-      if (value == this[_height]) return;
-      this[_height] = value;
-      this.markNeedsLayout();
-    }
-    get scale() {
-      return this[_scale];
-    }
-    set scale(value) {
-      if (value == null) dart.nullFailed(I[0], 138, 20, "value");
-      if (!(value != null)) dart.assertFailed(null, I[0], 139, 12, "value != null");
-      if (value == this[_scale]) return;
-      this[_scale] = value;
-      this.markNeedsLayout();
-    }
-    [_updateColorFilter]() {
-      let t0;
-      if (this[_color] == null)
-        this[_colorFilter] = null;
-      else
-        this[_colorFilter] = new _engine._CkBlendModeColorFilter.new(dart.nullCheck(this[_color]), (t0 = this[_colorBlendMode], t0 == null ? ui.BlendMode.srcIn : t0));
-    }
-    get color() {
-      return this[_color];
-    }
-    set color(value) {
-      if (dart.equals(value, this[_color])) return;
-      this[_color] = value;
-      this[_updateColorFilter]();
-      this.markNeedsPaint();
-    }
-    get filterQuality() {
-      return this[_filterQuality];
-    }
-    set filterQuality(value) {
-      if (value == null) dart.nullFailed(I[0], 172, 35, "value");
-      if (!(value != null)) dart.assertFailed(null, I[0], 173, 12, "value != null");
-      if (value == this[_filterQuality]) return;
-      this[_filterQuality] = value;
-      this.markNeedsPaint();
-    }
-    get colorBlendMode() {
-      return this[_colorBlendMode];
-    }
-    set colorBlendMode(value) {
-      if (value == this[_colorBlendMode]) return;
-      this[_colorBlendMode] = value;
-      this[_updateColorFilter]();
-      this.markNeedsPaint();
-    }
-    get fit() {
-      return this[_fit];
-    }
-    set fit(value) {
-      if (value == this[_fit]) return;
-      this[_fit] = value;
-      this.markNeedsPaint();
-    }
-    get alignment() {
-      return this[_alignment];
-    }
-    set alignment(value) {
-      if (value == null) dart.nullFailed(I[0], 218, 35, "value");
-      if (!(value != null)) dart.assertFailed(null, I[0], 219, 12, "value != null");
-      if (dart.equals(value, this[_alignment])) return;
-      this[_alignment] = value;
-      this[_markNeedResolution]();
-    }
-    get repeat() {
-      return this[_repeat];
-    }
-    set repeat(value) {
-      if (value == null) dart.nullFailed(I[0], 229, 26, "value");
-      if (!(value != null)) dart.assertFailed(null, I[0], 230, 12, "value != null");
-      if (value == this[_repeat]) return;
-      this[_repeat] = value;
-      this.markNeedsPaint();
-    }
-    get centerSlice() {
-      return this[_centerSlice];
-    }
-    set centerSlice(value) {
-      if (dart.equals(value, this[_centerSlice])) return;
-      this[_centerSlice] = value;
-      this.markNeedsPaint();
-    }
-    get invertColors() {
-      return this[_invertColors];
-    }
-    set invertColors(value) {
-      if (value == null) dart.nullFailed(I[0], 260, 25, "value");
-      if (value == this[_invertColors]) return;
-      this[_invertColors] = value;
-      this.markNeedsPaint();
-    }
-    get matchTextDirection() {
-      return this[_matchTextDirection];
-    }
-    set matchTextDirection(value) {
-      if (value == null) dart.nullFailed(I[0], 283, 31, "value");
-      if (!(value != null)) dart.assertFailed(null, I[0], 284, 12, "value != null");
-      if (value == this[_matchTextDirection]) return;
-      this[_matchTextDirection] = value;
-      this[_markNeedResolution]();
-    }
-    get textDirection() {
-      return this[_textDirection];
-    }
-    set textDirection(value) {
-      if (this[_textDirection] == value) return;
-      this[_textDirection] = value;
-      this[_markNeedResolution]();
-    }
-    get isAntiAlias() {
-      return this[_isAntiAlias];
-    }
-    set isAntiAlias(value) {
-      if (value == null) dart.nullFailed(I[0], 310, 24, "value");
-      if (this[_isAntiAlias] == value) {
-        return;
-      }
-      if (!(value != null)) dart.assertFailed(null, I[0], 314, 12, "value != null");
-      this[_isAntiAlias] = value;
-      this.markNeedsPaint();
-    }
-    [_sizeForConstraints](constraints) {
-      if (constraints == null) dart.nullFailed(I[0], 326, 43, "constraints");
-      constraints = new box.BoxConstraints.tightFor({width: this[_width], height: this[_height]}).enforce(constraints);
-      if (this[_image] == null) return constraints.smallest;
-      return constraints.constrainSizeAndAttemptToPreserveAspectRatio(new ui.Size.new(dart.nullCheck(this[_image]).width[$toDouble]() / dart.notNull(this[_scale]), dart.nullCheck(this[_image]).height[$toDouble]() / dart.notNull(this[_scale])));
-    }
-    computeMinIntrinsicWidth(height) {
-      if (height == null) dart.nullFailed(I[0], 344, 42, "height");
-      if (!(dart.notNull(height) >= 0.0)) dart.assertFailed(null, I[0], 345, 12, "height >= 0.0");
-      if (this[_width] == null && this[_height] == null) return 0.0;
-      return this[_sizeForConstraints](new box.BoxConstraints.tightForFinite({height: height})).width;
-    }
-    computeMaxIntrinsicWidth(height) {
-      if (height == null) dart.nullFailed(I[0], 352, 42, "height");
-      if (!(dart.notNull(height) >= 0.0)) dart.assertFailed(null, I[0], 353, 12, "height >= 0.0");
-      return this[_sizeForConstraints](new box.BoxConstraints.tightForFinite({height: height})).width;
-    }
-    computeMinIntrinsicHeight(width) {
-      if (width == null) dart.nullFailed(I[0], 358, 43, "width");
-      if (!(dart.notNull(width) >= 0.0)) dart.assertFailed(null, I[0], 359, 12, "width >= 0.0");
-      if (this[_width] == null && this[_height] == null) return 0.0;
-      return this[_sizeForConstraints](new box.BoxConstraints.tightForFinite({width: width})).height;
-    }
-    computeMaxIntrinsicHeight(width) {
-      if (width == null) dart.nullFailed(I[0], 366, 43, "width");
-      if (!(dart.notNull(width) >= 0.0)) dart.assertFailed(null, I[0], 367, 12, "width >= 0.0");
-      return this[_sizeForConstraints](new box.BoxConstraints.tightForFinite({width: width})).height;
-    }
-    hitTestSelf(position) {
-      if (position == null) dart.nullFailed(I[0], 372, 27, "position");
-      return true;
-    }
-    computeDryLayout(constraints) {
-      if (constraints == null) dart.nullFailed(I[0], 375, 40, "constraints");
-      return this[_sizeForConstraints](constraints);
-    }
-    performLayout() {
-      this.size = this[_sizeForConstraints](this.constraints);
-    }
-    paint(context, offset) {
-      if (context == null) dart.nullFailed(I[0], 385, 30, "context");
-      if (offset == null) dart.nullFailed(I[0], 385, 46, "offset");
-      if (this[_image] == null) return;
-      this[_resolve]();
-      if (!(this[_resolvedAlignment] != null)) dart.assertFailed(null, I[0], 389, 12, "_resolvedAlignment != null");
-      if (!(this[_flipHorizontally] != null)) dart.assertFailed(null, I[0], 390, 12, "_flipHorizontally != null");
-      decoration_image.paintImage({canvas: context.canvas, rect: offset['&'](this.size), image: dart.nullCheck(this[_image]), debugImageLabel: this.debugImageLabel, scale: this[_scale], colorFilter: this[_colorFilter], fit: this[_fit], alignment: dart.nullCheck(this[_resolvedAlignment]), centerSlice: this[_centerSlice], repeat: this[_repeat], flipHorizontally: dart.nullCheck(this[_flipHorizontally]), invertColors: this.invertColors, filterQuality: this[_filterQuality], isAntiAlias: this[_isAntiAlias]});
-    }
-    debugFillProperties(properties) {
-      if (properties == null) dart.nullFailed(I[0], 410, 56, "properties");
-      super.debugFillProperties(properties);
-      properties.add(new (T.DiagnosticsPropertyOfImage()).new("image", this.image));
-      properties.add(new diagnostics.DoubleProperty.new("width", this.width, {defaultValue: null}));
-      properties.add(new diagnostics.DoubleProperty.new("height", this.height, {defaultValue: null}));
-      properties.add(new diagnostics.DoubleProperty.new("scale", this.scale, {defaultValue: 1.0}));
-      properties.add(new colors.ColorProperty.new("color", this.color, {defaultValue: null}));
-      properties.add(new (T.EnumPropertyOfBlendMode()).new("colorBlendMode", this.colorBlendMode, {defaultValue: null}));
-      properties.add(new (T.EnumPropertyOfBoxFit()).new("fit", this.fit, {defaultValue: null}));
-      properties.add(new (T.DiagnosticsPropertyOfAlignmentGeometry()).new("alignment", this.alignment, {defaultValue: null}));
-      properties.add(new (T.EnumPropertyOfImageRepeat()).new("repeat", this.repeat, {defaultValue: decoration_image.ImageRepeat.noRepeat}));
-      properties.add(new (T.DiagnosticsPropertyOfRect()).new("centerSlice", this.centerSlice, {defaultValue: null}));
-      properties.add(new diagnostics.FlagProperty.new("matchTextDirection", {value: this.matchTextDirection, ifTrue: "match text direction"}));
-      properties.add(new (T.EnumPropertyOfTextDirection()).new("textDirection", this.textDirection, {defaultValue: null}));
-      properties.add(new (T.DiagnosticsPropertyOfbool()).new("invertColors", this.invertColors));
-      properties.add(new (T.EnumPropertyOfFilterQuality()).new("filterQuality", this.filterQuality));
+  var _name$ = dart.privateName(arena, "_name");
+  arena.GestureDisposition = class GestureDisposition extends core.Object {
+    toString() {
+      return this[_name$];
     }
   };
-  (image$.RenderImage.new = function(opts) {
-    let image = opts && 'image' in opts ? opts.image : null;
-    let debugImageLabel = opts && 'debugImageLabel' in opts ? opts.debugImageLabel : null;
-    let width = opts && 'width' in opts ? opts.width : null;
-    let height = opts && 'height' in opts ? opts.height : null;
-    let scale = opts && 'scale' in opts ? opts.scale : 1;
-    if (scale == null) dart.nullFailed(I[0], 32, 12, "scale");
-    let color = opts && 'color' in opts ? opts.color : null;
-    let colorBlendMode = opts && 'colorBlendMode' in opts ? opts.colorBlendMode : null;
-    let fit = opts && 'fit' in opts ? opts.fit : null;
-    let alignment = opts && 'alignment' in opts ? opts.alignment : C[0] || CT.C0;
-    if (alignment == null) dart.nullFailed(I[0], 36, 23, "alignment");
-    let repeat = opts && 'repeat' in opts ? opts.repeat : C[1] || CT.C1;
-    if (repeat == null) dart.nullFailed(I[0], 37, 17, "repeat");
-    let centerSlice = opts && 'centerSlice' in opts ? opts.centerSlice : null;
-    let matchTextDirection = opts && 'matchTextDirection' in opts ? opts.matchTextDirection : false;
-    if (matchTextDirection == null) dart.nullFailed(I[0], 39, 10, "matchTextDirection");
-    let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
-    let invertColors = opts && 'invertColors' in opts ? opts.invertColors : false;
-    if (invertColors == null) dart.nullFailed(I[0], 41, 10, "invertColors");
-    let isAntiAlias = opts && 'isAntiAlias' in opts ? opts.isAntiAlias : false;
-    if (isAntiAlias == null) dart.nullFailed(I[0], 42, 10, "isAntiAlias");
-    let filterQuality = opts && 'filterQuality' in opts ? opts.filterQuality : C[2] || CT.C2;
-    if (filterQuality == null) dart.nullFailed(I[0], 43, 19, "filterQuality");
-    this[_resolvedAlignment] = null;
-    this[_flipHorizontally] = null;
-    this[_colorFilter] = null;
-    this[debugImageLabel$] = debugImageLabel;
-    if (!(scale != null)) dart.assertFailed(null, I[0], 44, 15, "scale != null");
-    if (!(repeat != null)) dart.assertFailed(null, I[0], 45, 15, "repeat != null");
-    if (!(alignment != null)) dart.assertFailed(null, I[0], 46, 15, "alignment != null");
-    if (!(filterQuality != null)) dart.assertFailed(null, I[0], 47, 15, "filterQuality != null");
-    if (!(matchTextDirection != null)) dart.assertFailed(null, I[0], 48, 15, "matchTextDirection != null");
-    if (!(isAntiAlias != null)) dart.assertFailed(null, I[0], 49, 15, "isAntiAlias != null");
-    this[_image] = image;
-    this[_width] = width;
-    this[_height] = height;
-    this[_scale] = scale;
-    this[_color] = color;
-    this[_colorBlendMode] = colorBlendMode;
-    this[_fit] = fit;
-    this[_alignment] = alignment;
-    this[_repeat] = repeat;
-    this[_centerSlice] = centerSlice;
-    this[_matchTextDirection] = matchTextDirection;
-    this[_invertColors] = invertColors;
-    this[_textDirection] = textDirection;
-    this[_isAntiAlias] = isAntiAlias;
-    this[_filterQuality] = filterQuality;
-    image$.RenderImage.__proto__.new.call(this);
-    this[_updateColorFilter]();
-  }).prototype = image$.RenderImage.prototype;
-  dart.addTypeTests(image$.RenderImage);
-  dart.addTypeCaches(image$.RenderImage);
-  dart.setMethodSignature(image$.RenderImage, () => ({
-    __proto__: dart.getMethods(image$.RenderImage.__proto__),
-    [_resolve]: dart.fnType(dart.void, []),
-    [_markNeedResolution]: dart.fnType(dart.void, []),
-    [_updateColorFilter]: dart.fnType(dart.void, []),
-    [_sizeForConstraints]: dart.fnType(ui.Size, [box.BoxConstraints])
+  (arena.GestureDisposition.new = function(index, _name) {
+    if (index == null) dart.nullFailed(I[0], 13, 6, "index");
+    if (_name == null) dart.nullFailed(I[0], 13, 6, "_name");
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = arena.GestureDisposition.prototype;
+  dart.addTypeTests(arena.GestureDisposition);
+  dart.addTypeCaches(arena.GestureDisposition);
+  dart.setLibraryUri(arena.GestureDisposition, I[1]);
+  dart.setFieldSignature(arena.GestureDisposition, () => ({
+    __proto__: dart.getFields(arena.GestureDisposition.__proto__),
+    index: dart.finalFieldType(core.int),
+    [_name$]: dart.finalFieldType(core.String)
   }));
-  dart.setGetterSignature(image$.RenderImage, () => ({
-    __proto__: dart.getGetters(image$.RenderImage.__proto__),
-    image: dart.nullable(ui.Image),
-    width: dart.nullable(core.double),
-    height: dart.nullable(core.double),
-    scale: core.double,
-    color: dart.nullable(ui.Color),
-    filterQuality: ui.FilterQuality,
-    colorBlendMode: dart.nullable(ui.BlendMode),
-    fit: dart.nullable(box_fit.BoxFit),
-    alignment: alignment.AlignmentGeometry,
-    repeat: decoration_image.ImageRepeat,
-    centerSlice: dart.nullable(ui.Rect),
-    invertColors: core.bool,
-    matchTextDirection: core.bool,
-    textDirection: dart.nullable(ui.TextDirection),
-    isAntiAlias: core.bool
+  dart.defineExtensionMethods(arena.GestureDisposition, ['toString']);
+  arena.GestureDisposition.accepted = C[0] || CT.C0;
+  arena.GestureDisposition.rejected = C[1] || CT.C1;
+  arena.GestureDisposition.values = C[2] || CT.C2;
+  arena.GestureArenaMember = class GestureArenaMember extends core.Object {};
+  (arena.GestureArenaMember.new = function() {
+    ;
+  }).prototype = arena.GestureArenaMember.prototype;
+  dart.addTypeTests(arena.GestureArenaMember);
+  dart.addTypeCaches(arena.GestureArenaMember);
+  dart.setLibraryUri(arena.GestureArenaMember, I[1]);
+  var _arena$ = dart.privateName(arena, "_arena");
+  var _pointer$ = dart.privateName(arena, "_pointer");
+  var _member$ = dart.privateName(arena, "_member");
+  var _resolve = dart.privateName(arena, "_resolve");
+  arena.GestureArenaEntry = class GestureArenaEntry extends core.Object {
+    resolve(disposition) {
+      if (disposition == null) dart.nullFailed(I[0], 52, 35, "disposition");
+      this[_arena$][_resolve](this[_pointer$], this[_member$], disposition);
+    }
+  };
+  (arena.GestureArenaEntry.__ = function(_arena, _pointer, _member) {
+    if (_arena == null) dart.nullFailed(I[0], 42, 28, "_arena");
+    if (_pointer == null) dart.nullFailed(I[0], 42, 41, "_pointer");
+    if (_member == null) dart.nullFailed(I[0], 42, 56, "_member");
+    this[_arena$] = _arena;
+    this[_pointer$] = _pointer;
+    this[_member$] = _member;
+    ;
+  }).prototype = arena.GestureArenaEntry.prototype;
+  dart.addTypeTests(arena.GestureArenaEntry);
+  dart.addTypeCaches(arena.GestureArenaEntry);
+  dart.setMethodSignature(arena.GestureArenaEntry, () => ({
+    __proto__: dart.getMethods(arena.GestureArenaEntry.__proto__),
+    resolve: dart.fnType(dart.void, [arena.GestureDisposition])
   }));
-  dart.setSetterSignature(image$.RenderImage, () => ({
-    __proto__: dart.getSetters(image$.RenderImage.__proto__),
-    image: dart.nullable(ui.Image),
-    width: dart.nullable(core.double),
-    height: dart.nullable(core.double),
-    scale: core.double,
-    color: dart.nullable(ui.Color),
-    filterQuality: ui.FilterQuality,
-    colorBlendMode: dart.nullable(ui.BlendMode),
-    fit: dart.nullable(box_fit.BoxFit),
-    alignment: alignment.AlignmentGeometry,
-    repeat: decoration_image.ImageRepeat,
-    centerSlice: dart.nullable(ui.Rect),
-    invertColors: core.bool,
-    matchTextDirection: core.bool,
-    textDirection: dart.nullable(ui.TextDirection),
-    isAntiAlias: core.bool
+  dart.setLibraryUri(arena.GestureArenaEntry, I[1]);
+  dart.setFieldSignature(arena.GestureArenaEntry, () => ({
+    __proto__: dart.getFields(arena.GestureArenaEntry.__proto__),
+    [_arena$]: dart.finalFieldType(arena.GestureArenaManager),
+    [_pointer$]: dart.finalFieldType(core.int),
+    [_member$]: dart.finalFieldType(arena.GestureArenaMember)
   }));
-  dart.setLibraryUri(image$.RenderImage, I[1]);
-  dart.setFieldSignature(image$.RenderImage, () => ({
-    __proto__: dart.getFields(image$.RenderImage.__proto__),
-    [_resolvedAlignment]: dart.fieldType(dart.nullable(alignment.Alignment)),
-    [_flipHorizontally]: dart.fieldType(dart.nullable(core.bool)),
-    [_image]: dart.fieldType(dart.nullable(ui.Image)),
-    debugImageLabel: dart.fieldType(dart.nullable(core.String)),
-    [_width]: dart.fieldType(dart.nullable(core.double)),
-    [_height]: dart.fieldType(dart.nullable(core.double)),
-    [_scale]: dart.fieldType(core.double),
-    [_colorFilter]: dart.fieldType(dart.nullable(ui.ColorFilter)),
-    [_color]: dart.fieldType(dart.nullable(ui.Color)),
-    [_filterQuality]: dart.fieldType(ui.FilterQuality),
-    [_colorBlendMode]: dart.fieldType(dart.nullable(ui.BlendMode)),
-    [_fit]: dart.fieldType(dart.nullable(box_fit.BoxFit)),
-    [_alignment]: dart.fieldType(alignment.AlignmentGeometry),
-    [_repeat]: dart.fieldType(decoration_image.ImageRepeat),
-    [_centerSlice]: dart.fieldType(dart.nullable(ui.Rect)),
-    [_invertColors]: dart.fieldType(core.bool),
-    [_matchTextDirection]: dart.fieldType(core.bool),
-    [_textDirection]: dart.fieldType(dart.nullable(ui.TextDirection)),
-    [_isAntiAlias]: dart.fieldType(core.bool)
+  arena._GestureArena = class _GestureArena extends core.Object {
+    add(member) {
+      if (member == null) dart.nullFailed(I[0], 69, 31, "member");
+      if (!dart.test(this.isOpen)) dart.assertFailed(null, I[0], 70, 12, "isOpen");
+      this.members[$add](member);
+    }
+    toString() {
+      let buffer = new core.StringBuffer.new();
+      if (dart.test(this.members[$isEmpty])) {
+        buffer.write("<empty>");
+      } else {
+        buffer.write(this.members[$map](core.String, dart.fn(member => {
+          if (member == null) dart.nullFailed(I[0], 80, 60, "member");
+          if (dart.equals(member, this.eagerWinner)) return dart.str(member) + " (eager winner)";
+          return dart.str(member);
+        }, T.GestureArenaMemberToString()))[$join](", "));
+      }
+      if (dart.test(this.isOpen)) buffer.write(" [open]");
+      if (dart.test(this.isHeld)) buffer.write(" [held]");
+      if (dart.test(this.hasPendingSweep)) buffer.write(" [hasPendingSweep]");
+      return buffer.toString();
+    }
+  };
+  (arena._GestureArena.new = function() {
+    this.members = T.JSArrayOfGestureArenaMember().of([]);
+    this.isOpen = true;
+    this.isHeld = false;
+    this.hasPendingSweep = false;
+    this.eagerWinner = null;
+    ;
+  }).prototype = arena._GestureArena.prototype;
+  dart.addTypeTests(arena._GestureArena);
+  dart.addTypeCaches(arena._GestureArena);
+  dart.setMethodSignature(arena._GestureArena, () => ({
+    __proto__: dart.getMethods(arena._GestureArena.__proto__),
+    add: dart.fnType(dart.void, [arena.GestureArenaMember])
   }));
-  dart.trackLibraries("packages/flutter/src/rendering/image.dart", {
-    "package:flutter/src/rendering/image.dart": image$
+  dart.setLibraryUri(arena._GestureArena, I[1]);
+  dart.setFieldSignature(arena._GestureArena, () => ({
+    __proto__: dart.getFields(arena._GestureArena.__proto__),
+    members: dart.finalFieldType(core.List$(arena.GestureArenaMember)),
+    isOpen: dart.fieldType(core.bool),
+    isHeld: dart.fieldType(core.bool),
+    hasPendingSweep: dart.fieldType(core.bool),
+    eagerWinner: dart.fieldType(dart.nullable(arena.GestureArenaMember))
+  }));
+  dart.defineExtensionMethods(arena._GestureArena, ['toString']);
+  var _arenas = dart.privateName(arena, "_arenas");
+  var _debugLogDiagnostic = dart.privateName(arena, "_debugLogDiagnostic");
+  var _tryToResolveArena = dart.privateName(arena, "_tryToResolveArena");
+  var _resolveInFavorOf = dart.privateName(arena, "_resolveInFavorOf");
+  var _resolveByDefault = dart.privateName(arena, "_resolveByDefault");
+  arena.GestureArenaManager = class GestureArenaManager extends core.Object {
+    add(pointer, member) {
+      if (pointer == null) dart.nullFailed(I[0], 107, 29, "pointer");
+      if (member == null) dart.nullFailed(I[0], 107, 57, "member");
+      let state = this[_arenas][$putIfAbsent](pointer, dart.fn(() => {
+        if (!dart.test(this[_debugLogDiagnostic](pointer, "★ Opening new gesture arena."))) dart.assertFailed(null, I[0], 109, 14, "_debugLogDiagnostic(pointer, '★ Opening new gesture arena.')");
+        return new arena._GestureArena.new();
+      }, T.VoidTo_GestureArena()));
+      state.add(member);
+      if (!dart.test(this[_debugLogDiagnostic](pointer, "Adding: " + dart.str(member)))) dart.assertFailed(null, I[0], 113, 12, "_debugLogDiagnostic(pointer, 'Adding: $member')");
+      return new arena.GestureArenaEntry.__(this, pointer, member);
+    }
+    close(pointer) {
+      if (pointer == null) dart.nullFailed(I[0], 120, 18, "pointer");
+      let state = this[_arenas][$_get](pointer);
+      if (state == null) return;
+      state.isOpen = false;
+      if (!dart.test(this[_debugLogDiagnostic](pointer, "Closing", state))) dart.assertFailed(null, I[0], 125, 12, "_debugLogDiagnostic(pointer, 'Closing', state)");
+      this[_tryToResolveArena](pointer, state);
+    }
+    sweep(pointer) {
+      if (pointer == null) dart.nullFailed(I[0], 142, 18, "pointer");
+      let state = this[_arenas][$_get](pointer);
+      if (state == null) return;
+      if (!!dart.test(state.isOpen)) dart.assertFailed(null, I[0], 146, 12, "!state.isOpen");
+      if (dart.test(state.isHeld)) {
+        state.hasPendingSweep = true;
+        if (!dart.test(this[_debugLogDiagnostic](pointer, "Delaying sweep", state))) dart.assertFailed(null, I[0], 149, 14, "_debugLogDiagnostic(pointer, 'Delaying sweep', state)");
+        return;
+      }
+      if (!dart.test(this[_debugLogDiagnostic](pointer, "Sweeping", state))) dart.assertFailed(null, I[0], 152, 12, "_debugLogDiagnostic(pointer, 'Sweeping', state)");
+      this[_arenas][$remove](pointer);
+      if (dart.test(state.members[$isNotEmpty])) {
+        if (!dart.test(this[_debugLogDiagnostic](pointer, "Winner: " + dart.str(state.members[$first])))) dart.assertFailed(null, I[0], 156, 14, "_debugLogDiagnostic(pointer, 'Winner: ${state.members.first}')");
+        state.members[$first].acceptGesture(pointer);
+        for (let i = 1; i < dart.notNull(state.members[$length]); i = i + 1)
+          state.members[$_get](i).rejectGesture(pointer);
+      }
+    }
+    hold(pointer) {
+      if (pointer == null) dart.nullFailed(I[0], 176, 17, "pointer");
+      let state = this[_arenas][$_get](pointer);
+      if (state == null) return;
+      state.isHeld = true;
+      if (!dart.test(this[_debugLogDiagnostic](pointer, "Holding", state))) dart.assertFailed(null, I[0], 181, 12, "_debugLogDiagnostic(pointer, 'Holding', state)");
+    }
+    release(pointer) {
+      if (pointer == null) dart.nullFailed(I[0], 193, 20, "pointer");
+      let state = this[_arenas][$_get](pointer);
+      if (state == null) return;
+      state.isHeld = false;
+      if (!dart.test(this[_debugLogDiagnostic](pointer, "Releasing", state))) dart.assertFailed(null, I[0], 198, 12, "_debugLogDiagnostic(pointer, 'Releasing', state)");
+      if (dart.test(state.hasPendingSweep)) this.sweep(pointer);
+    }
+    [_resolve](pointer, member, disposition) {
+      let t0;
+      if (pointer == null) dart.nullFailed(I[0], 206, 21, "pointer");
+      if (member == null) dart.nullFailed(I[0], 206, 49, "member");
+      if (disposition == null) dart.nullFailed(I[0], 206, 76, "disposition");
+      let state = this[_arenas][$_get](pointer);
+      if (state == null) return;
+      if (!dart.test(this[_debugLogDiagnostic](pointer, (disposition == arena.GestureDisposition.accepted ? "Accepting" : "Rejecting") + ": " + dart.str(member)))) dart.assertFailed(null, I[0], 210, 12, "_debugLogDiagnostic(pointer, '${ disposition == GestureDisposition.accepted ? \"Accepting\" : \"Rejecting\" }: $member')");
+      if (!dart.test(state.members[$contains](member))) dart.assertFailed(null, I[0], 211, 12, "state.members.contains(member)");
+      if (disposition == arena.GestureDisposition.rejected) {
+        state.members[$remove](member);
+        member.rejectGesture(pointer);
+        if (!dart.test(state.isOpen)) this[_tryToResolveArena](pointer, state);
+      } else {
+        if (!(disposition == arena.GestureDisposition.accepted)) dart.assertFailed(null, I[0], 218, 14, "disposition == GestureDisposition.accepted");
+        if (dart.test(state.isOpen)) {
+          t0 = state;
+          t0.eagerWinner == null ? t0.eagerWinner = member : null;
+        } else {
+          if (!dart.test(this[_debugLogDiagnostic](pointer, "Self-declared winner: " + dart.str(member)))) dart.assertFailed(null, I[0], 222, 16, "_debugLogDiagnostic(pointer, 'Self-declared winner: $member')");
+          this[_resolveInFavorOf](pointer, state, member);
+        }
+      }
+    }
+    [_tryToResolveArena](pointer, state) {
+      if (pointer == null) dart.nullFailed(I[0], 228, 31, "pointer");
+      if (state == null) dart.nullFailed(I[0], 228, 54, "state");
+      if (!dart.equals(this[_arenas][$_get](pointer), state)) dart.assertFailed(null, I[0], 229, 12, "_arenas[pointer] == state");
+      if (!!dart.test(state.isOpen)) dart.assertFailed(null, I[0], 230, 12, "!state.isOpen");
+      if (state.members[$length] === 1) {
+        async.scheduleMicrotask(dart.fn(() => this[_resolveByDefault](pointer, state), T.VoidTovoid()));
+      } else if (dart.test(state.members[$isEmpty])) {
+        this[_arenas][$remove](pointer);
+        if (!dart.test(this[_debugLogDiagnostic](pointer, "Arena empty."))) dart.assertFailed(null, I[0], 235, 14, "_debugLogDiagnostic(pointer, 'Arena empty.')");
+      } else if (state.eagerWinner != null) {
+        if (!dart.test(this[_debugLogDiagnostic](pointer, "Eager winner: " + dart.str(state.eagerWinner)))) dart.assertFailed(null, I[0], 237, 14, "_debugLogDiagnostic(pointer, 'Eager winner: ${state.eagerWinner}')");
+        this[_resolveInFavorOf](pointer, state, dart.nullCheck(state.eagerWinner));
+      }
+    }
+    [_resolveByDefault](pointer, state) {
+      if (pointer == null) dart.nullFailed(I[0], 242, 30, "pointer");
+      if (state == null) dart.nullFailed(I[0], 242, 53, "state");
+      if (!dart.test(this[_arenas][$containsKey](pointer))) return;
+      if (!dart.equals(this[_arenas][$_get](pointer), state)) dart.assertFailed(null, I[0], 245, 12, "_arenas[pointer] == state");
+      if (!!dart.test(state.isOpen)) dart.assertFailed(null, I[0], 246, 12, "!state.isOpen");
+      let members = state.members;
+      if (!(members[$length] === 1)) dart.assertFailed(null, I[0], 248, 12, "members.length == 1");
+      this[_arenas][$remove](pointer);
+      if (!dart.test(this[_debugLogDiagnostic](pointer, "Default winner: " + dart.str(state.members[$first])))) dart.assertFailed(null, I[0], 250, 12, "_debugLogDiagnostic(pointer, 'Default winner: ${state.members.first}')");
+      state.members[$first].acceptGesture(pointer);
+    }
+    [_resolveInFavorOf](pointer, state, member) {
+      if (pointer == null) dart.nullFailed(I[0], 254, 30, "pointer");
+      if (state == null) dart.nullFailed(I[0], 254, 53, "state");
+      if (member == null) dart.nullFailed(I[0], 254, 79, "member");
+      if (!dart.equals(state, this[_arenas][$_get](pointer))) dart.assertFailed(null, I[0], 255, 12, "state == _arenas[pointer]");
+      if (!(state != null)) dart.assertFailed(null, I[0], 256, 12, "state != null");
+      if (!(state.eagerWinner == null || dart.equals(state.eagerWinner, member))) dart.assertFailed(null, I[0], 257, 12, "state.eagerWinner == null || state.eagerWinner == member");
+      if (!!dart.test(state.isOpen)) dart.assertFailed(null, I[0], 258, 12, "!state.isOpen");
+      this[_arenas][$remove](pointer);
+      for (let rejectedMember of state.members) {
+        if (!dart.equals(rejectedMember, member)) rejectedMember.rejectGesture(pointer);
+      }
+      member.acceptGesture(pointer);
+    }
+    [_debugLogDiagnostic](pointer, message, state = null) {
+      if (pointer == null) dart.nullFailed(I[0], 267, 32, "pointer");
+      if (message == null) dart.nullFailed(I[0], 267, 48, "message");
+      if (!dart.test(dart.fn(() => {
+        if (dart.test(debug.debugPrintGestureArenaDiagnostics)) {
+          let count = state != null ? state.members[$length] : null;
+          let s = count !== 1 ? "s" : "";
+          print.debugPrint("Gesture arena " + dart.toString(pointer)[$padRight](4) + " ❙ " + dart.str(message) + (count != null ? " with " + dart.str(count) + " member" + s + "." : ""));
+        }
+        return true;
+      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 268, 12, "() {\r\n      if (debugPrintGestureArenaDiagnostics) {\r\n        final int? count = state != null ? state.members.length : null;\r\n        final String s = count != 1 ? 's' : '';\r\n        debugPrint('Gesture arena ${pointer.toString().padRight(4)} ❙ $message${ count != null ? \" with $count member$s.\" : \"\"}');\r\n      }\r\n      return true;\r\n    }()");
+      return true;
+    }
+  };
+  (arena.GestureArenaManager.new = function() {
+    this[_arenas] = new (T.IdentityMapOfint$_GestureArena()).new();
+    ;
+  }).prototype = arena.GestureArenaManager.prototype;
+  dart.addTypeTests(arena.GestureArenaManager);
+  dart.addTypeCaches(arena.GestureArenaManager);
+  dart.setMethodSignature(arena.GestureArenaManager, () => ({
+    __proto__: dart.getMethods(arena.GestureArenaManager.__proto__),
+    add: dart.fnType(arena.GestureArenaEntry, [core.int, arena.GestureArenaMember]),
+    close: dart.fnType(dart.void, [core.int]),
+    sweep: dart.fnType(dart.void, [core.int]),
+    hold: dart.fnType(dart.void, [core.int]),
+    release: dart.fnType(dart.void, [core.int]),
+    [_resolve]: dart.fnType(dart.void, [core.int, arena.GestureArenaMember, arena.GestureDisposition]),
+    [_tryToResolveArena]: dart.fnType(dart.void, [core.int, arena._GestureArena]),
+    [_resolveByDefault]: dart.fnType(dart.void, [core.int, arena._GestureArena]),
+    [_resolveInFavorOf]: dart.fnType(dart.void, [core.int, arena._GestureArena, arena.GestureArenaMember]),
+    [_debugLogDiagnostic]: dart.fnType(core.bool, [core.int, core.String], [dart.nullable(arena._GestureArena)])
+  }));
+  dart.setLibraryUri(arena.GestureArenaManager, I[1]);
+  dart.setFieldSignature(arena.GestureArenaManager, () => ({
+    __proto__: dart.getFields(arena.GestureArenaManager.__proto__),
+    [_arenas]: dart.finalFieldType(core.Map$(core.int, arena._GestureArena))
+  }));
+  dart.trackLibraries("packages/flutter/src/gestures/arena.dart", {
+    "package:flutter/src/gestures/arena.dart": arena
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["image.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/rendering/image.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["arena.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/gestures/arena.dart.lib.js"}');
   // Exports:
   return {
-    src__rendering__image: image$
+    src__gestures__arena: arena
   };
 }));
 
-//# sourceMappingURL=image.dart.lib.js.map
+//# sourceMappingURL=arena.dart.lib.js.map

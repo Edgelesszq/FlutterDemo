@@ -1,22 +1,24 @@
-define(['dart_sdk', 'packages/flutter/src/gestures/velocity_tracker.dart', 'packages/flutter/src/gestures/constants.dart', 'packages/flutter/src/gestures/arena.dart', 'packages/flutter/src/gestures/events.dart', 'packages/flutter/src/gestures/recognizer.dart'], (function load__packages__flutter__src__gestures__long_press_dart(dart_sdk, packages__flutter__src__gestures__velocity_tracker$46dart, packages__flutter__src__gestures__constants$46dart, packages__flutter__src__gestures__arena$46dart, packages__flutter__src__gestures__events$46dart, packages__flutter__src__gestures__recognizer$46dart) {
+define(['dart_sdk', 'packages/provider/src/provider.dart', 'packages/flutter/src/foundation/change_notifier.dart', 'packages/flutter/src/widgets/widget_span.dart'], (function load__packages__provider__src__listenable_provider_dart(dart_sdk, packages__provider__src__provider$46dart, packages__flutter__src__foundation__change_notifier$46dart, packages__flutter__src__widgets__widget_span$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const ui = dart_sdk.ui;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const velocity_tracker = packages__flutter__src__gestures__velocity_tracker$46dart.src__gestures__velocity_tracker;
-  const constants = packages__flutter__src__gestures__constants$46dart.src__gestures__constants;
-  const arena = packages__flutter__src__gestures__arena$46dart.src__gestures__arena;
-  const events = packages__flutter__src__gestures__events$46dart.src__gestures__events;
-  const recognizer = packages__flutter__src__gestures__recognizer$46dart.src__gestures__recognizer;
-  var long_press = Object.create(dart.library);
+  const provider = packages__provider__src__provider$46dart.src__provider;
+  const change_notifier = packages__flutter__src__foundation__change_notifier$46dart.src__foundation__change_notifier;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  var listenable_provider = Object.create(dart.library);
+  var change_notifier_provider = Object.create(dart.library);
   dart._checkModuleNullSafetyMode(false);
-  var T = {
-    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))()
+  var T$ = {
+    VoidTovoid: () => (T$.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
+    ListenableN: () => (T$.ListenableN = dart.constFn(dart.nullable(change_notifier.Listenable)))(),
+    InheritedContextAndListenableNToFn: () => (T$.InheritedContextAndListenableNToFn = dart.constFn(dart.fnType(T$.VoidTovoid(), [provider.InheritedContext, T$.ListenableN()])))(),
+    ChangeNotifierN: () => (T$.ChangeNotifierN = dart.constFn(dart.nullable(change_notifier.ChangeNotifier)))(),
+    BuildContextAndChangeNotifierNTovoid: () => (T$.BuildContextAndChangeNotifierNTovoid = dart.constFn(dart.fnType(dart.void, [framework.BuildContext, T$.ChangeNotifierN()])))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
-  }, T);
+  }, T$);
   var S = {
     _: () => S
   };
@@ -28,548 +30,484 @@ define(['dart_sdk', 'packages/flutter/src/gestures/velocity_tracker.dart', 'pack
   });
   dart.defineLazy(CT, {
     get C0() {
-      return C[0] = dart.const({
-        __proto__: ui.Offset.prototype,
-        [OffsetBase__dy]: 0,
-        [OffsetBase__dx]: 0
-      });
+      return C[0] = dart.fn(listenable_provider.ListenableProvider._startListening, T$.InheritedContextAndListenableNToFn());
     },
     get C1() {
-      return C[1] = dart.const({
-        __proto__: velocity_tracker.Velocity.prototype,
-        [Velocity_pixelsPerSecond]: C[0] || CT.C0
-      });
+      return C[1] = dart.fn(change_notifier_provider.ChangeNotifierProvider._dispose, T$.BuildContextAndChangeNotifierNTovoid());
     }
   }, false);
   var C = Array(2).fill(void 0);
   var I = [
-    "file:///D:/flutterSDK/flutter/packages/flutter/lib/src/gestures/long_press.dart",
-    "package:flutter/src/gestures/long_press.dart"
+    "file:///D:/flutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/provider-5.0.0/lib/src/listenable_provider.dart",
+    "package:provider/src/listenable_provider.dart",
+    "file:///D:/flutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/provider-5.0.0/lib/src/change_notifier_provider.dart",
+    "package:provider/src/change_notifier_provider.dart"
   ];
-  var globalPosition$ = dart.privateName(long_press, "LongPressStartDetails.globalPosition");
-  var localPosition$ = dart.privateName(long_press, "LongPressStartDetails.localPosition");
-  var OffsetBase__dy = dart.privateName(ui, "OffsetBase._dy");
-  var OffsetBase__dx = dart.privateName(ui, "OffsetBase._dx");
-  long_press.LongPressStartDetails = class LongPressStartDetails extends core.Object {
-    get globalPosition() {
-      return this[globalPosition$];
-    }
-    set globalPosition(value) {
-      super.globalPosition = value;
-    }
-    get localPosition() {
-      return this[localPosition$];
-    }
-    set localPosition(value) {
-      super.localPosition = value;
-    }
-  };
-  (long_press.LongPressStartDetails.new = function(opts) {
-    let t0;
-    let globalPosition = opts && 'globalPosition' in opts ? opts.globalPosition : C[0] || CT.C0;
-    if (globalPosition == null) dart.nullFailed(I[0], 57, 10, "globalPosition");
-    let localPosition = opts && 'localPosition' in opts ? opts.localPosition : null;
-    this[globalPosition$] = globalPosition;
-    if (!(globalPosition != null)) dart.assertFailed(null, I[0], 59, 15, "globalPosition != null");
-    this[localPosition$] = (t0 = localPosition, t0 == null ? globalPosition : t0);
-    ;
-  }).prototype = long_press.LongPressStartDetails.prototype;
-  dart.addTypeTests(long_press.LongPressStartDetails);
-  dart.addTypeCaches(long_press.LongPressStartDetails);
-  dart.setLibraryUri(long_press.LongPressStartDetails, I[1]);
-  dart.setFieldSignature(long_press.LongPressStartDetails, () => ({
-    __proto__: dart.getFields(long_press.LongPressStartDetails.__proto__),
-    globalPosition: dart.finalFieldType(ui.Offset),
-    localPosition: dart.finalFieldType(ui.Offset)
-  }));
-  var globalPosition$0 = dart.privateName(long_press, "LongPressMoveUpdateDetails.globalPosition");
-  var localPosition$0 = dart.privateName(long_press, "LongPressMoveUpdateDetails.localPosition");
-  var offsetFromOrigin$ = dart.privateName(long_press, "LongPressMoveUpdateDetails.offsetFromOrigin");
-  var localOffsetFromOrigin$ = dart.privateName(long_press, "LongPressMoveUpdateDetails.localOffsetFromOrigin");
-  long_press.LongPressMoveUpdateDetails = class LongPressMoveUpdateDetails extends core.Object {
-    get globalPosition() {
-      return this[globalPosition$0];
-    }
-    set globalPosition(value) {
-      super.globalPosition = value;
-    }
-    get localPosition() {
-      return this[localPosition$0];
-    }
-    set localPosition(value) {
-      super.localPosition = value;
-    }
-    get offsetFromOrigin() {
-      return this[offsetFromOrigin$];
-    }
-    set offsetFromOrigin(value) {
-      super.offsetFromOrigin = value;
-    }
-    get localOffsetFromOrigin() {
-      return this[localOffsetFromOrigin$];
-    }
-    set localOffsetFromOrigin(value) {
-      super.localOffsetFromOrigin = value;
-    }
-  };
-  (long_press.LongPressMoveUpdateDetails.new = function(opts) {
-    let t0, t0$;
-    let globalPosition = opts && 'globalPosition' in opts ? opts.globalPosition : C[0] || CT.C0;
-    if (globalPosition == null) dart.nullFailed(I[0], 81, 10, "globalPosition");
-    let localPosition = opts && 'localPosition' in opts ? opts.localPosition : null;
-    let offsetFromOrigin = opts && 'offsetFromOrigin' in opts ? opts.offsetFromOrigin : C[0] || CT.C0;
-    if (offsetFromOrigin == null) dart.nullFailed(I[0], 83, 10, "offsetFromOrigin");
-    let localOffsetFromOrigin = opts && 'localOffsetFromOrigin' in opts ? opts.localOffsetFromOrigin : null;
-    this[globalPosition$0] = globalPosition;
-    this[offsetFromOrigin$] = offsetFromOrigin;
-    if (!(globalPosition != null)) dart.assertFailed(null, I[0], 85, 15, "globalPosition != null");
-    if (!(offsetFromOrigin != null)) dart.assertFailed(null, I[0], 86, 15, "offsetFromOrigin != null");
-    this[localPosition$0] = (t0 = localPosition, t0 == null ? globalPosition : t0);
-    this[localOffsetFromOrigin$] = (t0$ = localOffsetFromOrigin, t0$ == null ? offsetFromOrigin : t0$);
-    ;
-  }).prototype = long_press.LongPressMoveUpdateDetails.prototype;
-  dart.addTypeTests(long_press.LongPressMoveUpdateDetails);
-  dart.addTypeCaches(long_press.LongPressMoveUpdateDetails);
-  dart.setLibraryUri(long_press.LongPressMoveUpdateDetails, I[1]);
-  dart.setFieldSignature(long_press.LongPressMoveUpdateDetails, () => ({
-    __proto__: dart.getFields(long_press.LongPressMoveUpdateDetails.__proto__),
-    globalPosition: dart.finalFieldType(ui.Offset),
-    localPosition: dart.finalFieldType(ui.Offset),
-    offsetFromOrigin: dart.finalFieldType(ui.Offset),
-    localOffsetFromOrigin: dart.finalFieldType(ui.Offset)
-  }));
-  var globalPosition$1 = dart.privateName(long_press, "LongPressEndDetails.globalPosition");
-  var localPosition$1 = dart.privateName(long_press, "LongPressEndDetails.localPosition");
-  var velocity$ = dart.privateName(long_press, "LongPressEndDetails.velocity");
-  var Velocity_pixelsPerSecond = dart.privateName(velocity_tracker, "Velocity.pixelsPerSecond");
-  long_press.LongPressEndDetails = class LongPressEndDetails extends core.Object {
-    get globalPosition() {
-      return this[globalPosition$1];
-    }
-    set globalPosition(value) {
-      super.globalPosition = value;
-    }
-    get localPosition() {
-      return this[localPosition$1];
-    }
-    set localPosition(value) {
-      super.localPosition = value;
-    }
-    get velocity() {
-      return this[velocity$];
-    }
-    set velocity(value) {
-      super.velocity = value;
-    }
-  };
-  (long_press.LongPressEndDetails.new = function(opts) {
-    let t0;
-    let globalPosition = opts && 'globalPosition' in opts ? opts.globalPosition : C[0] || CT.C0;
-    if (globalPosition == null) dart.nullFailed(I[0], 119, 10, "globalPosition");
-    let localPosition = opts && 'localPosition' in opts ? opts.localPosition : null;
-    let velocity = opts && 'velocity' in opts ? opts.velocity : C[1] || CT.C1;
-    if (velocity == null) dart.nullFailed(I[0], 121, 10, "velocity");
-    this[globalPosition$1] = globalPosition;
-    this[velocity$] = velocity;
-    if (!(globalPosition != null)) dart.assertFailed(null, I[0], 122, 15, "globalPosition != null");
-    this[localPosition$1] = (t0 = localPosition, t0 == null ? globalPosition : t0);
-    ;
-  }).prototype = long_press.LongPressEndDetails.prototype;
-  dart.addTypeTests(long_press.LongPressEndDetails);
-  dart.addTypeCaches(long_press.LongPressEndDetails);
-  dart.setLibraryUri(long_press.LongPressEndDetails, I[1]);
-  dart.setFieldSignature(long_press.LongPressEndDetails, () => ({
-    __proto__: dart.getFields(long_press.LongPressEndDetails.__proto__),
-    globalPosition: dart.finalFieldType(ui.Offset),
-    localPosition: dart.finalFieldType(ui.Offset),
-    velocity: dart.finalFieldType(velocity_tracker.Velocity)
-  }));
-  var onLongPress = dart.privateName(long_press, "LongPressGestureRecognizer.onLongPress");
-  var onLongPressStart = dart.privateName(long_press, "LongPressGestureRecognizer.onLongPressStart");
-  var onLongPressMoveUpdate = dart.privateName(long_press, "LongPressGestureRecognizer.onLongPressMoveUpdate");
-  var onLongPressUp = dart.privateName(long_press, "LongPressGestureRecognizer.onLongPressUp");
-  var onLongPressEnd = dart.privateName(long_press, "LongPressGestureRecognizer.onLongPressEnd");
-  var onSecondaryLongPress = dart.privateName(long_press, "LongPressGestureRecognizer.onSecondaryLongPress");
-  var onSecondaryLongPressStart = dart.privateName(long_press, "LongPressGestureRecognizer.onSecondaryLongPressStart");
-  var onSecondaryLongPressMoveUpdate = dart.privateName(long_press, "LongPressGestureRecognizer.onSecondaryLongPressMoveUpdate");
-  var onSecondaryLongPressUp = dart.privateName(long_press, "LongPressGestureRecognizer.onSecondaryLongPressUp");
-  var onSecondaryLongPressEnd = dart.privateName(long_press, "LongPressGestureRecognizer.onSecondaryLongPressEnd");
-  var onTertiaryLongPress = dart.privateName(long_press, "LongPressGestureRecognizer.onTertiaryLongPress");
-  var onTertiaryLongPressStart = dart.privateName(long_press, "LongPressGestureRecognizer.onTertiaryLongPressStart");
-  var onTertiaryLongPressMoveUpdate = dart.privateName(long_press, "LongPressGestureRecognizer.onTertiaryLongPressMoveUpdate");
-  var onTertiaryLongPressUp = dart.privateName(long_press, "LongPressGestureRecognizer.onTertiaryLongPressUp");
-  var onTertiaryLongPressEnd = dart.privateName(long_press, "LongPressGestureRecognizer.onTertiaryLongPressEnd");
-  var _longPressAccepted = dart.privateName(long_press, "_longPressAccepted");
-  var _longPressOrigin = dart.privateName(long_press, "_longPressOrigin");
-  var _initialButtons = dart.privateName(long_press, "_initialButtons");
-  var _velocityTracker = dart.privateName(long_press, "_velocityTracker");
-  var _checkLongPressStart = dart.privateName(long_press, "_checkLongPressStart");
-  var _checkLongPressEnd = dart.privateName(long_press, "_checkLongPressEnd");
-  var _reset = dart.privateName(long_press, "_reset");
-  var _checkLongPressMoveUpdate = dart.privateName(long_press, "_checkLongPressMoveUpdate");
-  long_press.LongPressGestureRecognizer = class LongPressGestureRecognizer extends recognizer.PrimaryPointerGestureRecognizer {
-    get onLongPress() {
-      return this[onLongPress];
-    }
-    set onLongPress(value) {
-      this[onLongPress] = value;
-    }
-    get onLongPressStart() {
-      return this[onLongPressStart];
-    }
-    set onLongPressStart(value) {
-      this[onLongPressStart] = value;
-    }
-    get onLongPressMoveUpdate() {
-      return this[onLongPressMoveUpdate];
-    }
-    set onLongPressMoveUpdate(value) {
-      this[onLongPressMoveUpdate] = value;
-    }
-    get onLongPressUp() {
-      return this[onLongPressUp];
-    }
-    set onLongPressUp(value) {
-      this[onLongPressUp] = value;
-    }
-    get onLongPressEnd() {
-      return this[onLongPressEnd];
-    }
-    set onLongPressEnd(value) {
-      this[onLongPressEnd] = value;
-    }
-    get onSecondaryLongPress() {
-      return this[onSecondaryLongPress];
-    }
-    set onSecondaryLongPress(value) {
-      this[onSecondaryLongPress] = value;
-    }
-    get onSecondaryLongPressStart() {
-      return this[onSecondaryLongPressStart];
-    }
-    set onSecondaryLongPressStart(value) {
-      this[onSecondaryLongPressStart] = value;
-    }
-    get onSecondaryLongPressMoveUpdate() {
-      return this[onSecondaryLongPressMoveUpdate];
-    }
-    set onSecondaryLongPressMoveUpdate(value) {
-      this[onSecondaryLongPressMoveUpdate] = value;
-    }
-    get onSecondaryLongPressUp() {
-      return this[onSecondaryLongPressUp];
-    }
-    set onSecondaryLongPressUp(value) {
-      this[onSecondaryLongPressUp] = value;
-    }
-    get onSecondaryLongPressEnd() {
-      return this[onSecondaryLongPressEnd];
-    }
-    set onSecondaryLongPressEnd(value) {
-      this[onSecondaryLongPressEnd] = value;
-    }
-    get onTertiaryLongPress() {
-      return this[onTertiaryLongPress];
-    }
-    set onTertiaryLongPress(value) {
-      this[onTertiaryLongPress] = value;
-    }
-    get onTertiaryLongPressStart() {
-      return this[onTertiaryLongPressStart];
-    }
-    set onTertiaryLongPressStart(value) {
-      this[onTertiaryLongPressStart] = value;
-    }
-    get onTertiaryLongPressMoveUpdate() {
-      return this[onTertiaryLongPressMoveUpdate];
-    }
-    set onTertiaryLongPressMoveUpdate(value) {
-      this[onTertiaryLongPressMoveUpdate] = value;
-    }
-    get onTertiaryLongPressUp() {
-      return this[onTertiaryLongPressUp];
-    }
-    set onTertiaryLongPressUp(value) {
-      this[onTertiaryLongPressUp] = value;
-    }
-    get onTertiaryLongPressEnd() {
-      return this[onTertiaryLongPressEnd];
-    }
-    set onTertiaryLongPressEnd(value) {
-      this[onTertiaryLongPressEnd] = value;
-    }
-    isPointerAllowed(event) {
-      if (event == null) dart.nullFailed(I[0], 334, 42, "event");
-      switch (event.buttons) {
-        case 1:
-        {
-          if (this.onLongPressStart == null && this.onLongPress == null && this.onLongPressMoveUpdate == null && this.onLongPressEnd == null && this.onLongPressUp == null) return false;
-          break;
-        }
-        case 2:
-        {
-          if (this.onSecondaryLongPressStart == null && this.onSecondaryLongPress == null && this.onSecondaryLongPressMoveUpdate == null && this.onSecondaryLongPressEnd == null && this.onSecondaryLongPressUp == null) return false;
-          break;
-        }
-        case 4:
-        {
-          if (this.onTertiaryLongPressStart == null && this.onTertiaryLongPress == null && this.onTertiaryLongPressMoveUpdate == null && this.onTertiaryLongPressEnd == null && this.onTertiaryLongPressUp == null) return false;
-          break;
-        }
-        default:
-        {
-          return false;
-        }
-      }
-      return super.isPointerAllowed(event);
-    }
-    didExceedDeadline() {
-      this.resolve(arena.GestureDisposition.accepted);
-      this[_longPressAccepted] = true;
-      super.acceptGesture(dart.nullCheck(this.primaryPointer));
-      this[_checkLongPressStart]();
-    }
-    handlePrimaryPointer(event) {
-      if (event == null) dart.nullFailed(I[0], 376, 42, "event");
-      if (!dart.test(event.synthesized)) {
-        if (events.PointerDownEvent.is(event)) {
-          this[_velocityTracker] = new velocity_tracker.VelocityTracker.withKind(event.kind);
-          dart.nullCheck(this[_velocityTracker]).addPosition(event.timeStamp, event.localPosition);
-        }
-        if (events.PointerMoveEvent.is(event)) {
-          if (!(this[_velocityTracker] != null)) dart.assertFailed(null, I[0], 383, 16, "_velocityTracker != null");
-          dart.nullCheck(this[_velocityTracker]).addPosition(event.timeStamp, event.localPosition);
-        }
-      }
-      if (events.PointerUpEvent.is(event)) {
-        if (this[_longPressAccepted] === true) {
-          this[_checkLongPressEnd](event);
-        } else {
-          this.resolve(arena.GestureDisposition.rejected);
-        }
-        this[_reset]();
-      } else if (events.PointerCancelEvent.is(event)) {
-        this[_reset]();
-      } else if (events.PointerDownEvent.is(event)) {
-        this[_longPressOrigin] = recognizer.OffsetPair.fromEventPosition(event);
-        this[_initialButtons] = event.buttons;
-      } else if (events.PointerMoveEvent.is(event)) {
-        if (event.buttons != this[_initialButtons]) {
-          this.resolve(arena.GestureDisposition.rejected);
-          this.stopTrackingPointer(dart.nullCheck(this.primaryPointer));
-        } else if (dart.test(this[_longPressAccepted])) {
-          this[_checkLongPressMoveUpdate](event);
-        }
+  const _is_ListenableProvider_default = Symbol('_is_ListenableProvider_default');
+  listenable_provider.ListenableProvider$ = dart.generic(T => {
+    class ListenableProvider extends provider.InheritedProvider$(T) {
+      static _startListening(e, value) {
+        let t0;
+        if (e == null) dart.nullFailed(I[0], 59, 22, "e");
+        t0 = value;
+        t0 == null ? null : t0.addListener(dart.bind(e, 'markNeedsNotifyDependents'));
+        return dart.fn(() => {
+          let t0;
+          t0 = value;
+          return t0 == null ? null : t0.removeListener(dart.bind(e, 'markNeedsNotifyDependents'));
+        }, T$.VoidTovoid());
       }
     }
-    [_checkLongPressStart]() {
-      switch (this[_initialButtons]) {
-        case 1:
-        {
-          if (this.onLongPressStart != null) {
-            let details = new long_press.LongPressStartDetails.new({globalPosition: dart.nullCheck(this[_longPressOrigin]).global, localPosition: dart.nullCheck(this[_longPressOrigin]).local});
-            this.invokeCallback(dart.void, "onLongPressStart", dart.fn(() => dart.nullCheck(this.onLongPressStart)(details), T.VoidTovoid()));
+    (ListenableProvider.new = function(opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      let create = opts && 'create' in opts ? opts.create : null;
+      if (create == null) dart.nullFailed(I[0], 27, 24, "create");
+      let dispose = opts && 'dispose' in opts ? opts.dispose : null;
+      let lazy = opts && 'lazy' in opts ? opts.lazy : null;
+      let builder = opts && 'builder' in opts ? opts.builder : null;
+      let child = opts && 'child' in opts ? opts.child : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      ListenableProvider.__proto__.new.call(this, {key: key, startListening: C[0] || CT.C0, create: create, dispose: dispose, lazy: lazy, builder: builder, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+      ;
+    }).prototype = ListenableProvider.prototype;
+    (ListenableProvider.value = function(opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      let value = opts && 'value' in opts ? opts.value : null;
+      let updateShouldNotify = opts && 'updateShouldNotify' in opts ? opts.updateShouldNotify : null;
+      let builder = opts && 'builder' in opts ? opts.builder : null;
+      let child = opts && 'child' in opts ? opts.child : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      ListenableProvider.__proto__.value.call(this, {key: key, builder: builder, value: value, updateShouldNotify: updateShouldNotify, startListening: C[0] || CT.C0, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+      ;
+    }).prototype = ListenableProvider.prototype;
+    dart.addTypeTests(ListenableProvider);
+    ListenableProvider.prototype[_is_ListenableProvider_default] = true;
+    dart.addTypeCaches(ListenableProvider);
+    dart.setLibraryUri(ListenableProvider, I[1]);
+    return ListenableProvider;
+  });
+  listenable_provider.ListenableProvider = listenable_provider.ListenableProvider$();
+  dart.addTypeTests(listenable_provider.ListenableProvider, _is_ListenableProvider_default);
+  const _is_ListenableProxyProvider0_default = Symbol('_is_ListenableProxyProvider0_default');
+  listenable_provider.ListenableProxyProvider0$ = dart.generic(R => {
+    var RTovoid = () => (RTovoid = dart.constFn(dart.fnType(dart.void, [R])))();
+    class ListenableProxyProvider0 extends provider.InheritedProvider$(R) {}
+    (ListenableProxyProvider0.new = function(opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      let create = opts && 'create' in opts ? opts.create : null;
+      let update = opts && 'update' in opts ? opts.update : null;
+      if (update == null) dart.nullFailed(I[0], 74, 52, "update");
+      let dispose = opts && 'dispose' in opts ? opts.dispose : null;
+      let updateShouldNotify = opts && 'updateShouldNotify' in opts ? opts.updateShouldNotify : null;
+      let lazy = opts && 'lazy' in opts ? opts.lazy : null;
+      let builder = opts && 'builder' in opts ? opts.builder : null;
+      let child = opts && 'child' in opts ? opts.child : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      ListenableProxyProvider0.__proto__.new.call(this, {key: key, create: create, update: update, lazy: lazy, builder: builder, dispose: dispose, updateShouldNotify: updateShouldNotify, startListening: C[0] || CT.C0, debugCheckInvalidValueType: false ? null : dart.fn(value => {
+          if (change_notifier.ChangeNotifier.is(value)) {
+            if (!(value.hasListeners !== true)) dart.assertFailed(null, I[0], 94, 28, "value.hasListeners != true");
           }
-          if (this.onLongPress != null) {
-            this.invokeCallback(dart.void, "onLongPress", dart.nullCheck(this.onLongPress));
-          }
-          break;
-        }
-        case 2:
-        {
-          if (this.onSecondaryLongPressStart != null) {
-            let details = new long_press.LongPressStartDetails.new({globalPosition: dart.nullCheck(this[_longPressOrigin]).global, localPosition: dart.nullCheck(this[_longPressOrigin]).local});
-            this.invokeCallback(dart.void, "onSecondaryLongPressStart", dart.fn(() => dart.nullCheck(this.onSecondaryLongPressStart)(details), T.VoidTovoid()));
-          }
-          if (this.onSecondaryLongPress != null) {
-            this.invokeCallback(dart.void, "onSecondaryLongPress", dart.nullCheck(this.onSecondaryLongPress));
-          }
-          break;
-        }
-        case 4:
-        {
-          if (this.onTertiaryLongPressStart != null) {
-            let details = new long_press.LongPressStartDetails.new({globalPosition: dart.nullCheck(this[_longPressOrigin]).global, localPosition: dart.nullCheck(this[_longPressOrigin]).local});
-            this.invokeCallback(dart.void, "onTertiaryLongPressStart", dart.fn(() => dart.nullCheck(this.onTertiaryLongPressStart)(details), T.VoidTovoid()));
-          }
-          if (this.onTertiaryLongPress != null) {
-            this.invokeCallback(dart.void, "onTertiaryLongPress", dart.nullCheck(this.onTertiaryLongPress));
-          }
-          break;
-        }
-        default:
-        {
-          if (!false) dart.assertFailed("Unhandled button " + dart.str(this[_initialButtons]), I[0], 453, 16, "false");
-        }
+        }, RTovoid()), child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+      ;
+    }).prototype = ListenableProxyProvider0.prototype;
+    dart.addTypeTests(ListenableProxyProvider0);
+    ListenableProxyProvider0.prototype[_is_ListenableProxyProvider0_default] = true;
+    dart.addTypeCaches(ListenableProxyProvider0);
+    dart.setLibraryUri(ListenableProxyProvider0, I[1]);
+    return ListenableProxyProvider0;
+  });
+  listenable_provider.ListenableProxyProvider0 = listenable_provider.ListenableProxyProvider0$();
+  dart.addTypeTests(listenable_provider.ListenableProxyProvider0, _is_ListenableProxyProvider0_default);
+  const _is_ListenableProxyProvider_default = Symbol('_is_ListenableProxyProvider_default');
+  listenable_provider.ListenableProxyProvider$ = dart.generic((T, R) => {
+    var RN = () => (RN = dart.constFn(dart.nullable(R)))();
+    var BuildContextAndRNToR = () => (BuildContextAndRNToR = dart.constFn(dart.fnType(R, [framework.BuildContext, RN()])))();
+    class ListenableProxyProvider extends listenable_provider.ListenableProxyProvider0$(R) {}
+    (ListenableProxyProvider.new = function(opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      let create = opts && 'create' in opts ? opts.create : null;
+      let update = opts && 'update' in opts ? opts.update : null;
+      if (update == null) dart.nullFailed(I[0], 121, 41, "update");
+      let dispose = opts && 'dispose' in opts ? opts.dispose : null;
+      let lazy = opts && 'lazy' in opts ? opts.lazy : null;
+      let builder = opts && 'builder' in opts ? opts.builder : null;
+      let child = opts && 'child' in opts ? opts.child : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      ListenableProxyProvider.__proto__.new.call(this, {key: key, create: create, lazy: lazy, builder: builder, update: dart.fn((context, previous) => {
+          if (context == null) dart.nullFailed(I[0], 131, 20, "context");
+          return update(context, provider.Provider.of(T, context), previous);
+        }, BuildContextAndRNToR()), dispose: dispose, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+      ;
+    }).prototype = ListenableProxyProvider.prototype;
+    dart.addTypeTests(ListenableProxyProvider);
+    ListenableProxyProvider.prototype[_is_ListenableProxyProvider_default] = true;
+    dart.addTypeCaches(ListenableProxyProvider);
+    dart.setLibraryUri(ListenableProxyProvider, I[1]);
+    return ListenableProxyProvider;
+  });
+  listenable_provider.ListenableProxyProvider = listenable_provider.ListenableProxyProvider$();
+  dart.addTypeTests(listenable_provider.ListenableProxyProvider, _is_ListenableProxyProvider_default);
+  const _is_ListenableProxyProvider2_default = Symbol('_is_ListenableProxyProvider2_default');
+  listenable_provider.ListenableProxyProvider2$ = dart.generic((T, T2, R) => {
+    var RN = () => (RN = dart.constFn(dart.nullable(R)))();
+    var BuildContextAndRNToR = () => (BuildContextAndRNToR = dart.constFn(dart.fnType(R, [framework.BuildContext, RN()])))();
+    class ListenableProxyProvider2 extends listenable_provider.ListenableProxyProvider0$(R) {}
+    (ListenableProxyProvider2.new = function(opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      let create = opts && 'create' in opts ? opts.create : null;
+      let update = opts && 'update' in opts ? opts.update : null;
+      if (update == null) dart.nullFailed(I[0], 148, 46, "update");
+      let dispose = opts && 'dispose' in opts ? opts.dispose : null;
+      let lazy = opts && 'lazy' in opts ? opts.lazy : null;
+      let builder = opts && 'builder' in opts ? opts.builder : null;
+      let child = opts && 'child' in opts ? opts.child : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      ListenableProxyProvider2.__proto__.new.call(this, {key: key, create: create, lazy: lazy, builder: builder, update: dart.fn((context, previous) => {
+          if (context == null) dart.nullFailed(I[0], 158, 20, "context");
+          return update(context, provider.Provider.of(T, context), provider.Provider.of(T2, context), previous);
+        }, BuildContextAndRNToR()), dispose: dispose, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+      ;
+    }).prototype = ListenableProxyProvider2.prototype;
+    dart.addTypeTests(ListenableProxyProvider2);
+    ListenableProxyProvider2.prototype[_is_ListenableProxyProvider2_default] = true;
+    dart.addTypeCaches(ListenableProxyProvider2);
+    dart.setLibraryUri(ListenableProxyProvider2, I[1]);
+    return ListenableProxyProvider2;
+  });
+  listenable_provider.ListenableProxyProvider2 = listenable_provider.ListenableProxyProvider2$();
+  dart.addTypeTests(listenable_provider.ListenableProxyProvider2, _is_ListenableProxyProvider2_default);
+  const _is_ListenableProxyProvider3_default = Symbol('_is_ListenableProxyProvider3_default');
+  listenable_provider.ListenableProxyProvider3$ = dart.generic((T, T2, T3, R) => {
+    var RN = () => (RN = dart.constFn(dart.nullable(R)))();
+    var BuildContextAndRNToR = () => (BuildContextAndRNToR = dart.constFn(dart.fnType(R, [framework.BuildContext, RN()])))();
+    class ListenableProxyProvider3 extends listenable_provider.ListenableProxyProvider0$(R) {}
+    (ListenableProxyProvider3.new = function(opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      let create = opts && 'create' in opts ? opts.create : null;
+      let update = opts && 'update' in opts ? opts.update : null;
+      if (update == null) dart.nullFailed(I[0], 176, 50, "update");
+      let dispose = opts && 'dispose' in opts ? opts.dispose : null;
+      let lazy = opts && 'lazy' in opts ? opts.lazy : null;
+      let builder = opts && 'builder' in opts ? opts.builder : null;
+      let child = opts && 'child' in opts ? opts.child : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      ListenableProxyProvider3.__proto__.new.call(this, {key: key, create: create, lazy: lazy, builder: builder, update: dart.fn((context, previous) => {
+          if (context == null) dart.nullFailed(I[0], 186, 20, "context");
+          return update(context, provider.Provider.of(T, context), provider.Provider.of(T2, context), provider.Provider.of(T3, context), previous);
+        }, BuildContextAndRNToR()), dispose: dispose, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+      ;
+    }).prototype = ListenableProxyProvider3.prototype;
+    dart.addTypeTests(ListenableProxyProvider3);
+    ListenableProxyProvider3.prototype[_is_ListenableProxyProvider3_default] = true;
+    dart.addTypeCaches(ListenableProxyProvider3);
+    dart.setLibraryUri(ListenableProxyProvider3, I[1]);
+    return ListenableProxyProvider3;
+  });
+  listenable_provider.ListenableProxyProvider3 = listenable_provider.ListenableProxyProvider3$();
+  dart.addTypeTests(listenable_provider.ListenableProxyProvider3, _is_ListenableProxyProvider3_default);
+  const _is_ListenableProxyProvider4_default = Symbol('_is_ListenableProxyProvider4_default');
+  listenable_provider.ListenableProxyProvider4$ = dart.generic((T, T2, T3, T4, R) => {
+    var RN = () => (RN = dart.constFn(dart.nullable(R)))();
+    var BuildContextAndRNToR = () => (BuildContextAndRNToR = dart.constFn(dart.fnType(R, [framework.BuildContext, RN()])))();
+    class ListenableProxyProvider4 extends listenable_provider.ListenableProxyProvider0$(R) {}
+    (ListenableProxyProvider4.new = function(opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      let create = opts && 'create' in opts ? opts.create : null;
+      let update = opts && 'update' in opts ? opts.update : null;
+      if (update == null) dart.nullFailed(I[0], 205, 54, "update");
+      let dispose = opts && 'dispose' in opts ? opts.dispose : null;
+      let lazy = opts && 'lazy' in opts ? opts.lazy : null;
+      let builder = opts && 'builder' in opts ? opts.builder : null;
+      let child = opts && 'child' in opts ? opts.child : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      ListenableProxyProvider4.__proto__.new.call(this, {key: key, create: create, lazy: lazy, builder: builder, update: dart.fn((context, previous) => {
+          if (context == null) dart.nullFailed(I[0], 215, 20, "context");
+          return update(context, provider.Provider.of(T, context), provider.Provider.of(T2, context), provider.Provider.of(T3, context), provider.Provider.of(T4, context), previous);
+        }, BuildContextAndRNToR()), dispose: dispose, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+      ;
+    }).prototype = ListenableProxyProvider4.prototype;
+    dart.addTypeTests(ListenableProxyProvider4);
+    ListenableProxyProvider4.prototype[_is_ListenableProxyProvider4_default] = true;
+    dart.addTypeCaches(ListenableProxyProvider4);
+    dart.setLibraryUri(ListenableProxyProvider4, I[1]);
+    return ListenableProxyProvider4;
+  });
+  listenable_provider.ListenableProxyProvider4 = listenable_provider.ListenableProxyProvider4$();
+  dart.addTypeTests(listenable_provider.ListenableProxyProvider4, _is_ListenableProxyProvider4_default);
+  const _is_ListenableProxyProvider5_default = Symbol('_is_ListenableProxyProvider5_default');
+  listenable_provider.ListenableProxyProvider5$ = dart.generic((T, T2, T3, T4, T5, R) => {
+    var RN = () => (RN = dart.constFn(dart.nullable(R)))();
+    var BuildContextAndRNToR = () => (BuildContextAndRNToR = dart.constFn(dart.fnType(R, [framework.BuildContext, RN()])))();
+    class ListenableProxyProvider5 extends listenable_provider.ListenableProxyProvider0$(R) {}
+    (ListenableProxyProvider5.new = function(opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      let create = opts && 'create' in opts ? opts.create : null;
+      let update = opts && 'update' in opts ? opts.update : null;
+      if (update == null) dart.nullFailed(I[0], 235, 58, "update");
+      let dispose = opts && 'dispose' in opts ? opts.dispose : null;
+      let lazy = opts && 'lazy' in opts ? opts.lazy : null;
+      let builder = opts && 'builder' in opts ? opts.builder : null;
+      let child = opts && 'child' in opts ? opts.child : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      ListenableProxyProvider5.__proto__.new.call(this, {key: key, create: create, lazy: lazy, builder: builder, update: dart.fn((context, previous) => {
+          if (context == null) dart.nullFailed(I[0], 245, 20, "context");
+          return update(context, provider.Provider.of(T, context), provider.Provider.of(T2, context), provider.Provider.of(T3, context), provider.Provider.of(T4, context), provider.Provider.of(T5, context), previous);
+        }, BuildContextAndRNToR()), dispose: dispose, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+      ;
+    }).prototype = ListenableProxyProvider5.prototype;
+    dart.addTypeTests(ListenableProxyProvider5);
+    ListenableProxyProvider5.prototype[_is_ListenableProxyProvider5_default] = true;
+    dart.addTypeCaches(ListenableProxyProvider5);
+    dart.setLibraryUri(ListenableProxyProvider5, I[1]);
+    return ListenableProxyProvider5;
+  });
+  listenable_provider.ListenableProxyProvider5 = listenable_provider.ListenableProxyProvider5$();
+  dart.addTypeTests(listenable_provider.ListenableProxyProvider5, _is_ListenableProxyProvider5_default);
+  const _is_ListenableProxyProvider6_default = Symbol('_is_ListenableProxyProvider6_default');
+  listenable_provider.ListenableProxyProvider6$ = dart.generic((T, T2, T3, T4, T5, T6, R) => {
+    var RN = () => (RN = dart.constFn(dart.nullable(R)))();
+    var BuildContextAndRNToR = () => (BuildContextAndRNToR = dart.constFn(dart.fnType(R, [framework.BuildContext, RN()])))();
+    class ListenableProxyProvider6 extends listenable_provider.ListenableProxyProvider0$(R) {}
+    (ListenableProxyProvider6.new = function(opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      let create = opts && 'create' in opts ? opts.create : null;
+      let update = opts && 'update' in opts ? opts.update : null;
+      if (update == null) dart.nullFailed(I[0], 266, 62, "update");
+      let dispose = opts && 'dispose' in opts ? opts.dispose : null;
+      let lazy = opts && 'lazy' in opts ? opts.lazy : null;
+      let builder = opts && 'builder' in opts ? opts.builder : null;
+      let child = opts && 'child' in opts ? opts.child : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      ListenableProxyProvider6.__proto__.new.call(this, {key: key, create: create, lazy: lazy, builder: builder, update: dart.fn((context, previous) => {
+          if (context == null) dart.nullFailed(I[0], 276, 20, "context");
+          return update(context, provider.Provider.of(T, context), provider.Provider.of(T2, context), provider.Provider.of(T3, context), provider.Provider.of(T4, context), provider.Provider.of(T5, context), provider.Provider.of(T6, context), previous);
+        }, BuildContextAndRNToR()), dispose: dispose, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+      ;
+    }).prototype = ListenableProxyProvider6.prototype;
+    dart.addTypeTests(ListenableProxyProvider6);
+    ListenableProxyProvider6.prototype[_is_ListenableProxyProvider6_default] = true;
+    dart.addTypeCaches(ListenableProxyProvider6);
+    dart.setLibraryUri(ListenableProxyProvider6, I[1]);
+    return ListenableProxyProvider6;
+  });
+  listenable_provider.ListenableProxyProvider6 = listenable_provider.ListenableProxyProvider6$();
+  dart.addTypeTests(listenable_provider.ListenableProxyProvider6, _is_ListenableProxyProvider6_default);
+  const _is_ChangeNotifierProvider_default = Symbol('_is_ChangeNotifierProvider_default');
+  change_notifier_provider.ChangeNotifierProvider$ = dart.generic(T => {
+    class ChangeNotifierProvider extends listenable_provider.ListenableProvider$(T) {
+      static _dispose(context, notifier) {
+        let t0;
+        if (context == null) dart.nullFailed(I[2], 132, 37, "context");
+        t0 = notifier;
+        t0 == null ? null : t0.dispose();
       }
     }
-    [_checkLongPressMoveUpdate](event) {
-      if (event == null) dart.nullFailed(I[0], 457, 47, "event");
-      let details = new long_press.LongPressMoveUpdateDetails.new({globalPosition: event.position, localPosition: event.localPosition, offsetFromOrigin: event.position['-'](dart.nullCheck(this[_longPressOrigin]).global), localOffsetFromOrigin: event.localPosition['-'](dart.nullCheck(this[_longPressOrigin]).local)});
-      switch (this[_initialButtons]) {
-        case 1:
-        {
-          if (this.onLongPressMoveUpdate != null) {
-            this.invokeCallback(dart.void, "onLongPressMoveUpdate", dart.fn(() => dart.nullCheck(this.onLongPressMoveUpdate)(details), T.VoidTovoid()));
-          }
-          break;
-        }
-        case 2:
-        {
-          if (this.onSecondaryLongPressMoveUpdate != null) {
-            this.invokeCallback(dart.void, "onSecondaryLongPressMoveUpdate", dart.fn(() => dart.nullCheck(this.onSecondaryLongPressMoveUpdate)(details), T.VoidTovoid()));
-          }
-          break;
-        }
-        case 4:
-        {
-          if (this.onTertiaryLongPressMoveUpdate != null) {
-            this.invokeCallback(dart.void, "onTertiaryLongPressMoveUpdate", dart.fn(() => dart.nullCheck(this.onTertiaryLongPressMoveUpdate)(details), T.VoidTovoid()));
-          }
-          break;
-        }
-        default:
-        {
-          if (!false) dart.assertFailed("Unhandled button " + dart.str(this[_initialButtons]), I[0], 484, 16, "false");
-        }
-      }
-    }
-    [_checkLongPressEnd](event) {
-      if (event == null) dart.nullFailed(I[0], 488, 40, "event");
-      let estimate = dart.nullCheck(this[_velocityTracker]).getVelocityEstimate();
-      let velocity = estimate == null ? velocity_tracker.Velocity.zero : new velocity_tracker.Velocity.new({pixelsPerSecond: estimate.pixelsPerSecond});
-      let details = new long_press.LongPressEndDetails.new({globalPosition: event.position, localPosition: event.localPosition, velocity: velocity});
-      this[_velocityTracker] = null;
-      switch (this[_initialButtons]) {
-        case 1:
-        {
-          if (this.onLongPressEnd != null) {
-            this.invokeCallback(dart.void, "onLongPressEnd", dart.fn(() => dart.nullCheck(this.onLongPressEnd)(details), T.VoidTovoid()));
-          }
-          if (this.onLongPressUp != null) {
-            this.invokeCallback(dart.void, "onLongPressUp", dart.nullCheck(this.onLongPressUp));
-          }
-          break;
-        }
-        case 2:
-        {
-          if (this.onSecondaryLongPressEnd != null) {
-            this.invokeCallback(dart.void, "onSecondaryLongPressEnd", dart.fn(() => dart.nullCheck(this.onSecondaryLongPressEnd)(details), T.VoidTovoid()));
-          }
-          if (this.onSecondaryLongPressUp != null) {
-            this.invokeCallback(dart.void, "onSecondaryLongPressUp", dart.nullCheck(this.onSecondaryLongPressUp));
-          }
-          break;
-        }
-        case 4:
-        {
-          if (this.onTertiaryLongPressEnd != null) {
-            this.invokeCallback(dart.void, "onTertiaryLongPressEnd", dart.fn(() => dart.nullCheck(this.onTertiaryLongPressEnd)(details), T.VoidTovoid()));
-          }
-          if (this.onTertiaryLongPressUp != null) {
-            this.invokeCallback(dart.void, "onTertiaryLongPressUp", dart.nullCheck(this.onTertiaryLongPressUp));
-          }
-          break;
-        }
-        default:
-        {
-          if (!false) dart.assertFailed("Unhandled button " + dart.str(this[_initialButtons]), I[0], 526, 16, "false");
-        }
-      }
-    }
-    [_reset]() {
-      this[_longPressAccepted] = false;
-      this[_longPressOrigin] = null;
-      this[_initialButtons] = null;
-      this[_velocityTracker] = null;
-    }
-    resolve(disposition) {
-      if (disposition == null) dart.nullFailed(I[0], 538, 35, "disposition");
-      if (dart.test(this[_longPressAccepted]) && disposition == arena.GestureDisposition.rejected) {
-        this[_reset]();
-      }
-      super.resolve(disposition);
-    }
-    acceptGesture(pointer) {
-      if (pointer == null) dart.nullFailed(I[0], 548, 26, "pointer");
-    }
-    get debugDescription() {
-      return "long press";
-    }
-  };
-  (long_press.LongPressGestureRecognizer.new = function(opts) {
-    let t0;
-    let duration = opts && 'duration' in opts ? opts.duration : null;
-    let postAcceptSlopTolerance = opts && 'postAcceptSlopTolerance' in opts ? opts.postAcceptSlopTolerance : null;
-    let kind = opts && 'kind' in opts ? opts.kind : null;
-    let debugOwner = opts && 'debugOwner' in opts ? opts.debugOwner : null;
-    this[_longPressAccepted] = false;
-    this[_longPressOrigin] = null;
-    this[_initialButtons] = null;
-    this[onLongPress] = null;
-    this[onLongPressStart] = null;
-    this[onLongPressMoveUpdate] = null;
-    this[onLongPressUp] = null;
-    this[onLongPressEnd] = null;
-    this[onSecondaryLongPress] = null;
-    this[onSecondaryLongPressStart] = null;
-    this[onSecondaryLongPressMoveUpdate] = null;
-    this[onSecondaryLongPressUp] = null;
-    this[onSecondaryLongPressEnd] = null;
-    this[onTertiaryLongPress] = null;
-    this[onTertiaryLongPressStart] = null;
-    this[onTertiaryLongPressMoveUpdate] = null;
-    this[onTertiaryLongPressUp] = null;
-    this[onTertiaryLongPressEnd] = null;
-    this[_velocityTracker] = null;
-    long_press.LongPressGestureRecognizer.__proto__.new.call(this, {deadline: (t0 = duration, t0 == null ? constants.kLongPressTimeout : t0), postAcceptSlopTolerance: postAcceptSlopTolerance, kind: kind, debugOwner: debugOwner});
-    ;
-  }).prototype = long_press.LongPressGestureRecognizer.prototype;
-  dart.addTypeTests(long_press.LongPressGestureRecognizer);
-  dart.addTypeCaches(long_press.LongPressGestureRecognizer);
-  dart.setMethodSignature(long_press.LongPressGestureRecognizer, () => ({
-    __proto__: dart.getMethods(long_press.LongPressGestureRecognizer.__proto__),
-    handlePrimaryPointer: dart.fnType(dart.void, [events.PointerEvent]),
-    [_checkLongPressStart]: dart.fnType(dart.void, []),
-    [_checkLongPressMoveUpdate]: dart.fnType(dart.void, [events.PointerEvent]),
-    [_checkLongPressEnd]: dart.fnType(dart.void, [events.PointerEvent]),
-    [_reset]: dart.fnType(dart.void, [])
-  }));
-  dart.setGetterSignature(long_press.LongPressGestureRecognizer, () => ({
-    __proto__: dart.getGetters(long_press.LongPressGestureRecognizer.__proto__),
-    debugDescription: core.String
-  }));
-  dart.setLibraryUri(long_press.LongPressGestureRecognizer, I[1]);
-  dart.setFieldSignature(long_press.LongPressGestureRecognizer, () => ({
-    __proto__: dart.getFields(long_press.LongPressGestureRecognizer.__proto__),
-    [_longPressAccepted]: dart.fieldType(core.bool),
-    [_longPressOrigin]: dart.fieldType(dart.nullable(recognizer.OffsetPair)),
-    [_initialButtons]: dart.fieldType(dart.nullable(core.int)),
-    onLongPress: dart.fieldType(dart.nullable(dart.fnType(dart.void, []))),
-    onLongPressStart: dart.fieldType(dart.nullable(dart.fnType(dart.void, [long_press.LongPressStartDetails]))),
-    onLongPressMoveUpdate: dart.fieldType(dart.nullable(dart.fnType(dart.void, [long_press.LongPressMoveUpdateDetails]))),
-    onLongPressUp: dart.fieldType(dart.nullable(dart.fnType(dart.void, []))),
-    onLongPressEnd: dart.fieldType(dart.nullable(dart.fnType(dart.void, [long_press.LongPressEndDetails]))),
-    onSecondaryLongPress: dart.fieldType(dart.nullable(dart.fnType(dart.void, []))),
-    onSecondaryLongPressStart: dart.fieldType(dart.nullable(dart.fnType(dart.void, [long_press.LongPressStartDetails]))),
-    onSecondaryLongPressMoveUpdate: dart.fieldType(dart.nullable(dart.fnType(dart.void, [long_press.LongPressMoveUpdateDetails]))),
-    onSecondaryLongPressUp: dart.fieldType(dart.nullable(dart.fnType(dart.void, []))),
-    onSecondaryLongPressEnd: dart.fieldType(dart.nullable(dart.fnType(dart.void, [long_press.LongPressEndDetails]))),
-    onTertiaryLongPress: dart.fieldType(dart.nullable(dart.fnType(dart.void, []))),
-    onTertiaryLongPressStart: dart.fieldType(dart.nullable(dart.fnType(dart.void, [long_press.LongPressStartDetails]))),
-    onTertiaryLongPressMoveUpdate: dart.fieldType(dart.nullable(dart.fnType(dart.void, [long_press.LongPressMoveUpdateDetails]))),
-    onTertiaryLongPressUp: dart.fieldType(dart.nullable(dart.fnType(dart.void, []))),
-    onTertiaryLongPressEnd: dart.fieldType(dart.nullable(dart.fnType(dart.void, [long_press.LongPressEndDetails]))),
-    [_velocityTracker]: dart.fieldType(dart.nullable(velocity_tracker.VelocityTracker))
-  }));
-  dart.trackLibraries("packages/flutter/src/gestures/long_press.dart", {
-    "package:flutter/src/gestures/long_press.dart": long_press
+    (ChangeNotifierProvider.new = function(opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      let create = opts && 'create' in opts ? opts.create : null;
+      if (create == null) dart.nullFailed(I[2], 106, 24, "create");
+      let lazy = opts && 'lazy' in opts ? opts.lazy : null;
+      let builder = opts && 'builder' in opts ? opts.builder : null;
+      let child = opts && 'child' in opts ? opts.child : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      ChangeNotifierProvider.__proto__.new.call(this, {key: key, create: create, dispose: C[1] || CT.C1, lazy: lazy, builder: builder, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+      ;
+    }).prototype = ChangeNotifierProvider.prototype;
+    (ChangeNotifierProvider.value = function(opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      let value = opts && 'value' in opts ? opts.value : null;
+      let builder = opts && 'builder' in opts ? opts.builder : null;
+      let child = opts && 'child' in opts ? opts.child : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      ChangeNotifierProvider.__proto__.value.call(this, {key: key, builder: builder, value: value, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+      ;
+    }).prototype = ChangeNotifierProvider.prototype;
+    dart.addTypeTests(ChangeNotifierProvider);
+    ChangeNotifierProvider.prototype[_is_ChangeNotifierProvider_default] = true;
+    dart.addTypeCaches(ChangeNotifierProvider);
+    dart.setLibraryUri(ChangeNotifierProvider, I[3]);
+    return ChangeNotifierProvider;
+  });
+  change_notifier_provider.ChangeNotifierProvider = change_notifier_provider.ChangeNotifierProvider$();
+  dart.addTypeTests(change_notifier_provider.ChangeNotifierProvider, _is_ChangeNotifierProvider_default);
+  const _is_ChangeNotifierProxyProvider_default = Symbol('_is_ChangeNotifierProxyProvider_default');
+  change_notifier_provider.ChangeNotifierProxyProvider$ = dart.generic((T, R) => {
+    class ChangeNotifierProxyProvider extends listenable_provider.ListenableProxyProvider$(T, R) {}
+    (ChangeNotifierProxyProvider.new = function(opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      let create = opts && 'create' in opts ? opts.create : null;
+      if (create == null) dart.nullFailed(I[2], 216, 24, "create");
+      let update = opts && 'update' in opts ? opts.update : null;
+      if (update == null) dart.nullFailed(I[2], 217, 41, "update");
+      let lazy = opts && 'lazy' in opts ? opts.lazy : null;
+      let builder = opts && 'builder' in opts ? opts.builder : null;
+      let child = opts && 'child' in opts ? opts.child : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      ChangeNotifierProxyProvider.__proto__.new.call(this, {key: key, create: create, update: update, dispose: C[1] || CT.C1, lazy: lazy, builder: builder, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+      ;
+    }).prototype = ChangeNotifierProxyProvider.prototype;
+    dart.addTypeTests(ChangeNotifierProxyProvider);
+    ChangeNotifierProxyProvider.prototype[_is_ChangeNotifierProxyProvider_default] = true;
+    dart.addTypeCaches(ChangeNotifierProxyProvider);
+    dart.setLibraryUri(ChangeNotifierProxyProvider, I[3]);
+    return ChangeNotifierProxyProvider;
+  });
+  change_notifier_provider.ChangeNotifierProxyProvider = change_notifier_provider.ChangeNotifierProxyProvider$();
+  dart.addTypeTests(change_notifier_provider.ChangeNotifierProxyProvider, _is_ChangeNotifierProxyProvider_default);
+  const _is_ChangeNotifierProxyProvider0_default = Symbol('_is_ChangeNotifierProxyProvider0_default');
+  change_notifier_provider.ChangeNotifierProxyProvider0$ = dart.generic(R => {
+    class ChangeNotifierProxyProvider0 extends listenable_provider.ListenableProxyProvider0$(R) {}
+    (ChangeNotifierProxyProvider0.new = function(opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      let create = opts && 'create' in opts ? opts.create : null;
+      if (create == null) dart.nullFailed(I[2], 238, 24, "create");
+      let update = opts && 'update' in opts ? opts.update : null;
+      if (update == null) dart.nullFailed(I[2], 239, 49, "update");
+      let lazy = opts && 'lazy' in opts ? opts.lazy : null;
+      let builder = opts && 'builder' in opts ? opts.builder : null;
+      let child = opts && 'child' in opts ? opts.child : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      ChangeNotifierProxyProvider0.__proto__.new.call(this, {key: key, create: create, update: update, dispose: C[1] || CT.C1, lazy: lazy, builder: builder, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+      ;
+    }).prototype = ChangeNotifierProxyProvider0.prototype;
+    dart.addTypeTests(ChangeNotifierProxyProvider0);
+    ChangeNotifierProxyProvider0.prototype[_is_ChangeNotifierProxyProvider0_default] = true;
+    dart.addTypeCaches(ChangeNotifierProxyProvider0);
+    dart.setLibraryUri(ChangeNotifierProxyProvider0, I[3]);
+    return ChangeNotifierProxyProvider0;
+  });
+  change_notifier_provider.ChangeNotifierProxyProvider0 = change_notifier_provider.ChangeNotifierProxyProvider0$();
+  dart.addTypeTests(change_notifier_provider.ChangeNotifierProxyProvider0, _is_ChangeNotifierProxyProvider0_default);
+  const _is_ChangeNotifierProxyProvider2_default = Symbol('_is_ChangeNotifierProxyProvider2_default');
+  change_notifier_provider.ChangeNotifierProxyProvider2$ = dart.generic((T, T2, R) => {
+    class ChangeNotifierProxyProvider2 extends listenable_provider.ListenableProxyProvider2$(T, T2, R) {}
+    (ChangeNotifierProxyProvider2.new = function(opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      let create = opts && 'create' in opts ? opts.create : null;
+      if (create == null) dart.nullFailed(I[2], 260, 24, "create");
+      let update = opts && 'update' in opts ? opts.update : null;
+      if (update == null) dart.nullFailed(I[2], 261, 46, "update");
+      let lazy = opts && 'lazy' in opts ? opts.lazy : null;
+      let builder = opts && 'builder' in opts ? opts.builder : null;
+      let child = opts && 'child' in opts ? opts.child : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      ChangeNotifierProxyProvider2.__proto__.new.call(this, {key: key, create: create, update: update, dispose: C[1] || CT.C1, lazy: lazy, builder: builder, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+      ;
+    }).prototype = ChangeNotifierProxyProvider2.prototype;
+    dart.addTypeTests(ChangeNotifierProxyProvider2);
+    ChangeNotifierProxyProvider2.prototype[_is_ChangeNotifierProxyProvider2_default] = true;
+    dart.addTypeCaches(ChangeNotifierProxyProvider2);
+    dart.setLibraryUri(ChangeNotifierProxyProvider2, I[3]);
+    return ChangeNotifierProxyProvider2;
+  });
+  change_notifier_provider.ChangeNotifierProxyProvider2 = change_notifier_provider.ChangeNotifierProxyProvider2$();
+  dart.addTypeTests(change_notifier_provider.ChangeNotifierProxyProvider2, _is_ChangeNotifierProxyProvider2_default);
+  const _is_ChangeNotifierProxyProvider3_default = Symbol('_is_ChangeNotifierProxyProvider3_default');
+  change_notifier_provider.ChangeNotifierProxyProvider3$ = dart.generic((T, T2, T3, R) => {
+    class ChangeNotifierProxyProvider3 extends listenable_provider.ListenableProxyProvider3$(T, T2, T3, R) {}
+    (ChangeNotifierProxyProvider3.new = function(opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      let create = opts && 'create' in opts ? opts.create : null;
+      if (create == null) dart.nullFailed(I[2], 282, 24, "create");
+      let update = opts && 'update' in opts ? opts.update : null;
+      if (update == null) dart.nullFailed(I[2], 283, 50, "update");
+      let lazy = opts && 'lazy' in opts ? opts.lazy : null;
+      let builder = opts && 'builder' in opts ? opts.builder : null;
+      let child = opts && 'child' in opts ? opts.child : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      ChangeNotifierProxyProvider3.__proto__.new.call(this, {key: key, create: create, update: update, dispose: C[1] || CT.C1, lazy: lazy, builder: builder, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+      ;
+    }).prototype = ChangeNotifierProxyProvider3.prototype;
+    dart.addTypeTests(ChangeNotifierProxyProvider3);
+    ChangeNotifierProxyProvider3.prototype[_is_ChangeNotifierProxyProvider3_default] = true;
+    dart.addTypeCaches(ChangeNotifierProxyProvider3);
+    dart.setLibraryUri(ChangeNotifierProxyProvider3, I[3]);
+    return ChangeNotifierProxyProvider3;
+  });
+  change_notifier_provider.ChangeNotifierProxyProvider3 = change_notifier_provider.ChangeNotifierProxyProvider3$();
+  dart.addTypeTests(change_notifier_provider.ChangeNotifierProxyProvider3, _is_ChangeNotifierProxyProvider3_default);
+  const _is_ChangeNotifierProxyProvider4_default = Symbol('_is_ChangeNotifierProxyProvider4_default');
+  change_notifier_provider.ChangeNotifierProxyProvider4$ = dart.generic((T, T2, T3, T4, R) => {
+    class ChangeNotifierProxyProvider4 extends listenable_provider.ListenableProxyProvider4$(T, T2, T3, T4, R) {}
+    (ChangeNotifierProxyProvider4.new = function(opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      let create = opts && 'create' in opts ? opts.create : null;
+      if (create == null) dart.nullFailed(I[2], 304, 24, "create");
+      let update = opts && 'update' in opts ? opts.update : null;
+      if (update == null) dart.nullFailed(I[2], 305, 54, "update");
+      let lazy = opts && 'lazy' in opts ? opts.lazy : null;
+      let builder = opts && 'builder' in opts ? opts.builder : null;
+      let child = opts && 'child' in opts ? opts.child : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      ChangeNotifierProxyProvider4.__proto__.new.call(this, {key: key, create: create, update: update, dispose: C[1] || CT.C1, lazy: lazy, builder: builder, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+      ;
+    }).prototype = ChangeNotifierProxyProvider4.prototype;
+    dart.addTypeTests(ChangeNotifierProxyProvider4);
+    ChangeNotifierProxyProvider4.prototype[_is_ChangeNotifierProxyProvider4_default] = true;
+    dart.addTypeCaches(ChangeNotifierProxyProvider4);
+    dart.setLibraryUri(ChangeNotifierProxyProvider4, I[3]);
+    return ChangeNotifierProxyProvider4;
+  });
+  change_notifier_provider.ChangeNotifierProxyProvider4 = change_notifier_provider.ChangeNotifierProxyProvider4$();
+  dart.addTypeTests(change_notifier_provider.ChangeNotifierProxyProvider4, _is_ChangeNotifierProxyProvider4_default);
+  const _is_ChangeNotifierProxyProvider5_default = Symbol('_is_ChangeNotifierProxyProvider5_default');
+  change_notifier_provider.ChangeNotifierProxyProvider5$ = dart.generic((T, T2, T3, T4, T5, R) => {
+    class ChangeNotifierProxyProvider5 extends listenable_provider.ListenableProxyProvider5$(T, T2, T3, T4, T5, R) {}
+    (ChangeNotifierProxyProvider5.new = function(opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      let create = opts && 'create' in opts ? opts.create : null;
+      if (create == null) dart.nullFailed(I[2], 326, 24, "create");
+      let update = opts && 'update' in opts ? opts.update : null;
+      if (update == null) dart.nullFailed(I[2], 327, 58, "update");
+      let lazy = opts && 'lazy' in opts ? opts.lazy : null;
+      let builder = opts && 'builder' in opts ? opts.builder : null;
+      let child = opts && 'child' in opts ? opts.child : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      ChangeNotifierProxyProvider5.__proto__.new.call(this, {key: key, create: create, update: update, dispose: C[1] || CT.C1, lazy: lazy, builder: builder, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+      ;
+    }).prototype = ChangeNotifierProxyProvider5.prototype;
+    dart.addTypeTests(ChangeNotifierProxyProvider5);
+    ChangeNotifierProxyProvider5.prototype[_is_ChangeNotifierProxyProvider5_default] = true;
+    dart.addTypeCaches(ChangeNotifierProxyProvider5);
+    dart.setLibraryUri(ChangeNotifierProxyProvider5, I[3]);
+    return ChangeNotifierProxyProvider5;
+  });
+  change_notifier_provider.ChangeNotifierProxyProvider5 = change_notifier_provider.ChangeNotifierProxyProvider5$();
+  dart.addTypeTests(change_notifier_provider.ChangeNotifierProxyProvider5, _is_ChangeNotifierProxyProvider5_default);
+  const _is_ChangeNotifierProxyProvider6_default = Symbol('_is_ChangeNotifierProxyProvider6_default');
+  change_notifier_provider.ChangeNotifierProxyProvider6$ = dart.generic((T, T2, T3, T4, T5, T6, R) => {
+    class ChangeNotifierProxyProvider6 extends listenable_provider.ListenableProxyProvider6$(T, T2, T3, T4, T5, T6, R) {}
+    (ChangeNotifierProxyProvider6.new = function(opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      let create = opts && 'create' in opts ? opts.create : null;
+      if (create == null) dart.nullFailed(I[2], 349, 24, "create");
+      let update = opts && 'update' in opts ? opts.update : null;
+      if (update == null) dart.nullFailed(I[2], 350, 62, "update");
+      let lazy = opts && 'lazy' in opts ? opts.lazy : null;
+      let builder = opts && 'builder' in opts ? opts.builder : null;
+      let child = opts && 'child' in opts ? opts.child : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      ChangeNotifierProxyProvider6.__proto__.new.call(this, {key: key, create: create, update: update, dispose: C[1] || CT.C1, lazy: lazy, builder: builder, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+      ;
+    }).prototype = ChangeNotifierProxyProvider6.prototype;
+    dart.addTypeTests(ChangeNotifierProxyProvider6);
+    ChangeNotifierProxyProvider6.prototype[_is_ChangeNotifierProxyProvider6_default] = true;
+    dart.addTypeCaches(ChangeNotifierProxyProvider6);
+    dart.setLibraryUri(ChangeNotifierProxyProvider6, I[3]);
+    return ChangeNotifierProxyProvider6;
+  });
+  change_notifier_provider.ChangeNotifierProxyProvider6 = change_notifier_provider.ChangeNotifierProxyProvider6$();
+  dart.addTypeTests(change_notifier_provider.ChangeNotifierProxyProvider6, _is_ChangeNotifierProxyProvider6_default);
+  dart.trackLibraries("packages/provider/src/listenable_provider.dart", {
+    "package:provider/src/listenable_provider.dart": listenable_provider,
+    "package:provider/src/change_notifier_provider.dart": change_notifier_provider
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["long_press.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/gestures/long_press.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["listenable_provider.dart","change_notifier_provider.dart"],"names":[],"mappings":"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,IAAI,WACD,OAAO,SACT,KAAK;;IACb;;;;;;;;;;;;;UAQA;UACc;;UACyB;;UACtC;UACa;UACX;;AACL,kEACQ,GAAG,UACA,MAAM,UACN,MAAM,gCAER,IAAI,WACD,OAAO,SACT,KAAK;;IACb;;;;;;;;;;;;;UAQA;UACc;;UACsB;;UACnC;UACa;UACX;;AACL,kEACQ,GAAG,UACA,MAAM,UACN,MAAM,gCAER,IAAI,WACD,OAAO,SACT,KAAK;;IACb;;;;;;;;;;;;;UAQA;UACc;;UAC0B;;UACvC;UACa;UACX;;AACL,kEACQ,GAAG,UACA,MAAM,UACN,MAAM,gCAER,IAAI,WACD,OAAO,SACT,KAAK;;IACb;;;;;;;;;;;;;UAQA;UACc;;UAC8B;;UAC3C;UACa;UACX;;AACL,kEACQ,GAAG,UACA,MAAM,UACN,MAAM,gCAER,IAAI,WACD,OAAO,SACT,KAAK;;IACb;;;;;;;;;;;;;UAQA;UACc;;UACkC;;UAC/C;UACa;UACX;;AACL,kEACQ,GAAG,UACA,MAAM,UACN,MAAM,gCAER,IAAI,WACD,OAAO,SACT,KAAK;;IACb;;;;;;;;;;;;;UASA;UACc;;UACsC;;UACnD;UACa;UACX;;AACL,kEACQ,GAAG,UACA,MAAM,UACN,MAAM,gCAER,IAAI,WACD,OAAO,SACT,KAAK;;IACb","file":"../../../../../../../../packages/provider/src/listenable_provider.dart.lib.js"}');
   // Exports:
   return {
-    src__gestures__long_press: long_press
+    src__listenable_provider: listenable_provider,
+    src__change_notifier_provider: change_notifier_provider
   };
 }));
 
-//# sourceMappingURL=long_press.dart.lib.js.map
+//# sourceMappingURL=listenable_provider.dart.lib.js.map

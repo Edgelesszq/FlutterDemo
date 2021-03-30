@@ -1,28 +1,25 @@
-define(['dart_sdk', 'packages/flutter/src/gestures/tap.dart', 'packages/flutter/src/animation/animation_controller.dart', 'packages/flutter/src/animation/listener_helpers.dart', 'packages/flutter/src/animation/curves.dart', 'packages/flutter/src/material/constants.dart', 'packages/flutter/src/rendering/layer.dart', 'packages/flutter/src/semantics/semantics_event.dart', 'packages/flutter/src/gestures/events.dart', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/rendering/proxy_box.dart', 'packages/flutter/src/scheduler/ticker.dart'], (function load__packages__flutter__src__material__toggleable_dart(dart_sdk, packages__flutter__src__gestures__tap$46dart, packages__flutter__src__animation__animation_controller$46dart, packages__flutter__src__animation__listener_helpers$46dart, packages__flutter__src__animation__curves$46dart, packages__flutter__src__material__constants$46dart, packages__flutter__src__rendering__layer$46dart, packages__flutter__src__semantics__semantics_event$46dart, packages__flutter__src__gestures__events$46dart, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__rendering__proxy_box$46dart, packages__flutter__src__scheduler__ticker$46dart) {
+define(['dart_sdk'], (function load__packages__typed_data__src__typed_buffer_dart(dart_sdk) {
   'use strict';
   const core = dart_sdk.core;
-  const _internal = dart_sdk._internal;
-  const ui = dart_sdk.ui;
+  const typed_data = dart_sdk.typed_data;
+  const collection = dart_sdk.collection;
+  const _native_typed_data = dart_sdk._native_typed_data;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const tap = packages__flutter__src__gestures__tap$46dart.src__gestures__tap;
-  const animation_controller = packages__flutter__src__animation__animation_controller$46dart.src__animation__animation_controller;
-  const animations = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animations;
-  const animation = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animation;
-  const tween = packages__flutter__src__animation__listener_helpers$46dart.src__animation__tween;
-  const curves = packages__flutter__src__animation__curves$46dart.src__animation__curves;
-  const constants = packages__flutter__src__material__constants$46dart.src__material__constants;
-  const object = packages__flutter__src__rendering__layer$46dart.src__rendering__object;
-  const box = packages__flutter__src__rendering__layer$46dart.src__rendering__box;
-  const semantics_event = packages__flutter__src__semantics__semantics_event$46dart.src__semantics__semantics_event;
-  const events = packages__flutter__src__gestures__events$46dart.src__gestures__events;
-  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
-  const proxy_box = packages__flutter__src__rendering__proxy_box$46dart.src__rendering__proxy_box;
-  const ticker = packages__flutter__src__scheduler__ticker$46dart.src__scheduler__ticker;
-  var toggleable = Object.create(dart.library);
+  var typed_buffer = Object.create(dart.library);
+  var $length = dartx.length;
+  var $_get = dartx._get;
+  var $_set = dartx._set;
+  var $isEmpty = dartx.isEmpty;
+  var $setRange = dartx.setRange;
+  var $elementSizeInBytes = dartx.elementSizeInBytes;
+  var $offsetInBytes = dartx.offsetInBytes;
+  var $buffer = dartx.buffer;
+  var $addAll = dartx.addAll;
+  var $insertAll = dartx.insertAll;
   dart._checkModuleNullSafetyMode(false);
   var T = {
-    TweenOfdouble: () => (T.TweenOfdouble = dart.constFn(tween.Tween$(core.double)))()
+    _: () => T
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -36,691 +33,618 @@ define(['dart_sdk', 'packages/flutter/src/gestures/tap.dart', 'packages/flutter/
   const CT = Object.create({
     _: () => (C, CT)
   });
-  dart.defineLazy(CT, {
-    get C0() {
-      return C[0] = dart.const({
-        __proto__: animation.AnimationStatus.prototype,
-        [_name]: "AnimationStatus.forward",
-        index: 1
-      });
-    },
-    get C1() {
-      return C[1] = dart.const({
-        __proto__: animation.AnimationStatus.prototype,
-        [_name]: "AnimationStatus.reverse",
-        index: 2
-      });
-    },
-    get C2() {
-      return C[2] = dart.const({
-        __proto__: animation.AnimationStatus.prototype,
-        [_name]: "AnimationStatus.dismissed",
-        index: 0
-      });
-    },
-    get C3() {
-      return C[3] = dart.const({
-        __proto__: animation.AnimationStatus.prototype,
-        [_name]: "AnimationStatus.completed",
-        index: 3
-      });
-    },
-    get C4() {
-      return C[4] = dart.const({
-        __proto__: semantics_event.TapSemanticEvent.prototype,
-        [SemanticsEvent_type]: "tap"
-      });
-    },
-    get C5() {
-      return C[5] = dart.const({
-        __proto__: core.Duration.prototype,
-        [Duration__duration]: 200000
-      });
-    },
-    get C6() {
-      return C[6] = dart.const({
-        __proto__: core.Duration.prototype,
-        [Duration__duration]: 50000
-      });
+  var C = [];
+  var I = [
+    "file:///D:/flutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/typed_data-1.3.0/lib/src/typed_buffer.dart",
+    "package:typed_data/src/typed_buffer.dart"
+  ];
+  var _buffer = dart.privateName(typed_buffer, "_buffer");
+  var _length = dart.privateName(typed_buffer, "_length");
+  var _typedBuffer = dart.privateName(typed_buffer, "_typedBuffer");
+  var _defaultValue = dart.privateName(typed_buffer, "_defaultValue");
+  var _createBuffer = dart.privateName(typed_buffer, "_createBuffer");
+  var _createBiggerBuffer = dart.privateName(typed_buffer, "_createBiggerBuffer");
+  var _grow = dart.privateName(typed_buffer, "_grow");
+  var _add = dart.privateName(typed_buffer, "_add");
+  var _addAll = dart.privateName(typed_buffer, "_addAll");
+  var _insertKnownLength = dart.privateName(typed_buffer, "_insertKnownLength");
+  var _ensureCapacity = dart.privateName(typed_buffer, "_ensureCapacity");
+  var _setRange = dart.privateName(typed_buffer, "_setRange");
+  const _is_TypedDataBuffer_default = Symbol('_is_TypedDataBuffer_default');
+  typed_buffer.TypedDataBuffer$ = dart.generic(E => {
+    var IterableOfE = () => (IterableOfE = dart.constFn(core.Iterable$(E)))();
+    var TypedDataBufferOfE = () => (TypedDataBufferOfE = dart.constFn(typed_buffer.TypedDataBuffer$(E)))();
+    class TypedDataBuffer extends collection.ListBase$(E) {
+      get [_typedBuffer]() {
+        return typed_data.TypedData.as(this[_buffer]);
+      }
+      get length() {
+        return this[_length];
+      }
+      _get(index) {
+        if (index == null) dart.nullFailed(I[0], 31, 21, "index");
+        if (dart.notNull(index) >= dart.notNull(this.length)) dart.throw(new core.IndexError.new(index, this));
+        return this[_buffer][$_get](index);
+      }
+      _set(index, value$) {
+        let value = value$;
+        if (index == null) dart.nullFailed(I[0], 37, 25, "index");
+        E.as(value);
+        if (dart.notNull(index) >= dart.notNull(this.length)) dart.throw(new core.IndexError.new(index, this));
+        this[_buffer][$_set](index, value);
+        return value$;
+      }
+      set length(newLength) {
+        if (newLength == null) dart.nullFailed(I[0], 43, 18, "newLength");
+        if (dart.notNull(newLength) < dart.notNull(this[_length])) {
+          let defaultValue = this[_defaultValue];
+          for (let i = newLength; dart.notNull(i) < dart.notNull(this[_length]); i = dart.notNull(i) + 1) {
+            this[_buffer][$_set](i, defaultValue);
+          }
+        } else if (dart.notNull(newLength) > dart.notNull(this[_buffer][$length])) {
+          let newBuffer = null;
+          if (dart.test(this[_buffer][$isEmpty])) {
+            newBuffer = this[_createBuffer](newLength);
+          } else {
+            newBuffer = this[_createBiggerBuffer](newLength);
+          }
+          newBuffer[$setRange](0, this[_length], this[_buffer]);
+          this[_buffer] = newBuffer;
+        }
+        this[_length] = newLength;
+      }
+      [_add](value) {
+        let t0;
+        if (this[_length] == this[_buffer][$length]) this[_grow](this[_length]);
+        this[_buffer][$_set]((t0 = this[_length], this[_length] = dart.notNull(t0) + 1, t0), value);
+      }
+      add(value) {
+        E.as(value);
+        this[_add](value);
+      }
+      addAll(values, start = 0, end = null) {
+        IterableOfE().as(values);
+        if (values == null) dart.nullFailed(I[0], 85, 27, "values");
+        if (start == null) dart.nullFailed(I[0], 85, 40, "start");
+        core.RangeError.checkNotNegative(start, "start");
+        if (end != null && dart.notNull(start) > dart.notNull(end)) {
+          dart.throw(new core.RangeError.range(end, start, null, "end"));
+        }
+        this[_addAll](values, start, end);
+      }
+      insertAll(index, values, start = 0, end = null) {
+        let t0;
+        if (index == null) dart.nullFailed(I[0], 104, 22, "index");
+        IterableOfE().as(values);
+        if (values == null) dart.nullFailed(I[0], 104, 41, "values");
+        if (start == null) dart.nullFailed(I[0], 104, 54, "start");
+        core.RangeError.checkValidIndex(index, this, "index", dart.notNull(this[_length]) + 1);
+        core.RangeError.checkNotNegative(start, "start");
+        if (end != null) {
+          if (dart.notNull(start) > dart.notNull(end)) {
+            dart.throw(new core.RangeError.range(end, start, null, "end"));
+          }
+          if (start == end) return;
+        }
+        if (index == this[_length]) {
+          this[_addAll](values, start, end);
+          return;
+        }
+        if (end == null && core.List.is(values)) {
+          end = values[$length];
+        }
+        if (end != null) {
+          this[_insertKnownLength](index, values, start, end);
+          return;
+        }
+        let writeIndex = this[_length];
+        let skipCount = start;
+        for (let value of values) {
+          if (dart.notNull(skipCount) > 0) {
+            skipCount = dart.notNull(skipCount) - 1;
+            continue;
+          }
+          if (writeIndex == this[_buffer][$length]) {
+            this[_grow](writeIndex);
+          }
+          this[_buffer][$_set]((t0 = writeIndex, writeIndex = dart.notNull(t0) + 1, t0), value);
+        }
+        if (dart.notNull(skipCount) > 0) {
+          dart.throw(new core.StateError.new("Too few elements"));
+        }
+        if (end != null && dart.notNull(writeIndex) < dart.notNull(end)) {
+          dart.throw(new core.RangeError.range(end, start, writeIndex, "end"));
+        }
+        typed_buffer.TypedDataBuffer._reverse(this[_buffer], index, this[_length]);
+        typed_buffer.TypedDataBuffer._reverse(this[_buffer], this[_length], writeIndex);
+        typed_buffer.TypedDataBuffer._reverse(this[_buffer], index, writeIndex);
+        this[_length] = writeIndex;
+        return;
+      }
+      static _reverse(buffer, start, end) {
+        if (buffer == null) dart.nullFailed(I[0], 162, 29, "buffer");
+        if (start == null) dart.nullFailed(I[0], 162, 41, "start");
+        if (end == null) dart.nullFailed(I[0], 162, 52, "end");
+        end = dart.notNull(end) - 1;
+        while (dart.notNull(start) < dart.notNull(end)) {
+          let first = buffer[$_get](start);
+          let last = buffer[$_get](end);
+          buffer[$_set](end, first);
+          buffer[$_set](start, last);
+          start = dart.notNull(start) + 1;
+          end = dart.notNull(end) - 1;
+        }
+      }
+      [_addAll](values, start = 0, end = null) {
+        if (values == null) dart.nullFailed(I[0], 179, 28, "values");
+        if (start == null) dart.nullFailed(I[0], 179, 41, "start");
+        if (core.List.is(values)) end == null ? end = values[$length] : null;
+        if (end != null) {
+          this[_insertKnownLength](this[_length], values, start, end);
+          return;
+        }
+        let i = 0;
+        for (let value of values) {
+          if (i >= dart.notNull(start)) this.add(value);
+          i = i + 1;
+        }
+        if (i < dart.notNull(start)) dart.throw(new core.StateError.new("Too few elements"));
+      }
+      [_insertKnownLength](index, values, start, end) {
+        if (index == null) dart.nullFailed(I[0], 200, 31, "index");
+        if (values == null) dart.nullFailed(I[0], 200, 50, "values");
+        if (start == null) dart.nullFailed(I[0], 200, 62, "start");
+        if (end == null) dart.nullFailed(I[0], 200, 73, "end");
+        if (core.List.is(values)) {
+          if (dart.notNull(start) > dart.notNull(values[$length]) || dart.notNull(end) > dart.notNull(values[$length])) {
+            dart.throw(new core.StateError.new("Too few elements"));
+          }
+        }
+        let valuesLength = dart.notNull(end) - dart.notNull(start);
+        let newLength = dart.notNull(this[_length]) + valuesLength;
+        this[_ensureCapacity](newLength);
+        this[_buffer][$setRange](dart.notNull(index) + valuesLength, dart.notNull(this[_length]) + valuesLength, this[_buffer], index);
+        this[_buffer][$setRange](index, dart.notNull(index) + valuesLength, values, start);
+        this[_length] = newLength;
+      }
+      insert(index, element) {
+        if (index == null) dart.nullFailed(I[0], 218, 19, "index");
+        E.as(element);
+        if (dart.notNull(index) < 0 || dart.notNull(index) > dart.notNull(this[_length])) {
+          dart.throw(new core.RangeError.range(index, 0, this[_length]));
+        }
+        if (dart.notNull(this[_length]) < dart.notNull(this[_buffer][$length])) {
+          this[_buffer][$setRange](dart.notNull(index) + 1, dart.notNull(this[_length]) + 1, this[_buffer], index);
+          this[_buffer][$_set](index, element);
+          this[_length] = dart.notNull(this[_length]) + 1;
+          return;
+        }
+        let newBuffer = this[_createBiggerBuffer](null);
+        newBuffer[$setRange](0, index, this[_buffer]);
+        newBuffer[$setRange](dart.notNull(index) + 1, dart.notNull(this[_length]) + 1, this[_buffer], index);
+        newBuffer[$_set](index, element);
+        this[_length] = dart.notNull(this[_length]) + 1;
+        this[_buffer] = newBuffer;
+      }
+      [_ensureCapacity](requiredCapacity) {
+        if (requiredCapacity == null) dart.nullFailed(I[0], 239, 28, "requiredCapacity");
+        if (dart.notNull(requiredCapacity) <= dart.notNull(this[_buffer][$length])) return;
+        let newBuffer = this[_createBiggerBuffer](requiredCapacity);
+        newBuffer[$setRange](0, this[_length], this[_buffer]);
+        this[_buffer] = newBuffer;
+      }
+      [_createBiggerBuffer](requiredCapacity) {
+        let newLength = dart.notNull(this[_buffer][$length]) * 2;
+        if (requiredCapacity != null && dart.notNull(newLength) < dart.notNull(requiredCapacity)) {
+          newLength = requiredCapacity;
+        } else if (dart.notNull(newLength) < 8) {
+          newLength = 8;
+        }
+        return this[_createBuffer](newLength);
+      }
+      [_grow](length) {
+        let t0;
+        if (length == null) dart.nullFailed(I[0], 265, 18, "length");
+        this[_buffer] = (t0 = this[_createBiggerBuffer](null), (() => {
+          t0[$setRange](0, length, this[_buffer]);
+          return t0;
+        })());
+      }
+      setRange(start, end, source, skipCount = 0) {
+        if (start == null) dart.nullFailed(I[0], 270, 21, "start");
+        if (end == null) dart.nullFailed(I[0], 270, 32, "end");
+        IterableOfE().as(source);
+        if (source == null) dart.nullFailed(I[0], 270, 49, "source");
+        if (skipCount == null) dart.nullFailed(I[0], 270, 62, "skipCount");
+        if (dart.notNull(end) > dart.notNull(this[_length])) dart.throw(new core.RangeError.range(end, 0, this[_length]));
+        this[_setRange](start, end, source, skipCount);
+      }
+      [_setRange](start, end, source, skipCount) {
+        if (start == null) dart.nullFailed(I[0], 276, 22, "start");
+        if (end == null) dart.nullFailed(I[0], 276, 33, "end");
+        if (source == null) dart.nullFailed(I[0], 276, 50, "source");
+        if (skipCount == null) dart.nullFailed(I[0], 276, 62, "skipCount");
+        if (TypedDataBufferOfE().is(source)) {
+          this[_buffer][$setRange](start, end, source[_buffer], skipCount);
+        } else {
+          this[_buffer][$setRange](start, end, source, skipCount);
+        }
+      }
+      get elementSizeInBytes() {
+        return this[_typedBuffer][$elementSizeInBytes];
+      }
+      get lengthInBytes() {
+        return dart.notNull(this[_length]) * dart.notNull(this[_typedBuffer][$elementSizeInBytes]);
+      }
+      get offsetInBytes() {
+        return this[_typedBuffer][$offsetInBytes];
+      }
+      get buffer() {
+        return this[_typedBuffer][$buffer];
+      }
+    }
+    (TypedDataBuffer.new = function(buffer) {
+      if (buffer == null) dart.nullFailed(I[0], 23, 27, "buffer");
+      this[_buffer] = buffer;
+      this[_length] = buffer[$length];
+      ;
+    }).prototype = TypedDataBuffer.prototype;
+    dart.addTypeTests(TypedDataBuffer);
+    TypedDataBuffer.prototype[_is_TypedDataBuffer_default] = true;
+    dart.addTypeCaches(TypedDataBuffer);
+    dart.setMethodSignature(TypedDataBuffer, () => ({
+      __proto__: dart.getMethods(TypedDataBuffer.__proto__),
+      _get: dart.fnType(E, [core.int]),
+      [$_get]: dart.fnType(E, [core.int]),
+      _set: dart.fnType(dart.void, [core.int, dart.nullable(core.Object)]),
+      [$_set]: dart.fnType(dart.void, [core.int, dart.nullable(core.Object)]),
+      [_add]: dart.fnType(dart.void, [E]),
+      addAll: dart.fnType(dart.void, [dart.nullable(core.Object)], [core.int, dart.nullable(core.int)]),
+      [$addAll]: dart.fnType(dart.void, [dart.nullable(core.Object)], [core.int, dart.nullable(core.int)]),
+      insertAll: dart.fnType(dart.void, [core.int, dart.nullable(core.Object)], [core.int, dart.nullable(core.int)]),
+      [$insertAll]: dart.fnType(dart.void, [core.int, dart.nullable(core.Object)], [core.int, dart.nullable(core.int)]),
+      [_addAll]: dart.fnType(dart.void, [core.Iterable$(E)], [core.int, dart.nullable(core.int)]),
+      [_insertKnownLength]: dart.fnType(dart.void, [core.int, core.Iterable$(E), core.int, core.int]),
+      [_ensureCapacity]: dart.fnType(dart.void, [core.int]),
+      [_createBiggerBuffer]: dart.fnType(core.List$(E), [dart.nullable(core.int)]),
+      [_grow]: dart.fnType(dart.void, [core.int]),
+      [_setRange]: dart.fnType(dart.void, [core.int, core.int, core.Iterable$(E), core.int])
+    }));
+    dart.setGetterSignature(TypedDataBuffer, () => ({
+      __proto__: dart.getGetters(TypedDataBuffer.__proto__),
+      [_typedBuffer]: typed_data.TypedData,
+      length: core.int,
+      [$length]: core.int,
+      elementSizeInBytes: core.int,
+      lengthInBytes: core.int,
+      offsetInBytes: core.int,
+      buffer: typed_data.ByteBuffer
+    }));
+    dart.setSetterSignature(TypedDataBuffer, () => ({
+      __proto__: dart.getSetters(TypedDataBuffer.__proto__),
+      length: core.int,
+      [$length]: core.int
+    }));
+    dart.setLibraryUri(TypedDataBuffer, I[1]);
+    dart.setFieldSignature(TypedDataBuffer, () => ({
+      __proto__: dart.getFields(TypedDataBuffer.__proto__),
+      [_buffer]: dart.fieldType(core.List$(E)),
+      [_length]: dart.fieldType(core.int)
+    }));
+    dart.defineExtensionMethods(TypedDataBuffer, [
+      '_get',
+      '_set',
+      'add',
+      'addAll',
+      'insertAll',
+      'insert',
+      'setRange'
+    ]);
+    dart.defineExtensionAccessors(TypedDataBuffer, ['length']);
+    return TypedDataBuffer;
+  });
+  typed_buffer.TypedDataBuffer = typed_buffer.TypedDataBuffer$();
+  dart.defineLazy(typed_buffer.TypedDataBuffer, {
+    /*typed_buffer.TypedDataBuffer._initialLength*/get _initialLength() {
+      return 8;
     }
   }, false);
-  var C = Array(7).fill(void 0);
-  var I = [
-    "file:///D:/flutterSDK/flutter/packages/flutter/lib/src/material/toggleable.dart",
-    "package:flutter/src/material/toggleable.dart"
-  ];
-  var __RenderToggleable__positionController = dart.privateName(toggleable, "_#RenderToggleable#_positionController");
-  var __RenderToggleable__positionController_isSet = dart.privateName(toggleable, "_#RenderToggleable#_positionController#isSet");
-  var __RenderToggleable__position = dart.privateName(toggleable, "_#RenderToggleable#_position");
-  var __RenderToggleable__position_isSet = dart.privateName(toggleable, "_#RenderToggleable#_position#isSet");
-  var __RenderToggleable__reactionController = dart.privateName(toggleable, "_#RenderToggleable#_reactionController");
-  var __RenderToggleable__reactionController_isSet = dart.privateName(toggleable, "_#RenderToggleable#_reactionController#isSet");
-  var __RenderToggleable__reaction = dart.privateName(toggleable, "_#RenderToggleable#_reaction");
-  var __RenderToggleable__reaction_isSet = dart.privateName(toggleable, "_#RenderToggleable#_reaction#isSet");
-  var __RenderToggleable__reactionFocusFadeController = dart.privateName(toggleable, "_#RenderToggleable#_reactionFocusFadeController");
-  var __RenderToggleable__reactionFocusFadeController_isSet = dart.privateName(toggleable, "_#RenderToggleable#_reactionFocusFadeController#isSet");
-  var __RenderToggleable__reactionFocusFade = dart.privateName(toggleable, "_#RenderToggleable#_reactionFocusFade");
-  var __RenderToggleable__reactionFocusFade_isSet = dart.privateName(toggleable, "_#RenderToggleable#_reactionFocusFade#isSet");
-  var __RenderToggleable__reactionHoverFadeController = dart.privateName(toggleable, "_#RenderToggleable#_reactionHoverFadeController");
-  var __RenderToggleable__reactionHoverFadeController_isSet = dart.privateName(toggleable, "_#RenderToggleable#_reactionHoverFadeController#isSet");
-  var __RenderToggleable__reactionHoverFade = dart.privateName(toggleable, "_#RenderToggleable#_reactionHoverFade");
-  var __RenderToggleable__reactionHoverFade_isSet = dart.privateName(toggleable, "_#RenderToggleable#_reactionHoverFade#isSet");
-  var __RenderToggleable__tap = dart.privateName(toggleable, "_#RenderToggleable#_tap");
-  var __RenderToggleable__tap_isSet = dart.privateName(toggleable, "_#RenderToggleable#_tap#isSet");
-  var _downPosition = dart.privateName(toggleable, "_downPosition");
-  var _value = dart.privateName(toggleable, "_value");
-  var _tristate = dart.privateName(toggleable, "_tristate");
-  var _activeColor = dart.privateName(toggleable, "_activeColor");
-  var _inactiveColor = dart.privateName(toggleable, "_inactiveColor");
-  var _hoverColor = dart.privateName(toggleable, "_hoverColor");
-  var _focusColor = dart.privateName(toggleable, "_focusColor");
-  var _reactionColor = dart.privateName(toggleable, "_reactionColor");
-  var _inactiveReactionColor = dart.privateName(toggleable, "_inactiveReactionColor");
-  var _splashRadius = dart.privateName(toggleable, "_splashRadius");
-  var _onChanged = dart.privateName(toggleable, "_onChanged");
-  var _hasFocus = dart.privateName(toggleable, "_hasFocus");
-  var _hovering = dart.privateName(toggleable, "_hovering");
-  var _vsync = dart.privateName(toggleable, "_vsync");
-  var _tap = dart.privateName(toggleable, "_tap");
-  var _handleTapDown = dart.privateName(toggleable, "_handleTapDown");
-  var _handleTap = dart.privateName(toggleable, "_handleTap");
-  var _handleTapUp = dart.privateName(toggleable, "_handleTapUp");
-  var _handleTapCancel = dart.privateName(toggleable, "_handleTapCancel");
-  var _positionController = dart.privateName(toggleable, "_positionController");
-  var _position = dart.privateName(toggleable, "_position");
-  var _reactionController = dart.privateName(toggleable, "_reactionController");
-  var _reaction = dart.privateName(toggleable, "_reaction");
-  var _reactionHoverFadeController = dart.privateName(toggleable, "_reactionHoverFadeController");
-  var _reactionHoverFade = dart.privateName(toggleable, "_reactionHoverFade");
-  var _reactionFocusFadeController = dart.privateName(toggleable, "_reactionFocusFadeController");
-  var _reactionFocusFade = dart.privateName(toggleable, "_reactionFocusFade");
-  var _name = dart.privateName(animation, "_name");
-  var SemanticsEvent_type = dart.privateName(semantics_event, "SemanticsEvent.type");
-  toggleable.RenderToggleable = class RenderToggleable extends proxy_box.RenderConstrainedBox {
-    get positionController() {
-      return this[_positionController];
-    }
-    get [_positionController]() {
-      let t0;
-      return dart.test(this[__RenderToggleable__positionController_isSet]) ? (t0 = this[__RenderToggleable__positionController], t0) : dart.throw(new _internal.LateError.fieldNI("_positionController"));
-    }
-    set [_positionController](t0) {
-      if (t0 == null) dart.nullFailed(I[0], 114, 28, "null");
-      this[__RenderToggleable__positionController_isSet] = true;
-      this[__RenderToggleable__positionController] = t0;
-    }
-    get position() {
-      return this[_position];
-    }
-    get [_position]() {
-      let t1;
-      return dart.test(this[__RenderToggleable__position_isSet]) ? (t1 = this[__RenderToggleable__position], t1) : dart.throw(new _internal.LateError.fieldNI("_position"));
-    }
-    set [_position](t1) {
-      if (t1 == null) dart.nullFailed(I[0], 125, 24, "null");
-      this[__RenderToggleable__position_isSet] = true;
-      this[__RenderToggleable__position] = t1;
-    }
-    get reactionController() {
-      return this[_reactionController];
-    }
-    get [_reactionController]() {
-      let t2;
-      return dart.test(this[__RenderToggleable__reactionController_isSet]) ? (t2 = this[__RenderToggleable__reactionController], t2) : dart.throw(new _internal.LateError.fieldNI("_reactionController"));
-    }
-    set [_reactionController](t2) {
-      if (t2 == null) dart.nullFailed(I[0], 136, 28, "null");
-      this[__RenderToggleable__reactionController_isSet] = true;
-      this[__RenderToggleable__reactionController] = t2;
-    }
-    get [_reaction]() {
-      let t3;
-      return dart.test(this[__RenderToggleable__reaction_isSet]) ? (t3 = this[__RenderToggleable__reaction], t3) : dart.throw(new _internal.LateError.fieldNI("_reaction"));
-    }
-    set [_reaction](t3) {
-      if (t3 == null) dart.nullFailed(I[0], 137, 26, "null");
-      this[__RenderToggleable__reaction_isSet] = true;
-      this[__RenderToggleable__reaction] = t3;
-    }
-    get reactionFocusFadeController() {
-      return this[_reactionFocusFadeController];
-    }
-    get [_reactionFocusFadeController]() {
-      let t4;
-      return dart.test(this[__RenderToggleable__reactionFocusFadeController_isSet]) ? (t4 = this[__RenderToggleable__reactionFocusFadeController], t4) : dart.throw(new _internal.LateError.fieldNI("_reactionFocusFadeController"));
-    }
-    set [_reactionFocusFadeController](t4) {
-      if (t4 == null) dart.nullFailed(I[0], 150, 28, "null");
-      this[__RenderToggleable__reactionFocusFadeController_isSet] = true;
-      this[__RenderToggleable__reactionFocusFadeController] = t4;
-    }
-    get [_reactionFocusFade]() {
-      let t5;
-      return dart.test(this[__RenderToggleable__reactionFocusFade_isSet]) ? (t5 = this[__RenderToggleable__reactionFocusFade], t5) : dart.throw(new _internal.LateError.fieldNI("_reactionFocusFade"));
-    }
-    set [_reactionFocusFade](t5) {
-      if (t5 == null) dart.nullFailed(I[0], 151, 26, "null");
-      this[__RenderToggleable__reactionFocusFade_isSet] = true;
-      this[__RenderToggleable__reactionFocusFade] = t5;
-    }
-    get reactionHoverFadeController() {
-      return this[_reactionHoverFadeController];
-    }
-    get [_reactionHoverFadeController]() {
-      let t6;
-      return dart.test(this[__RenderToggleable__reactionHoverFadeController_isSet]) ? (t6 = this[__RenderToggleable__reactionHoverFadeController], t6) : dart.throw(new _internal.LateError.fieldNI("_reactionHoverFadeController"));
-    }
-    set [_reactionHoverFadeController](t6) {
-      if (t6 == null) dart.nullFailed(I[0], 164, 28, "null");
-      this[__RenderToggleable__reactionHoverFadeController_isSet] = true;
-      this[__RenderToggleable__reactionHoverFadeController] = t6;
-    }
-    set [_reactionHoverFade](t7) {
-      if (t7 == null) dart.nullFailed(I[0], 165, 26, "null");
-      this[__RenderToggleable__reactionHoverFade_isSet] = true;
-      this[__RenderToggleable__reactionHoverFade] = t7;
-    }
-    get [_reactionHoverFade]() {
-      let t8;
-      return dart.test(this[__RenderToggleable__reactionHoverFade_isSet]) ? (t8 = this[__RenderToggleable__reactionHoverFade], t8) : dart.throw(new _internal.LateError.fieldNI("_reactionHoverFade"));
-    }
-    get hasFocus() {
-      return this[_hasFocus];
-    }
-    set hasFocus(value) {
-      if (value == null) dart.nullFailed(I[0], 170, 21, "value");
-      if (!(value != null)) dart.assertFailed(null, I[0], 171, 12, "value != null");
-      if (value == this[_hasFocus]) return;
-      this[_hasFocus] = value;
-      if (dart.test(this[_hasFocus])) {
-        this[_reactionFocusFadeController].forward();
-      } else {
-        this[_reactionFocusFadeController].reverse();
-      }
-      this.markNeedsPaint();
-    }
-    get hovering() {
-      return this[_hovering];
-    }
-    set hovering(value) {
-      if (value == null) dart.nullFailed(I[0], 186, 21, "value");
-      if (!(value != null)) dart.assertFailed(null, I[0], 187, 12, "value != null");
-      if (value == this[_hovering]) return;
-      this[_hovering] = value;
-      if (dart.test(this[_hovering])) {
-        this[_reactionHoverFadeController].forward();
-      } else {
-        this[_reactionHoverFadeController].reverse();
-      }
-      this.markNeedsPaint();
-    }
-    get vsync() {
-      return this[_vsync];
-    }
-    set vsync(value) {
-      if (value == null) dart.nullFailed(I[0], 202, 28, "value");
-      if (!(value != null)) dart.assertFailed(null, I[0], 203, 12, "value != null");
-      if (dart.equals(value, this[_vsync])) return;
-      this[_vsync] = value;
-      this.positionController.resync(this.vsync);
-      this.reactionController.resync(this.vsync);
-    }
-    get value() {
-      return this[_value];
-    }
-    set value(value) {
-      let t8;
-      if (!(dart.test(this.tristate) || value != null)) dart.assertFailed(null, I[0], 223, 12, "tristate || value != null");
-      if (value == this[_value]) return;
-      this[_value] = value;
-      this.markNeedsSemanticsUpdate();
-      t8 = this[_position];
-      (() => {
-        t8.curve = curves.Curves.easeIn;
-        t8.reverseCurve = curves.Curves.easeOut;
-        return t8;
-      })();
-      if (dart.test(this.tristate)) {
-        if (value == null) this[_positionController].value = 0.0;
-        if (value !== false)
-          this[_positionController].forward();
-        else
-          this[_positionController].reverse();
-      } else {
-        if (value === true)
-          this[_positionController].forward();
-        else
-          this[_positionController].reverse();
-      }
-    }
-    get tristate() {
-      return this[_tristate];
-    }
-    set tristate(value) {
-      if (value == null) dart.nullFailed(I[0], 253, 21, "value");
-      if (!(this.tristate != null)) dart.assertFailed(null, I[0], 254, 12, "tristate != null");
-      if (value == this[_tristate]) return;
-      this[_tristate] = value;
-      this.markNeedsSemanticsUpdate();
-    }
-    get activeColor() {
-      return this[_activeColor];
-    }
-    set activeColor(value) {
-      if (value == null) dart.nullFailed(I[0], 266, 25, "value");
-      if (!(value != null)) dart.assertFailed(null, I[0], 267, 12, "value != null");
-      if (dart.equals(value, this[_activeColor])) return;
-      this[_activeColor] = value;
-      this.markNeedsPaint();
-    }
-    get inactiveColor() {
-      return this[_inactiveColor];
-    }
-    set inactiveColor(value) {
-      if (value == null) dart.nullFailed(I[0], 279, 27, "value");
-      if (!(value != null)) dart.assertFailed(null, I[0], 280, 12, "value != null");
-      if (dart.equals(value, this[_inactiveColor])) return;
-      this[_inactiveColor] = value;
-      this.markNeedsPaint();
-    }
-    get hoverColor() {
-      return this[_hoverColor];
-    }
-    set hoverColor(value) {
-      if (value == null) dart.nullFailed(I[0], 295, 24, "value");
-      if (!(value != null)) dart.assertFailed(null, I[0], 296, 12, "value != null");
-      if (dart.equals(value, this[_hoverColor])) return;
-      this[_hoverColor] = value;
-      this.markNeedsPaint();
-    }
-    get focusColor() {
-      return this[_focusColor];
-    }
-    set focusColor(value) {
-      if (value == null) dart.nullFailed(I[0], 311, 24, "value");
-      if (!(value != null)) dart.assertFailed(null, I[0], 312, 12, "value != null");
-      if (dart.equals(value, this[_focusColor])) return;
-      this[_focusColor] = value;
-      this.markNeedsPaint();
-    }
-    get reactionColor() {
-      return this[_reactionColor];
-    }
-    set reactionColor(value) {
-      if (!(value != null)) dart.assertFailed(null, I[0], 329, 12, "value != null");
-      if (dart.equals(value, this[_reactionColor])) return;
-      this[_reactionColor] = value;
-      this.markNeedsPaint();
-    }
-    get inactiveReactionColor() {
-      return this[_inactiveReactionColor];
-    }
-    set inactiveReactionColor(value) {
-      if (!(value != null)) dart.assertFailed(null, I[0], 346, 12, "value != null");
-      if (dart.equals(value, this[_inactiveReactionColor])) return;
-      this[_inactiveReactionColor] = value;
-      this.markNeedsPaint();
-    }
-    get splashRadius() {
-      return this[_splashRadius];
-    }
-    set splashRadius(value) {
-      if (value == null) dart.nullFailed(I[0], 356, 27, "value");
-      if (value == this[_splashRadius]) return;
-      this[_splashRadius] = value;
-      this.markNeedsPaint();
-    }
-    get onChanged() {
-      return this[_onChanged];
-    }
-    set onChanged(value) {
-      if (dart.equals(value, this[_onChanged])) return;
-      let wasInteractive = this.isInteractive;
-      this[_onChanged] = value;
-      if (wasInteractive != this.isInteractive) {
-        this.markNeedsPaint();
-        this.markNeedsSemanticsUpdate();
-      }
-    }
-    get isInteractive() {
-      return this.onChanged != null;
-    }
-    set [_tap](t8) {
-      if (t8 == null) dart.nullFailed(I[0], 393, 29, "null");
-      this[__RenderToggleable__tap_isSet] = true;
-      this[__RenderToggleable__tap] = t8;
-    }
-    get [_tap]() {
-      let t9;
-      return dart.test(this[__RenderToggleable__tap_isSet]) ? (t9 = this[__RenderToggleable__tap], t9) : dart.throw(new _internal.LateError.fieldNI("_tap"));
-    }
-    attach(owner) {
-      object.PipelineOwner.as(owner);
-      if (owner == null) dart.nullFailed(I[0], 397, 29, "owner");
-      super.attach(owner);
-      if (this.value === false)
-        this[_positionController].reverse();
-      else
-        this[_positionController].forward();
-      if (dart.test(this.isInteractive)) {
-        switch (this[_reactionController].status) {
-          case C[0] || CT.C0:
-          {
-            this[_reactionController].forward();
-            break;
-          }
-          case C[1] || CT.C1:
-          {
-            this[_reactionController].reverse();
-            break;
-          }
-          case C[2] || CT.C2:
-          case C[3] || CT.C3:
-          {
-            break;
-          }
-          default:
-          {
-            dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
-          }
-        }
-      }
-    }
-    detach() {
-      this[_positionController].stop();
-      this[_reactionController].stop();
-      this[_reactionHoverFadeController].stop();
-      this[_reactionFocusFadeController].stop();
-      super.detach();
-    }
-    [_handleTapDown](details) {
-      if (details == null) dart.nullFailed(I[0], 428, 38, "details");
-      if (dart.test(this.isInteractive)) {
-        this[_downPosition] = this.globalToLocal(details.globalPosition);
-        this[_reactionController].forward();
-      }
-    }
-    [_handleTap]() {
-      if (!dart.test(this.isInteractive)) return;
-      switch (this.value) {
-        case false:
-        {
-          dart.nullCheck(this.onChanged)(true);
-          break;
-        }
-        case true:
-        {
-          dart.nullCheck(this.onChanged)(dart.test(this.tristate) ? null : false);
-          break;
-        }
-        case null:
-        {
-          dart.nullCheck(this.onChanged)(false);
-          break;
-        }
-      }
-      this.sendSemanticsEvent(C[4] || CT.C4);
-    }
-    [_handleTapUp](details) {
-      if (details == null) dart.nullFailed(I[0], 452, 34, "details");
-      this[_downPosition] = null;
-      if (dart.test(this.isInteractive)) this[_reactionController].reverse();
-    }
-    [_handleTapCancel]() {
-      this[_downPosition] = null;
-      if (dart.test(this.isInteractive)) this[_reactionController].reverse();
-    }
-    hitTestSelf(position) {
-      if (position == null) dart.nullFailed(I[0], 465, 27, "position");
-      return true;
-    }
-    handleEvent(event, entry) {
-      if (event == null) dart.nullFailed(I[0], 468, 33, "event");
-      box.BoxHitTestEntry.as(entry);
-      if (entry == null) dart.nullFailed(I[0], 468, 56, "entry");
-      if (!dart.test(this.debugHandleEvent(event, entry))) dart.assertFailed(null, I[0], 469, 12, "debugHandleEvent(event, entry)");
-      if (events.PointerDownEvent.is(event) && dart.test(this.isInteractive)) this[_tap].addPointer(event);
-    }
-    paintRadialReaction(canvas, offset, origin) {
-      let t9, t9$;
-      if (canvas == null) dart.nullFailed(I[0], 480, 35, "canvas");
-      if (offset == null) dart.nullFailed(I[0], 480, 50, "offset");
-      if (origin == null) dart.nullFailed(I[0], 480, 65, "origin");
-      if (!dart.test(this[_reaction].isDismissed) || !dart.test(this[_reactionFocusFade].isDismissed) || !dart.test(this[_reactionHoverFade].isDismissed)) {
-        let reactionPaint = (t9 = ui.Paint.new(), (() => {
-          t9.color = dart.nullCheck(ui.Color.lerp(ui.Color.lerp(ui.Color.lerp(this.inactiveReactionColor, this.reactionColor, this[_position].value), this.hoverColor, this[_reactionHoverFade].value), this.focusColor, this[_reactionFocusFade].value));
-          return t9;
-        })());
-        let center = dart.nullCheck(ui.Offset.lerp((t9$ = this[_downPosition], t9$ == null ? origin : t9$), origin, this[_reaction].value));
-        let radialReactionRadiusTween = new (T.TweenOfdouble()).new({begin: 0.0, end: this.splashRadius});
-        let reactionRadius = dart.test(this.hasFocus) || dart.test(this.hovering) ? this.splashRadius : radialReactionRadiusTween.evaluate(this[_reaction]);
-        if (dart.notNull(reactionRadius) > 0.0) {
-          canvas.drawCircle(center['+'](offset), reactionRadius, reactionPaint);
-        }
-      }
-    }
-    describeSemanticsConfiguration(config) {
-      if (config == null) dart.nullFailed(I[0], 507, 62, "config");
-      super.describeSemanticsConfiguration(config);
-      config.isEnabled = this.isInteractive;
-      if (dart.test(this.isInteractive)) config.onTap = dart.bind(this, _handleTap);
-    }
-    debugFillProperties(properties) {
-      if (properties == null) dart.nullFailed(I[0], 516, 56, "properties");
-      super.debugFillProperties(properties);
-      properties.add(new diagnostics.FlagProperty.new("value", {value: this.value, ifTrue: "checked", ifFalse: "unchecked", showName: true}));
-      properties.add(new diagnostics.FlagProperty.new("isInteractive", {value: this.isInteractive, ifTrue: "enabled", ifFalse: "disabled", defaultValue: true}));
+  dart.addTypeTests(typed_buffer.TypedDataBuffer, _is_TypedDataBuffer_default);
+  typed_buffer._IntBuffer = class _IntBuffer extends typed_buffer.TypedDataBuffer$(core.int) {
+    get [_defaultValue]() {
+      return 0;
     }
   };
-  (toggleable.RenderToggleable.new = function(opts) {
-    let t0, t0$, t0$0, t0$1, t0$2, t0$3, t0$4, t0$5, t0$6;
-    let value = opts && 'value' in opts ? opts.value : null;
-    let tristate = opts && 'tristate' in opts ? opts.tristate : false;
-    if (tristate == null) dart.nullFailed(I[0], 31, 10, "tristate");
-    let activeColor = opts && 'activeColor' in opts ? opts.activeColor : null;
-    if (activeColor == null) dart.nullFailed(I[0], 32, 20, "activeColor");
-    let inactiveColor = opts && 'inactiveColor' in opts ? opts.inactiveColor : null;
-    if (inactiveColor == null) dart.nullFailed(I[0], 33, 20, "inactiveColor");
-    let hoverColor = opts && 'hoverColor' in opts ? opts.hoverColor : null;
-    let focusColor = opts && 'focusColor' in opts ? opts.focusColor : null;
-    let reactionColor = opts && 'reactionColor' in opts ? opts.reactionColor : null;
-    let inactiveReactionColor = opts && 'inactiveReactionColor' in opts ? opts.inactiveReactionColor : null;
-    let splashRadius = opts && 'splashRadius' in opts ? opts.splashRadius : null;
-    if (splashRadius == null) dart.nullFailed(I[0], 38, 21, "splashRadius");
-    let onChanged = opts && 'onChanged' in opts ? opts.onChanged : null;
-    let additionalConstraints = opts && 'additionalConstraints' in opts ? opts.additionalConstraints : null;
-    if (additionalConstraints == null) dart.nullFailed(I[0], 40, 29, "additionalConstraints");
-    let vsync = opts && 'vsync' in opts ? opts.vsync : null;
-    if (vsync == null) dart.nullFailed(I[0], 41, 29, "vsync");
-    let hasFocus = opts && 'hasFocus' in opts ? opts.hasFocus : false;
-    if (hasFocus == null) dart.nullFailed(I[0], 42, 10, "hasFocus");
-    let hovering = opts && 'hovering' in opts ? opts.hovering : false;
-    if (hovering == null) dart.nullFailed(I[0], 43, 10, "hovering");
-    this[__RenderToggleable__positionController] = null;
-    this[__RenderToggleable__positionController_isSet] = false;
-    this[__RenderToggleable__position] = null;
-    this[__RenderToggleable__position_isSet] = false;
-    this[__RenderToggleable__reactionController] = null;
-    this[__RenderToggleable__reactionController_isSet] = false;
-    this[__RenderToggleable__reaction] = null;
-    this[__RenderToggleable__reaction_isSet] = false;
-    this[__RenderToggleable__reactionFocusFadeController] = null;
-    this[__RenderToggleable__reactionFocusFadeController_isSet] = false;
-    this[__RenderToggleable__reactionFocusFade] = null;
-    this[__RenderToggleable__reactionFocusFade_isSet] = false;
-    this[__RenderToggleable__reactionHoverFadeController] = null;
-    this[__RenderToggleable__reactionHoverFadeController_isSet] = false;
-    this[__RenderToggleable__reactionHoverFade] = null;
-    this[__RenderToggleable__reactionHoverFade_isSet] = false;
-    this[__RenderToggleable__tap] = null;
-    this[__RenderToggleable__tap_isSet] = false;
-    this[_downPosition] = null;
-    if (!(tristate != null)) dart.assertFailed(null, I[0], 44, 15, "tristate != null");
-    if (!(dart.test(tristate) || value != null)) dart.assertFailed(null, I[0], 45, 15, "tristate || value != null");
-    if (!(activeColor != null)) dart.assertFailed(null, I[0], 46, 15, "activeColor != null");
-    if (!(inactiveColor != null)) dart.assertFailed(null, I[0], 47, 15, "inactiveColor != null");
-    if (!(vsync != null)) dart.assertFailed(null, I[0], 48, 15, "vsync != null");
-    this[_value] = value;
-    this[_tristate] = tristate;
-    this[_activeColor] = activeColor;
-    this[_inactiveColor] = inactiveColor;
-    this[_hoverColor] = (t0 = hoverColor, t0 == null ? activeColor.withAlpha(31) : t0);
-    this[_focusColor] = (t0$ = focusColor, t0$ == null ? activeColor.withAlpha(31) : t0$);
-    this[_reactionColor] = (t0$0 = reactionColor, t0$0 == null ? activeColor.withAlpha(31) : t0$0);
-    this[_inactiveReactionColor] = (t0$1 = inactiveReactionColor, t0$1 == null ? activeColor.withAlpha(31) : t0$1);
-    this[_splashRadius] = splashRadius;
-    this[_onChanged] = onChanged;
-    this[_hasFocus] = hasFocus;
-    this[_hovering] = hovering;
-    this[_vsync] = vsync;
-    toggleable.RenderToggleable.__proto__.new.call(this, {additionalConstraints: additionalConstraints});
-    this[_tap] = (t0$2 = new tap.TapGestureRecognizer.new(), (() => {
-      t0$2.onTapDown = dart.bind(this, _handleTapDown);
-      t0$2.onTap = dart.bind(this, _handleTap);
-      t0$2.onTapUp = dart.bind(this, _handleTapUp);
-      t0$2.onTapCancel = dart.bind(this, _handleTapCancel);
-      return t0$2;
-    })());
-    this[_positionController] = new animation_controller.AnimationController.new({duration: toggleable._kToggleDuration, value: value === false ? 0.0 : 1.0, vsync: vsync});
-    this[_position] = (t0$3 = new animations.CurvedAnimation.new({parent: this[_positionController], curve: curves.Curves.linear}), (() => {
-      t0$3.addListener(dart.bind(this, 'markNeedsPaint'));
-      return t0$3;
-    })());
-    this[_reactionController] = new animation_controller.AnimationController.new({duration: constants.kRadialReactionDuration, vsync: vsync});
-    this[_reaction] = (t0$4 = new animations.CurvedAnimation.new({parent: this[_reactionController], curve: curves.Curves.fastOutSlowIn}), (() => {
-      t0$4.addListener(dart.bind(this, 'markNeedsPaint'));
-      return t0$4;
-    })());
-    this[_reactionHoverFadeController] = new animation_controller.AnimationController.new({duration: toggleable._kReactionFadeDuration, value: dart.test(hovering) || dart.test(hasFocus) ? 1.0 : 0.0, vsync: vsync});
-    this[_reactionHoverFade] = (t0$5 = new animations.CurvedAnimation.new({parent: this[_reactionHoverFadeController], curve: curves.Curves.fastOutSlowIn}), (() => {
-      t0$5.addListener(dart.bind(this, 'markNeedsPaint'));
-      return t0$5;
-    })());
-    this[_reactionFocusFadeController] = new animation_controller.AnimationController.new({duration: toggleable._kReactionFadeDuration, value: dart.test(hovering) || dart.test(hasFocus) ? 1.0 : 0.0, vsync: vsync});
-    this[_reactionFocusFade] = (t0$6 = new animations.CurvedAnimation.new({parent: this[_reactionFocusFadeController], curve: curves.Curves.fastOutSlowIn}), (() => {
-      t0$6.addListener(dart.bind(this, 'markNeedsPaint'));
-      return t0$6;
-    })());
-  }).prototype = toggleable.RenderToggleable.prototype;
-  dart.addTypeTests(toggleable.RenderToggleable);
-  dart.addTypeCaches(toggleable.RenderToggleable);
-  dart.setMethodSignature(toggleable.RenderToggleable, () => ({
-    __proto__: dart.getMethods(toggleable.RenderToggleable.__proto__),
-    [_handleTapDown]: dart.fnType(dart.void, [tap.TapDownDetails]),
-    [_handleTap]: dart.fnType(dart.void, []),
-    [_handleTapUp]: dart.fnType(dart.void, [tap.TapUpDetails]),
-    [_handleTapCancel]: dart.fnType(dart.void, []),
-    paintRadialReaction: dart.fnType(dart.void, [ui.Canvas, ui.Offset, ui.Offset])
+  (typed_buffer._IntBuffer.new = function(buffer) {
+    if (buffer == null) dart.nullFailed(I[0], 311, 24, "buffer");
+    typed_buffer._IntBuffer.__proto__.new.call(this, buffer);
+    ;
+  }).prototype = typed_buffer._IntBuffer.prototype;
+  dart.addTypeTests(typed_buffer._IntBuffer);
+  dart.addTypeCaches(typed_buffer._IntBuffer);
+  dart.setGetterSignature(typed_buffer._IntBuffer, () => ({
+    __proto__: dart.getGetters(typed_buffer._IntBuffer.__proto__),
+    [_defaultValue]: core.int
   }));
-  dart.setGetterSignature(toggleable.RenderToggleable, () => ({
-    __proto__: dart.getGetters(toggleable.RenderToggleable.__proto__),
-    positionController: animation_controller.AnimationController,
-    [_positionController]: animation_controller.AnimationController,
-    position: animations.CurvedAnimation,
-    [_position]: animations.CurvedAnimation,
-    reactionController: animation_controller.AnimationController,
-    [_reactionController]: animation_controller.AnimationController,
-    [_reaction]: animation.Animation$(core.double),
-    reactionFocusFadeController: animation_controller.AnimationController,
-    [_reactionFocusFadeController]: animation_controller.AnimationController,
-    [_reactionFocusFade]: animation.Animation$(core.double),
-    reactionHoverFadeController: animation_controller.AnimationController,
-    [_reactionHoverFadeController]: animation_controller.AnimationController,
-    [_reactionHoverFade]: animation.Animation$(core.double),
-    hasFocus: core.bool,
-    hovering: core.bool,
-    vsync: ticker.TickerProvider,
-    value: dart.nullable(core.bool),
-    tristate: core.bool,
-    activeColor: ui.Color,
-    inactiveColor: ui.Color,
-    hoverColor: ui.Color,
-    focusColor: ui.Color,
-    reactionColor: dart.nullable(ui.Color),
-    inactiveReactionColor: dart.nullable(ui.Color),
-    splashRadius: core.double,
-    onChanged: dart.nullable(dart.fnType(dart.void, [dart.nullable(core.bool)])),
-    isInteractive: core.bool,
-    [_tap]: tap.TapGestureRecognizer
+  dart.setLibraryUri(typed_buffer._IntBuffer, I[1]);
+  typed_buffer._FloatBuffer = class _FloatBuffer extends typed_buffer.TypedDataBuffer$(core.double) {
+    get [_defaultValue]() {
+      return 0.0;
+    }
+  };
+  (typed_buffer._FloatBuffer.new = function(buffer) {
+    if (buffer == null) dart.nullFailed(I[0], 318, 29, "buffer");
+    typed_buffer._FloatBuffer.__proto__.new.call(this, buffer);
+    ;
+  }).prototype = typed_buffer._FloatBuffer.prototype;
+  dart.addTypeTests(typed_buffer._FloatBuffer);
+  dart.addTypeCaches(typed_buffer._FloatBuffer);
+  dart.setGetterSignature(typed_buffer._FloatBuffer, () => ({
+    __proto__: dart.getGetters(typed_buffer._FloatBuffer.__proto__),
+    [_defaultValue]: core.double
   }));
-  dart.setSetterSignature(toggleable.RenderToggleable, () => ({
-    __proto__: dart.getSetters(toggleable.RenderToggleable.__proto__),
-    [_positionController]: animation_controller.AnimationController,
-    [_position]: animations.CurvedAnimation,
-    [_reactionController]: animation_controller.AnimationController,
-    [_reaction]: animation.Animation$(core.double),
-    [_reactionFocusFadeController]: animation_controller.AnimationController,
-    [_reactionFocusFade]: animation.Animation$(core.double),
-    [_reactionHoverFadeController]: animation_controller.AnimationController,
-    [_reactionHoverFade]: animation.Animation$(core.double),
-    hasFocus: core.bool,
-    hovering: core.bool,
-    vsync: ticker.TickerProvider,
-    value: dart.nullable(core.bool),
-    tristate: core.bool,
-    activeColor: ui.Color,
-    inactiveColor: ui.Color,
-    hoverColor: ui.Color,
-    focusColor: ui.Color,
-    reactionColor: dart.nullable(ui.Color),
-    inactiveReactionColor: dart.nullable(ui.Color),
-    splashRadius: core.double,
-    onChanged: dart.nullable(dart.fnType(dart.void, [dart.nullable(core.bool)])),
-    [_tap]: tap.TapGestureRecognizer
+  dart.setLibraryUri(typed_buffer._FloatBuffer, I[1]);
+  typed_buffer.Uint8Buffer = class Uint8Buffer extends typed_buffer._IntBuffer {
+    [_createBuffer](size) {
+      if (size == null) dart.nullFailed(I[0], 328, 31, "size");
+      return _native_typed_data.NativeUint8List.new(size);
+    }
+  };
+  (typed_buffer.Uint8Buffer.new = function(initialLength = 0) {
+    if (initialLength == null) dart.nullFailed(I[0], 325, 20, "initialLength");
+    typed_buffer.Uint8Buffer.__proto__.new.call(this, _native_typed_data.NativeUint8List.new(initialLength));
+    ;
+  }).prototype = typed_buffer.Uint8Buffer.prototype;
+  dart.addTypeTests(typed_buffer.Uint8Buffer);
+  dart.addTypeCaches(typed_buffer.Uint8Buffer);
+  dart.setMethodSignature(typed_buffer.Uint8Buffer, () => ({
+    __proto__: dart.getMethods(typed_buffer.Uint8Buffer.__proto__),
+    [_createBuffer]: dart.fnType(typed_data.Uint8List, [core.int])
   }));
-  dart.setLibraryUri(toggleable.RenderToggleable, I[1]);
-  dart.setFieldSignature(toggleable.RenderToggleable, () => ({
-    __proto__: dart.getFields(toggleable.RenderToggleable.__proto__),
-    [__RenderToggleable__positionController]: dart.fieldType(dart.nullable(animation_controller.AnimationController)),
-    [__RenderToggleable__positionController_isSet]: dart.fieldType(core.bool),
-    [__RenderToggleable__position]: dart.fieldType(dart.nullable(animations.CurvedAnimation)),
-    [__RenderToggleable__position_isSet]: dart.fieldType(core.bool),
-    [__RenderToggleable__reactionController]: dart.fieldType(dart.nullable(animation_controller.AnimationController)),
-    [__RenderToggleable__reactionController_isSet]: dart.fieldType(core.bool),
-    [__RenderToggleable__reaction]: dart.fieldType(dart.nullable(animation.Animation$(core.double))),
-    [__RenderToggleable__reaction_isSet]: dart.fieldType(core.bool),
-    [__RenderToggleable__reactionFocusFadeController]: dart.fieldType(dart.nullable(animation_controller.AnimationController)),
-    [__RenderToggleable__reactionFocusFadeController_isSet]: dart.fieldType(core.bool),
-    [__RenderToggleable__reactionFocusFade]: dart.fieldType(dart.nullable(animation.Animation$(core.double))),
-    [__RenderToggleable__reactionFocusFade_isSet]: dart.fieldType(core.bool),
-    [__RenderToggleable__reactionHoverFadeController]: dart.fieldType(dart.nullable(animation_controller.AnimationController)),
-    [__RenderToggleable__reactionHoverFadeController_isSet]: dart.fieldType(core.bool),
-    [__RenderToggleable__reactionHoverFade]: dart.fieldType(dart.nullable(animation.Animation$(core.double))),
-    [__RenderToggleable__reactionHoverFade_isSet]: dart.fieldType(core.bool),
-    [_hasFocus]: dart.fieldType(core.bool),
-    [_hovering]: dart.fieldType(core.bool),
-    [_vsync]: dart.fieldType(ticker.TickerProvider),
-    [_value]: dart.fieldType(dart.nullable(core.bool)),
-    [_tristate]: dart.fieldType(core.bool),
-    [_activeColor]: dart.fieldType(ui.Color),
-    [_inactiveColor]: dart.fieldType(ui.Color),
-    [_hoverColor]: dart.fieldType(ui.Color),
-    [_focusColor]: dart.fieldType(ui.Color),
-    [_reactionColor]: dart.fieldType(dart.nullable(ui.Color)),
-    [_inactiveReactionColor]: dart.fieldType(dart.nullable(ui.Color)),
-    [_splashRadius]: dart.fieldType(core.double),
-    [_onChanged]: dart.fieldType(dart.nullable(dart.fnType(dart.void, [dart.nullable(core.bool)]))),
-    [__RenderToggleable__tap]: dart.fieldType(dart.nullable(tap.TapGestureRecognizer)),
-    [__RenderToggleable__tap_isSet]: dart.fieldType(core.bool),
-    [_downPosition]: dart.fieldType(dart.nullable(ui.Offset))
+  dart.setLibraryUri(typed_buffer.Uint8Buffer, I[1]);
+  typed_buffer.Int8Buffer = class Int8Buffer extends typed_buffer._IntBuffer {
+    [_createBuffer](size) {
+      if (size == null) dart.nullFailed(I[0], 335, 30, "size");
+      return _native_typed_data.NativeInt8List.new(size);
+    }
+  };
+  (typed_buffer.Int8Buffer.new = function(initialLength = 0) {
+    if (initialLength == null) dart.nullFailed(I[0], 332, 19, "initialLength");
+    typed_buffer.Int8Buffer.__proto__.new.call(this, _native_typed_data.NativeInt8List.new(initialLength));
+    ;
+  }).prototype = typed_buffer.Int8Buffer.prototype;
+  dart.addTypeTests(typed_buffer.Int8Buffer);
+  dart.addTypeCaches(typed_buffer.Int8Buffer);
+  dart.setMethodSignature(typed_buffer.Int8Buffer, () => ({
+    __proto__: dart.getMethods(typed_buffer.Int8Buffer.__proto__),
+    [_createBuffer]: dart.fnType(typed_data.Int8List, [core.int])
   }));
-  var Duration__duration = dart.privateName(core, "Duration._duration");
-  dart.defineLazy(toggleable, {
-    /*toggleable._kToggleDuration*/get _kToggleDuration() {
-      return C[5] || CT.C5;
-    },
-    /*toggleable._kReactionFadeDuration*/get _kReactionFadeDuration() {
-      return C[6] || CT.C6;
+  dart.setLibraryUri(typed_buffer.Int8Buffer, I[1]);
+  typed_buffer.Uint8ClampedBuffer = class Uint8ClampedBuffer extends typed_buffer._IntBuffer {
+    [_createBuffer](size) {
+      if (size == null) dart.nullFailed(I[0], 343, 38, "size");
+      return _native_typed_data.NativeUint8ClampedList.new(size);
+    }
+  };
+  (typed_buffer.Uint8ClampedBuffer.new = function(initialLength = 0) {
+    if (initialLength == null) dart.nullFailed(I[0], 339, 27, "initialLength");
+    typed_buffer.Uint8ClampedBuffer.__proto__.new.call(this, _native_typed_data.NativeUint8ClampedList.new(initialLength));
+    ;
+  }).prototype = typed_buffer.Uint8ClampedBuffer.prototype;
+  dart.addTypeTests(typed_buffer.Uint8ClampedBuffer);
+  dart.addTypeCaches(typed_buffer.Uint8ClampedBuffer);
+  dart.setMethodSignature(typed_buffer.Uint8ClampedBuffer, () => ({
+    __proto__: dart.getMethods(typed_buffer.Uint8ClampedBuffer.__proto__),
+    [_createBuffer]: dart.fnType(typed_data.Uint8ClampedList, [core.int])
+  }));
+  dart.setLibraryUri(typed_buffer.Uint8ClampedBuffer, I[1]);
+  typed_buffer.Uint16Buffer = class Uint16Buffer extends typed_buffer._IntBuffer {
+    [_createBuffer](size) {
+      if (size == null) dart.nullFailed(I[0], 350, 32, "size");
+      return _native_typed_data.NativeUint16List.new(size);
+    }
+  };
+  (typed_buffer.Uint16Buffer.new = function(initialLength = 0) {
+    if (initialLength == null) dart.nullFailed(I[0], 347, 21, "initialLength");
+    typed_buffer.Uint16Buffer.__proto__.new.call(this, _native_typed_data.NativeUint16List.new(initialLength));
+    ;
+  }).prototype = typed_buffer.Uint16Buffer.prototype;
+  dart.addTypeTests(typed_buffer.Uint16Buffer);
+  dart.addTypeCaches(typed_buffer.Uint16Buffer);
+  dart.setMethodSignature(typed_buffer.Uint16Buffer, () => ({
+    __proto__: dart.getMethods(typed_buffer.Uint16Buffer.__proto__),
+    [_createBuffer]: dart.fnType(typed_data.Uint16List, [core.int])
+  }));
+  dart.setLibraryUri(typed_buffer.Uint16Buffer, I[1]);
+  typed_buffer.Int16Buffer = class Int16Buffer extends typed_buffer._IntBuffer {
+    [_createBuffer](size) {
+      if (size == null) dart.nullFailed(I[0], 357, 31, "size");
+      return _native_typed_data.NativeInt16List.new(size);
+    }
+  };
+  (typed_buffer.Int16Buffer.new = function(initialLength = 0) {
+    if (initialLength == null) dart.nullFailed(I[0], 354, 20, "initialLength");
+    typed_buffer.Int16Buffer.__proto__.new.call(this, _native_typed_data.NativeInt16List.new(initialLength));
+    ;
+  }).prototype = typed_buffer.Int16Buffer.prototype;
+  dart.addTypeTests(typed_buffer.Int16Buffer);
+  dart.addTypeCaches(typed_buffer.Int16Buffer);
+  dart.setMethodSignature(typed_buffer.Int16Buffer, () => ({
+    __proto__: dart.getMethods(typed_buffer.Int16Buffer.__proto__),
+    [_createBuffer]: dart.fnType(typed_data.Int16List, [core.int])
+  }));
+  dart.setLibraryUri(typed_buffer.Int16Buffer, I[1]);
+  typed_buffer.Uint32Buffer = class Uint32Buffer extends typed_buffer._IntBuffer {
+    [_createBuffer](size) {
+      if (size == null) dart.nullFailed(I[0], 364, 32, "size");
+      return _native_typed_data.NativeUint32List.new(size);
+    }
+  };
+  (typed_buffer.Uint32Buffer.new = function(initialLength = 0) {
+    if (initialLength == null) dart.nullFailed(I[0], 361, 21, "initialLength");
+    typed_buffer.Uint32Buffer.__proto__.new.call(this, _native_typed_data.NativeUint32List.new(initialLength));
+    ;
+  }).prototype = typed_buffer.Uint32Buffer.prototype;
+  dart.addTypeTests(typed_buffer.Uint32Buffer);
+  dart.addTypeCaches(typed_buffer.Uint32Buffer);
+  dart.setMethodSignature(typed_buffer.Uint32Buffer, () => ({
+    __proto__: dart.getMethods(typed_buffer.Uint32Buffer.__proto__),
+    [_createBuffer]: dart.fnType(typed_data.Uint32List, [core.int])
+  }));
+  dart.setLibraryUri(typed_buffer.Uint32Buffer, I[1]);
+  typed_buffer.Int32Buffer = class Int32Buffer extends typed_buffer._IntBuffer {
+    [_createBuffer](size) {
+      if (size == null) dart.nullFailed(I[0], 371, 31, "size");
+      return _native_typed_data.NativeInt32List.new(size);
+    }
+  };
+  (typed_buffer.Int32Buffer.new = function(initialLength = 0) {
+    if (initialLength == null) dart.nullFailed(I[0], 368, 20, "initialLength");
+    typed_buffer.Int32Buffer.__proto__.new.call(this, _native_typed_data.NativeInt32List.new(initialLength));
+    ;
+  }).prototype = typed_buffer.Int32Buffer.prototype;
+  dart.addTypeTests(typed_buffer.Int32Buffer);
+  dart.addTypeCaches(typed_buffer.Int32Buffer);
+  dart.setMethodSignature(typed_buffer.Int32Buffer, () => ({
+    __proto__: dart.getMethods(typed_buffer.Int32Buffer.__proto__),
+    [_createBuffer]: dart.fnType(typed_data.Int32List, [core.int])
+  }));
+  dart.setLibraryUri(typed_buffer.Int32Buffer, I[1]);
+  typed_buffer.Uint64Buffer = class Uint64Buffer extends typed_buffer._IntBuffer {
+    [_createBuffer](size) {
+      if (size == null) dart.nullFailed(I[0], 378, 32, "size");
+      return typed_data.Uint64List.new(size);
+    }
+  };
+  (typed_buffer.Uint64Buffer.new = function(initialLength = 0) {
+    if (initialLength == null) dart.nullFailed(I[0], 375, 21, "initialLength");
+    typed_buffer.Uint64Buffer.__proto__.new.call(this, typed_data.Uint64List.new(initialLength));
+    ;
+  }).prototype = typed_buffer.Uint64Buffer.prototype;
+  dart.addTypeTests(typed_buffer.Uint64Buffer);
+  dart.addTypeCaches(typed_buffer.Uint64Buffer);
+  dart.setMethodSignature(typed_buffer.Uint64Buffer, () => ({
+    __proto__: dart.getMethods(typed_buffer.Uint64Buffer.__proto__),
+    [_createBuffer]: dart.fnType(typed_data.Uint64List, [core.int])
+  }));
+  dart.setLibraryUri(typed_buffer.Uint64Buffer, I[1]);
+  typed_buffer.Int64Buffer = class Int64Buffer extends typed_buffer._IntBuffer {
+    [_createBuffer](size) {
+      if (size == null) dart.nullFailed(I[0], 385, 31, "size");
+      return typed_data.Int64List.new(size);
+    }
+  };
+  (typed_buffer.Int64Buffer.new = function(initialLength = 0) {
+    if (initialLength == null) dart.nullFailed(I[0], 382, 20, "initialLength");
+    typed_buffer.Int64Buffer.__proto__.new.call(this, typed_data.Int64List.new(initialLength));
+    ;
+  }).prototype = typed_buffer.Int64Buffer.prototype;
+  dart.addTypeTests(typed_buffer.Int64Buffer);
+  dart.addTypeCaches(typed_buffer.Int64Buffer);
+  dart.setMethodSignature(typed_buffer.Int64Buffer, () => ({
+    __proto__: dart.getMethods(typed_buffer.Int64Buffer.__proto__),
+    [_createBuffer]: dart.fnType(typed_data.Int64List, [core.int])
+  }));
+  dart.setLibraryUri(typed_buffer.Int64Buffer, I[1]);
+  typed_buffer.Float32Buffer = class Float32Buffer extends typed_buffer._FloatBuffer {
+    [_createBuffer](size) {
+      if (size == null) dart.nullFailed(I[0], 392, 33, "size");
+      return _native_typed_data.NativeFloat32List.new(size);
+    }
+  };
+  (typed_buffer.Float32Buffer.new = function(initialLength = 0) {
+    if (initialLength == null) dart.nullFailed(I[0], 389, 22, "initialLength");
+    typed_buffer.Float32Buffer.__proto__.new.call(this, _native_typed_data.NativeFloat32List.new(initialLength));
+    ;
+  }).prototype = typed_buffer.Float32Buffer.prototype;
+  dart.addTypeTests(typed_buffer.Float32Buffer);
+  dart.addTypeCaches(typed_buffer.Float32Buffer);
+  dart.setMethodSignature(typed_buffer.Float32Buffer, () => ({
+    __proto__: dart.getMethods(typed_buffer.Float32Buffer.__proto__),
+    [_createBuffer]: dart.fnType(typed_data.Float32List, [core.int])
+  }));
+  dart.setLibraryUri(typed_buffer.Float32Buffer, I[1]);
+  typed_buffer.Float64Buffer = class Float64Buffer extends typed_buffer._FloatBuffer {
+    [_createBuffer](size) {
+      if (size == null) dart.nullFailed(I[0], 399, 33, "size");
+      return _native_typed_data.NativeFloat64List.new(size);
+    }
+  };
+  (typed_buffer.Float64Buffer.new = function(initialLength = 0) {
+    if (initialLength == null) dart.nullFailed(I[0], 396, 22, "initialLength");
+    typed_buffer.Float64Buffer.__proto__.new.call(this, _native_typed_data.NativeFloat64List.new(initialLength));
+    ;
+  }).prototype = typed_buffer.Float64Buffer.prototype;
+  dart.addTypeTests(typed_buffer.Float64Buffer);
+  dart.addTypeCaches(typed_buffer.Float64Buffer);
+  dart.setMethodSignature(typed_buffer.Float64Buffer, () => ({
+    __proto__: dart.getMethods(typed_buffer.Float64Buffer.__proto__),
+    [_createBuffer]: dart.fnType(typed_data.Float64List, [core.int])
+  }));
+  dart.setLibraryUri(typed_buffer.Float64Buffer, I[1]);
+  typed_buffer.Int32x4Buffer = class Int32x4Buffer extends typed_buffer.TypedDataBuffer$(typed_data.Int32x4) {
+    get [_defaultValue]() {
+      return typed_buffer.Int32x4Buffer._zero;
+    }
+    [_createBuffer](size) {
+      if (size == null) dart.nullFailed(I[0], 411, 33, "size");
+      return new _native_typed_data.NativeInt32x4List.new(size);
+    }
+  };
+  (typed_buffer.Int32x4Buffer.new = function(initialLength = 0) {
+    if (initialLength == null) dart.nullFailed(I[0], 405, 22, "initialLength");
+    typed_buffer.Int32x4Buffer.__proto__.new.call(this, new _native_typed_data.NativeInt32x4List.new(initialLength));
+    ;
+  }).prototype = typed_buffer.Int32x4Buffer.prototype;
+  dart.addTypeTests(typed_buffer.Int32x4Buffer);
+  dart.addTypeCaches(typed_buffer.Int32x4Buffer);
+  dart.setMethodSignature(typed_buffer.Int32x4Buffer, () => ({
+    __proto__: dart.getMethods(typed_buffer.Int32x4Buffer.__proto__),
+    [_createBuffer]: dart.fnType(typed_data.Int32x4List, [core.int])
+  }));
+  dart.setGetterSignature(typed_buffer.Int32x4Buffer, () => ({
+    __proto__: dart.getGetters(typed_buffer.Int32x4Buffer.__proto__),
+    [_defaultValue]: typed_data.Int32x4
+  }));
+  dart.setLibraryUri(typed_buffer.Int32x4Buffer, I[1]);
+  dart.defineLazy(typed_buffer.Int32x4Buffer, {
+    /*typed_buffer.Int32x4Buffer._zero*/get _zero() {
+      return new _native_typed_data.NativeInt32x4.new(0, 0, 0, 0);
     }
   }, false);
-  dart.trackLibraries("packages/flutter/src/material/toggleable.dart", {
-    "package:flutter/src/material/toggleable.dart": toggleable
+  typed_buffer.Float32x4Buffer = class Float32x4Buffer extends typed_buffer.TypedDataBuffer$(typed_data.Float32x4) {
+    get [_defaultValue]() {
+      return new _native_typed_data.NativeFloat32x4.zero();
+    }
+    [_createBuffer](size) {
+      if (size == null) dart.nullFailed(I[0], 422, 35, "size");
+      return new _native_typed_data.NativeFloat32x4List.new(size);
+    }
+  };
+  (typed_buffer.Float32x4Buffer.new = function(initialLength = 0) {
+    if (initialLength == null) dart.nullFailed(I[0], 415, 24, "initialLength");
+    typed_buffer.Float32x4Buffer.__proto__.new.call(this, new _native_typed_data.NativeFloat32x4List.new(initialLength));
+    ;
+  }).prototype = typed_buffer.Float32x4Buffer.prototype;
+  dart.addTypeTests(typed_buffer.Float32x4Buffer);
+  dart.addTypeCaches(typed_buffer.Float32x4Buffer);
+  dart.setMethodSignature(typed_buffer.Float32x4Buffer, () => ({
+    __proto__: dart.getMethods(typed_buffer.Float32x4Buffer.__proto__),
+    [_createBuffer]: dart.fnType(typed_data.Float32x4List, [core.int])
+  }));
+  dart.setGetterSignature(typed_buffer.Float32x4Buffer, () => ({
+    __proto__: dart.getGetters(typed_buffer.Float32x4Buffer.__proto__),
+    [_defaultValue]: typed_data.Float32x4
+  }));
+  dart.setLibraryUri(typed_buffer.Float32x4Buffer, I[1]);
+  dart.trackLibraries("packages/typed_data/src/typed_buffer.dart", {
+    "package:typed_data/src/typed_buffer.dart": typed_buffer
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["toggleable.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/material/toggleable.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["typed_buffer.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/typed_data/src/typed_buffer.dart.lib.js"}');
   // Exports:
   return {
-    src__material__toggleable: toggleable
+    src__typed_buffer: typed_buffer
   };
 }));
 
-//# sourceMappingURL=toggleable.dart.lib.js.map
+//# sourceMappingURL=typed_buffer.dart.lib.js.map

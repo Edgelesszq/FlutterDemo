@@ -1,38 +1,51 @@
-define(['dart_sdk', 'packages/flutter/src/animation/listener_helpers.dart', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/animation/curves.dart', 'packages/flutter/src/semantics/binding.dart', 'packages/flutter/src/scheduler/ticker.dart', 'packages/flutter/src/physics/spring_simulation.dart', 'packages/flutter/src/physics/simulation.dart', 'packages/flutter/src/physics/tolerance.dart'], (function load__packages__flutter__src__animation__animation_controller_dart(dart_sdk, packages__flutter__src__animation__listener_helpers$46dart, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__animation__curves$46dart, packages__flutter__src__semantics__binding$46dart, packages__flutter__src__scheduler__ticker$46dart, packages__flutter__src__physics__spring_simulation$46dart, packages__flutter__src__physics__simulation$46dart, packages__flutter__src__physics__tolerance$46dart) {
+define(['dart_sdk', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/foundation/change_notifier.dart', 'packages/flutter/src/foundation/key.dart', 'packages/vector_math/vector_math_64.dart', 'packages/flutter/src/semantics/semantics.dart', 'packages/flutter/src/rendering/layer.dart', 'packages/flutter/src/rendering/proxy_box.dart'], (function load__packages__flutter__src__rendering__custom_paint_dart(dart_sdk, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__foundation__change_notifier$46dart, packages__flutter__src__foundation__key$46dart, packages__vector_math__vector_math_64$46dart, packages__flutter__src__semantics__semantics$46dart, packages__flutter__src__rendering__layer$46dart, packages__flutter__src__rendering__proxy_box$46dart) {
   'use strict';
   const core = dart_sdk.core;
+  const ui = dart_sdk.ui;
   const _internal = dart_sdk._internal;
   const _interceptors = dart_sdk._interceptors;
-  const ui = dart_sdk.ui;
+  const _js_helper = dart_sdk._js_helper;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const animation = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animation;
-  const listener_helpers = packages__flutter__src__animation__listener_helpers$46dart.src__animation__listener_helpers;
-  const assertions = packages__flutter__src__foundation__debug$46dart.src__foundation__assertions;
   const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
-  const curves = packages__flutter__src__animation__curves$46dart.src__animation__curves;
-  const binding = packages__flutter__src__semantics__binding$46dart.src__semantics__binding;
-  const ticker = packages__flutter__src__scheduler__ticker$46dart.src__scheduler__ticker;
-  const spring_simulation = packages__flutter__src__physics__spring_simulation$46dart.src__physics__spring_simulation;
-  const simulation = packages__flutter__src__physics__simulation$46dart.src__physics__simulation;
-  const tolerance = packages__flutter__src__physics__tolerance$46dart.src__physics__tolerance;
-  var animation_controller = Object.create(dart.library);
-  var $toDouble = dartx.toDouble;
-  var $clamp = dartx.clamp;
-  var $isFinite = dartx.isFinite;
-  var $abs = dartx.abs;
+  const assertions = packages__flutter__src__foundation__debug$46dart.src__foundation__assertions;
+  const change_notifier = packages__flutter__src__foundation__change_notifier$46dart.src__foundation__change_notifier;
+  const key = packages__flutter__src__foundation__key$46dart.src__foundation__key;
+  const vector_math_64 = packages__vector_math__vector_math_64$46dart.vector_math_64;
+  const semantics = packages__flutter__src__semantics__semantics$46dart.src__semantics__semantics;
+  const object = packages__flutter__src__rendering__layer$46dart.src__rendering__object;
+  const proxy_box = packages__flutter__src__rendering__proxy_box$46dart.src__rendering__proxy_box;
+  var custom_paint = Object.create(dart.library);
+  var $toString = dartx.toString;
   var $runtimeType = dartx.runtimeType;
-  var $toStringAsFixed = dartx.toStringAsFixed;
-  var $modulo = dartx['%'];
-  var $isOdd = dartx.isOdd;
-  var $truncate = dartx.truncate;
+  var $isFinite = dartx.isFinite;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $join = dartx.join;
+  var $addAll = dartx.addAll;
+  var $length = dartx.length;
+  var $_get = dartx._get;
+  var $containsKey = dartx.containsKey;
+  var $add = dartx.add;
+  var $_set = dartx._set;
+  var $insert = dartx.insert;
+  var $remove = dartx.remove;
+  var $cast = dartx.cast;
   dart._checkModuleNullSafetyMode(false);
   var T = {
-    _AnimationDirectionL: () => (T._AnimationDirectionL = dart.constFn(dart.legacy(animation_controller._AnimationDirection)))(),
-    AnimationBehaviorL: () => (T.AnimationBehaviorL = dart.constFn(dart.legacy(animation_controller.AnimationBehavior)))(),
+    VoidToint: () => (T.VoidToint = dart.constFn(dart.fnType(core.int, [])))(),
+    intTodynamic: () => (T.intTodynamic = dart.constFn(dart.fnType(dart.dynamic, [core.int])))(),
     VoidTobool: () => (T.VoidTobool = dart.constFn(dart.fnType(core.bool, [])))(),
-    DiagnosticsPropertyOfAnimationController: () => (T.DiagnosticsPropertyOfAnimationController = dart.constFn(diagnostics.DiagnosticsProperty$(animation_controller.AnimationController)))(),
-    JSArrayOfDiagnosticsNode: () => (T.JSArrayOfDiagnosticsNode = dart.constFn(_interceptors.JSArray$(diagnostics.DiagnosticsNode)))()
+    JSArrayOfDiagnosticsNode: () => (T.JSArrayOfDiagnosticsNode = dart.constFn(_interceptors.JSArray$(diagnostics.DiagnosticsNode)))(),
+    CustomPainterSemanticsL: () => (T.CustomPainterSemanticsL = dart.constFn(dart.legacy(custom_paint.CustomPainterSemantics)))(),
+    JSArrayOfSemanticsNode: () => (T.JSArrayOfSemanticsNode = dart.constFn(_interceptors.JSArray$(semantics.SemanticsNode)))(),
+    SemanticsNodeL: () => (T.SemanticsNodeL = dart.constFn(dart.legacy(semantics.SemanticsNode)))(),
+    LinkedMapOfKey$int: () => (T.LinkedMapOfKey$int = dart.constFn(_js_helper.LinkedMap$(key.Key, core.int)))(),
+    SemanticsNodeN: () => (T.SemanticsNodeN = dart.constFn(dart.nullable(semantics.SemanticsNode)))(),
+    ListOfSemanticsNodeN: () => (T.ListOfSemanticsNodeN = dart.constFn(core.List$(T.SemanticsNodeN())))(),
+    MapOfKey$SemanticsNode: () => (T.MapOfKey$SemanticsNode = dart.constFn(core.Map$(key.Key, semantics.SemanticsNode)))(),
+    VoidToMapOfKey$SemanticsNode: () => (T.VoidToMapOfKey$SemanticsNode = dart.constFn(dart.fnType(T.MapOfKey$SemanticsNode(), [])))(),
+    MapOfKey$SemanticsNodeTodynamic: () => (T.MapOfKey$SemanticsNodeTodynamic = dart.constFn(dart.fnType(dart.dynamic, [T.MapOfKey$SemanticsNode()])))(),
+    LinkedMapOfKey$SemanticsNode: () => (T.LinkedMapOfKey$SemanticsNode = dart.constFn(_js_helper.LinkedMap$(key.Key, semantics.SemanticsNode)))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -49,746 +62,721 @@ define(['dart_sdk', 'packages/flutter/src/animation/listener_helpers.dart', 'pac
   dart.defineLazy(CT, {
     get C0() {
       return C[0] = dart.const({
-        __proto__: animation_controller._AnimationDirection.prototype,
-        [_name$]: "_AnimationDirection.forward",
-        index: 0
+        __proto__: ui.Size.prototype,
+        [OffsetBase__dy]: 0,
+        [OffsetBase__dx]: 0
       });
     },
     get C1() {
-      return C[1] = dart.const({
-        __proto__: animation_controller._AnimationDirection.prototype,
-        [_name$]: "_AnimationDirection.reverse",
-        index: 1
-      });
+      return C[1] = dart.constList([], T.CustomPainterSemanticsL());
     },
     get C2() {
-      return C[2] = dart.constList([C[0] || CT.C0, C[1] || CT.C1], T._AnimationDirectionL());
-    },
-    get C3() {
-      return C[3] = dart.const({
-        __proto__: animation_controller.AnimationBehavior.prototype,
-        [_name$]: "AnimationBehavior.normal",
-        index: 0
-      });
-    },
-    get C4() {
-      return C[4] = dart.const({
-        __proto__: animation_controller.AnimationBehavior.prototype,
-        [_name$]: "AnimationBehavior.preserve",
-        index: 1
-      });
-    },
-    get C5() {
-      return C[5] = dart.constList([C[3] || CT.C3, C[4] || CT.C4], T.AnimationBehaviorL());
-    },
-    get C6() {
-      return C[6] = dart.const({
-        __proto__: curves._Linear.prototype
-      });
-    },
-    get C7() {
-      return C[7] = dart.const({
-        __proto__: tolerance.Tolerance.prototype,
-        [Tolerance_velocity]: 1 / 0,
-        [Tolerance_time]: 0.001,
-        [Tolerance_distance]: 0.01
-      });
+      return C[2] = dart.constList([], T.SemanticsNodeL());
     }
   }, false);
-  var C = Array(8).fill(void 0);
+  var C = Array(3).fill(void 0);
   var I = [
-    "file:///D:/flutterSDK/flutter/packages/flutter/lib/src/animation/animation_controller.dart",
-    "package:flutter/src/animation/animation_controller.dart"
+    "file:///D:/flutterSDK/flutter/packages/flutter/lib/src/rendering/custom_paint.dart",
+    "package:flutter/src/rendering/custom_paint.dart"
   ];
-  var _name$ = dart.privateName(animation_controller, "_name");
-  animation_controller._AnimationDirection = class _AnimationDirection extends core.Object {
-    toString() {
-      return this[_name$];
+  var _repaint = dart.privateName(custom_paint, "CustomPainter._repaint");
+  var _repaint$ = dart.privateName(custom_paint, "_repaint");
+  custom_paint.CustomPainter = class CustomPainter extends change_notifier.Listenable {
+    get [_repaint$]() {
+      return this[_repaint];
     }
-  };
-  (animation_controller._AnimationDirection.new = function(index, _name) {
-    if (index == null) dart.nullFailed(I[0], 25, 6, "index");
-    if (_name == null) dart.nullFailed(I[0], 25, 6, "_name");
-    this.index = index;
-    this[_name$] = _name;
-    ;
-  }).prototype = animation_controller._AnimationDirection.prototype;
-  dart.addTypeTests(animation_controller._AnimationDirection);
-  dart.addTypeCaches(animation_controller._AnimationDirection);
-  dart.setLibraryUri(animation_controller._AnimationDirection, I[1]);
-  dart.setFieldSignature(animation_controller._AnimationDirection, () => ({
-    __proto__: dart.getFields(animation_controller._AnimationDirection.__proto__),
-    index: dart.finalFieldType(core.int),
-    [_name$]: dart.finalFieldType(core.String)
-  }));
-  dart.defineExtensionMethods(animation_controller._AnimationDirection, ['toString']);
-  animation_controller._AnimationDirection.forward = C[0] || CT.C0;
-  animation_controller._AnimationDirection.reverse = C[1] || CT.C1;
-  animation_controller._AnimationDirection.values = C[2] || CT.C2;
-  animation_controller.AnimationBehavior = class AnimationBehavior extends core.Object {
-    toString() {
-      return this[_name$];
+    set [_repaint$](value) {
+      super[_repaint$] = value;
     }
-  };
-  (animation_controller.AnimationBehavior.new = function(index, _name) {
-    if (index == null) dart.nullFailed(I[0], 56, 6, "index");
-    if (_name == null) dart.nullFailed(I[0], 56, 6, "_name");
-    this.index = index;
-    this[_name$] = _name;
-    ;
-  }).prototype = animation_controller.AnimationBehavior.prototype;
-  dart.addTypeTests(animation_controller.AnimationBehavior);
-  dart.addTypeCaches(animation_controller.AnimationBehavior);
-  dart.setLibraryUri(animation_controller.AnimationBehavior, I[1]);
-  dart.setFieldSignature(animation_controller.AnimationBehavior, () => ({
-    __proto__: dart.getFields(animation_controller.AnimationBehavior.__proto__),
-    index: dart.finalFieldType(core.int),
-    [_name$]: dart.finalFieldType(core.String)
-  }));
-  dart.defineExtensionMethods(animation_controller.AnimationBehavior, ['toString']);
-  animation_controller.AnimationBehavior.normal = C[3] || CT.C3;
-  animation_controller.AnimationBehavior.preserve = C[4] || CT.C4;
-  animation_controller.AnimationBehavior.values = C[5] || CT.C5;
-  var lowerBound$ = dart.privateName(animation_controller, "AnimationController.lowerBound");
-  var upperBound$ = dart.privateName(animation_controller, "AnimationController.upperBound");
-  var debugLabel$ = dart.privateName(animation_controller, "AnimationController.debugLabel");
-  var animationBehavior$ = dart.privateName(animation_controller, "AnimationController.animationBehavior");
-  var duration$ = dart.privateName(animation_controller, "AnimationController.duration");
-  var reverseDuration$ = dart.privateName(animation_controller, "AnimationController.reverseDuration");
-  var _ticker = dart.privateName(animation_controller, "_ticker");
-  var _simulation = dart.privateName(animation_controller, "_simulation");
-  var __AnimationController__value = dart.privateName(animation_controller, "_#AnimationController#_value");
-  var __AnimationController__value_isSet = dart.privateName(animation_controller, "_#AnimationController#_value#isSet");
-  var _lastElapsedDuration = dart.privateName(animation_controller, "_lastElapsedDuration");
-  var __AnimationController__status = dart.privateName(animation_controller, "_#AnimationController#_status");
-  var __AnimationController__status_isSet = dart.privateName(animation_controller, "_#AnimationController#_status#isSet");
-  var _lastReportedStatus = dart.privateName(animation_controller, "_lastReportedStatus");
-  var _direction = dart.privateName(animation_controller, "_direction");
-  var _tick = dart.privateName(animation_controller, "_tick");
-  var _internalSetValue = dart.privateName(animation_controller, "_internalSetValue");
-  var _value = dart.privateName(animation_controller, "_value");
-  var _checkStatusChanged = dart.privateName(animation_controller, "_checkStatusChanged");
-  var _status = dart.privateName(animation_controller, "_status");
-  var _animateToInternal = dart.privateName(animation_controller, "_animateToInternal");
-  var _startSimulation = dart.privateName(animation_controller, "_startSimulation");
-  var _directionSetter = dart.privateName(animation_controller, "_directionSetter");
-  const Animation_AnimationEagerListenerMixin$36 = class Animation_AnimationEagerListenerMixin extends animation.Animation$(core.double) {};
-  (Animation_AnimationEagerListenerMixin$36.new = function() {
-    Animation_AnimationEagerListenerMixin$36.__proto__.new.call(this);
-  }).prototype = Animation_AnimationEagerListenerMixin$36.prototype;
-  dart.applyMixin(Animation_AnimationEagerListenerMixin$36, listener_helpers.AnimationEagerListenerMixin);
-  const Animation_AnimationLocalListenersMixin$36 = class Animation_AnimationLocalListenersMixin extends Animation_AnimationEagerListenerMixin$36 {};
-  (Animation_AnimationLocalListenersMixin$36.new = function() {
-    listener_helpers.AnimationLocalListenersMixin[dart.mixinNew].call(this);
-    Animation_AnimationLocalListenersMixin$36.__proto__.new.call(this);
-  }).prototype = Animation_AnimationLocalListenersMixin$36.prototype;
-  dart.applyMixin(Animation_AnimationLocalListenersMixin$36, listener_helpers.AnimationLocalListenersMixin);
-  const Animation_AnimationLocalStatusListenersMixin$36 = class Animation_AnimationLocalStatusListenersMixin extends Animation_AnimationLocalListenersMixin$36 {};
-  (Animation_AnimationLocalStatusListenersMixin$36.new = function() {
-    listener_helpers.AnimationLocalStatusListenersMixin[dart.mixinNew].call(this);
-    Animation_AnimationLocalStatusListenersMixin$36.__proto__.new.call(this);
-  }).prototype = Animation_AnimationLocalStatusListenersMixin$36.prototype;
-  dart.applyMixin(Animation_AnimationLocalStatusListenersMixin$36, listener_helpers.AnimationLocalStatusListenersMixin);
-  animation_controller.AnimationController = class AnimationController extends Animation_AnimationLocalStatusListenersMixin$36 {
-    get lowerBound() {
-      return this[lowerBound$];
-    }
-    set lowerBound(value) {
-      super.lowerBound = value;
-    }
-    get upperBound() {
-      return this[upperBound$];
-    }
-    set upperBound(value) {
-      super.upperBound = value;
-    }
-    get debugLabel() {
-      return this[debugLabel$];
-    }
-    set debugLabel(value) {
-      super.debugLabel = value;
-    }
-    get animationBehavior() {
-      return this[animationBehavior$];
-    }
-    set animationBehavior(value) {
-      super.animationBehavior = value;
-    }
-    get duration() {
-      return this[duration$];
-    }
-    set duration(value) {
-      this[duration$] = value;
-    }
-    get reverseDuration() {
-      return this[reverseDuration$];
-    }
-    set reverseDuration(value) {
-      this[reverseDuration$] = value;
-    }
-    get view() {
-      return this;
-    }
-    resync(vsync) {
-      if (vsync == null) dart.nullFailed(I[0], 322, 30, "vsync");
-      let oldTicker = dart.nullCheck(this[_ticker]);
-      this[_ticker] = vsync.createTicker(dart.bind(this, _tick));
-      dart.nullCheck(this[_ticker]).absorbTicker(oldTicker);
-    }
-    get value() {
-      return this[_value];
-    }
-    get [_value]() {
+    addListener(listener) {
       let t0;
-      return dart.test(this[__AnimationController__value_isSet]) ? (t0 = this[__AnimationController__value], t0) : dart.throw(new _internal.LateError.fieldNI("_value"));
+      if (listener == null) dart.nullFailed(I[0], 145, 33, "listener");
+      t0 = this[_repaint$];
+      return t0 == null ? null : t0.addListener(listener);
     }
-    set [_value](t0) {
-      if (t0 == null) dart.nullFailed(I[0], 340, 15, "null");
-      this[__AnimationController__value_isSet] = true;
-      this[__AnimationController__value] = t0;
+    removeListener(listener) {
+      let t0;
+      if (listener == null) dart.nullFailed(I[0], 154, 36, "listener");
+      t0 = this[_repaint$];
+      return t0 == null ? null : t0.removeListener(listener);
     }
-    set value(newValue) {
-      if (newValue == null) dart.nullFailed(I[0], 362, 20, "newValue");
-      if (!(newValue != null)) dart.assertFailed(null, I[0], 363, 12, "newValue != null");
-      this.stop();
-      this[_internalSetValue](newValue);
-      this.notifyListeners();
-      this[_checkStatusChanged]();
+    get semanticsBuilder() {
+      return null;
     }
-    reset() {
-      this.value = this.lowerBound;
+    shouldRebuildSemantics(oldDelegate) {
+      custom_paint.CustomPainter.as(oldDelegate);
+      if (oldDelegate == null) dart.nullFailed(I[0], 226, 55, "oldDelegate");
+      return this.shouldRepaint(oldDelegate);
     }
-    get velocity() {
-      if (!dart.test(this.isAnimating)) return 0.0;
-      return dart.nullCheck(this[_simulation]).dx(dart.nullCheck(this.lastElapsedDuration).inMicroseconds[$toDouble]() / 1000000);
+    hitTest(position) {
+      if (position == null) dart.nullFailed(I[0], 268, 24, "position");
+      return null;
     }
-    [_internalSetValue](newValue) {
-      if (newValue == null) dart.nullFailed(I[0], 398, 33, "newValue");
-      this[_value] = newValue[$clamp](this.lowerBound, this.upperBound);
-      if (this[_value] == this.lowerBound) {
-        this[_status] = animation.AnimationStatus.dismissed;
-      } else if (this[_value] == this.upperBound) {
-        this[_status] = animation.AnimationStatus.completed;
-      } else {
-        this[_status] = this[_direction] == animation_controller._AnimationDirection.forward ? animation.AnimationStatus.forward : animation.AnimationStatus.reverse;
-      }
-    }
-    get lastElapsedDuration() {
-      return this[_lastElapsedDuration];
-    }
-    get isAnimating() {
-      return this[_ticker] != null && dart.test(dart.nullCheck(this[_ticker]).isActive);
-    }
-    get status() {
-      return this[_status];
-    }
-    get [_status]() {
-      let t1;
-      return dart.test(this[__AnimationController__status_isSet]) ? (t1 = this[__AnimationController__status], t1) : dart.throw(new _internal.LateError.fieldNI("_status"));
-    }
-    set [_status](t1) {
-      if (t1 == null) dart.nullFailed(I[0], 430, 24, "null");
-      this[__AnimationController__status_isSet] = true;
-      this[__AnimationController__status] = t1;
-    }
-    forward(opts) {
-      let from = opts && 'from' in opts ? opts.from : null;
-      if (!dart.test(dart.fn(() => {
-        if (this.duration == null) {
-          dart.throw(assertions.FlutterError.new("AnimationController.forward() called with no default duration.\n" + "The \"duration\" property should be set, either in the constructor or later, before " + "calling the forward() function."));
-        }
-        return true;
-      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 444, 12, "() {\r\n      if (duration == null) {\r\n        throw FlutterError(\r\n          'AnimationController.forward() called with no default duration.\\n'\r\n          'The \"duration\" property should be set, either in the constructor or later, before '\r\n          'calling the forward() function.'\r\n        );\r\n      }\r\n      return true;\r\n    }()");
-      if (!(this[_ticker] != null)) dart.assertFailed("AnimationController.forward() called after AnimationController.dispose()\n" + "AnimationController methods should not be used after calling dispose.", I[0], 455, 7, "_ticker != null");
-      this[_direction] = animation_controller._AnimationDirection.forward;
-      if (from != null) this.value = from;
-      return this[_animateToInternal](this.upperBound);
-    }
-    reverse(opts) {
-      let from = opts && 'from' in opts ? opts.from : null;
-      if (!dart.test(dart.fn(() => {
-        if (this.duration == null && this.reverseDuration == null) {
-          dart.throw(assertions.FlutterError.new("AnimationController.reverse() called with no default duration or reverseDuration.\n" + "The \"duration\" or \"reverseDuration\" property should be set, either in the constructor or later, before " + "calling the reverse() function."));
-        }
-        return true;
-      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 477, 12, "() {\r\n      if (duration == null && reverseDuration == null) {\r\n        throw FlutterError(\r\n          'AnimationController.reverse() called with no default duration or reverseDuration.\\n'\r\n          'The \"duration\" or \"reverseDuration\" property should be set, either in the constructor or later, before '\r\n          'calling the reverse() function.'\r\n        );\r\n      }\r\n      return true;\r\n    }()");
-      if (!(this[_ticker] != null)) dart.assertFailed("AnimationController.reverse() called after AnimationController.dispose()\n" + "AnimationController methods should not be used after calling dispose.", I[0], 488, 7, "_ticker != null");
-      this[_direction] = animation_controller._AnimationDirection.reverse;
-      if (from != null) this.value = from;
-      return this[_animateToInternal](this.lowerBound);
-    }
-    animateTo(target, opts) {
-      if (target == null) dart.nullFailed(I[0], 514, 33, "target");
-      let duration = opts && 'duration' in opts ? opts.duration : null;
-      let curve = opts && 'curve' in opts ? opts.curve : C[6] || CT.C6;
-      if (curve == null) dart.nullFailed(I[0], 514, 69, "curve");
-      if (!dart.test(dart.fn(() => {
-        if (this.duration == null && duration == null) {
-          dart.throw(assertions.FlutterError.new("AnimationController.animateTo() called with no explicit duration and no default duration.\n" + "Either the \"duration\" argument to the animateTo() method should be provided, or the " + "\"duration\" property should be set, either in the constructor or later, before " + "calling the animateTo() function."));
-        }
-        return true;
-      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 515, 12, "() {\r\n      if (this.duration == null && duration == null) {\r\n        throw FlutterError(\r\n          'AnimationController.animateTo() called with no explicit duration and no default duration.\\n'\r\n          'Either the \"duration\" argument to the animateTo() method should be provided, or the '\r\n          '\"duration\" property should be set, either in the constructor or later, before '\r\n          'calling the animateTo() function.'\r\n        );\r\n      }\r\n      return true;\r\n    }()");
-      if (!(this[_ticker] != null)) dart.assertFailed("AnimationController.animateTo() called after AnimationController.dispose()\n" + "AnimationController methods should not be used after calling dispose.", I[0], 527, 7, "_ticker != null");
-      this[_direction] = animation_controller._AnimationDirection.forward;
-      return this[_animateToInternal](target, {duration: duration, curve: curve});
-    }
-    animateBack(target, opts) {
-      if (target == null) dart.nullFailed(I[0], 547, 35, "target");
-      let duration = opts && 'duration' in opts ? opts.duration : null;
-      let curve = opts && 'curve' in opts ? opts.curve : C[6] || CT.C6;
-      if (curve == null) dart.nullFailed(I[0], 547, 71, "curve");
-      if (!dart.test(dart.fn(() => {
-        if (this.duration == null && this.reverseDuration == null && duration == null) {
-          dart.throw(assertions.FlutterError.new("AnimationController.animateBack() called with no explicit duration and no default duration or reverseDuration.\n" + "Either the \"duration\" argument to the animateBack() method should be provided, or the " + "\"duration\" or \"reverseDuration\" property should be set, either in the constructor or later, before " + "calling the animateBack() function."));
-        }
-        return true;
-      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 548, 12, "() {\r\n      if (this.duration == null && reverseDuration == null && duration == null) {\r\n        throw FlutterError(\r\n          'AnimationController.animateBack() called with no explicit duration and no default duration or reverseDuration.\\n'\r\n          'Either the \"duration\" argument to the animateBack() method should be provided, or the '\r\n          '\"duration\" or \"reverseDuration\" property should be set, either in the constructor or later, before '\r\n          'calling the animateBack() function.'\r\n        );\r\n      }\r\n      return true;\r\n    }()");
-      if (!(this[_ticker] != null)) dart.assertFailed("AnimationController.animateBack() called after AnimationController.dispose()\n" + "AnimationController methods should not be used after calling dispose.", I[0], 560, 7, "_ticker != null");
-      this[_direction] = animation_controller._AnimationDirection.reverse;
-      return this[_animateToInternal](target, {duration: duration, curve: curve});
-    }
-    [_animateToInternal](target, opts) {
-      if (target == null) dart.nullFailed(I[0], 568, 42, "target");
-      let duration = opts && 'duration' in opts ? opts.duration : null;
-      let curve = opts && 'curve' in opts ? opts.curve : C[6] || CT.C6;
-      if (curve == null) dart.nullFailed(I[0], 568, 78, "curve");
-      let scale = 1.0;
-      if (dart.test(dart.nullCheck(binding.SemanticsBinding.instance).disableAnimations)) {
-        switch (this.animationBehavior) {
-          case C[3] || CT.C3:
-          {
-            scale = 0.05;
-            break;
-          }
-          case C[4] || CT.C4:
-          {
-            break;
-          }
-          default:
-          {
-            dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
-          }
-        }
-      }
-      let simulationDuration = duration;
-      if (simulationDuration == null) {
-        if (!!(this.duration == null && this[_direction] == animation_controller._AnimationDirection.forward)) dart.assertFailed(null, I[0], 584, 14, "!(this.duration == null && _direction == _AnimationDirection.forward)");
-        if (!!(this.duration == null && this[_direction] == animation_controller._AnimationDirection.reverse && this.reverseDuration == null)) dart.assertFailed(null, I[0], 585, 14, "!(this.duration == null && _direction == _AnimationDirection.reverse && reverseDuration == null)");
-        let range = dart.notNull(this.upperBound) - dart.notNull(this.lowerBound);
-        let remainingFraction = range[$isFinite] ? (dart.notNull(target) - dart.notNull(this[_value]))[$abs]() / range : 1.0;
-        let directionDuration = this[_direction] == animation_controller._AnimationDirection.reverse && this.reverseDuration != null ? dart.nullCheck(this.reverseDuration) : dart.nullCheck(this.duration);
-        simulationDuration = directionDuration['*'](remainingFraction);
-      } else if (target == this.value) {
-        simulationDuration = core.Duration.zero;
-      }
-      this.stop();
-      if (dart.equals(simulationDuration, core.Duration.zero)) {
-        if (this.value != target) {
-          this[_value] = target[$clamp](this.lowerBound, this.upperBound);
-          this.notifyListeners();
-        }
-        this[_status] = this[_direction] == animation_controller._AnimationDirection.forward ? animation.AnimationStatus.completed : animation.AnimationStatus.dismissed;
-        this[_checkStatusChanged]();
-        return new ticker.TickerFuture.complete();
-      }
-      if (!dart.test(simulationDuration['>'](core.Duration.zero))) dart.assertFailed(null, I[0], 609, 12, "simulationDuration > Duration.zero");
-      if (!!dart.test(this.isAnimating)) dart.assertFailed(null, I[0], 610, 12, "!isAnimating");
-      return this[_startSimulation](new animation_controller._InterpolationSimulation.new(this[_value], target, simulationDuration, curve, scale));
-    }
-    repeat(opts) {
-      let min = opts && 'min' in opts ? opts.min : null;
-      let max = opts && 'max' in opts ? opts.max : null;
-      let reverse = opts && 'reverse' in opts ? opts.reverse : false;
-      if (reverse == null) dart.nullFailed(I[0], 635, 56, "reverse");
-      let period = opts && 'period' in opts ? opts.period : null;
-      min == null ? min = this.lowerBound : null;
-      max == null ? max = this.upperBound : null;
-      period == null ? period = this.duration : null;
-      if (!dart.test(dart.fn(() => {
-        if (period == null) {
-          dart.throw(assertions.FlutterError.new("AnimationController.repeat() called without an explicit period and with no default Duration.\n" + "Either the \"period\" argument to the repeat() method should be provided, or the " + "\"duration\" property should be set, either in the constructor or later, before " + "calling the repeat() function."));
-        }
-        return true;
-      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 639, 12, "() {\r\n      if (period == null) {\r\n        throw FlutterError(\r\n          'AnimationController.repeat() called without an explicit period and with no default Duration.\\n'\r\n          'Either the \"period\" argument to the repeat() method should be provided, or the '\r\n          '\"duration\" property should be set, either in the constructor or later, before '\r\n          'calling the repeat() function.'\r\n        );\r\n      }\r\n      return true;\r\n    }()");
-      if (!(dart.notNull(max) >= dart.notNull(min))) dart.assertFailed(null, I[0], 650, 12, "max >= min");
-      if (!(dart.notNull(max) <= dart.notNull(this.upperBound) && dart.notNull(min) >= dart.notNull(this.lowerBound))) dart.assertFailed(null, I[0], 651, 12, "max <= upperBound && min >= lowerBound");
-      if (!(reverse != null)) dart.assertFailed(null, I[0], 652, 12, "reverse != null");
-      this.stop();
-      return this[_startSimulation](new animation_controller._RepeatingSimulation.new(this[_value], min, max, reverse, dart.nullCheck(period), dart.bind(this, _directionSetter)));
-    }
-    [_directionSetter](direction) {
-      if (direction == null) dart.nullFailed(I[0], 657, 45, "direction");
-      this[_direction] = direction;
-      this[_status] = this[_direction] == animation_controller._AnimationDirection.forward ? animation.AnimationStatus.forward : animation.AnimationStatus.reverse;
-      this[_checkStatusChanged]();
-    }
-    fling(opts) {
-      let t2, t2$;
-      let velocity = opts && 'velocity' in opts ? opts.velocity : 1;
-      if (velocity == null) dart.nullFailed(I[0], 684, 31, "velocity");
-      let springDescription = opts && 'springDescription' in opts ? opts.springDescription : null;
-      let animationBehavior = opts && 'animationBehavior' in opts ? opts.animationBehavior : null;
-      springDescription == null ? springDescription = animation_controller._kFlingSpringDescription : null;
-      this[_direction] = dart.notNull(velocity) < 0.0 ? animation_controller._AnimationDirection.reverse : animation_controller._AnimationDirection.forward;
-      let target = dart.notNull(velocity) < 0.0 ? dart.notNull(this.lowerBound) - dart.notNull(animation_controller._kFlingTolerance.distance) : dart.notNull(this.upperBound) + dart.notNull(animation_controller._kFlingTolerance.distance);
-      let scale = 1.0;
-      let behavior = (t2 = animationBehavior, t2 == null ? this.animationBehavior : t2);
-      if (dart.test(dart.nullCheck(binding.SemanticsBinding.instance).disableAnimations)) {
-        switch (behavior) {
-          case C[3] || CT.C3:
-          {
-            scale = 200.0;
-            break;
-          }
-          case C[4] || CT.C4:
-          {
-            break;
-          }
-          default:
-          {
-            dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
-          }
-        }
-      }
-      let simulation = (t2$ = new spring_simulation.SpringSimulation.new(springDescription, this.value, target, dart.notNull(velocity) * scale), (() => {
-        t2$.tolerance = animation_controller._kFlingTolerance;
-        return t2$;
-      })());
-      if (!(simulation.type != spring_simulation.SpringType.underDamped)) dart.assertFailed("The resulting spring simulation is of type SpringType.underDamped.\n" + "This can lead to unexpected look of the animation, please adjust the springDescription parameter", I[0], 705, 7, "simulation.type != SpringType.underDamped");
-      this.stop();
-      return this[_startSimulation](simulation);
-    }
-    animateWith(simulation) {
-      if (simulation == null) dart.nullFailed(I[0], 727, 39, "simulation");
-      if (!(this[_ticker] != null)) dart.assertFailed("AnimationController.animateWith() called after AnimationController.dispose()\n" + "AnimationController methods should not be used after calling dispose.", I[0], 729, 7, "_ticker != null");
-      this.stop();
-      this[_direction] = animation_controller._AnimationDirection.forward;
-      return this[_startSimulation](simulation);
-    }
-    [_startSimulation](simulation) {
-      if (simulation == null) dart.nullFailed(I[0], 738, 44, "simulation");
-      if (!(simulation != null)) dart.assertFailed(null, I[0], 739, 12, "simulation != null");
-      if (!!dart.test(this.isAnimating)) dart.assertFailed(null, I[0], 740, 12, "!isAnimating");
-      this[_simulation] = simulation;
-      this[_lastElapsedDuration] = core.Duration.zero;
-      this[_value] = simulation.x(0.0)[$clamp](this.lowerBound, this.upperBound);
-      let result = dart.nullCheck(this[_ticker]).start();
-      this[_status] = this[_direction] == animation_controller._AnimationDirection.forward ? animation.AnimationStatus.forward : animation.AnimationStatus.reverse;
-      this[_checkStatusChanged]();
-      return result;
-    }
-    stop(opts) {
-      let canceled = opts && 'canceled' in opts ? opts.canceled : true;
-      if (canceled == null) dart.nullFailed(I[0], 769, 20, "canceled");
-      if (!(this[_ticker] != null)) dart.assertFailed("AnimationController.stop() called after AnimationController.dispose()\n" + "AnimationController methods should not be used after calling dispose.", I[0], 771, 7, "_ticker != null");
-      this[_simulation] = null;
-      this[_lastElapsedDuration] = null;
-      dart.nullCheck(this[_ticker]).stop({canceled: canceled});
-    }
-    dispose() {
-      if (!dart.test(dart.fn(() => {
-        if (this[_ticker] == null) {
-          dart.throw(new assertions.FlutterError.fromParts(T.JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new("AnimationController.dispose() called more than once."), new assertions.ErrorDescription.new("A given " + dart.str(this[$runtimeType]) + " cannot be disposed more than once.\n"), new (T.DiagnosticsPropertyOfAnimationController()).new("The following " + dart.str(this[$runtimeType]) + " object was disposed multiple times", this, {style: diagnostics.DiagnosticsTreeStyle.errorProperty})])));
-        }
-        return true;
-      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 788, 12, "() {\r\n      if (_ticker == null) {\r\n        throw FlutterError.fromParts(<DiagnosticsNode>[\r\n          ErrorSummary('AnimationController.dispose() called more than once.'),\r\n          ErrorDescription('A given $runtimeType cannot be disposed more than once.\\n'),\r\n          DiagnosticsProperty<AnimationController>(\r\n            'The following $runtimeType object was disposed multiple times',\r\n            this,\r\n            style: DiagnosticsTreeStyle.errorProperty,\r\n          ),\r\n        ]);\r\n      }\r\n      return true;\r\n    }()");
-      dart.nullCheck(this[_ticker]).dispose();
-      this[_ticker] = null;
-      super.dispose();
-    }
-    [_checkStatusChanged]() {
-      let newStatus = this.status;
-      if (this[_lastReportedStatus] != newStatus) {
-        this[_lastReportedStatus] = newStatus;
-        this.notifyStatusListeners(newStatus);
-      }
-    }
-    [_tick](elapsed) {
-      if (elapsed == null) dart.nullFailed(I[0], 816, 23, "elapsed");
-      this[_lastElapsedDuration] = elapsed;
-      let elapsedInSeconds = elapsed.inMicroseconds[$toDouble]() / 1000000;
-      if (!(elapsedInSeconds >= 0.0)) dart.assertFailed(null, I[0], 819, 12, "elapsedInSeconds >= 0.0");
-      this[_value] = dart.nullCheck(this[_simulation]).x(elapsedInSeconds)[$clamp](this.lowerBound, this.upperBound);
-      if (dart.test(dart.nullCheck(this[_simulation]).isDone(elapsedInSeconds))) {
-        this[_status] = this[_direction] == animation_controller._AnimationDirection.forward ? animation.AnimationStatus.completed : animation.AnimationStatus.dismissed;
-        this.stop({canceled: false});
-      }
-      this.notifyListeners();
-      this[_checkStatusChanged]();
-    }
-    toStringDetails() {
-      let paused = dart.test(this.isAnimating) ? "" : "; paused";
-      let ticker = this[_ticker] == null ? "; DISPOSED" : dart.test(dart.nullCheck(this[_ticker]).muted) ? "; silenced" : "";
-      let label = this.debugLabel == null ? "" : "; for " + dart.str(this.debugLabel);
-      let more = dart.str(super.toStringDetails()) + " " + this.value[$toStringAsFixed](3);
-      return more + paused + ticker + label;
+    toString() {
+      let t0, t0$;
+      return dart.str(diagnostics.describeIdentity(this)) + "(" + dart.str((t0$ = (t0 = this[_repaint$], t0 == null ? null : dart.toString(t0)), t0$ == null ? "" : t0$)) + ")";
     }
   };
-  (animation_controller.AnimationController.new = function(opts) {
-    let t0;
-    let value = opts && 'value' in opts ? opts.value : null;
-    let duration = opts && 'duration' in opts ? opts.duration : null;
-    let reverseDuration = opts && 'reverseDuration' in opts ? opts.reverseDuration : null;
-    let debugLabel = opts && 'debugLabel' in opts ? opts.debugLabel : null;
-    let lowerBound = opts && 'lowerBound' in opts ? opts.lowerBound : 0;
-    if (lowerBound == null) dart.nullFailed(I[0], 238, 10, "lowerBound");
-    let upperBound = opts && 'upperBound' in opts ? opts.upperBound : 1;
-    if (upperBound == null) dart.nullFailed(I[0], 239, 10, "upperBound");
-    let animationBehavior = opts && 'animationBehavior' in opts ? opts.animationBehavior : C[3] || CT.C3;
-    if (animationBehavior == null) dart.nullFailed(I[0], 240, 10, "animationBehavior");
-    let vsync = opts && 'vsync' in opts ? opts.vsync : null;
-    if (vsync == null) dart.nullFailed(I[0], 241, 29, "vsync");
-    this[_ticker] = null;
-    this[_simulation] = null;
-    this[__AnimationController__value] = null;
-    this[__AnimationController__value_isSet] = false;
-    this[_lastElapsedDuration] = null;
-    this[__AnimationController__status] = null;
-    this[__AnimationController__status_isSet] = false;
-    this[_lastReportedStatus] = animation.AnimationStatus.dismissed;
-    this[duration$] = duration;
-    this[reverseDuration$] = reverseDuration;
-    this[debugLabel$] = debugLabel;
-    this[lowerBound$] = lowerBound;
-    this[upperBound$] = upperBound;
-    this[animationBehavior$] = animationBehavior;
-    if (!(lowerBound != null)) dart.assertFailed(null, I[0], 242, 15, "lowerBound != null");
-    if (!(upperBound != null)) dart.assertFailed(null, I[0], 243, 15, "upperBound != null");
-    if (!(dart.notNull(upperBound) >= dart.notNull(lowerBound))) dart.assertFailed(null, I[0], 244, 15, "upperBound >= lowerBound");
-    if (!(vsync != null)) dart.assertFailed(null, I[0], 245, 15, "vsync != null");
-    this[_direction] = animation_controller._AnimationDirection.forward;
-    animation_controller.AnimationController.__proto__.new.call(this);
-    this[_ticker] = vsync.createTicker(dart.bind(this, _tick));
-    this[_internalSetValue]((t0 = value, t0 == null ? this.lowerBound : t0));
-  }).prototype = animation_controller.AnimationController.prototype;
-  (animation_controller.AnimationController.unbounded = function(opts) {
-    let value = opts && 'value' in opts ? opts.value : 0;
-    if (value == null) dart.nullFailed(I[0], 269, 12, "value");
-    let duration = opts && 'duration' in opts ? opts.duration : null;
-    let reverseDuration = opts && 'reverseDuration' in opts ? opts.reverseDuration : null;
-    let debugLabel = opts && 'debugLabel' in opts ? opts.debugLabel : null;
-    let vsync = opts && 'vsync' in opts ? opts.vsync : null;
-    if (vsync == null) dart.nullFailed(I[0], 273, 29, "vsync");
-    let animationBehavior = opts && 'animationBehavior' in opts ? opts.animationBehavior : C[4] || CT.C4;
-    if (animationBehavior == null) dart.nullFailed(I[0], 274, 10, "animationBehavior");
-    this[_ticker] = null;
-    this[_simulation] = null;
-    this[__AnimationController__value] = null;
-    this[__AnimationController__value_isSet] = false;
-    this[_lastElapsedDuration] = null;
-    this[__AnimationController__status] = null;
-    this[__AnimationController__status_isSet] = false;
-    this[_lastReportedStatus] = animation.AnimationStatus.dismissed;
-    this[duration$] = duration;
-    this[reverseDuration$] = reverseDuration;
-    this[debugLabel$] = debugLabel;
-    this[animationBehavior$] = animationBehavior;
-    if (!(value != null)) dart.assertFailed(null, I[0], 275, 15, "value != null");
-    if (!(vsync != null)) dart.assertFailed(null, I[0], 276, 15, "vsync != null");
-    this[lowerBound$] = -1 / 0;
-    this[upperBound$] = 1 / 0;
-    this[_direction] = animation_controller._AnimationDirection.forward;
-    animation_controller.AnimationController.__proto__.new.call(this);
-    this[_ticker] = vsync.createTicker(dart.bind(this, _tick));
-    this[_internalSetValue](value);
-  }).prototype = animation_controller.AnimationController.prototype;
-  dart.addTypeTests(animation_controller.AnimationController);
-  dart.addTypeCaches(animation_controller.AnimationController);
-  dart.setMethodSignature(animation_controller.AnimationController, () => ({
-    __proto__: dart.getMethods(animation_controller.AnimationController.__proto__),
-    resync: dart.fnType(dart.void, [ticker.TickerProvider]),
-    reset: dart.fnType(dart.void, []),
-    [_internalSetValue]: dart.fnType(dart.void, [core.double]),
-    forward: dart.fnType(ticker.TickerFuture, [], {from: dart.nullable(core.double)}, {}),
-    reverse: dart.fnType(ticker.TickerFuture, [], {from: dart.nullable(core.double)}, {}),
-    animateTo: dart.fnType(ticker.TickerFuture, [core.double], {curve: curves.Curve, duration: dart.nullable(core.Duration)}, {}),
-    animateBack: dart.fnType(ticker.TickerFuture, [core.double], {curve: curves.Curve, duration: dart.nullable(core.Duration)}, {}),
-    [_animateToInternal]: dart.fnType(ticker.TickerFuture, [core.double], {curve: curves.Curve, duration: dart.nullable(core.Duration)}, {}),
-    repeat: dart.fnType(ticker.TickerFuture, [], {max: dart.nullable(core.double), min: dart.nullable(core.double), period: dart.nullable(core.Duration), reverse: core.bool}, {}),
-    [_directionSetter]: dart.fnType(dart.void, [animation_controller._AnimationDirection]),
-    fling: dart.fnType(ticker.TickerFuture, [], {animationBehavior: dart.nullable(animation_controller.AnimationBehavior), springDescription: dart.nullable(spring_simulation.SpringDescription), velocity: core.double}, {}),
-    animateWith: dart.fnType(ticker.TickerFuture, [simulation.Simulation]),
-    [_startSimulation]: dart.fnType(ticker.TickerFuture, [simulation.Simulation]),
-    stop: dart.fnType(dart.void, [], {canceled: core.bool}, {}),
-    [_checkStatusChanged]: dart.fnType(dart.void, []),
-    [_tick]: dart.fnType(dart.void, [core.Duration])
-  }));
-  dart.setGetterSignature(animation_controller.AnimationController, () => ({
-    __proto__: dart.getGetters(animation_controller.AnimationController.__proto__),
-    view: animation.Animation$(core.double),
-    value: core.double,
-    [_value]: core.double,
-    velocity: core.double,
-    lastElapsedDuration: dart.nullable(core.Duration),
-    isAnimating: core.bool,
-    status: animation.AnimationStatus,
-    [_status]: animation.AnimationStatus
-  }));
-  dart.setSetterSignature(animation_controller.AnimationController, () => ({
-    __proto__: dart.getSetters(animation_controller.AnimationController.__proto__),
-    [_value]: core.double,
-    value: core.double,
-    [_status]: animation.AnimationStatus
-  }));
-  dart.setLibraryUri(animation_controller.AnimationController, I[1]);
-  dart.setFieldSignature(animation_controller.AnimationController, () => ({
-    __proto__: dart.getFields(animation_controller.AnimationController.__proto__),
-    lowerBound: dart.finalFieldType(core.double),
-    upperBound: dart.finalFieldType(core.double),
-    debugLabel: dart.finalFieldType(dart.nullable(core.String)),
-    animationBehavior: dart.finalFieldType(animation_controller.AnimationBehavior),
-    duration: dart.fieldType(dart.nullable(core.Duration)),
-    reverseDuration: dart.fieldType(dart.nullable(core.Duration)),
-    [_ticker]: dart.fieldType(dart.nullable(ticker.Ticker)),
-    [_simulation]: dart.fieldType(dart.nullable(simulation.Simulation)),
-    [__AnimationController__value]: dart.fieldType(dart.nullable(core.double)),
-    [__AnimationController__value_isSet]: dart.fieldType(core.bool),
-    [_lastElapsedDuration]: dart.fieldType(dart.nullable(core.Duration)),
-    [_direction]: dart.fieldType(animation_controller._AnimationDirection),
-    [__AnimationController__status]: dart.fieldType(dart.nullable(animation.AnimationStatus)),
-    [__AnimationController__status_isSet]: dart.fieldType(core.bool),
-    [_lastReportedStatus]: dart.fieldType(animation.AnimationStatus)
-  }));
-  var _begin$ = dart.privateName(animation_controller, "_begin");
-  var _end$ = dart.privateName(animation_controller, "_end");
-  var _curve$ = dart.privateName(animation_controller, "_curve");
-  var _durationInSeconds = dart.privateName(animation_controller, "_durationInSeconds");
-  animation_controller._InterpolationSimulation = class _InterpolationSimulation extends simulation.Simulation {
-    x(timeInSeconds) {
-      if (timeInSeconds == null) dart.nullFailed(I[0], 854, 19, "timeInSeconds");
-      let t = (dart.notNull(timeInSeconds) / dart.notNull(this[_durationInSeconds]))[$clamp](0.0, 1.0);
-      if (t === 0.0)
-        return this[_begin$];
-      else if (t === 1.0)
-        return this[_end$];
-      else
-        return dart.notNull(this[_begin$]) + (dart.notNull(this[_end$]) - dart.notNull(this[_begin$])) * dart.notNull(this[_curve$].transform(t));
-    }
-    dx(timeInSeconds) {
-      if (timeInSeconds == null) dart.nullFailed(I[0], 865, 20, "timeInSeconds");
-      let epsilon = this.tolerance.time;
-      return (dart.notNull(this.x(dart.notNull(timeInSeconds) + dart.notNull(epsilon))) - dart.notNull(this.x(dart.notNull(timeInSeconds) - dart.notNull(epsilon)))) / (2 * dart.notNull(epsilon));
-    }
-    isDone(timeInSeconds) {
-      if (timeInSeconds == null) dart.nullFailed(I[0], 871, 22, "timeInSeconds");
-      return dart.notNull(timeInSeconds) > dart.notNull(this[_durationInSeconds]);
-    }
-  };
-  (animation_controller._InterpolationSimulation.new = function(_begin, _end, duration, _curve, scale) {
-    if (_begin == null) dart.nullFailed(I[0], 842, 33, "_begin");
-    if (_end == null) dart.nullFailed(I[0], 842, 46, "_end");
-    if (duration == null) dart.nullFailed(I[0], 842, 61, "duration");
-    if (_curve == null) dart.nullFailed(I[0], 842, 76, "_curve");
-    if (scale == null) dart.nullFailed(I[0], 842, 91, "scale");
-    this[_begin$] = _begin;
-    this[_end$] = _end;
-    this[_curve$] = _curve;
-    if (!(_begin != null)) dart.assertFailed(null, I[0], 843, 14, "_begin != null");
-    if (!(_end != null)) dart.assertFailed(null, I[0], 844, 14, "_end != null");
-    if (!(duration != null && dart.notNull(duration.inMicroseconds) > 0)) dart.assertFailed(null, I[0], 845, 14, "duration != null && duration.inMicroseconds > 0");
-    this[_durationInSeconds] = dart.notNull(duration.inMicroseconds) * dart.notNull(scale) / 1000000;
-    animation_controller._InterpolationSimulation.__proto__.new.call(this);
+  (custom_paint.CustomPainter.new = function(opts) {
+    let repaint = opts && 'repaint' in opts ? opts.repaint : null;
+    this[_repaint] = repaint;
+    custom_paint.CustomPainter.__proto__.new.call(this);
     ;
-  }).prototype = animation_controller._InterpolationSimulation.prototype;
-  dart.addTypeTests(animation_controller._InterpolationSimulation);
-  dart.addTypeCaches(animation_controller._InterpolationSimulation);
-  dart.setMethodSignature(animation_controller._InterpolationSimulation, () => ({
-    __proto__: dart.getMethods(animation_controller._InterpolationSimulation.__proto__),
-    x: dart.fnType(core.double, [core.double]),
-    dx: dart.fnType(core.double, [core.double]),
-    isDone: dart.fnType(core.bool, [core.double])
+  }).prototype = custom_paint.CustomPainter.prototype;
+  dart.addTypeTests(custom_paint.CustomPainter);
+  dart.addTypeCaches(custom_paint.CustomPainter);
+  dart.setMethodSignature(custom_paint.CustomPainter, () => ({
+    __proto__: dart.getMethods(custom_paint.CustomPainter.__proto__),
+    addListener: dart.fnType(dart.void, [dart.fnType(dart.void, [])]),
+    removeListener: dart.fnType(dart.void, [dart.fnType(dart.void, [])]),
+    shouldRebuildSemantics: dart.fnType(core.bool, [dart.nullable(core.Object)]),
+    hitTest: dart.fnType(dart.nullable(core.bool), [ui.Offset])
   }));
-  dart.setLibraryUri(animation_controller._InterpolationSimulation, I[1]);
-  dart.setFieldSignature(animation_controller._InterpolationSimulation, () => ({
-    __proto__: dart.getFields(animation_controller._InterpolationSimulation.__proto__),
-    [_durationInSeconds]: dart.finalFieldType(core.double),
-    [_begin$]: dart.finalFieldType(core.double),
-    [_end$]: dart.finalFieldType(core.double),
-    [_curve$]: dart.finalFieldType(curves.Curve)
+  dart.setGetterSignature(custom_paint.CustomPainter, () => ({
+    __proto__: dart.getGetters(custom_paint.CustomPainter.__proto__),
+    semanticsBuilder: dart.nullable(dart.fnType(core.List$(custom_paint.CustomPainterSemantics), [ui.Size]))
   }));
-  var _periodInSeconds = dart.privateName(animation_controller, "_periodInSeconds");
-  var _initialT = dart.privateName(animation_controller, "_initialT");
-  animation_controller._RepeatingSimulation = class _RepeatingSimulation extends simulation.Simulation {
-    x(timeInSeconds) {
-      let t2, t2$;
-      if (timeInSeconds == null) dart.nullFailed(I[0], 893, 19, "timeInSeconds");
-      if (!(dart.notNull(timeInSeconds) >= 0.0)) dart.assertFailed(null, I[0], 894, 12, "timeInSeconds >= 0.0");
-      let totalTimeInSeconds = dart.notNull(timeInSeconds) + dart.notNull(this[_initialT]);
-      let t = (totalTimeInSeconds / dart.notNull(this[_periodInSeconds]))[$modulo](1.0);
-      let _isPlayingReverse = (totalTimeInSeconds / dart.notNull(this[_periodInSeconds]))[$truncate]()[$isOdd];
-      if (dart.test(this.reverse) && _isPlayingReverse) {
-        t2 = animation_controller._AnimationDirection.reverse;
-        this.directionSetter(t2);
-        return dart.nullCheck(ui.lerpDouble(this.max, this.min, t));
-      } else {
-        t2$ = animation_controller._AnimationDirection.forward;
-        this.directionSetter(t2$);
-        return dart.nullCheck(ui.lerpDouble(this.min, this.max, t));
-      }
+  dart.setLibraryUri(custom_paint.CustomPainter, I[1]);
+  dart.setFieldSignature(custom_paint.CustomPainter, () => ({
+    __proto__: dart.getFields(custom_paint.CustomPainter.__proto__),
+    [_repaint$]: dart.finalFieldType(dart.nullable(change_notifier.Listenable))
+  }));
+  dart.defineExtensionMethods(custom_paint.CustomPainter, ['toString']);
+  var key$ = dart.privateName(custom_paint, "CustomPainterSemantics.key");
+  var rect$ = dart.privateName(custom_paint, "CustomPainterSemantics.rect");
+  var transform$ = dart.privateName(custom_paint, "CustomPainterSemantics.transform");
+  var properties$ = dart.privateName(custom_paint, "CustomPainterSemantics.properties");
+  var tags$ = dart.privateName(custom_paint, "CustomPainterSemantics.tags");
+  custom_paint.CustomPainterSemantics = class CustomPainterSemantics extends core.Object {
+    get key() {
+      return this[key$];
     }
-    dx(timeInSeconds) {
-      if (timeInSeconds == null) dart.nullFailed(I[0], 910, 20, "timeInSeconds");
-      return (dart.notNull(this.max) - dart.notNull(this.min)) / dart.notNull(this[_periodInSeconds]);
+    set key(value) {
+      super.key = value;
     }
-    isDone(timeInSeconds) {
-      if (timeInSeconds == null) dart.nullFailed(I[0], 913, 22, "timeInSeconds");
-      return false;
+    get rect() {
+      return this[rect$];
+    }
+    set rect(value) {
+      super.rect = value;
+    }
+    get transform() {
+      return this[transform$];
+    }
+    set transform(value) {
+      super.transform = value;
+    }
+    get properties() {
+      return this[properties$];
+    }
+    set properties(value) {
+      super.properties = value;
+    }
+    get tags() {
+      return this[tags$];
+    }
+    set tags(value) {
+      super.tags = value;
     }
   };
-  (animation_controller._RepeatingSimulation.new = function(initialValue, min, max, reverse, period, directionSetter) {
-    if (initialValue == null) dart.nullFailed(I[0], 877, 31, "initialValue");
-    if (min == null) dart.nullFailed(I[0], 877, 50, "min");
-    if (max == null) dart.nullFailed(I[0], 877, 60, "max");
-    if (reverse == null) dart.nullFailed(I[0], 877, 70, "reverse");
-    if (period == null) dart.nullFailed(I[0], 877, 88, "period");
-    if (directionSetter == null) dart.nullFailed(I[0], 877, 101, "directionSetter");
-    this.min = min;
-    this.max = max;
-    this.reverse = reverse;
-    this.directionSetter = directionSetter;
-    this[_periodInSeconds] = dart.notNull(period.inMicroseconds) / 1000000;
-    this[_initialT] = max == min ? 0.0 : dart.notNull(initialValue) / (dart.notNull(max) - dart.notNull(min)) * (dart.notNull(period.inMicroseconds) / 1000000);
-    animation_controller._RepeatingSimulation.__proto__.new.call(this);
-    if (!(dart.notNull(this[_periodInSeconds]) > 0.0)) dart.assertFailed(null, I[0], 880, 12, "_periodInSeconds > 0.0");
-    if (!(dart.notNull(this[_initialT]) >= 0.0)) dart.assertFailed(null, I[0], 881, 12, "_initialT >= 0.0");
-  }).prototype = animation_controller._RepeatingSimulation.prototype;
-  dart.addTypeTests(animation_controller._RepeatingSimulation);
-  dart.addTypeCaches(animation_controller._RepeatingSimulation);
-  dart.setMethodSignature(animation_controller._RepeatingSimulation, () => ({
-    __proto__: dart.getMethods(animation_controller._RepeatingSimulation.__proto__),
-    x: dart.fnType(core.double, [core.double]),
-    dx: dart.fnType(core.double, [core.double]),
-    isDone: dart.fnType(core.bool, [core.double])
+  (custom_paint.CustomPainterSemantics.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let rect = opts && 'rect' in opts ? opts.rect : null;
+    if (rect == null) dart.nullFailed(I[0], 296, 19, "rect");
+    let properties = opts && 'properties' in opts ? opts.properties : null;
+    if (properties == null) dart.nullFailed(I[0], 297, 19, "properties");
+    let transform = opts && 'transform' in opts ? opts.transform : null;
+    let tags = opts && 'tags' in opts ? opts.tags : null;
+    this[key$] = key;
+    this[rect$] = rect;
+    this[properties$] = properties;
+    this[transform$] = transform;
+    this[tags$] = tags;
+    if (!(rect != null)) dart.assertFailed(null, I[0], 300, 15, "rect != null");
+    if (!(properties != null)) dart.assertFailed(null, I[0], 301, 15, "properties != null");
+    ;
+  }).prototype = custom_paint.CustomPainterSemantics.prototype;
+  dart.addTypeTests(custom_paint.CustomPainterSemantics);
+  dart.addTypeCaches(custom_paint.CustomPainterSemantics);
+  dart.setLibraryUri(custom_paint.CustomPainterSemantics, I[1]);
+  dart.setFieldSignature(custom_paint.CustomPainterSemantics, () => ({
+    __proto__: dart.getFields(custom_paint.CustomPainterSemantics.__proto__),
+    key: dart.finalFieldType(dart.nullable(key.Key)),
+    rect: dart.finalFieldType(ui.Rect),
+    transform: dart.finalFieldType(dart.nullable(vector_math_64.Matrix4)),
+    properties: dart.finalFieldType(semantics.SemanticsProperties),
+    tags: dart.finalFieldType(dart.nullable(core.Set$(semantics.SemanticsTag)))
   }));
-  dart.setLibraryUri(animation_controller._RepeatingSimulation, I[1]);
-  dart.setFieldSignature(animation_controller._RepeatingSimulation, () => ({
-    __proto__: dart.getFields(animation_controller._RepeatingSimulation.__proto__),
-    min: dart.finalFieldType(core.double),
-    max: dart.finalFieldType(core.double),
-    reverse: dart.finalFieldType(core.bool),
-    directionSetter: dart.finalFieldType(dart.fnType(dart.void, [animation_controller._AnimationDirection])),
-    [_periodInSeconds]: dart.finalFieldType(core.double),
-    [_initialT]: dart.finalFieldType(core.double)
-  }));
-  var Tolerance_velocity = dart.privateName(tolerance, "Tolerance.velocity");
-  var Tolerance_time = dart.privateName(tolerance, "Tolerance.time");
-  var Tolerance_distance = dart.privateName(tolerance, "Tolerance.distance");
-  dart.defineLazy(animation_controller, {
-    /*animation_controller._kFlingSpringDescription*/get _kFlingSpringDescription() {
-      return new spring_simulation.SpringDescription.withDampingRatio({mass: 1.0, stiffness: 500.0, ratio: 1.0});
-    },
-    /*animation_controller._kFlingTolerance*/get _kFlingTolerance() {
-      return C[7] || CT.C7;
+  var isComplex$ = dart.privateName(custom_paint, "RenderCustomPaint.isComplex");
+  var willChange$ = dart.privateName(custom_paint, "RenderCustomPaint.willChange");
+  var OffsetBase__dy = dart.privateName(ui, "OffsetBase._dy");
+  var OffsetBase__dx = dart.privateName(ui, "OffsetBase._dx");
+  var _backgroundSemanticsBuilder = dart.privateName(custom_paint, "_backgroundSemanticsBuilder");
+  var _foregroundSemanticsBuilder = dart.privateName(custom_paint, "_foregroundSemanticsBuilder");
+  var _backgroundSemanticsNodes = dart.privateName(custom_paint, "_backgroundSemanticsNodes");
+  var _foregroundSemanticsNodes = dart.privateName(custom_paint, "_foregroundSemanticsNodes");
+  var _painter = dart.privateName(custom_paint, "_painter");
+  var _foregroundPainter = dart.privateName(custom_paint, "_foregroundPainter");
+  var _preferredSize = dart.privateName(custom_paint, "_preferredSize");
+  var _didUpdatePainter = dart.privateName(custom_paint, "_didUpdatePainter");
+  var _paintWithPainter = dart.privateName(custom_paint, "_paintWithPainter");
+  var _setRasterCacheHints = dart.privateName(custom_paint, "_setRasterCacheHints");
+  custom_paint.RenderCustomPaint = class RenderCustomPaint extends proxy_box.RenderProxyBox {
+    get isComplex() {
+      return this[isComplex$];
     }
-  }, false);
-  dart.trackLibraries("packages/flutter/src/animation/animation_controller.dart", {
-    "package:flutter/src/animation/animation_controller.dart": animation_controller
+    set isComplex(value) {
+      this[isComplex$] = value;
+    }
+    get willChange() {
+      return this[willChange$];
+    }
+    set willChange(value) {
+      this[willChange$] = value;
+    }
+    get painter() {
+      return this[_painter];
+    }
+    set painter(value) {
+      if (dart.equals(this[_painter], value)) return;
+      let oldPainter = this[_painter];
+      this[_painter] = value;
+      this[_didUpdatePainter](this[_painter], oldPainter);
+    }
+    get foregroundPainter() {
+      return this[_foregroundPainter];
+    }
+    set foregroundPainter(value) {
+      if (dart.equals(this[_foregroundPainter], value)) return;
+      let oldPainter = this[_foregroundPainter];
+      this[_foregroundPainter] = value;
+      this[_didUpdatePainter](this[_foregroundPainter], oldPainter);
+    }
+    [_didUpdatePainter](newPainter, oldPainter) {
+      let t0, t0$;
+      if (newPainter == null) {
+        if (!(oldPainter != null)) dart.assertFailed(null, I[0], 436, 14, "oldPainter != null");
+        this.markNeedsPaint();
+      } else if (oldPainter == null || !dart.equals(dart.runtimeType(newPainter), dart.runtimeType(oldPainter)) || dart.test(newPainter.shouldRepaint(oldPainter))) {
+        this.markNeedsPaint();
+      }
+      if (dart.test(this.attached)) {
+        t0 = oldPainter;
+        t0 == null ? null : t0.removeListener(dart.bind(this, 'markNeedsPaint'));
+        t0$ = newPainter;
+        t0$ == null ? null : t0$.addListener(dart.bind(this, 'markNeedsPaint'));
+      }
+      if (newPainter == null) {
+        if (!(oldPainter != null)) dart.assertFailed(null, I[0], 450, 14, "oldPainter != null");
+        if (dart.test(this.attached)) this.markNeedsSemanticsUpdate();
+      } else if (oldPainter == null || !dart.equals(dart.runtimeType(newPainter), dart.runtimeType(oldPainter)) || dart.test(newPainter.shouldRebuildSemantics(oldPainter))) {
+        this.markNeedsSemanticsUpdate();
+      }
+    }
+    get preferredSize() {
+      return this[_preferredSize];
+    }
+    set preferredSize(value) {
+      if (value == null) dart.nullFailed(I[0], 469, 26, "value");
+      if (!(value != null)) dart.assertFailed(null, I[0], 470, 12, "value != null");
+      if (dart.equals(this.preferredSize, value)) return;
+      this[_preferredSize] = value;
+      this.markNeedsLayout();
+    }
+    computeMinIntrinsicWidth(height) {
+      if (height == null) dart.nullFailed(I[0], 491, 42, "height");
+      if (this.child == null) return this.preferredSize.width[$isFinite] ? this.preferredSize.width : 0.0;
+      return super.computeMinIntrinsicWidth(height);
+    }
+    computeMaxIntrinsicWidth(height) {
+      if (height == null) dart.nullFailed(I[0], 498, 42, "height");
+      if (this.child == null) return this.preferredSize.width[$isFinite] ? this.preferredSize.width : 0.0;
+      return super.computeMaxIntrinsicWidth(height);
+    }
+    computeMinIntrinsicHeight(width) {
+      if (width == null) dart.nullFailed(I[0], 505, 43, "width");
+      if (this.child == null) return this.preferredSize.height[$isFinite] ? this.preferredSize.height : 0.0;
+      return super.computeMinIntrinsicHeight(width);
+    }
+    computeMaxIntrinsicHeight(width) {
+      if (width == null) dart.nullFailed(I[0], 512, 43, "width");
+      if (this.child == null) return this.preferredSize.height[$isFinite] ? this.preferredSize.height : 0.0;
+      return super.computeMaxIntrinsicHeight(width);
+    }
+    attach(owner) {
+      let t0, t0$;
+      object.PipelineOwner.as(owner);
+      if (owner == null) dart.nullFailed(I[0], 519, 29, "owner");
+      super.attach(owner);
+      t0 = this[_painter];
+      t0 == null ? null : t0.addListener(dart.bind(this, 'markNeedsPaint'));
+      t0$ = this[_foregroundPainter];
+      t0$ == null ? null : t0$.addListener(dart.bind(this, 'markNeedsPaint'));
+    }
+    detach() {
+      let t0, t0$;
+      t0 = this[_painter];
+      t0 == null ? null : t0.removeListener(dart.bind(this, 'markNeedsPaint'));
+      t0$ = this[_foregroundPainter];
+      t0$ == null ? null : t0$.removeListener(dart.bind(this, 'markNeedsPaint'));
+      super.detach();
+    }
+    hitTestChildren(result, opts) {
+      let t0;
+      if (result == null) dart.nullFailed(I[0], 533, 41, "result");
+      let position = opts && 'position' in opts ? opts.position : null;
+      if (position == null) dart.nullFailed(I[0], 533, 67, "position");
+      if (this[_foregroundPainter] != null && dart.test((t0 = dart.nullCheck(this[_foregroundPainter]).hitTest(position), t0 == null ? false : t0))) return true;
+      return super.hitTestChildren(result, {position: position});
+    }
+    hitTestSelf(position) {
+      let t0;
+      if (position == null) dart.nullFailed(I[0], 540, 27, "position");
+      return this[_painter] != null && dart.test((t0 = dart.nullCheck(this[_painter]).hitTest(position), t0 == null ? true : t0));
+    }
+    performLayout() {
+      super.performLayout();
+      this.markNeedsSemanticsUpdate();
+    }
+    computeSizeForNoChild(constraints) {
+      if (constraints == null) dart.nullFailed(I[0], 551, 45, "constraints");
+      return constraints.constrain(this.preferredSize);
+    }
+    [_paintWithPainter](canvas, offset, painter) {
+      if (canvas == null) dart.nullFailed(I[0], 555, 33, "canvas");
+      if (offset == null) dart.nullFailed(I[0], 555, 48, "offset");
+      if (painter == null) dart.nullFailed(I[0], 555, 70, "painter");
+      let debugPreviousCanvasSaveCount = null;
+      let debugPreviousCanvasSaveCount$35isSet = false;
+      function debugPreviousCanvasSaveCount$35get() {
+        return debugPreviousCanvasSaveCount$35isSet ? debugPreviousCanvasSaveCount : dart.throw(new _internal.LateError.localNI("debugPreviousCanvasSaveCount"));
+      }
+      dart.fn(debugPreviousCanvasSaveCount$35get, T.VoidToint());
+      function debugPreviousCanvasSaveCount$35set(t3) {
+        if (t3 == null) dart.nullFailed(I[0], 556, 14, "null");
+        debugPreviousCanvasSaveCount$35isSet = true;
+        return debugPreviousCanvasSaveCount = t3;
+      }
+      dart.fn(debugPreviousCanvasSaveCount$35set, T.intTodynamic());
+      canvas.save();
+      if (!dart.test(dart.fn(() => {
+        debugPreviousCanvasSaveCount$35set(canvas.getSaveCount());
+        return true;
+      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 558, 12, "() {\r\n      debugPreviousCanvasSaveCount = canvas.getSaveCount();\r\n      return true;\r\n    }()");
+      if (!dart.equals(offset, ui.Offset.zero)) canvas.translate(offset.dx, offset.dy);
+      painter.paint(canvas, this.size);
+      if (!dart.test(dart.fn(() => {
+        let debugNewCanvasSaveCount = canvas.getSaveCount();
+        if (dart.notNull(debugNewCanvasSaveCount) > dart.notNull(debugPreviousCanvasSaveCount$35get())) {
+          dart.throw(new assertions.FlutterError.fromParts(T.JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new("The " + dart.str(painter) + " custom painter called canvas.save() or canvas.saveLayer() at least " + dart.str(dart.notNull(debugNewCanvasSaveCount) - dart.notNull(debugPreviousCanvasSaveCount$35get())) + " more " + "time" + (dart.notNull(debugNewCanvasSaveCount) - dart.notNull(debugPreviousCanvasSaveCount$35get()) === 1 ? "" : "s") + " " + "than it called canvas.restore()."), new assertions.ErrorDescription.new("This leaves the canvas in an inconsistent state and will probably result in a broken display."), new assertions.ErrorHint.new("You must pair each call to save()/saveLayer() with a later matching call to restore().")])));
+        }
+        if (dart.notNull(debugNewCanvasSaveCount) < dart.notNull(debugPreviousCanvasSaveCount$35get())) {
+          dart.throw(new assertions.FlutterError.fromParts(T.JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new("The " + dart.str(painter) + " custom painter called canvas.restore() " + dart.str(dart.notNull(debugPreviousCanvasSaveCount$35get()) - dart.notNull(debugNewCanvasSaveCount)) + " more " + "time" + (dart.notNull(debugPreviousCanvasSaveCount$35get()) - dart.notNull(debugNewCanvasSaveCount) === 1 ? "" : "s") + " " + "than it called canvas.save() or canvas.saveLayer()."), new assertions.ErrorDescription.new("This leaves the canvas in an inconsistent state and will result in a broken display."), new assertions.ErrorHint.new("You should only call restore() if you first called save() or saveLayer().")])));
+        }
+        return debugNewCanvasSaveCount == debugPreviousCanvasSaveCount$35get();
+      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 565, 12, "() {\r\n      // This isn't perfect. For example, we can't catch the case of\r\n      // someone first restoring, then setting a transform or whatnot,\r\n      // then saving.\r\n      // If this becomes a real problem, we could add logic to the\r\n      // Canvas class to lock the canvas at a particular save count\r\n      // such that restore() fails if it would take the lock count\r\n      // below that number.\r\n      final int debugNewCanvasSaveCount = canvas.getSaveCount();\r\n      if (debugNewCanvasSaveCount > debugPreviousCanvasSaveCount) {\r\n        throw FlutterError.fromParts(<DiagnosticsNode>[\r\n          ErrorSummary(\r\n            'The $painter custom painter called canvas.save() or canvas.saveLayer() at least '\r\n            '${debugNewCanvasSaveCount - debugPreviousCanvasSaveCount} more '\r\n            'time${debugNewCanvasSaveCount - debugPreviousCanvasSaveCount == 1 ? '' : 's' } '\r\n            'than it called canvas.restore().'\r\n          ),\r\n          ErrorDescription('This leaves the canvas in an inconsistent state and will probably result in a broken display.'),\r\n          ErrorHint('You must pair each call to save()/saveLayer() with a later matching call to restore().')\r\n        ]);\r\n      }\r\n      if (debugNewCanvasSaveCount < debugPreviousCanvasSaveCount) {\r\n        throw FlutterError.fromParts(<DiagnosticsNode>[\r\n          ErrorSummary('The $painter custom painter called canvas.restore() '\r\n            '${debugPreviousCanvasSaveCount - debugNewCanvasSaveCount} more '\r\n            'time${debugPreviousCanvasSaveCount - debugNewCanvasSaveCount == 1 ? '' : 's' } '\r\n            'than it called canvas.save() or canvas.saveLayer().'\r\n          ),\r\n          ErrorDescription('This leaves the canvas in an inconsistent state and will result in a broken display.'),\r\n          ErrorHint('You should only call restore() if you first called save() or saveLayer().')\r\n        ]);\r\n      }\r\n      return debugNewCanvasSaveCount == debugPreviousCanvasSaveCount;\r\n    }()");
+      canvas.restore();
+    }
+    paint(context, offset) {
+      if (context == null) dart.nullFailed(I[0], 603, 30, "context");
+      if (offset == null) dart.nullFailed(I[0], 603, 46, "offset");
+      if (this[_painter] != null) {
+        this[_paintWithPainter](context.canvas, offset, dart.nullCheck(this[_painter]));
+        this[_setRasterCacheHints](context);
+      }
+      super.paint(context, offset);
+      if (this[_foregroundPainter] != null) {
+        this[_paintWithPainter](context.canvas, offset, dart.nullCheck(this[_foregroundPainter]));
+        this[_setRasterCacheHints](context);
+      }
+    }
+    [_setRasterCacheHints](context) {
+      if (context == null) dart.nullFailed(I[0], 615, 45, "context");
+      if (dart.test(this.isComplex)) context.setIsComplexHint();
+      if (dart.test(this.willChange)) context.setWillChangeHint();
+    }
+    describeSemanticsConfiguration(config) {
+      let t5, t5$;
+      if (config == null) dart.nullFailed(I[0], 629, 62, "config");
+      super.describeSemanticsConfiguration(config);
+      this[_backgroundSemanticsBuilder] = (t5 = this.painter, t5 == null ? null : t5.semanticsBuilder);
+      this[_foregroundSemanticsBuilder] = (t5$ = this.foregroundPainter, t5$ == null ? null : t5$.semanticsBuilder);
+      config.isSemanticBoundary = this[_backgroundSemanticsBuilder] != null || this[_foregroundSemanticsBuilder] != null;
+    }
+    assembleSemanticsNode(node, config, children) {
+      if (node == null) dart.nullFailed(I[0], 644, 19, "node");
+      if (config == null) dart.nullFailed(I[0], 645, 28, "config");
+      if (children == null) dart.nullFailed(I[0], 646, 29, "children");
+      if (!dart.test(dart.fn(() => {
+        if (this.child == null && dart.test(children[$isNotEmpty])) {
+          dart.throw(new assertions.FlutterError.fromParts(T.JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new(dart.str(this[$runtimeType]) + " does not have a child widget but received a non-empty list of child SemanticsNode:\n" + dart.str(children[$join]("\n")))])));
+        }
+        return true;
+      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 648, 12, "() {\r\n      if (child == null && children.isNotEmpty) {\r\n        throw FlutterError.fromParts(<DiagnosticsNode>[\r\n          ErrorSummary(\r\n            '$runtimeType does not have a child widget but received a non-empty list of child SemanticsNode:\\n'\r\n            '${children.join('\\n')}'\r\n          )\r\n        ]);\r\n      }\r\n      return true;\r\n    }()");
+      let backgroundSemantics = this[_backgroundSemanticsBuilder] != null ? dart.nullCheck(this[_backgroundSemanticsBuilder])(this.size) : C[1] || CT.C1;
+      this[_backgroundSemanticsNodes] = custom_paint.RenderCustomPaint._updateSemanticsChildren(this[_backgroundSemanticsNodes], backgroundSemantics);
+      let foregroundSemantics = this[_foregroundSemanticsBuilder] != null ? dart.nullCheck(this[_foregroundSemanticsBuilder])(this.size) : C[1] || CT.C1;
+      this[_foregroundSemanticsNodes] = custom_paint.RenderCustomPaint._updateSemanticsChildren(this[_foregroundSemanticsNodes], foregroundSemantics);
+      let hasBackgroundSemantics = this[_backgroundSemanticsNodes] != null && dart.test(dart.nullCheck(this[_backgroundSemanticsNodes])[$isNotEmpty]);
+      let hasForegroundSemantics = this[_foregroundSemanticsNodes] != null && dart.test(dart.nullCheck(this[_foregroundSemanticsNodes])[$isNotEmpty]);
+      let finalChildren = (() => {
+        let t5 = T.JSArrayOfSemanticsNode().of([]);
+        if (hasBackgroundSemantics) t5[$addAll](dart.nullCheck(this[_backgroundSemanticsNodes]));
+        t5[$addAll](children);
+        if (hasForegroundSemantics) t5[$addAll](dart.nullCheck(this[_foregroundSemanticsNodes]));
+        return t5;
+      })();
+      super.assembleSemanticsNode(node, config, finalChildren);
+    }
+    clearSemantics() {
+      super.clearSemantics();
+      this[_backgroundSemanticsNodes] = null;
+      this[_foregroundSemanticsNodes] = null;
+    }
+    static _updateSemanticsChildren(oldSemantics, newChildSemantics) {
+      let t6, t6$;
+      oldSemantics = (t6 = oldSemantics, t6 == null ? C[2] || CT.C2 : t6);
+      newChildSemantics = (t6$ = newChildSemantics, t6$ == null ? C[1] || CT.C1 : t6$);
+      if (!dart.test(dart.fn(() => {
+        let keys = new (T.LinkedMapOfKey$int()).new();
+        let information = T.JSArrayOfDiagnosticsNode().of([]);
+        for (let i = 0; i < dart.notNull(dart.nullCheck(newChildSemantics)[$length]); i = i + 1) {
+          let child = newChildSemantics[$_get](i);
+          if (child.key != null) {
+            if (dart.test(keys[$containsKey](child.key))) {
+              information[$add](new assertions.ErrorDescription.new("- duplicate key " + dart.str(child.key) + " found at position " + dart.str(i)));
+            }
+            keys[$_set](dart.nullCheck(child.key), i);
+          }
+        }
+        if (dart.test(information[$isNotEmpty])) {
+          information[$insert](0, new assertions.ErrorSummary.new("Failed to update the list of CustomPainterSemantics:"));
+          dart.throw(new assertions.FlutterError.fromParts(information));
+        }
+        return true;
+      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 716, 12, "() {\r\n      final Map<Key, int> keys = HashMap<Key, int>();\r\n      final List<DiagnosticsNode> information = <DiagnosticsNode>[];\r\n      for (int i = 0; i < newChildSemantics!.length; i += 1) {\r\n        final CustomPainterSemantics child = newChildSemantics[i];\r\n        if (child.key != null) {\r\n          if (keys.containsKey(child.key)) {\r\n            information.add(ErrorDescription('- duplicate key ${child.key} found at position $i'));\r\n          }\r\n          keys[child.key!] = i;\r\n        }\r\n      }\r\n\r\n      if (information.isNotEmpty) {\r\n        information.insert(0, ErrorSummary('Failed to update the list of CustomPainterSemantics:'));\r\n        throw FlutterError.fromParts(information);\r\n      }\r\n\r\n      return true;\r\n    }()");
+      let newChildrenTop = 0;
+      let oldChildrenTop = 0;
+      let newChildrenBottom = dart.notNull(newChildSemantics[$length]) - 1;
+      let oldChildrenBottom = dart.notNull(oldSemantics[$length]) - 1;
+      let newChildren = T.ListOfSemanticsNodeN().filled(newChildSemantics[$length], null, {growable: false});
+      while (oldChildrenTop <= oldChildrenBottom && newChildrenTop <= newChildrenBottom) {
+        let oldChild = oldSemantics[$_get](oldChildrenTop);
+        let newSemantics = newChildSemantics[$_get](newChildrenTop);
+        if (!dart.test(custom_paint.RenderCustomPaint._canUpdateSemanticsChild(oldChild, newSemantics))) break;
+        let newChild = custom_paint.RenderCustomPaint._updateSemanticsChild(oldChild, newSemantics);
+        newChildren[$_set](newChildrenTop, newChild);
+        newChildrenTop = newChildrenTop + 1;
+        oldChildrenTop = oldChildrenTop + 1;
+      }
+      while (oldChildrenTop <= oldChildrenBottom && newChildrenTop <= newChildrenBottom) {
+        let oldChild = oldSemantics[$_get](oldChildrenBottom);
+        let newChild = newChildSemantics[$_get](newChildrenBottom);
+        if (!dart.test(custom_paint.RenderCustomPaint._canUpdateSemanticsChild(oldChild, newChild))) break;
+        oldChildrenBottom = oldChildrenBottom - 1;
+        newChildrenBottom = newChildrenBottom - 1;
+      }
+      let haveOldChildren = oldChildrenTop <= oldChildrenBottom;
+      let oldKeyedChildren = null;
+      let oldKeyedChildren$35isSet = false;
+      function oldKeyedChildren$35get() {
+        return oldKeyedChildren$35isSet ? oldKeyedChildren : dart.throw(new _internal.LateError.localNI("oldKeyedChildren"));
+      }
+      dart.fn(oldKeyedChildren$35get, T.VoidToMapOfKey$SemanticsNode());
+      function oldKeyedChildren$35set(t9) {
+        if (t9 == null) dart.nullFailed(I[0], 768, 40, "null");
+        if (oldKeyedChildren$35isSet)
+          dart.throw(new _internal.LateError.localAI("oldKeyedChildren"));
+        else {
+          oldKeyedChildren$35isSet = true;
+          return oldKeyedChildren = t9;
+        }
+      }
+      dart.fn(oldKeyedChildren$35set, T.MapOfKey$SemanticsNodeTodynamic());
+      if (haveOldChildren) {
+        oldKeyedChildren$35set(new (T.LinkedMapOfKey$SemanticsNode()).new());
+        while (oldChildrenTop <= oldChildrenBottom) {
+          let oldChild = oldSemantics[$_get](oldChildrenTop);
+          if (oldChild.key != null) oldKeyedChildren$35get()[$_set](dart.nullCheck(oldChild.key), oldChild);
+          oldChildrenTop = oldChildrenTop + 1;
+        }
+      }
+      while (newChildrenTop <= newChildrenBottom) {
+        let oldChild = null;
+        let newSemantics = newChildSemantics[$_get](newChildrenTop);
+        if (haveOldChildren) {
+          let key = newSemantics.key;
+          if (key != null) {
+            oldChild = oldKeyedChildren$35get()[$_get](key);
+            if (oldChild != null) {
+              if (dart.test(custom_paint.RenderCustomPaint._canUpdateSemanticsChild(oldChild, newSemantics))) {
+                oldKeyedChildren$35get()[$remove](key);
+              } else {
+                oldChild = null;
+              }
+            }
+          }
+        }
+        if (!(oldChild == null || dart.test(custom_paint.RenderCustomPaint._canUpdateSemanticsChild(oldChild, newSemantics)))) dart.assertFailed(null, I[0], 799, 14, "oldChild == null || _canUpdateSemanticsChild(oldChild, newSemantics)");
+        let newChild = custom_paint.RenderCustomPaint._updateSemanticsChild(oldChild, newSemantics);
+        if (!(dart.equals(oldChild, newChild) || oldChild == null)) dart.assertFailed(null, I[0], 801, 14, "oldChild == newChild || oldChild == null");
+        newChildren[$_set](newChildrenTop, newChild);
+        newChildrenTop = newChildrenTop + 1;
+      }
+      if (!(oldChildrenTop === oldChildrenBottom + 1)) dart.assertFailed(null, I[0], 807, 12, "oldChildrenTop == oldChildrenBottom + 1");
+      if (!(newChildrenTop === newChildrenBottom + 1)) dart.assertFailed(null, I[0], 808, 12, "newChildrenTop == newChildrenBottom + 1");
+      if (!(dart.notNull(newChildSemantics[$length]) - newChildrenTop === dart.notNull(oldSemantics[$length]) - oldChildrenTop)) dart.assertFailed(null, I[0], 809, 12, "newChildSemantics.length - newChildrenTop == oldSemantics.length - oldChildrenTop");
+      newChildrenBottom = dart.notNull(newChildSemantics[$length]) - 1;
+      oldChildrenBottom = dart.notNull(oldSemantics[$length]) - 1;
+      while (oldChildrenTop <= oldChildrenBottom && newChildrenTop <= newChildrenBottom) {
+        let oldChild = oldSemantics[$_get](oldChildrenTop);
+        let newSemantics = newChildSemantics[$_get](newChildrenTop);
+        if (!dart.test(custom_paint.RenderCustomPaint._canUpdateSemanticsChild(oldChild, newSemantics))) dart.assertFailed(null, I[0], 817, 14, "_canUpdateSemanticsChild(oldChild, newSemantics)");
+        let newChild = custom_paint.RenderCustomPaint._updateSemanticsChild(oldChild, newSemantics);
+        if (!dart.equals(oldChild, newChild)) dart.assertFailed(null, I[0], 819, 14, "oldChild == newChild");
+        newChildren[$_set](newChildrenTop, newChild);
+        newChildrenTop = newChildrenTop + 1;
+        oldChildrenTop = oldChildrenTop + 1;
+      }
+      if (!dart.test(dart.fn(() => {
+        for (let node of newChildren) {
+          if (!(node != null)) dart.assertFailed(null, I[0], 827, 16, "node != null");
+        }
+        return true;
+      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 825, 12, "() {\r\n      for (final SemanticsNode? node in newChildren) {\r\n        assert(node != null);\r\n      }\r\n      return true;\r\n    }()");
+      return newChildren[$cast](semantics.SemanticsNode);
+    }
+    static _canUpdateSemanticsChild(oldChild, newSemantics) {
+      if (oldChild == null) dart.nullFailed(I[0], 839, 54, "oldChild");
+      if (newSemantics == null) dart.nullFailed(I[0], 839, 87, "newSemantics");
+      return dart.equals(oldChild.key, newSemantics.key);
+    }
+    static _updateSemanticsChild(oldChild, newSemantics) {
+      let t11, t11$;
+      if (newSemantics == null) dart.nullFailed(I[0], 847, 94, "newSemantics");
+      if (!(oldChild == null || dart.test(custom_paint.RenderCustomPaint._canUpdateSemanticsChild(oldChild, newSemantics)))) dart.assertFailed(null, I[0], 848, 12, "oldChild == null || _canUpdateSemanticsChild(oldChild, newSemantics)");
+      let newChild = (t11 = oldChild, t11 == null ? new semantics.SemanticsNode.new({key: newSemantics.key}) : t11);
+      let properties = newSemantics.properties;
+      let config = new semantics.SemanticsConfiguration.new();
+      if (properties.sortKey != null) {
+        config.sortKey = properties.sortKey;
+      }
+      if (properties.checked != null) {
+        config.isChecked = properties.checked;
+      }
+      if (properties.selected != null) {
+        config.isSelected = dart.nullCheck(properties.selected);
+      }
+      if (properties.button != null) {
+        config.isButton = dart.nullCheck(properties.button);
+      }
+      if (properties.link != null) {
+        config.isLink = dart.nullCheck(properties.link);
+      }
+      if (properties.textField != null) {
+        config.isTextField = dart.nullCheck(properties.textField);
+      }
+      if (properties.slider != null) {
+        config.isSlider = dart.nullCheck(properties.slider);
+      }
+      if (properties.readOnly != null) {
+        config.isReadOnly = dart.nullCheck(properties.readOnly);
+      }
+      if (properties.focusable != null) {
+        config.isFocusable = dart.nullCheck(properties.focusable);
+      }
+      if (properties.focused != null) {
+        config.isFocused = dart.nullCheck(properties.focused);
+      }
+      if (properties.enabled != null) {
+        config.isEnabled = properties.enabled;
+      }
+      if (properties.inMutuallyExclusiveGroup != null) {
+        config.isInMutuallyExclusiveGroup = dart.nullCheck(properties.inMutuallyExclusiveGroup);
+      }
+      if (properties.obscured != null) {
+        config.isObscured = dart.nullCheck(properties.obscured);
+      }
+      if (properties.multiline != null) {
+        config.isMultiline = dart.nullCheck(properties.multiline);
+      }
+      if (properties.hidden != null) {
+        config.isHidden = dart.nullCheck(properties.hidden);
+      }
+      if (properties.header != null) {
+        config.isHeader = dart.nullCheck(properties.header);
+      }
+      if (properties.scopesRoute != null) {
+        config.scopesRoute = dart.nullCheck(properties.scopesRoute);
+      }
+      if (properties.namesRoute != null) {
+        config.namesRoute = dart.nullCheck(properties.namesRoute);
+      }
+      if (properties.liveRegion != null) {
+        config.liveRegion = dart.nullCheck(properties.liveRegion);
+      }
+      if (properties.maxValueLength != null) {
+        config.maxValueLength = properties.maxValueLength;
+      }
+      if (properties.currentValueLength != null) {
+        config.currentValueLength = properties.currentValueLength;
+      }
+      if (properties.toggled != null) {
+        config.isToggled = properties.toggled;
+      }
+      if (properties.image != null) {
+        config.isImage = dart.nullCheck(properties.image);
+      }
+      if (properties.label != null) {
+        config.label = dart.nullCheck(properties.label);
+      }
+      if (properties.value != null) {
+        config.value = dart.nullCheck(properties.value);
+      }
+      if (properties.increasedValue != null) {
+        config.increasedValue = dart.nullCheck(properties.increasedValue);
+      }
+      if (properties.decreasedValue != null) {
+        config.decreasedValue = dart.nullCheck(properties.decreasedValue);
+      }
+      if (properties.hint != null) {
+        config.hint = dart.nullCheck(properties.hint);
+      }
+      if (properties.textDirection != null) {
+        config.textDirection = properties.textDirection;
+      }
+      if (properties.onTap != null) {
+        config.onTap = properties.onTap;
+      }
+      if (properties.onLongPress != null) {
+        config.onLongPress = properties.onLongPress;
+      }
+      if (properties.onScrollLeft != null) {
+        config.onScrollLeft = properties.onScrollLeft;
+      }
+      if (properties.onScrollRight != null) {
+        config.onScrollRight = properties.onScrollRight;
+      }
+      if (properties.onScrollUp != null) {
+        config.onScrollUp = properties.onScrollUp;
+      }
+      if (properties.onScrollDown != null) {
+        config.onScrollDown = properties.onScrollDown;
+      }
+      if (properties.onIncrease != null) {
+        config.onIncrease = properties.onIncrease;
+      }
+      if (properties.onDecrease != null) {
+        config.onDecrease = properties.onDecrease;
+      }
+      if (properties.onCopy != null) {
+        config.onCopy = properties.onCopy;
+      }
+      if (properties.onCut != null) {
+        config.onCut = properties.onCut;
+      }
+      if (properties.onPaste != null) {
+        config.onPaste = properties.onPaste;
+      }
+      if (properties.onMoveCursorForwardByCharacter != null) {
+        config.onMoveCursorForwardByCharacter = properties.onMoveCursorForwardByCharacter;
+      }
+      if (properties.onMoveCursorBackwardByCharacter != null) {
+        config.onMoveCursorBackwardByCharacter = properties.onMoveCursorBackwardByCharacter;
+      }
+      if (properties.onMoveCursorForwardByWord != null) {
+        config.onMoveCursorForwardByWord = properties.onMoveCursorForwardByWord;
+      }
+      if (properties.onMoveCursorBackwardByWord != null) {
+        config.onMoveCursorBackwardByWord = properties.onMoveCursorBackwardByWord;
+      }
+      if (properties.onSetSelection != null) {
+        config.onSetSelection = properties.onSetSelection;
+      }
+      if (properties.onDidGainAccessibilityFocus != null) {
+        config.onDidGainAccessibilityFocus = properties.onDidGainAccessibilityFocus;
+      }
+      if (properties.onDidLoseAccessibilityFocus != null) {
+        config.onDidLoseAccessibilityFocus = properties.onDidLoseAccessibilityFocus;
+      }
+      if (properties.onDismiss != null) {
+        config.onDismiss = properties.onDismiss;
+      }
+      newChild.updateWith({config: config, childrenInInversePaintOrder: C[2] || CT.C2});
+      t11$ = newChild;
+      (() => {
+        t11$.rect = newSemantics.rect;
+        t11$.transform = newSemantics.transform;
+        t11$.tags = newSemantics.tags;
+        return t11$;
+      })();
+      return newChild;
+    }
+  };
+  (custom_paint.RenderCustomPaint.new = function(opts) {
+    let painter = opts && 'painter' in opts ? opts.painter : null;
+    let foregroundPainter = opts && 'foregroundPainter' in opts ? opts.foregroundPainter : null;
+    let preferredSize = opts && 'preferredSize' in opts ? opts.preferredSize : C[0] || CT.C0;
+    if (preferredSize == null) dart.nullFailed(I[0], 373, 10, "preferredSize");
+    let isComplex = opts && 'isComplex' in opts ? opts.isComplex : false;
+    if (isComplex == null) dart.nullFailed(I[0], 374, 10, "isComplex");
+    let willChange = opts && 'willChange' in opts ? opts.willChange : false;
+    if (willChange == null) dart.nullFailed(I[0], 375, 10, "willChange");
+    let child = opts && 'child' in opts ? opts.child : null;
+    this[_backgroundSemanticsBuilder] = null;
+    this[_foregroundSemanticsBuilder] = null;
+    this[_backgroundSemanticsNodes] = null;
+    this[_foregroundSemanticsNodes] = null;
+    this[isComplex$] = isComplex;
+    this[willChange$] = willChange;
+    if (!(preferredSize != null)) dart.assertFailed(null, I[0], 377, 15, "preferredSize != null");
+    this[_painter] = painter;
+    this[_foregroundPainter] = foregroundPainter;
+    this[_preferredSize] = preferredSize;
+    custom_paint.RenderCustomPaint.__proto__.new.call(this, child);
+    ;
+  }).prototype = custom_paint.RenderCustomPaint.prototype;
+  dart.addTypeTests(custom_paint.RenderCustomPaint);
+  dart.addTypeCaches(custom_paint.RenderCustomPaint);
+  dart.setMethodSignature(custom_paint.RenderCustomPaint, () => ({
+    __proto__: dart.getMethods(custom_paint.RenderCustomPaint.__proto__),
+    [_didUpdatePainter]: dart.fnType(dart.void, [dart.nullable(custom_paint.CustomPainter), dart.nullable(custom_paint.CustomPainter)]),
+    [_paintWithPainter]: dart.fnType(dart.void, [ui.Canvas, ui.Offset, custom_paint.CustomPainter]),
+    [_setRasterCacheHints]: dart.fnType(dart.void, [object.PaintingContext])
+  }));
+  dart.setGetterSignature(custom_paint.RenderCustomPaint, () => ({
+    __proto__: dart.getGetters(custom_paint.RenderCustomPaint.__proto__),
+    painter: dart.nullable(custom_paint.CustomPainter),
+    foregroundPainter: dart.nullable(custom_paint.CustomPainter),
+    preferredSize: ui.Size
+  }));
+  dart.setSetterSignature(custom_paint.RenderCustomPaint, () => ({
+    __proto__: dart.getSetters(custom_paint.RenderCustomPaint.__proto__),
+    painter: dart.nullable(custom_paint.CustomPainter),
+    foregroundPainter: dart.nullable(custom_paint.CustomPainter),
+    preferredSize: ui.Size
+  }));
+  dart.setLibraryUri(custom_paint.RenderCustomPaint, I[1]);
+  dart.setFieldSignature(custom_paint.RenderCustomPaint, () => ({
+    __proto__: dart.getFields(custom_paint.RenderCustomPaint.__proto__),
+    [_painter]: dart.fieldType(dart.nullable(custom_paint.CustomPainter)),
+    [_foregroundPainter]: dart.fieldType(dart.nullable(custom_paint.CustomPainter)),
+    [_preferredSize]: dart.fieldType(ui.Size),
+    isComplex: dart.fieldType(core.bool),
+    willChange: dart.fieldType(core.bool),
+    [_backgroundSemanticsBuilder]: dart.fieldType(dart.nullable(dart.fnType(core.List$(custom_paint.CustomPainterSemantics), [ui.Size]))),
+    [_foregroundSemanticsBuilder]: dart.fieldType(dart.nullable(dart.fnType(core.List$(custom_paint.CustomPainterSemantics), [ui.Size]))),
+    [_backgroundSemanticsNodes]: dart.fieldType(dart.nullable(core.List$(semantics.SemanticsNode))),
+    [_foregroundSemanticsNodes]: dart.fieldType(dart.nullable(core.List$(semantics.SemanticsNode)))
+  }));
+  dart.trackLibraries("packages/flutter/src/rendering/custom_paint.dart", {
+    "package:flutter/src/rendering/custom_paint.dart": custom_paint
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["animation_controller.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/animation/animation_controller.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["custom_paint.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAwIoB;;;;;;gBAQY;;;AAAa;iCAAU,eAAY,QAAQ;IAAC;mBASzC;;;AAAa;iCAAU,kBAAe,QAAQ;IAAC;;AAkD9B;IAAI;;oCAsBF;;AAAgB,gCAAc,WAAW;IAAC;;UA0CzE;AAAa;IAAI;;;AAGjB,YAA4D,UAAzD,6BAAiB,SAAM,gBAAyB,0CAArB,OAAU,oBAAV,cAAwB,aAAI;IAAE;;;QAxI/C;IAAsB,iBAAE,OAAO;AAA3D;;EAA2D;;;;;;;;;;;;;;;;;;;;;;;;;;IAkLtD;;;;;;IAMA;;;;;;IAMI;;;;;;IASW;;;;;;IAMD;;;;;;;;QA7ClB;QACS;;QACA;;QACT;QACA;IAJA;IACS;IACA;IACT;IACA;UACK,AAAK,IAAD;UACJ,AAAW,UAAD;;EAAS;;;;;;;;;;;;;;;;;;;;;;;;;;;IAuL1B;;;;;;IAIA;;;;;;;AAtGyB;IAAQ;gBAcX;AACzB,UAAa,YAAT,gBAAY,KAAK,GACnB;AACmB,uBAAa;AAClB,MAAhB,iBAAW,KAAK;AACuB,MAAvC,wBAAkB,gBAAU,UAAU;IACxC;;AAKwC;IAAkB;0BAcrB;AACnC,UAAuB,YAAnB,0BAAsB,KAAK,GAC7B;AACmB,uBAAa;AACR,MAA1B,2BAAqB,KAAK;AACuB,MAAjD,wBAAkB,0BAAoB,UAAU;IAClD;wBAEsC,YAA2B;;AAE/D,UAAI,AAAW,UAAD;AACZ,cAAO,AAAW,UAAD;AACD,QAAhB;YACK,KAAI,AAAW,UAAD,YACM,aAAZ,iBAAX,UAAU,GAA2B,iBAAX,UAAU,gBACpC,AAAW,UAAD,eAAe,UAAU;AACrB,QAAhB;;AAEF,oBAAI;AACwC,aAA1C,UAAU;qBAAV,OAAY,4BAAe;AACY,cAAvC,UAAU;sBAAV,OAAY,0BAAY;;AAI1B,UAAI,AAAW,UAAD;AACZ,cAAO,AAAW,UAAD;AACjB,sBAAI,gBACF,AAA0B;YACvB,KAAI,AAAW,UAAD,YACM,aAAZ,iBAAX,UAAU,GAA2B,iBAAX,UAAU,gBACpC,AAAW,UAAD,wBAAwB,UAAU;AACpB,QAA1B;;IAEJ;;AAS0B;IAAc;;UAEjB;AACrB,YAAO,AAAM,KAAD;AACZ,UAAkB,YAAd,oBAAiB,KAAK,GACxB;AACoB,MAAtB,uBAAiB,KAAK;AACL,MAAjB;IACF;;UAgBuC;AACrC,UAAI,AAAM,oBACR,MAAO,AAAc,AAAM,uCAAW,AAAc,2BAAQ;AAC9D,YAAa,gCAAyB,MAAM;IAC9C;;UAGuC;AACrC,UAAI,AAAM,oBACR,MAAO,AAAc,AAAM,uCAAW,AAAc,2BAAQ;AAC9D,YAAa,gCAAyB,MAAM;IAC9C;;UAGwC;AACtC,UAAI,AAAM,oBACR,MAAO,AAAc,AAAO,wCAAW,AAAc,4BAAS;AAChE,YAAa,iCAA0B,KAAK;IAC9C;;UAGwC;AACtC,UAAI,AAAM,oBACR,MAAO,AAAc,AAAO,wCAAW,AAAc,4BAAS;AAChE,YAAa,iCAA0B,KAAK;IAC9C;WAG0B;;;;AACL,MAAb,aAAO,KAAK;AACmB,WAArC;0BAAU,yBAAY;AACyB,YAA/C;2BAAoB,0BAAY;IAClC;;;AAI0C,WAAxC;0BAAU,4BAAe;AACyB,YAAlD;2BAAoB,6BAAe;AACrB,MAAR;IACR;oBAGsC;;;UAA0B;;AAC9D,UAAI,AAAmB,+CAAkD,KAApB,AAAE,eAApB,kCAA4B,QAAQ,GAAhB,aAAqB,cAC1E,MAAO;AACT,YAAa,uBAAgB,MAAM,aAAY,QAAQ;IACzD;gBAGwB;;;AACtB,YAAO,AAAS,AAAQ,sCAAgC,KAApB,AAAE,eAAV,wBAAkB,QAAQ,GAAhB,aAAqB;IAC7D;;AAIuB,MAAf;AACoB,MAA1B;IACF;;UAG0C;AACxC,YAAO,AAAY,YAAD,WAAW;IAC/B;wBAE8B,QAAe,QAAsB;UAArC;UAAe;UAAsB;AACxD;;;;;;;;;;;;AACI,MAAb,AAAO,MAAD;AACN,qBAAO,AAGN;AAFqD,QAApD,mCAA+B,AAAO,MAAD;AACrC,cAAO;;AAET,UAAW,aAAP,MAAM,EAAW,iBACnB,AAAO,AAA+B,MAAhC,WAAW,AAAO,MAAD,KAAK,AAAO,MAAD;AACT,MAA3B,AAAQ,OAAD,OAAO,MAAM,EAAE;AACtB,qBAAO,AAiCN;AAzBW,sCAA0B,AAAO,MAAD;AAC1C,YAA4B,aAAxB,uBAAuB,iBAAG;AAU1B,UATF,WAAmB,sCAA2B,iCAC5C,gCAAY,AACV,kBAAM,OAAO,sFACc,aAAxB,uBAAuB,iBAAG,yCAA6B,WAC1D,UAA+B,AAA+B,aAAvD,uBAAuB,iBAAG,0CAAgC,IAAI,KAAK,OAAK,MAC/E,qCAEF,oCAAiB,kGACjB,6BAAU;;AAGd,YAA4B,aAAxB,uBAAuB,iBAAG;AAS1B,UARF,WAAmB,sCAA2B,iCAC5C,gCAAY,AAAC,kBAAM,OAAO,0DACQ,aAA7B,qDAA+B,uBAAuB,KAAC,WAC1D,UAAoC,AAA0B,aAAvD,qDAA+B,uBAAuB,MAAI,IAAI,KAAK,OAAK,MAC/E,wDAEF,oCAAiB,yFACjB,6BAAU;;AAGd,cAAO,AAAwB,wBAAD,IAAI;;AAEpB,MAAhB,AAAO,MAAD;IACR;UAG2B,SAAgB;UAAhB;UAAgB;AACzC,UAAI,AAAS;AACyC,QAApD,wBAAkB,AAAQ,OAAD,SAAS,MAAM,EAAU,eAAR;AACb,QAA7B,2BAAqB,OAAO;;AAEF,MAAtB,YAAM,OAAO,EAAE,MAAM;AAC3B,UAAI,AAAmB;AACyC,QAA9D,wBAAkB,AAAQ,OAAD,SAAS,MAAM,EAAoB,eAAlB;AACb,QAA7B,2BAAqB,OAAO;;IAEhC;;UAE0C;AACxC,oBAAI,iBACF,AAAQ,AAAkB,OAAnB;AACT,oBAAI,kBACF,AAAQ,AAAmB,OAApB;IACX;mCAS2D;;;AACb,MAAtC,qCAA+B,MAAM;AACY,MAAvD,qEAA8B,OAAS;AAC0B,MAAjE,iFAA8B,OAAmB;AACqD,MAAtG,AAAO,MAAD,sBAAsB,AAA4B,AAAQ,6CAAG,AAA4B;IACjG;0BAUgB,MACS,QACC;UAFV;UACS;UACC;AAExB,qBAAO,AAUN;AATC,YAAI,AAAM,gCAAW,AAAS,QAAD;AAMzB,UALF,WAAmB,sCAA2B,iCAC5C,gCAAY,SACR,sBAAW,mGACV,AAAS,QAAD,QAAM;;AAIvB,cAAO;;AAG0B,gCAAsB,AAA4B,4CACtD,AAAC,eAA5B,mCAA6B;AAEmE,MAApG,kCAA4B,wDAAyB,iCAA2B,mBAAmB;AAEhE,gCAAsB,AAA4B,4CACtD,AAAC,eAA5B,mCAA6B;AAEmE,MAApG,kCAA4B,wDAAyB,iCAA2B,mBAAmB;AAExF,mCAAyB,AAA0B,AAAQ,qDAA4B,AAAE,eAA3B;AAC9D,mCAAyB,AAA0B,AAAQ,qDAA4B,AAAE,eAA3B;AAC/C,0BAA+B;;AACvD,YAAI,sBAAsB,EAA8B,2BAAzB;AAC5B,4BAAQ;AACX,YAAI,sBAAsB,EAA8B,2BAAzB;;;AAEuB,MAAlD,4BAAsB,IAAI,EAAE,MAAM,EAAE,aAAa;IACzD;;AAIwB,MAAhB;AAC0B,MAAhC,kCAA4B;AACI,MAAhC,kCAA4B;IAC9B;oCAyBuB,cACS;;AAEwB,MAAtD,gBAA4B,KAAb,YAAY,EAAZ;AAC0D,MAAzE,qBAAsC,MAAlB,iBAAiB,EAAjB;AAEpB,qBAAO,AAmBN;AAlBqB,mBAAO;AACC,0BAA+B;AAC3D,iBAAS,IAAI,GAAG,AAAE,CAAD,gBAAoB,AAAE,eAAnB,iBAAiB,aAAU,IAAA,AAAE,CAAD,GAAI;AACrB,sBAAQ,AAAiB,iBAAA,QAAC,CAAC;AACxD,cAAI,AAAM,AAAI,KAAL;AACP,0BAAI,AAAK,IAAD,eAAa,AAAM,KAAD;AAC8D,cAAtF,AAAY,WAAD,OAAK,oCAAiB,AAAmD,8BAAhC,AAAM,KAAD,QAAK,iCAAoB,CAAC;;AAEjE,YAApB,AAAI,IAAA,QAAU,eAAT,AAAM,KAAD,OAAS,CAAC;;;AAIxB,sBAAI,AAAY,WAAD;AAC8E,UAA3F,AAAY,WAAD,UAAQ,GAAG,gCAAa;AACM,UAAzC,WAAmB,sCAAU,WAAW;;AAG1C,cAAO;;AAGL,2BAAiB;AACjB,2BAAiB;AACjB,8BAA6C,aAAzB,AAAkB,iBAAD,aAAU;AAC/C,8BAAwC,aAApB,AAAa,YAAD,aAAU;AAEnB,wBAAc,gCAA4B,AAAkB,iBAAD,WAAS,iBAAgB;AAG/G,aAAQ,AAAe,cAAD,IAAI,iBAAiB,IAAM,AAAe,cAAD,IAAI,iBAAiB;AAC9D,uBAAW,AAAY,YAAA,QAAC,cAAc;AAC7B,2BAAe,AAAiB,iBAAA,QAAC,cAAc;AAC5E,uBAAK,wDAAyB,QAAQ,EAAE,YAAY,IAClD;AACkB,uBAAW,qDAAsB,QAAQ,EAAE,YAAY;AACrC,QAAtC,AAAW,WAAA,QAAC,cAAc,EAAI,QAAQ;AACnB,QAAnB,iBAAA,AAAe,cAAD,GAAI;AACC,QAAnB,iBAAA,AAAe,cAAD,GAAI;;AAIpB,aAAQ,AAAe,cAAD,IAAI,iBAAiB,IAAM,AAAe,cAAD,IAAI,iBAAiB;AAC9D,uBAAW,AAAY,YAAA,QAAC,iBAAiB;AAChC,uBAAW,AAAiB,iBAAA,QAAC,iBAAiB;AAC3E,uBAAK,wDAAyB,QAAQ,EAAE,QAAQ,IAC9C;AACoB,QAAtB,oBAAA,AAAkB,iBAAD,GAAI;AACC,QAAtB,oBAAA,AAAkB,iBAAD,GAAI;;AAIZ,4BAAkB,AAAe,cAAD,IAAI,iBAAiB;AAC7B;;;;;;;;;;;;;;;;AACnC,UAAI,eAAe;AACwB,QAAzC,uBAAuC;AACvC,eAAO,AAAe,cAAD,IAAI,iBAAiB;AACpB,yBAAW,AAAY,YAAA,QAAC,cAAc;AAC1D,cAAI,AAAS,AAAI,QAAL,cACV,AAAgB,AAA0B,gCAAb,eAAZ,AAAS,QAAD,OAAS,QAAQ;AACzB,UAAnB,iBAAA,AAAe,cAAD,GAAI;;;AAKtB,aAAO,AAAe,cAAD,IAAI,iBAAiB;AACzB;AACc,2BAAe,AAAiB,iBAAA,QAAC,cAAc;AAC5E,YAAI,eAAe;AACN,oBAAM,AAAa,YAAD;AAC7B,cAAI,AAAI,GAAD;AAC2B,YAAhC,WAAW,AAAgB,gCAAC,GAAG;AAC/B,gBAAI,AAAS,QAAD;AACV,4BAAI,wDAAyB,QAAQ,EAAE,YAAY;AAGrB,gBAA5B,AAAiB,kCAAO,GAAG;;AAGZ,gBAAf,WAAW;;;;;AAKnB,cAAO,AAAS,AAAQ,QAAT,sBAAY,wDAAyB,QAAQ,EAAE,YAAY;AACtD,uBAAW,qDAAsB,QAAQ,EAAE,YAAY;AAC3E,cAAgB,AAAY,YAArB,QAAQ,EAAI,QAAQ,KAAI,AAAS,QAAD;AACD,QAAtC,AAAW,WAAA,QAAC,cAAc,EAAI,QAAQ;AACnB,QAAnB,iBAAA,AAAe,cAAD,GAAI;;AAIpB,YAAO,AAAe,cAAD,KAAI,AAAkB,iBAAD,GAAG;AAC7C,YAAO,AAAe,cAAD,KAAI,AAAkB,iBAAD,GAAG;AAC7C,YAAgC,AAAiB,aAA1C,AAAkB,iBAAD,aAAU,cAAc,KAAwB,aAApB,AAAa,YAAD,aAAU,cAAc;AACxC,MAAhD,oBAA6C,aAAzB,AAAkB,iBAAD,aAAU;AACJ,MAA3C,oBAAwC,aAApB,AAAa,YAAD,aAAU;AAG1C,aAAQ,AAAe,cAAD,IAAI,iBAAiB,IAAM,AAAe,cAAD,IAAI,iBAAiB;AAC9D,uBAAW,AAAY,YAAA,QAAC,cAAc;AAC7B,2BAAe,AAAiB,iBAAA,QAAC,cAAc;AAC5E,uBAAO,wDAAyB,QAAQ,EAAE,YAAY;AAClC,uBAAW,qDAAsB,QAAQ,EAAE,YAAY;AAC3E,aAAgB,YAAT,QAAQ,EAAI,QAAQ;AACW,QAAtC,AAAW,WAAA,QAAC,cAAc,EAAI,QAAQ;AACnB,QAAnB,iBAAA,AAAe,cAAD,GAAI;AACC,QAAnB,iBAAA,AAAe,cAAD,GAAI;;AAGpB,qBAAO,AAKN;AAJC,iBAA0B,OAAQ,YAAW;AAC3C,gBAAO,AAAK,IAAD;;AAEb,cAAO;;AAGT,YAAO,AAAY,YAAD;IACpB;oCAMmD,UAAiC;UAAjC;UAAiC;AAClF,YAAoB,aAAb,AAAS,QAAD,MAAQ,AAAa,YAAD;IACrC;iCAM0D,UAAiC;;;AACzF,YAAO,AAAS,AAAQ,QAAT,sBAAY,wDAAyB,QAAQ,EAAE,YAAY;AAEtD,sBAAoB,MAAT,QAAQ,EAAR,cAAY,sCACpC,AAAa,YAAD;AAGO,uBAAa,AAAa,YAAD;AACtB,mBAAS;AACtC,UAAI,AAAW,AAAQ,UAAT;AACuB,QAAnC,AAAO,MAAD,WAAW,AAAW,UAAD;;AAE7B,UAAI,AAAW,AAAQ,UAAT;AACyB,QAArC,AAAO,MAAD,aAAa,AAAW,UAAD;;AAE/B,UAAI,AAAW,AAAS,UAAV;AAC4B,QAAxC,AAAO,MAAD,cAAiC,eAAnB,AAAW,UAAD;;AAEhC,UAAI,AAAW,AAAO,UAAR;AACwB,QAApC,AAAO,MAAD,YAA6B,eAAjB,AAAW,UAAD;;AAE9B,UAAI,AAAW,AAAK,UAAN;AACoB,QAAhC,AAAO,MAAD,UAAyB,eAAf,AAAW,UAAD;;AAE5B,UAAI,AAAW,AAAU,UAAX;AAC8B,QAA1C,AAAO,MAAD,eAAmC,eAApB,AAAW,UAAD;;AAEjC,UAAI,AAAW,AAAO,UAAR;AACwB,QAApC,AAAO,MAAD,YAA6B,eAAjB,AAAW,UAAD;;AAE9B,UAAI,AAAW,AAAS,UAAV;AAC4B,QAAxC,AAAO,MAAD,cAAiC,eAAnB,AAAW,UAAD;;AAEhC,UAAI,AAAW,AAAU,UAAX;AAC8B,QAA1C,AAAO,MAAD,eAAmC,eAApB,AAAW,UAAD;;AAEjC,UAAI,AAAW,AAAQ,UAAT;AAC0B,QAAtC,AAAO,MAAD,aAA+B,eAAlB,AAAW,UAAD;;AAE/B,UAAI,AAAW,AAAQ,UAAT;AACyB,QAArC,AAAO,MAAD,aAAa,AAAW,UAAD;;AAE/B,UAAI,AAAW,AAAyB,UAA1B;AAC4D,QAAxE,AAAO,MAAD,8BAAiE,eAAnC,AAAW,UAAD;;AAEhD,UAAI,AAAW,AAAS,UAAV;AAC4B,QAAxC,AAAO,MAAD,cAAiC,eAAnB,AAAW,UAAD;;AAEhC,UAAI,AAAW,AAAU,UAAX;AAC8B,QAA1C,AAAO,MAAD,eAAmC,eAApB,AAAW,UAAD;;AAEjC,UAAI,AAAW,AAAO,UAAR;AACwB,QAApC,AAAO,MAAD,YAA6B,eAAjB,AAAW,UAAD;;AAE9B,UAAI,AAAW,AAAO,UAAR;AACwB,QAApC,AAAO,MAAD,YAA6B,eAAjB,AAAW,UAAD;;AAE9B,UAAI,AAAW,AAAY,UAAb;AACgC,QAA5C,AAAO,MAAD,eAAqC,eAAtB,AAAW,UAAD;;AAEjC,UAAI,AAAW,AAAW,UAAZ;AAC8B,QAA1C,AAAO,MAAD,cAAmC,eAArB,AAAW,UAAD;;AAEhC,UAAI,AAAW,AAAW,UAAZ;AAC8B,QAA1C,AAAO,MAAD,cAAmC,eAArB,AAAW,UAAD;;AAEhC,UAAI,AAAW,AAAe,UAAhB;AACqC,QAAjD,AAAO,MAAD,kBAAkB,AAAW,UAAD;;AAEpC,UAAI,AAAW,AAAmB,UAApB;AAC6C,QAAzD,AAAO,MAAD,sBAAsB,AAAW,UAAD;;AAExC,UAAI,AAAW,AAAQ,UAAT;AACyB,QAArC,AAAO,MAAD,aAAa,AAAW,UAAD;;AAE/B,UAAI,AAAW,AAAM,UAAP;AACsB,QAAlC,AAAO,MAAD,WAA2B,eAAhB,AAAW,UAAD;;AAE7B,UAAI,AAAW,AAAM,UAAP;AACoB,QAAhC,AAAO,MAAD,SAAyB,eAAhB,AAAW,UAAD;;AAE3B,UAAI,AAAW,AAAM,UAAP;AACoB,QAAhC,AAAO,MAAD,SAAyB,eAAhB,AAAW,UAAD;;AAE3B,UAAI,AAAW,AAAe,UAAhB;AACsC,QAAlD,AAAO,MAAD,kBAA2C,eAAzB,AAAW,UAAD;;AAEpC,UAAI,AAAW,AAAe,UAAhB;AACsC,QAAlD,AAAO,MAAD,kBAA2C,eAAzB,AAAW,UAAD;;AAEpC,UAAI,AAAW,AAAK,UAAN;AACkB,QAA9B,AAAO,MAAD,QAAuB,eAAf,AAAW,UAAD;;AAE1B,UAAI,AAAW,AAAc,UAAf;AACmC,QAA/C,AAAO,MAAD,iBAAiB,AAAW,UAAD;;AAEnC,UAAI,AAAW,AAAM,UAAP;AACmB,QAA/B,AAAO,MAAD,SAAS,AAAW,UAAD;;AAE3B,UAAI,AAAW,AAAY,UAAb;AAC+B,QAA3C,AAAO,MAAD,eAAe,AAAW,UAAD;;AAEjC,UAAI,AAAW,AAAa,UAAd;AACiC,QAA7C,AAAO,MAAD,gBAAgB,AAAW,UAAD;;AAElC,UAAI,AAAW,AAAc,UAAf;AACmC,QAA/C,AAAO,MAAD,iBAAiB,AAAW,UAAD;;AAEnC,UAAI,AAAW,AAAW,UAAZ;AAC6B,QAAzC,AAAO,MAAD,cAAc,AAAW,UAAD;;AAEhC,UAAI,AAAW,AAAa,UAAd;AACiC,QAA7C,AAAO,MAAD,gBAAgB,AAAW,UAAD;;AAElC,UAAI,AAAW,AAAW,UAAZ;AAC6B,QAAzC,AAAO,MAAD,cAAc,AAAW,UAAD;;AAEhC,UAAI,AAAW,AAAW,UAAZ;AAC6B,QAAzC,AAAO,MAAD,cAAc,AAAW,UAAD;;AAEhC,UAAI,AAAW,AAAO,UAAR;AACqB,QAAjC,AAAO,MAAD,UAAU,AAAW,UAAD;;AAE5B,UAAI,AAAW,AAAM,UAAP;AACmB,QAA/B,AAAO,MAAD,SAAS,AAAW,UAAD;;AAE3B,UAAI,AAAW,AAAQ,UAAT;AACuB,QAAnC,AAAO,MAAD,WAAW,AAAW,UAAD;;AAE7B,UAAI,AAAW,AAA+B,UAAhC;AACqE,QAAjF,AAAO,MAAD,kCAAkC,AAAW,UAAD;;AAEpD,UAAI,AAAW,AAAgC,UAAjC;AACuE,QAAnF,AAAO,MAAD,mCAAmC,AAAW,UAAD;;AAErD,UAAI,AAAW,AAA0B,UAA3B;AAC2D,QAAvE,AAAO,MAAD,6BAA6B,AAAW,UAAD;;AAE/C,UAAI,AAAW,AAA2B,UAA5B;AAC6D,QAAzE,AAAO,MAAD,8BAA8B,AAAW,UAAD;;AAEhD,UAAI,AAAW,AAAe,UAAhB;AACqC,QAAjD,AAAO,MAAD,kBAAkB,AAAW,UAAD;;AAEpC,UAAI,AAAW,AAA4B,UAA7B;AAC+D,QAA3E,AAAO,MAAD,+BAA+B,AAAW,UAAD;;AAEjD,UAAI,AAAW,AAA4B,UAA7B;AAC+D,QAA3E,AAAO,MAAD,+BAA+B,AAAW,UAAD;;AAEjD,UAAI,AAAW,AAAU,UAAX;AAC2B,QAAvC,AAAO,MAAD,aAAa,AAAW,UAAD;;AAO9B,MAJD,AAAS,QAAD,qBACE,MAAM;AAQY,aAH5B,QAAQ;MAAR;AACI,oBAAO,AAAa,YAAD;AACnB,yBAAY,AAAa,YAAD;AACxB,oBAAO,AAAa,YAAD;;;AAEvB,YAAO,SAAQ;IACjB;;;QAloBiB;QACA;QACV;;QACA;;QACA;;QACM;IAuPa;IAGA;IAWL;IAGA;IA1Qd;IACA;UAEK,AAAc,aAAD;IACX,iBAAE,OAAO;IACC,2BAAE,iBAAiB;IACvB,uBAAE,aAAa;AAC9B,4DAAM,KAAK;;EAAC","file":"../../../../../../../packages/flutter/src/rendering/custom_paint.dart.lib.js"}');
   // Exports:
   return {
-    src__animation__animation_controller: animation_controller
+    src__rendering__custom_paint: custom_paint
   };
 }));
 
-//# sourceMappingURL=animation_controller.dart.lib.js.map
+//# sourceMappingURL=custom_paint.dart.lib.js.map

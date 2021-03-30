@@ -1,27 +1,32 @@
-define(['dart_sdk'], (function load__packages__flutter_arg_demo__model__novel_search_dart(dart_sdk) {
+define(['dart_sdk'], (function load__packages__flutter__src__foundation__licenses_dart(dart_sdk) {
   'use strict';
   const core = dart_sdk.core;
-  const _js_helper = dart_sdk._js_helper;
   const _interceptors = dart_sdk._interceptors;
+  const _internal = dart_sdk._internal;
+  const _js_helper = dart_sdk._js_helper;
+  const async = dart_sdk.async;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  var novel_search = Object.create(dart.library);
-  var $_get = dartx._get;
-  var $_set = dartx._set;
+  var licenses = Object.create(dart.library);
+  var $substring = dartx.substring;
   var $add = dartx.add;
-  var $map = dartx.map;
-  var $toList = dartx.toList;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $join = dartx.join;
+  var $trimLeft = dartx.trimLeft;
+  var $clear = dartx.clear;
+  var $_get = dartx._get;
+  var $truncate = dartx.truncate;
   dart._checkModuleNullSafetyMode(false);
   var T = {
-    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
-    intL: () => (T.intL = dart.constFn(dart.legacy(core.int)))(),
-    MapOfStringL$dynamic: () => (T.MapOfStringL$dynamic = dart.constFn(core.Map$(T.StringL(), dart.dynamic)))(),
-    MapLOfStringL$dynamic: () => (T.MapLOfStringL$dynamic = dart.constFn(dart.legacy(T.MapOfStringL$dynamic())))(),
-    LinkedMapOfStringL$dynamic: () => (T.LinkedMapOfStringL$dynamic = dart.constFn(_js_helper.LinkedMap$(T.StringL(), dart.dynamic)))(),
-    DataL: () => (T.DataL = dart.constFn(dart.legacy(novel_search.Data)))(),
-    JSArrayOfDataL: () => (T.JSArrayOfDataL = dart.constFn(_interceptors.JSArray$(T.DataL())))(),
-    dynamicToNull: () => (T.dynamicToNull = dart.constFn(dart.fnType(core.Null, [dart.dynamic])))(),
-    DataLToMapLOfStringL$dynamic: () => (T.DataLToMapLOfStringL$dynamic = dart.constFn(dart.fnType(T.MapLOfStringL$dynamic(), [T.DataL()])))()
+    _LicenseEntryWithLineBreaksParserStateL: () => (T._LicenseEntryWithLineBreaksParserStateL = dart.constFn(dart.legacy(licenses._LicenseEntryWithLineBreaksParserState)))(),
+    JSArrayOfString: () => (T.JSArrayOfString = dart.constFn(_interceptors.JSArray$(core.String)))(),
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
+    VoidToLicenseParagraph: () => (T.VoidToLicenseParagraph = dart.constFn(dart.fnType(licenses.LicenseParagraph, [])))(),
+    SyncIterableOfLicenseParagraph: () => (T.SyncIterableOfLicenseParagraph = dart.constFn(_js_helper.SyncIterable$(licenses.LicenseParagraph)))(),
+    StreamOfLicenseEntry: () => (T.StreamOfLicenseEntry = dart.constFn(async.Stream$(licenses.LicenseEntry)))(),
+    VoidToStreamOfLicenseEntry: () => (T.VoidToStreamOfLicenseEntry = dart.constFn(dart.fnType(T.StreamOfLicenseEntry(), [])))(),
+    JSArrayOfVoidToStreamOfLicenseEntry: () => (T.JSArrayOfVoidToStreamOfLicenseEntry = dart.constFn(_interceptors.JSArray$(T.VoidToStreamOfLicenseEntry())))(),
+    _AsyncStarImplOfLicenseEntry: () => (T._AsyncStarImplOfLicenseEntry = dart.constFn(async._AsyncStarImpl$(licenses.LicenseEntry)))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -35,374 +40,321 @@ define(['dart_sdk'], (function load__packages__flutter_arg_demo__model__novel_se
   const CT = Object.create({
     _: () => (C, CT)
   });
-  var C = [];
-  var I = ["package:flutter_arg_demo/model/novel_search.dart"];
-  var _msg = dart.privateName(novel_search, "_msg");
-  var _code = dart.privateName(novel_search, "_code");
-  var _data = dart.privateName(novel_search, "_data");
-  novel_search.NovelSearchBean = class NovelSearchBean extends core.Object {
-    get msg() {
-      return this[_msg];
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: licenses._LicenseEntryWithLineBreaksParserState.prototype,
+        [_name$]: "_LicenseEntryWithLineBreaksParserState.beforeParagraph",
+        index: 0
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: licenses._LicenseEntryWithLineBreaksParserState.prototype,
+        [_name$]: "_LicenseEntryWithLineBreaksParserState.inParagraph",
+        index: 1
+      });
+    },
+    get C2() {
+      return C[2] = dart.constList([C[0] || CT.C0, C[1] || CT.C1], T._LicenseEntryWithLineBreaksParserStateL());
     }
-    set msg(msg) {
-      return this[_msg] = msg;
+  }, false);
+  var C = Array(3).fill(void 0);
+  var I = [
+    "file:///D:/flutterSDK/flutter/packages/flutter/lib/src/foundation/licenses.dart",
+    "package:flutter/src/foundation/licenses.dart"
+  ];
+  var text$ = dart.privateName(licenses, "LicenseParagraph.text");
+  var indent$ = dart.privateName(licenses, "LicenseParagraph.indent");
+  licenses.LicenseParagraph = class LicenseParagraph extends core.Object {
+    get text() {
+      return this[text$];
     }
-    get code() {
-      return this[_code];
+    set text(value) {
+      super.text = value;
     }
-    set code(code) {
-      return this[_code] = code;
+    get indent() {
+      return this[indent$];
     }
-    get data() {
-      return this[_data];
-    }
-    set data(data) {
-      return this[_data] = data;
-    }
-    toJson() {
-      let data = new (T.LinkedMapOfStringL$dynamic()).new();
-      data[$_set]("msg", this[_msg]);
-      data[$_set]("code", this[_code]);
-      if (this[_data] != null) {
-        data[$_set]("data", this[_data].toJson());
-      }
-      return data;
-    }
-  };
-  (novel_search.NovelSearchBean.new = function(opts) {
-    let msg = opts && 'msg' in opts ? opts.msg : null;
-    let code = opts && 'code' in opts ? opts.code : null;
-    let data = opts && 'data' in opts ? opts.data : null;
-    this[_msg] = null;
-    this[_code] = null;
-    this[_data] = null;
-    this[_msg] = msg;
-    this[_code] = code;
-    this[_data] = data;
-  }).prototype = novel_search.NovelSearchBean.prototype;
-  (novel_search.NovelSearchBean.fromJson = function(json) {
-    this[_msg] = null;
-    this[_code] = null;
-    this[_data] = null;
-    this[_msg] = T.StringL().as(json[$_get]("msg"));
-    this[_code] = T.intL().as(json[$_get]("code"));
-    this[_data] = json[$_get]("data") != null ? new novel_search.Data.fromJson(T.MapLOfStringL$dynamic().as(json[$_get]("data"))) : null;
-  }).prototype = novel_search.NovelSearchBean.prototype;
-  dart.addTypeTests(novel_search.NovelSearchBean);
-  dart.addTypeCaches(novel_search.NovelSearchBean);
-  dart.setMethodSignature(novel_search.NovelSearchBean, () => ({
-    __proto__: dart.getMethods(novel_search.NovelSearchBean.__proto__),
-    toJson: dart.fnType(dart.legacy(core.Map$(dart.legacy(core.String), dart.dynamic)), [])
-  }));
-  dart.setGetterSignature(novel_search.NovelSearchBean, () => ({
-    __proto__: dart.getGetters(novel_search.NovelSearchBean.__proto__),
-    msg: dart.legacy(core.String),
-    code: dart.legacy(core.int),
-    data: dart.legacy(novel_search.Data)
-  }));
-  dart.setSetterSignature(novel_search.NovelSearchBean, () => ({
-    __proto__: dart.getSetters(novel_search.NovelSearchBean.__proto__),
-    msg: dart.legacy(core.String),
-    code: dart.legacy(core.int),
-    data: dart.legacy(novel_search.Data)
-  }));
-  dart.setLibraryUri(novel_search.NovelSearchBean, I[0]);
-  dart.setFieldSignature(novel_search.NovelSearchBean, () => ({
-    __proto__: dart.getFields(novel_search.NovelSearchBean.__proto__),
-    [_msg]: dart.fieldType(dart.legacy(core.String)),
-    [_code]: dart.fieldType(dart.legacy(core.int)),
-    [_data]: dart.fieldType(dart.legacy(novel_search.Data))
-  }));
-  var _size = dart.privateName(novel_search, "_size");
-  var _count = dart.privateName(novel_search, "_count");
-  var _from = dart.privateName(novel_search, "_from");
-  novel_search.Data = class Data extends core.Object {
-    get size() {
-      return this[_size];
-    }
-    set size(size) {
-      return this[_size] = size;
-    }
-    get data() {
-      return this[_data];
-    }
-    set data(data) {
-      return this[_data] = data;
-    }
-    get count() {
-      return this[_count];
-    }
-    set count(count) {
-      return this[_count] = count;
-    }
-    get from() {
-      return this[_from];
-    }
-    set from(from) {
-      return this[_from] = from;
-    }
-    toJson() {
-      let data = new (T.LinkedMapOfStringL$dynamic()).new();
-      data[$_set]("size", this[_size]);
-      if (this[_data] != null) {
-        data[$_set]("data", this[_data][$map](T.MapLOfStringL$dynamic(), dart.fn(v => v.toJson(), T.DataLToMapLOfStringL$dynamic()))[$toList]());
-      }
-      data[$_set]("count", this[_count]);
-      data[$_set]("from", this[_from]);
-      return data;
+    set indent(value) {
+      super.indent = value;
     }
   };
-  (novel_search.Data.new = function(opts) {
-    let size = opts && 'size' in opts ? opts.size : null;
-    let data = opts && 'data' in opts ? opts.data : null;
-    let count = opts && 'count' in opts ? opts.count : null;
-    let from = opts && 'from' in opts ? opts.from : null;
-    this[_size] = null;
-    this[_data] = null;
-    this[_count] = null;
-    this[_from] = null;
-    this[_size] = size;
-    this[_data] = data;
-    this[_count] = count;
-    this[_from] = from;
-  }).prototype = novel_search.Data.prototype;
-  (novel_search.Data.fromJson = function(json) {
-    this[_size] = null;
-    this[_data] = null;
-    this[_count] = null;
-    this[_from] = null;
-    this[_size] = T.intL().as(json[$_get]("size"));
-    if (json[$_get]("data") != null) {
-      this[_data] = T.JSArrayOfDataL().of([]);
-      dart.dsend(json[$_get]("data"), 'forEach', [dart.fn(v => {
-          this[_data][$add](new novel_search.Data.fromJson(T.MapLOfStringL$dynamic().as(v)));
-        }, T.dynamicToNull())]);
-    }
-    this[_count] = T.intL().as(json[$_get]("count"));
-    this[_from] = T.intL().as(json[$_get]("from"));
-  }).prototype = novel_search.Data.prototype;
-  dart.addTypeTests(novel_search.Data);
-  dart.addTypeCaches(novel_search.Data);
-  dart.setMethodSignature(novel_search.Data, () => ({
-    __proto__: dart.getMethods(novel_search.Data.__proto__),
-    toJson: dart.fnType(dart.legacy(core.Map$(dart.legacy(core.String), dart.dynamic)), [])
+  (licenses.LicenseParagraph.new = function(text, indent) {
+    if (text == null) dart.nullFailed(I[0], 15, 31, "text");
+    if (indent == null) dart.nullFailed(I[0], 15, 42, "indent");
+    this[text$] = text;
+    this[indent$] = indent;
+    ;
+  }).prototype = licenses.LicenseParagraph.prototype;
+  dart.addTypeTests(licenses.LicenseParagraph);
+  dart.addTypeCaches(licenses.LicenseParagraph);
+  dart.setLibraryUri(licenses.LicenseParagraph, I[1]);
+  dart.setFieldSignature(licenses.LicenseParagraph, () => ({
+    __proto__: dart.getFields(licenses.LicenseParagraph.__proto__),
+    text: dart.finalFieldType(core.String),
+    indent: dart.finalFieldType(core.int)
   }));
-  dart.setGetterSignature(novel_search.Data, () => ({
-    __proto__: dart.getGetters(novel_search.Data.__proto__),
-    size: dart.legacy(core.int),
-    data: dart.legacy(core.List$(dart.legacy(novel_search.Data))),
-    count: dart.legacy(core.int),
-    from: dart.legacy(core.int)
-  }));
-  dart.setSetterSignature(novel_search.Data, () => ({
-    __proto__: dart.getSetters(novel_search.Data.__proto__),
-    size: dart.legacy(core.int),
-    data: dart.legacy(core.List$(dart.legacy(novel_search.Data))),
-    count: dart.legacy(core.int),
-    from: dart.legacy(core.int)
-  }));
-  dart.setLibraryUri(novel_search.Data, I[0]);
-  dart.setFieldSignature(novel_search.Data, () => ({
-    __proto__: dart.getFields(novel_search.Data.__proto__),
-    [_size]: dart.fieldType(dart.legacy(core.int)),
-    [_data]: dart.fieldType(dart.legacy(core.List$(dart.legacy(novel_search.Data)))),
-    [_count]: dart.fieldType(dart.legacy(core.int)),
-    [_from]: dart.fieldType(dart.legacy(core.int))
-  }));
-  var _id = dart.privateName(novel_search, "_id");
-  var _title = dart.privateName(novel_search, "_title");
-  var _descs = dart.privateName(novel_search, "_descs");
-  var _cover = dart.privateName(novel_search, "_cover");
-  var _author = dart.privateName(novel_search, "_author");
-  var _cartoonType = dart.privateName(novel_search, "_cartoonType");
-  var _cartoonId = dart.privateName(novel_search, "_cartoonId");
-  var _updateTime = dart.privateName(novel_search, "_updateTime");
-  var _creationTime = dart.privateName(novel_search, "_creationTime");
-  var _cartoonVariableId = dart.privateName(novel_search, "_cartoonVariableId");
-  novel_search.ElData = class ElData extends core.Object {
-    get id() {
-      return this[_id];
+  dart.defineLazy(licenses.LicenseParagraph, {
+    /*licenses.LicenseParagraph.centeredIndent*/get centeredIndent() {
+      return -1;
     }
-    set id(id) {
-      return this[_id] = id;
-    }
-    get title() {
-      return this[_title];
-    }
-    set title(title) {
-      return this[_title] = title;
-    }
-    get descs() {
-      return this[_descs];
-    }
-    set descs(descs) {
-      return this[_descs] = descs;
-    }
-    get cover() {
-      return this[_cover];
-    }
-    set cover(cover) {
-      return this[_cover] = cover;
-    }
-    get author() {
-      return this[_author];
-    }
-    set author(author) {
-      return this[_author] = author;
-    }
-    get cartoonType() {
-      return this[_cartoonType];
-    }
-    set cartoonType(cartoonType) {
-      return this[_cartoonType] = cartoonType;
-    }
-    get cartoonId() {
-      return this[_cartoonId];
-    }
-    set cartoonId(cartoonId) {
-      return this[_cartoonId] = cartoonId;
-    }
-    get updateTime() {
-      return this[_updateTime];
-    }
-    set updateTime(updateTime) {
-      return this[_updateTime] = updateTime;
-    }
-    get creationTime() {
-      return this[_creationTime];
-    }
-    set creationTime(creationTime) {
-      return this[_creationTime] = creationTime;
-    }
-    get cartoonVariableId() {
-      return this[_cartoonVariableId];
-    }
-    set cartoonVariableId(cartoonVariableId) {
-      return this[_cartoonVariableId] = cartoonVariableId;
-    }
-    toJson() {
-      let data = new (T.LinkedMapOfStringL$dynamic()).new();
-      data[$_set]("id", this[_id]);
-      data[$_set]("title", this[_title]);
-      data[$_set]("descs", this[_descs]);
-      data[$_set]("cover", this[_cover]);
-      data[$_set]("author", this[_author]);
-      data[$_set]("cartoonType", this[_cartoonType]);
-      data[$_set]("cartoonId", this[_cartoonId]);
-      data[$_set]("updateTime", this[_updateTime]);
-      data[$_set]("creationTime", this[_creationTime]);
-      data[$_set]("cartoonVariableId", this[_cartoonVariableId]);
-      return data;
+  }, false);
+  licenses.LicenseEntry = class LicenseEntry extends core.Object {};
+  (licenses.LicenseEntry.new = function() {
+    ;
+  }).prototype = licenses.LicenseEntry.prototype;
+  dart.addTypeTests(licenses.LicenseEntry);
+  dart.addTypeCaches(licenses.LicenseEntry);
+  dart.setLibraryUri(licenses.LicenseEntry, I[1]);
+  var _name$ = dart.privateName(licenses, "_name");
+  licenses._LicenseEntryWithLineBreaksParserState = class _LicenseEntryWithLineBreaksParserState extends core.Object {
+    toString() {
+      return this[_name$];
     }
   };
-  (novel_search.ElData.new = function(opts) {
-    let id = opts && 'id' in opts ? opts.id : null;
-    let title = opts && 'title' in opts ? opts.title : null;
-    let descs = opts && 'descs' in opts ? opts.descs : null;
-    let cover = opts && 'cover' in opts ? opts.cover : null;
-    let author = opts && 'author' in opts ? opts.author : null;
-    let cartoonType = opts && 'cartoonType' in opts ? opts.cartoonType : null;
-    let cartoonId = opts && 'cartoonId' in opts ? opts.cartoonId : null;
-    let updateTime = opts && 'updateTime' in opts ? opts.updateTime : null;
-    let creationTime = opts && 'creationTime' in opts ? opts.creationTime : null;
-    let cartoonVariableId = opts && 'cartoonVariableId' in opts ? opts.cartoonVariableId : null;
-    this[_id] = null;
-    this[_title] = null;
-    this[_descs] = null;
-    this[_cover] = null;
-    this[_author] = null;
-    this[_cartoonType] = null;
-    this[_cartoonId] = null;
-    this[_updateTime] = null;
-    this[_creationTime] = null;
-    this[_cartoonVariableId] = null;
-    this[_id] = id;
-    this[_title] = title;
-    this[_descs] = descs;
-    this[_cover] = cover;
-    this[_author] = author;
-    this[_cartoonType] = cartoonType;
-    this[_cartoonId] = cartoonId;
-    this[_updateTime] = updateTime;
-    this[_creationTime] = creationTime;
-    this[_cartoonVariableId] = cartoonVariableId;
-  }).prototype = novel_search.ElData.prototype;
-  (novel_search.ElData.fromJson = function(json) {
-    this[_id] = null;
-    this[_title] = null;
-    this[_descs] = null;
-    this[_cover] = null;
-    this[_author] = null;
-    this[_cartoonType] = null;
-    this[_cartoonId] = null;
-    this[_updateTime] = null;
-    this[_creationTime] = null;
-    this[_cartoonVariableId] = null;
-    this[_id] = T.intL().as(json[$_get]("id"));
-    this[_title] = T.StringL().as(json[$_get]("title"));
-    this[_descs] = T.StringL().as(json[$_get]("descs"));
-    this[_cover] = T.StringL().as(json[$_get]("cover"));
-    this[_author] = T.StringL().as(json[$_get]("author"));
-    this[_cartoonType] = T.StringL().as(json[$_get]("cartoonType"));
-    this[_cartoonId] = T.StringL().as(json[$_get]("cartoonId"));
-    this[_updateTime] = T.StringL().as(json[$_get]("updateTime"));
-    this[_creationTime] = T.StringL().as(json[$_get]("creationTime"));
-    this[_cartoonVariableId] = T.intL().as(json[$_get]("cartoonVariableId"));
-  }).prototype = novel_search.ElData.prototype;
-  dart.addTypeTests(novel_search.ElData);
-  dart.addTypeCaches(novel_search.ElData);
-  dart.setMethodSignature(novel_search.ElData, () => ({
-    __proto__: dart.getMethods(novel_search.ElData.__proto__),
-    toJson: dart.fnType(dart.legacy(core.Map$(dart.legacy(core.String), dart.dynamic)), [])
+  (licenses._LicenseEntryWithLineBreaksParserState.new = function(index, _name) {
+    if (index == null) dart.nullFailed(I[0], 56, 6, "index");
+    if (_name == null) dart.nullFailed(I[0], 56, 6, "_name");
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = licenses._LicenseEntryWithLineBreaksParserState.prototype;
+  dart.addTypeTests(licenses._LicenseEntryWithLineBreaksParserState);
+  dart.addTypeCaches(licenses._LicenseEntryWithLineBreaksParserState);
+  dart.setLibraryUri(licenses._LicenseEntryWithLineBreaksParserState, I[1]);
+  dart.setFieldSignature(licenses._LicenseEntryWithLineBreaksParserState, () => ({
+    __proto__: dart.getFields(licenses._LicenseEntryWithLineBreaksParserState.__proto__),
+    index: dart.finalFieldType(core.int),
+    [_name$]: dart.finalFieldType(core.String)
   }));
-  dart.setGetterSignature(novel_search.ElData, () => ({
-    __proto__: dart.getGetters(novel_search.ElData.__proto__),
-    id: dart.legacy(core.int),
-    title: dart.legacy(core.String),
-    descs: dart.legacy(core.String),
-    cover: dart.legacy(core.String),
-    author: dart.legacy(core.String),
-    cartoonType: dart.legacy(core.String),
-    cartoonId: dart.legacy(core.String),
-    updateTime: dart.legacy(core.String),
-    creationTime: dart.legacy(core.String),
-    cartoonVariableId: dart.legacy(core.int)
+  dart.defineExtensionMethods(licenses._LicenseEntryWithLineBreaksParserState, ['toString']);
+  licenses._LicenseEntryWithLineBreaksParserState.beforeParagraph = C[0] || CT.C0;
+  licenses._LicenseEntryWithLineBreaksParserState.inParagraph = C[1] || CT.C1;
+  licenses._LicenseEntryWithLineBreaksParserState.values = C[2] || CT.C2;
+  var packages$ = dart.privateName(licenses, "LicenseEntryWithLineBreaks.packages");
+  var text$0 = dart.privateName(licenses, "LicenseEntryWithLineBreaks.text");
+  licenses.LicenseEntryWithLineBreaks = class LicenseEntryWithLineBreaks extends licenses.LicenseEntry {
+    get packages() {
+      return this[packages$];
+    }
+    set packages(value) {
+      super.packages = value;
+    }
+    get text() {
+      return this[text$0];
+    }
+    set text(value) {
+      super.text = value;
+    }
+    get paragraphs() {
+      return new (T.SyncIterableOfLicenseParagraph()).new((function* paragraphs() {
+        let lineStart = 0;
+        let currentPosition = 0;
+        let lastLineIndent = 0;
+        let currentLineIndent = 0;
+        let currentParagraphIndentation = null;
+        let state = licenses._LicenseEntryWithLineBreaksParserState.beforeParagraph;
+        let lines = T.JSArrayOfString().of([]);
+        const addLine = () => {
+          if (!(lineStart < currentPosition)) dart.assertFailed(null, I[0], 152, 14, "lineStart < currentPosition");
+          lines[$add](this.text[$substring](lineStart, currentPosition));
+        };
+        dart.fn(addLine, T.VoidTovoid());
+        function getParagraph() {
+          if (!dart.test(lines[$isNotEmpty])) dart.assertFailed(null, I[0], 157, 14, "lines.isNotEmpty");
+          if (!(currentParagraphIndentation != null)) dart.assertFailed(null, I[0], 158, 14, "currentParagraphIndentation != null");
+          let result = new licenses.LicenseParagraph.new(lines[$join](" "), dart.nullCheck(currentParagraphIndentation));
+          if (!(result.text[$trimLeft]() === result.text)) dart.assertFailed(null, I[0], 160, 14, "result.text.trimLeft() == result.text");
+          if (!result.text[$isNotEmpty]) dart.assertFailed(null, I[0], 161, 14, "result.text.isNotEmpty");
+          lines[$clear]();
+          return result;
+        }
+        dart.fn(getParagraph, T.VoidToLicenseParagraph());
+        while (currentPosition < this.text.length) {
+          switch (state) {
+            case C[0] || CT.C0:
+            {
+              if (!(lineStart === currentPosition)) dart.assertFailed(null, I[0], 169, 18, "lineStart == currentPosition");
+              let labelState = this.text[$_get](currentPosition);
+              SL0:
+                while (true) {
+                  switch (labelState) {
+                    case " ":
+                    {
+                      lineStart = currentPosition + 1;
+                      currentLineIndent = currentLineIndent + 1;
+                      state = licenses._LicenseEntryWithLineBreaksParserState.beforeParagraph;
+                      break SL0;
+                    }
+                    case "\t":
+                    {
+                      lineStart = currentPosition + 1;
+                      currentLineIndent = currentLineIndent + 8;
+                      state = licenses._LicenseEntryWithLineBreaksParserState.beforeParagraph;
+                      break SL0;
+                    }
+                    case "\r":
+                    case "\n":
+                    case "\f":
+                    {
+                      if (dart.test(lines[$isNotEmpty])) {
+                        yield getParagraph();
+                      }
+                      if (this.text[$_get](currentPosition) === "\r" && currentPosition < this.text.length - 1 && this.text[$_get](currentPosition + 1) === "\n") {
+                        currentPosition = currentPosition + 1;
+                      }
+                      lastLineIndent = 0;
+                      currentLineIndent = 0;
+                      currentParagraphIndentation = null;
+                      lineStart = currentPosition + 1;
+                      state = licenses._LicenseEntryWithLineBreaksParserState.beforeParagraph;
+                      break SL0;
+                    }
+                    case "[":
+                    {
+                      currentLineIndent = currentLineIndent + 1;
+                      labelState = Symbol('_default');
+                      continue SL0;
+                    }
+                    default:
+                    {
+                      if (dart.test(lines[$isNotEmpty]) && currentLineIndent > lastLineIndent) {
+                        yield getParagraph();
+                        currentParagraphIndentation = null;
+                      }
+                      if (currentParagraphIndentation == null) {
+                        if (currentLineIndent > 10)
+                          currentParagraphIndentation = -1;
+                        else
+                          currentParagraphIndentation = (currentLineIndent / 3)[$truncate]();
+                      }
+                      state = licenses._LicenseEntryWithLineBreaksParserState.inParagraph;
+                      break SL0;
+                    }
+                  }
+                  break;
+                }
+              break;
+            }
+            case C[1] || CT.C1:
+            {
+              switch (this.text[$_get](currentPosition)) {
+                case "\n":
+                {
+                  addLine();
+                  lastLineIndent = currentLineIndent;
+                  currentLineIndent = 0;
+                  lineStart = currentPosition + 1;
+                  state = licenses._LicenseEntryWithLineBreaksParserState.beforeParagraph;
+                  break;
+                }
+                case "\f":
+                {
+                  addLine();
+                  yield getParagraph();
+                  lastLineIndent = 0;
+                  currentLineIndent = 0;
+                  currentParagraphIndentation = null;
+                  lineStart = currentPosition + 1;
+                  state = licenses._LicenseEntryWithLineBreaksParserState.beforeParagraph;
+                  break;
+                }
+                default:
+                {
+                  state = licenses._LicenseEntryWithLineBreaksParserState.inParagraph;
+                }
+              }
+              break;
+            }
+            default:
+            {
+              dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
+            }
+          }
+          currentPosition = currentPosition + 1;
+        }
+        switch (state) {
+          case C[0] || CT.C0:
+          {
+            if (dart.test(lines[$isNotEmpty])) {
+              yield getParagraph();
+            }
+            break;
+          }
+          case C[1] || CT.C1:
+          {
+            addLine();
+            yield getParagraph();
+            break;
+          }
+          default:
+          {
+            dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
+          }
+        }
+      }).bind(this));
+    }
+  };
+  (licenses.LicenseEntryWithLineBreaks.new = function(packages, text) {
+    if (packages == null) dart.nullFailed(I[0], 121, 41, "packages");
+    if (text == null) dart.nullFailed(I[0], 121, 56, "text");
+    this[packages$] = packages;
+    this[text$0] = text;
+    licenses.LicenseEntryWithLineBreaks.__proto__.new.call(this);
+    ;
+  }).prototype = licenses.LicenseEntryWithLineBreaks.prototype;
+  dart.addTypeTests(licenses.LicenseEntryWithLineBreaks);
+  dart.addTypeCaches(licenses.LicenseEntryWithLineBreaks);
+  dart.setGetterSignature(licenses.LicenseEntryWithLineBreaks, () => ({
+    __proto__: dart.getGetters(licenses.LicenseEntryWithLineBreaks.__proto__),
+    paragraphs: core.Iterable$(licenses.LicenseParagraph)
   }));
-  dart.setSetterSignature(novel_search.ElData, () => ({
-    __proto__: dart.getSetters(novel_search.ElData.__proto__),
-    id: dart.legacy(core.int),
-    title: dart.legacy(core.String),
-    descs: dart.legacy(core.String),
-    cover: dart.legacy(core.String),
-    author: dart.legacy(core.String),
-    cartoonType: dart.legacy(core.String),
-    cartoonId: dart.legacy(core.String),
-    updateTime: dart.legacy(core.String),
-    creationTime: dart.legacy(core.String),
-    cartoonVariableId: dart.legacy(core.int)
+  dart.setLibraryUri(licenses.LicenseEntryWithLineBreaks, I[1]);
+  dart.setFieldSignature(licenses.LicenseEntryWithLineBreaks, () => ({
+    __proto__: dart.getFields(licenses.LicenseEntryWithLineBreaks.__proto__),
+    packages: dart.finalFieldType(core.List$(core.String)),
+    text: dart.finalFieldType(core.String)
   }));
-  dart.setLibraryUri(novel_search.ElData, I[0]);
-  dart.setFieldSignature(novel_search.ElData, () => ({
-    __proto__: dart.getFields(novel_search.ElData.__proto__),
-    [_id]: dart.fieldType(dart.legacy(core.int)),
-    [_title]: dart.fieldType(dart.legacy(core.String)),
-    [_descs]: dart.fieldType(dart.legacy(core.String)),
-    [_cover]: dart.fieldType(dart.legacy(core.String)),
-    [_author]: dart.fieldType(dart.legacy(core.String)),
-    [_cartoonType]: dart.fieldType(dart.legacy(core.String)),
-    [_cartoonId]: dart.fieldType(dart.legacy(core.String)),
-    [_updateTime]: dart.fieldType(dart.legacy(core.String)),
-    [_creationTime]: dart.fieldType(dart.legacy(core.String)),
-    [_cartoonVariableId]: dart.fieldType(dart.legacy(core.int))
-  }));
-  dart.trackLibraries("packages/flutter_arg_demo/model/novel_search.dart", {
-    "package:flutter_arg_demo/model/novel_search.dart": novel_search
+  licenses.LicenseRegistry = class LicenseRegistry extends core.Object {
+    static addLicense(collector) {
+      if (collector == null) dart.nullFailed(I[0], 303, 48, "collector");
+      licenses.LicenseRegistry._collectors == null ? licenses.LicenseRegistry._collectors = T.JSArrayOfVoidToStreamOfLicenseEntry().of([]) : null;
+      dart.nullCheck(licenses.LicenseRegistry._collectors)[$add](collector);
+    }
+    static get licenses() {
+      return new (T._AsyncStarImplOfLicenseEntry()).new(function* licenses$(stream) {
+        if (licenses.LicenseRegistry._collectors == null) return;
+        for (let collector of dart.nullCheck(licenses.LicenseRegistry._collectors)) {
+          if (stream.addStream(collector())) return;
+          yield;
+        }
+      }).stream;
+    }
+    static reset() {
+      licenses.LicenseRegistry._collectors = null;
+    }
+  };
+  (licenses.LicenseRegistry.__ = function() {
+    ;
+  }).prototype = licenses.LicenseRegistry.prototype;
+  dart.addTypeTests(licenses.LicenseRegistry);
+  dart.addTypeCaches(licenses.LicenseRegistry);
+  dart.setLibraryUri(licenses.LicenseRegistry, I[1]);
+  dart.defineLazy(licenses.LicenseRegistry, {
+    /*licenses.LicenseRegistry._collectors*/get _collectors() {
+      return null;
+    },
+    set _collectors(_) {}
+  }, false);
+  dart.trackLibraries("packages/flutter/src/foundation/licenses.dart", {
+    "package:flutter/src/foundation/licenses.dart": licenses
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["novel_search.dart"],"names":[],"mappings":"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","file":"../../../../packages/flutter_arg_demo/model/novel_search.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["licenses.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/foundation/licenses.dart.lib.js"}');
   // Exports:
   return {
-    model__novel_search: novel_search
+    src__foundation__licenses: licenses
   };
 }));
 
-//# sourceMappingURL=novel_search.dart.lib.js.map
+//# sourceMappingURL=licenses.dart.lib.js.map
