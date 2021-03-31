@@ -86,11 +86,20 @@ class ChildItemDecorateBox extends StatelessWidget {
     return Expanded(
         child: Column(
       children: [
-        Image.network(
-          content,
-          height: 600.0,
-        ),
-        Text(content)
+        Image.network(content, height: 600, loadingBuilder:
+            (BuildContext context, Widget child,
+                ImageChunkEvent loadingProgress) {
+          if (loadingProgress == null) return child;
+          int currentLength = loadingProgress.cumulativeBytesLoaded;
+          int totalLength = loadingProgress.expectedTotalBytes;
+          print("$currentLength/$totalLength from network");
+          return CircularProgressIndicator(
+            value: loadingProgress.expectedTotalBytes != null
+                ? loadingProgress.cumulativeBytesLoaded /
+                    loadingProgress.expectedTotalBytes
+                : null,
+          );
+        }),
       ],
     ));
   }
