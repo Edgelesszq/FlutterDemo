@@ -41,17 +41,33 @@ G
 lib/util/textUtils.dart,3\1\31c821cb75e8c5d3314141984b27f422805fff42
 N
 lib/widget/providerWidget.dart,c\7\c716ae7cb63c2ac81883ea2a4c812ed95851ab9c
-K
-lib/model/novel_search.dart,e\8\e8d1ba1ef039e8cc88ba0e6488d2fe51642afc48
 A
 lib/http/api.dart,5\9\5990c29dbf2bdaa2f983b874a2c8c152cee5416e
-K
-lib/viewmodel/myModel2.dart,8\d\8dd573fefe44eede0ebdd662793658515961ec98
-J
-lib/viewmodel/myModel.dart,4\c\4c80423e14ca62847ee6dd0fd59a867f39efbd5a
 F
 lib/ui/novel_page.dart,1\d\1d7c39cb8c7c7c361c911b146ea4d5cd81338cfe
 L
 lib/config/static_value.dart,e\8\e88276b35a594ab1ec1b63a0fd9552dac54c2802
 K
 lib/common/Application.dart,c\e\cea5b32d933ada7fe63a01c2dc496771a8ed0230
+P
+ lib/config/intent_key_value.dart,0\2\02495ae1c7ea6ce42fbad9e3cf228436e33b9ca2
+R
+"lib/model/novel_content_model.dart,2\f\2ff2e036bcc6f046df3897543b52ce94f7d16534
+Q
+!lib/model/novel_search_model.dart,4\b\4ba9cf9f5840c4167c815ed7195bb36ee6e690b9
+R
+"lib/model/novel_chapter_model.dart,f\9\f93963fb5c488a302ad1f12611f846cbb25c3ca5
+N
+lib/viewmodel/novel_model.dart,7\2\72af8fdd30c8e8db241cada0f02daa9ed3d31018
+K
+lib/ui/novel_list_page.dart,7\e\7ee4c254f8716cf321adefa97a41a5a60ed81521
+N
+lib/ui/novel_content_page.dart,f\4\f4dda0b78ff45a39036c25712c06a193c92ba197
+R
+"lib/model/comic_content_model.dart,a\c\acd68f824c1954f860dae41f3de35cbb98c2fe36
+K
+lib/ui/comic_list_page.dart,f\f\ff4480245e3e78ec0dc2a4f72664e151cb3ca779
+O
+lib/ui/comicl_content_page.dart,5\6\5652c26c0a4343662a3be819981f04c10cc8e655
+V
+&lib/viewmodel/comic_chapter_model.dart,9\0\904248115351df6de4410659ab17fc77f1d7a969

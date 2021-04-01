@@ -8,4 +8,6 @@ class Api {
   static const String GET_CARTOON_CHAPTER = "cartoonChapter/search/"; //漫画列表
   static const String GET_CARTOON_CONTENT = "cartoonContent/search/"; //漫画内容
 
+  static const String GET_VIDEO = "video/search/title/"; //视频搜索
+  static const String GET_VIDEO_CHAPTER = "videoChapter/search/"; //视频章节
 }

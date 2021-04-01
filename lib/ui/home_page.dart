@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_arg_demo/config/static_value.dart';
 import 'package:flutter_arg_demo/ui/comic_page.dart';
 import 'package:flutter_arg_demo/ui/novel_page.dart';
+import 'package:flutter_arg_demo/ui/video_page.dart';
 import 'package:flutter_arg_demo/widget/myHomeApp.dart';
 
 class HomePage extends StatelessWidget {
@@ -63,6 +64,10 @@ class MyFloatingButton extends StatelessWidget {
                     } else if (StaticValue.currentPage == 1) {
                       NovelPageState.model.content = inputContent.text;
                       NovelPageState.model.load(false, false);
+                      Navigator.pop(context);
+                    } else if (StaticValue.currentPage == 2) {
+                      VideoPageState.model.content = inputContent.text;
+                      VideoPageState.model.load(false, false);
                       Navigator.pop(context);
                     }
                   },

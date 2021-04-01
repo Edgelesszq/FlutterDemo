@@ -85,12 +85,11 @@ class ChildItemDecorateBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
         child: Column(
-      children: [
+      children: <Widget>[
         Image.network(
-          content,
-          height: 600.0,
-        ),
-        Text(content)
+          content.trim(),
+          height: 500.0,
+        )
       ],
     ));
   }
