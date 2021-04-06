@@ -35,7 +35,6 @@ class Http {
   Future<void> get(String uri, Map<String, dynamic> params,
       {Success success, Fail fail, After after}) {
     _dio.get(uri, queryParameters: params).then((response) {
-      print('凑得' '$response.statusCode');
       if (response.statusCode == 200) {
         if (success != null) {
           success(response.data);

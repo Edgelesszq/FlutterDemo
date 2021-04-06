@@ -41,6 +41,9 @@ class MyHomeAppState extends State<MyHomeApp> {
 
   void _onItemTapped(int index) {
     setState(() {
+      if (WebViewPageState.webViewPageState != null) {
+        WebViewPageState.webViewPageState.clearView();
+      }
       StaticValue.currentPage = index;
     });
   }
