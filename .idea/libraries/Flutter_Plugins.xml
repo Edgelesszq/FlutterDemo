@@ -1,6 +1,9 @@
 <component name="libraryTable">
   <library name="Flutter Plugins" type="FlutterPluginsLibraryType">
-    <CLASSES />
+    <CLASSES>
+      <root url="file://E:/flutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/fijkplayer-0.8.7" />
+      <root url="file://E:/flutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/webview_flutter-0.3.24" />
+    </CLASSES>
     <JAVADOC />
     <SOURCES />
   </library>

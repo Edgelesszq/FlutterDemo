@@ -74,6 +74,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "fijkplayer",
+      "rootUri": "file:///E:/flutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/fijkplayer-0.8.7",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
       "name": "fluro",
       "rootUri": "file:///E:/flutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/fluro-2.0.3",
       "packageUri": "lib/",
@@ -188,13 +194,19 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "webview_flutter",
+      "rootUri": "file:///E:/flutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/webview_flutter-0.3.24",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
       "name": "flutter_arg_demo",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-03-31T01:03:01.970015Z",
+  "generated": "2021-04-06T10:18:31.933117Z",
   "generator": "pub",
   "generatorVersion": "2.12.1"
 }

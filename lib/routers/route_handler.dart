@@ -6,6 +6,8 @@ import 'package:flutter_arg_demo/ui/flash_page.dart';
 import 'package:flutter_arg_demo/ui/home_page.dart';
 import 'package:flutter_arg_demo/ui/novel_content_page.dart';
 import 'package:flutter_arg_demo/ui/novel_list_page.dart';
+import 'package:flutter_arg_demo/ui/video_list_page.dart';
+import 'package:flutter_arg_demo/ui/video_play_page.dart';
 
 var homeHandler = Handler(handlerFunc: (context, params) {
   return HomePage();
@@ -40,5 +42,19 @@ var comicHandler = Handler(handlerFunc: (context, params) {
   return ComicListPage(
     novel_title: args.title,
     novel_id: args.functionId,
+  );
+});
+var videoListHandler = Handler(handlerFunc: (context, params) {
+  final args = context.settings.arguments as IntentKeyAndValue;
+  return VideoListPage(
+    video_title: args.title,
+    video_id: args.functionId,
+  );
+});
+var videoPlayHandler = Handler(handlerFunc: (context, params) {
+  final args = context.settings.arguments as IntentKeyAndValue;
+  return VideoPlayPage(
+    video_title: args.chapterTitle,
+    video_url: args.chapterId,
   );
 });

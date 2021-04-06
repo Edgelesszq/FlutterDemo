@@ -4,6 +4,7 @@ import 'package:flutter_arg_demo/config/static_value.dart';
 import 'package:flutter_arg_demo/ui/comic_page.dart';
 import 'package:flutter_arg_demo/ui/novel_page.dart';
 import 'package:flutter_arg_demo/ui/video_page.dart';
+import 'package:flutter_arg_demo/ui/web_page.dart';
 import 'package:flutter_arg_demo/widget/myAppBar.dart';
 
 class MyHomeApp extends StatefulWidget {
@@ -31,7 +32,12 @@ class MyHomeApp extends StatefulWidget {
 }
 
 class MyHomeAppState extends State<MyHomeApp> {
-  final List<Widget> pages = <Widget>[ComicPage(), NovelPage(), VideoPage()];
+  final List<Widget> pages = <Widget>[
+    ComicPage(),
+    NovelPage(),
+    VideoPage(),
+    WebPage()
+  ];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -56,7 +62,9 @@ class MyHomeAppState extends State<MyHomeApp> {
                   BottomNavigationBarItem(icon: Icon(Icons.home), label: "漫画"),
                   BottomNavigationBarItem(icon: Icon(Icons.book), label: "小说"),
                   BottomNavigationBarItem(
-                      icon: Icon(Icons.video_call), label: "视频")
+                      icon: Icon(Icons.video_call), label: "视频"),
+                  BottomNavigationBarItem(
+                      icon: Icon(Icons.web_asset), label: "网页")
                 ],
                 type: BottomNavigationBarType.fixed,
               )
@@ -70,7 +78,8 @@ class MyHomeAppState extends State<MyHomeApp> {
                 backShow: (widget.showBack == null) ? true : widget.showBack,
               )
             : null,
-        floatingActionButton: widget.floatingButton,
+        floatingActionButton:
+            StaticValue.currentPage != 3 ? widget.floatingButton : null,
         body: SafeArea(
             child: (widget.isShowBottomBar)
                 ? Padding(
@@ -81,6 +90,6 @@ class MyHomeAppState extends State<MyHomeApp> {
                 : Padding(
                     padding: EdgeInsets.only(left: 15.0, right: 15.0),
                     child: widget.bodyWidget,
-            )));
+                  )));
   }
 }

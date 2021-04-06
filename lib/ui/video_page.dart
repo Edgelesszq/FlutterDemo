@@ -80,7 +80,7 @@ Widget buildContentView(List<ElBean> mlist) {
               onTap: () {
                 Application.router.navigateTo(
                   context,
-                  Routes.novel_list,
+                  Routes.video_list,
                   routeSettings: RouteSettings(
                     arguments: IntentKeyAndValue(
                         title: elData.title, functionId: elData.videoId),
